@@ -955,6 +955,9 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 |----------|------------|-------------|
 | **[LangBot](https://github.com/langbot-app/LangBot)** | Multi-platform | Agentic IM bots with OpenClaw, Dify, n8n, Langflow, Coze |
 | **[OpenRouter](https://openrouter.ai/docs/guides/guides/openclaw-integration)** | LLM routing | Access 30+ models with smart routing (`openrouter/<author>/<slug>`) |
+| **[You.com](https://you.com/resources/openclaw-integration)** | Search/AI | OpenClaw skill for You.com search and AI integration |
+| **[ClawSec](https://github.com/prompt-security/clawsec)** | Security | Complete security skill suite by Prompt Security |
+| **[unRAID Community App](https://www.reddit.com/r/unRAID/comments/1qv4tky/openclaw_ai_assistant_gateway_now_available_on/)** | NAS/Server | Official Community Apps template for unRAID |
 
 ### Install a Skill
 
@@ -1036,6 +1039,12 @@ Capabilities: CDP, ARIA snapshots, screenshots, tab management, click/type/drag,
 - [Habr - Don't Launch Before Reading This](https://habr.com/en/articles/992720/)
 - [AI/ML API - Secure Local Docker Setup](https://aimlapi.com/blog/running-openclaw-in-docker-secure-local-setup-and-practical-workflow-guide)
 - [OpenClaw/ClawdBot Masterclass](https://blog.dailydoseofds.com/p/openclawclawdbot-masterclass) — In-depth written guide by Akshay Pachaar covering installation, Telegram, skills, cron jobs, scaling
+- [NxCode - Complete Guide 2026](https://www.nxcode.io/resources/news/openclaw-complete-guide-2026) — Clawdbot to Moltbot to OpenClaw story, breaking changes, what's next
+- [AI Product Playbook - Get Clawdbot Set Up in an Afternoon](https://amankhan1.substack.com/p/how-to-get-clawdbotmoltbotopenclaw) — Practical companion to official docs
+- [Complete Guide by Aakash](https://www.news.aakashg.com/p/openclaw-fka-moltbot-fka-clawdbot) — VPS setup, wizard walkthrough, messaging config
+- [Jitendra Zaa - Complete Guide](https://www.jitendrazaa.com/blog/ai/clawdbot-complete-guide-open-source-ai-assistant-2026/) — 147K+ stars overview, WhatsApp, API costs, skills
+- [AI/ML API - Practical Guide for Developers](https://aimlapi.com/blog/openclaw-a-practical-guide-to-local-ai-agents-for-developers) — Shift from chatbots to autonomous agents
+- [Pi: The Minimal Agent Within OpenClaw](https://lucumr.pocoo.org/2026/1/31/pi/) — Armin Ronacher's deep dive into Pi agent architecture
 
 ### Reviews
 
@@ -1045,7 +1054,7 @@ Capabilities: CDP, ARIA snapshots, screenshots, tab management, click/type/drag,
 
 ### Cloud Provider Guides
 
-- [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-run-openclaw) | [AWS](https://dev.to/brayanarrieta/how-to-set-up-openclaw-ai-on-aws-3a0j) | [Pulumi + Tailscale](https://www.pulumi.com/blog/deploy-openclaw-aws-hetzner/)
+- [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-run-openclaw) | [AWS](https://dev.to/brayanarrieta/how-to-set-up-openclaw-ai-on-aws-3a0j) | [AWS Bedrock (Official Sample)](https://github.com/aws-samples/sample-OpenClaw-on-AWS-with-Bedrock) | [Pulumi + Tailscale](https://www.pulumi.com/blog/deploy-openclaw-aws-hetzner/)
 - [GCP](https://rizwantheanalyst.com/2026/02/04/openclaw-on-google/) | [Azure](https://techcommunity.microsoft.com/blog/azuredevcommunityblog/complete-guide-to-deploying-openclaw-on-azure-windows-11-virtual-machine/4492001) | [Oracle Free Tier](https://ryanshook.org/blog/posts/openclaw-on-oracle-free-tier-always-on-ai-for-free/)
 - [Hostinger](https://www.hostinger.com/tutorials/how-to-set-up-openclaw) | [Alibaba Cloud](https://www.alibabacloud.com/en/campaign/ai-openclaw)
 - [Vultr](https://docs.vultr.com/how-to-deploy-openclaw-autonomous-ai-agent-platform) | [Milvus/Slack](https://milvus.io/blog/stepbystep-guide-to-setting-up-openclaw-previously-clawdbotmoltbot-with-slack.md)
@@ -1107,6 +1116,16 @@ Capabilities: CDP, ARIA snapshots, screenshots, tab management, click/type/drag,
 | **The Wild Rise of OpenClaw** | [Fireship (YouTube)](https://www.youtube.com/watch?v=ssYt09bCgUY) | Short | History, architecture, why it matters |
 | **ClawdBot Is the Most Powerful AI Tool** | [Alex Finn (YouTube)](https://www.youtube.com/watch?v=Qkqe-uRhQJE) | Medium | ClawdBot deep dive, real-world demos |
 | **How to Setup OpenClaw in 5 Minutes** | [Julian Goldie (YouTube)](https://www.youtube.com/watch?v=1luvvYcpSJ8) | 5 min | Quick start, beginner-friendly |
+| **Clawdbot: Complete Beginner Guide!** | [YouTube](https://www.youtube.com/watch?v=VQiGJRBkkSQ) | Medium | Install, connect to messaging platforms |
+| **Full OpenClaw Setup Tutorial** | [YouTube](https://www.youtube.com/watch?v=fcZMmP5dsl4) | Medium | Step-by-step walkthrough, Hostinger VPS |
+| **The ONLY OpenClaw Guide You Need** | [YouTube](https://www.youtube.com/watch?v=pjiuQnEVges) | Long | VPS setup, security, best workflows |
+| **OpenClaw Course 2026: Beginner to Advanced** | [YouTube](https://www.youtube.com/watch?v=-dThk2fNObk) | Long | Comprehensive beginner-to-advanced course |
+| **How to Use & Set up OpenClaw (Docker)** | [YouTube](https://www.youtube.com/watch?v=Zo7Putdga_4) | Medium | Docker on VPS deployment |
+| **OpenClaw Tutorial For Beginners (2026)** | [YouTube](https://www.youtube.com/watch?v=Gc4fyY0_8Rc) | Medium | Step-by-step from scratch |
+| **This Open-Source AI Agent Is INSANE** | [YouTube](https://m.youtube.com/watch?v=KqTs7QvknDo) | Medium | Review, Live Canvas, A2UI demo |
+| **ClawCon SF: Live Interviews** | [YouTube](https://www.youtube.com/watch?v=jMnLqGU-Ds4) | Long | Builder interviews, demos from ClawCon |
+| **OpenClaw, Moltbook and the Rise of Personal AI** | [YouTube](https://www.youtube.com/watch?v=LqT4n7XQHDo) | Medium | AI social network, personal agents |
+| **ClawCon 2026 Raw Footage** | [YouTube](https://www.youtube.com/watch?v=gT98KNkoLGM) | Long | Community event, builder demos |
 
 ---
 
@@ -1120,6 +1139,18 @@ Capabilities: CDP, ARIA snapshots, screenshots, tab management, click/type/drag,
 | **Codecademy** | [Tutorial](https://www.codecademy.com/article/open-claw-tutorial-installation-to-first-chat-setup) | **Free** | 20-minute install guide |
 | **GitHub Course** | [kiankyars/openclawcourse](https://github.com/kiankyars/openclawcourse) | **Free** | 1-hour crash course |
 | **Udemy** | [Azure VM Course](https://www.udemy.com/course/openclaw/) | Paid | Azure Linux VM deployment |
+
+---
+
+## Events & Hackathons
+
+| Event | Date | Location | Details |
+|-------|------|----------|---------|
+| **[ClawCon: 1st OpenClaw SF Show & Tell](https://trymimetic.com/events/sf/clawcon-1st-openclaw-sf-show-tell-open-registration-feb-2026)** | Feb 5, 2026 | San Francisco | Builder demos, live interviews |
+| **[OpenClaw Unhackathon](https://sf.aitinkerers.org/p/openclaw-unhackathon)** | Feb 7, 2026 | San Francisco (AI Tinkerers) | Build & compete, 2-6 PM |
+| **[OpenClaw Micro Hackathon](https://www.eventbrite.co.uk/e/openclaw-micro-hackathon-tickets-1982409167184)** | Feb 7, 2026 | Hong Kong (Dim Sum Labs) | Community hackathon |
+| **[OpenClaw/Moltbook Hackathon at MIT](https://x.com/SantanuB01/status/2018608892591395079)** | Feb 3, 2026 | MIT, Cambridge | Serious coders, agent building |
+| **[Circle/USDC Hackathon on Moltbook](https://www.circle.com/blog/openclaw-usdc-hackathon-on-moltbook)** | 2026 | Online (Moltbook) | USDC, onchain payments, cross-chain flows |
 
 ---
 
@@ -1144,6 +1175,15 @@ Capabilities: CDP, ARIA snapshots, screenshots, tab management, click/type/drag,
 - [TechCrunch - AI assistants building their own social network](https://techcrunch.com/2026/01/30/openclaws-ai-assistants-are-now-building-their-own-social-network/)
 - [Fortune - 'Most interesting place on the internet'](https://fortune.com/2026/01/31/ai-agent-moltbot-clawdbot-openclaw-data-privacy-security-nightmare-moltbook-social-network/)
 - [VentureBeat - What the OpenClaw moment means for enterprises](https://venturebeat.com/technology/what-the-openclaw-moment-means-for-enterprises-5-big-takeaways)
+- [Forbes - OpenClaw, Moltbook & The Birth of a Machine Society](https://www.forbes.com/sites/jonmarkman/2026/02/06/openclaw-moltbook--the-birth-of-a-machine-society/)
+- [Bloomberg - AI Sensation, Security a Work in Progress](https://www.bloomberg.com/news/articles/2026-02-04/openclaw-s-an-ai-sensation-but-its-security-a-work-in-progress)
+- [Axios - Moltbook highlights how far behind AI security is](https://www.axios.com/2026/02/03/moltbook-openclaw-security-threats)
+- [BBC Science Focus - Calls, bills and life admin taken care of](https://www.sciencefocus.com/future-technology/openclaw-first-agentic-ai)
+- [PCMag - Hot New AI Agent, But Is It Safe?](https://www.pcmag.com/news/openclaw-is-the-hot-new-ai-agent-but-is-it-safe-to-use)
+- [CNET - New AI Assistant Acts Like Your Digital Servant](https://www.cnet.com/tech/services-and-software/from-clawdbot-to-moltbot-to-openclaw/)
+- [Tom's Guide - Viral AI assistant that lives on your device](https://www.tomsguide.com/ai/openclaw-is-the-viral-ai-assistant-that-lives-on-your-device-what-you-need-to-know)
+- [Business Insider - Security Researchers Worried](https://www.businessinsider.com/openclaw-moltbook-cybersecurity-risks-researchers-ai-2026-2)
+- [MacStories - What the Future of Personal AI Assistants Looks Like](https://www.macstories.net/stories/clawdbot-showed-me-what-the-future-of-personal-ai-assistants-looks-like/)
 - [Nature - OpenClaw AI chatbots are running amok](https://www.nature.com/articles/d41586-026-00439-0)
 - [The Register - Clouds rush to deliver OpenClaw](https://www.theregister.com/2026/02/04/cloud_hosted_openclaw/)
 
@@ -1154,6 +1194,16 @@ Capabilities: CDP, ARIA snapshots, screenshots, tab management, click/type/drag,
 - [Cisco - Security Nightmare](https://blogs.cisco.com/ai/personal-ai-agents-like-openclaw-are-a-security-nightmare)
 - [Bitdefender - Malicious Skills](https://www.bitdefender.com/en-us/blog/labs/helpful-skills-or-hidden-payloads-bitdefender-labs-dives-deep-into-the-openclaw-malicious-skill-trap)
 - [Snyk - 280+ Leaky Skills](https://snyk.io/blog/openclaw-skills-credential-leaks-research/)
+- [CrowdStrike - What Security Teams Need to Know](https://www.crowdstrike.com/en-us/resources/crowdcasts/what-security-teams-need-to-know-about-openclaw/)
+- [VentureBeat - OpenClaw proves agentic AI works, security model doesn't](https://venturebeat.com/security/openclaw-agentic-ai-security-risk-ciso-guide)
+- [Censys - 21,000+ AI Instances Exposed](https://censys.com/blog/openclaw-in-the-wild-mapping-the-public-exposure-of-a-viral-ai-assistant)
+- [runZero - CVE-2026-25253 RCE Vulnerability](https://www.runzero.com/blog/openclaw/)
+- [SiliconANGLE - Tens of thousands of systems exposed](https://siliconangle.com/2026/02/09/tens-thousands-openclaw-systems-exposed-due-misconfiguration-known-exploits/)
+- [Cyera - How AI Adoption Outpaced Security Boundaries](https://www.cyera.com/research-labs/the-openclaw-security-saga-how-ai-adoption-outpaced-security-boundaries)
+- [Astrix - First AI Agent Security Nightmare](https://astrix.security/learn/blog/openclaw-moltbot-the-rise-chaos-and-security-nightmare-of-the-first-real-ai-agent/)
+- [VirusTotal Blog - Detecting Malicious OpenClaw Skills](https://blog.virustotal.com/2026/02/)
+- [Bitdefender - Enterprise Network Technical Advisory](https://businessinsights.bitdefender.com/technical-advisory-openclaw-exploitation-enterprise-networks)
+- [Bitsight - Risks of Exposed AI Agents](https://www.bitsight.com/blog/openclaw-ai-security-risks-exposed-instances)
 
 ### Global & Enterprise
 
@@ -1163,6 +1213,7 @@ Capabilities: CDP, ARIA snapshots, screenshots, tab management, click/type/drag,
 - [Wikipedia - OpenClaw](https://en.wikipedia.org/wiki/OpenClaw)
 - [Wikipedia - Moltbook](https://en.wikipedia.org/wiki/Moltbook)
 - [The Conversation - Why DIY AI Agent Feels New But Isn't](https://theconversation.com/openclaw-and-moltbook-why-a-diy-ai-agent-and-social-media-for-bots-feel-so-new-but-really-arent-274744)
+- [Citrix - OpenClaw and Moltbook preview corporate AI governance changes](https://www.citrix.com/blogs/2026/02/04/openclaw-and-moltbook-preview-the-changes-needed-with-corporate-ai-governance/)
 
 ### Opinion
 
@@ -1258,6 +1309,12 @@ node --version                     # Must be 22+
 | [BankrBot/openclaw-skills](https://github.com/BankrBot/openclaw-skills) | DeFi/crypto skill library — Polymarket, token trading, NFTs, on-chain messaging |
 | [SamurAIGPT/awesome-openclaw](https://github.com/SamurAIGPT/awesome-openclaw) | Community-curated list of OpenClaw resources, tools, and tutorials |
 | [nearai/private-ml-sdk](https://github.com/nearai/private-ml-sdk) | Run LLMs and agents on TEEs (NVIDIA GPU TEE, Intel TDX) for private inference |
+| [eltociear/awesome-molt-ecosystem](https://github.com/eltociear/awesome-molt-ecosystem) | Curated list of Molt ecosystem services — Moltbook, MoltCities, Molthunt, MoltMatch |
+| [kelkalot/moltbook-observatory](https://github.com/kelkalot/moltbook-observatory) | Data collection from Moltbook — tracking agents, posts, and trends over time |
+| [grp06/openclaw-studio](https://github.com/grp06/moltbot-agent-ui) | Visual agent management UI with cron jobs, tool extraction, mentions |
+| [prompt-security/clawsec](https://github.com/prompt-security/clawsec) | Complete security skill suite for OpenClaw family (Moltbot, Clawdbot, clones) |
+| [aws-samples/sample-OpenClaw-on-AWS-with-Bedrock](https://github.com/aws-samples/sample-OpenClaw-on-AWS-with-Bedrock) | AWS-native deployment using Amazon Bedrock — no multi-API key management |
+| [constansino/moltbot_qq](https://github.com/constansino/moltbot_qq) | QQ messaging channel support via OneBot v11 (WebSocket) |
 
 ---
 

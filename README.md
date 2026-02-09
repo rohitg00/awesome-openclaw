@@ -18,8 +18,8 @@
 </p>
 
 <p align="center">
-  <strong>178,000+ stars | 29,000+ forks | 500+ contributors | 8,817+ commits | MIT License</strong><br>
-  <em>Fastest-growing GitHub repo ever — 9K to 178K stars in 60 days (18x faster than Kubernetes)</em>
+  <strong>179,000+ stars | 29,600+ forks | 376 contributors | 9,191+ commits | MIT License</strong><br>
+  <em>Fastest-growing GitHub repo ever — 9K to 179K stars in 60 days (18x faster than Kubernetes)</em>
 </p>
 
 <p align="center">
@@ -1227,7 +1227,7 @@ node --version                     # Must be 22+
 | **Mario Zechner** | Pi creator, security pen-tester | [@badlogicc](https://github.com/badlogicc) |
 | **Maxim Vovshin** | Blogwatcher skill | [@Hyaxia](https://github.com/Hyaxia) |
 | **Nacho Iacovino** | Location parsing | [@nachoiacovino](https://github.com/nachoiacovino) |
-| **500+ contributors** | Community | [All contributors](https://github.com/openclaw/openclaw/graphs/contributors) |
+| **376 contributors** | Community | [All contributors](https://github.com/openclaw/openclaw/graphs/contributors) |
 
 ---
 
@@ -1320,7 +1320,20 @@ OpenClaw has seen explosive adoption in China with support from major tech compa
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=openclaw/openclaw&type=Date)](https://star-history.com/#openclaw/openclaw&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=openclaw/openclaw,facebook/react,vercel/next.js,torvalds/linux,kubernetes/kubernetes&type=Date)](https://star-history.com/#openclaw/openclaw&facebook/react&vercel/next.js&torvalds/linux&kubernetes/kubernetes&Date)
+
+### Growth Comparison
+
+| Project | Stars | Age | Time to 100K Stars | Stars/Day (avg) |
+|---------|-------|-----|---------------------|-----------------|
+| **OpenClaw** | **179K** | **~3 months** | **~2 days** | **~2,983** |
+| React | 242K | 12 years | ~8 years | ~55 |
+| Linux | 216K | 15 years | ~12 years | ~39 |
+| Next.js | 137K | 9 years | ~8 years | ~41 |
+| Kubernetes | 120K | 11 years | ~10 years | ~29 |
+| Vue | 52K | 7 years | — | ~20 |
+
+> OpenClaw reached 100K stars in ~2 days (Jan 29-30, 2026) — a feat that took React ~8 years, Linux ~12 years, and Kubernetes ~10 years. Peak growth hit **710 stars/hour** on Jan 30, 2026. It is the fastest GitHub repo to reach 100K stars in history.
 
 ---
 
@@ -1328,7 +1341,7 @@ OpenClaw has seen explosive adoption in China with support from major tech compa
 
 This repo powers **[openclawsearch.com](https://openclawsearch.com)** — the website automatically renders this README, so any change here updates the site.
 
-- [Ecosystem Directory](https://openclawsearch.com/directory.html) — 50+ curated projects built with OpenClaw
+- [Ecosystem Directory](https://openclawsearch.com/directory.html) — 80+ curated projects built with OpenClaw
 
 ## Contributing
 

@@ -74,6 +74,8 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .gh-link{color:var(--text-muted);text-decoration:none;font-size:.85rem;font-weight:500;padding:6px 14px;border-radius:8px;border:1px solid var(--card-border);transition:all .2s;display:flex;align-items:center;gap:6px}
 .gh-link:hover{color:var(--text);border-color:var(--primary)}
 .gh-link svg{width:16px;height:16px;fill:currentColor}
+.dir-link{color:var(--primary);text-decoration:none;font-size:.85rem;font-weight:600;padding:6px 14px;border-radius:8px;border:1px solid rgba(220,38,38,0.3);background:rgba(220,38,38,0.06);transition:all .2s;white-space:nowrap}
+.dir-link:hover{background:rgba(220,38,38,0.12);border-color:var(--primary)}
 .search-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;padding-top:15vh}
 .search-overlay.open{display:flex}
 .search-box{background:var(--bg-s1);border:1px solid var(--card-border);border-radius:16px;width:90%;max-width:600px;box-shadow:0 24px 64px rgba(0,0,0,0.4);overflow:hidden}
@@ -176,6 +178,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 <a href="#" class="nav-logo"><span class="claw">Open</span>Claw</a>
 <div class="nav-links" id="navLinks"></div>
 <div class="nav-actions">
+<a href="directory.html" class="dir-link">Directory</a>
 <button class="search-btn" id="searchBtn"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4 4"/></svg><span class="label">Search</span><span class="kbd">&#8984;K</span></button>
 <button class="theme-toggle" id="themeToggle" title="Toggle theme"><span id="themeIcon">&#9790;</span></button>
 <a href="https://github.com/rohitg00/awesome-openclaw" target="_blank" rel="noopener" class="gh-link"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>GitHub</span></a>
@@ -380,12 +383,6 @@ a.setAttribute('data-target',id);
 a.textContent=label;
 navLinks.appendChild(a);
 });
-const dirLink=document.createElement('a');
-dirLink.href='directory.html';
-dirLink.textContent='Directory';
-dirLink.style.color='var(--primary)';
-navLinks.appendChild(dirLink);
-
 const navObs=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){

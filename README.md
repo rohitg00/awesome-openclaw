@@ -743,10 +743,12 @@ ollama pull llama3.1
 | **OpenClaw Voice** | Self-hosted browser-based voice chat (Whisper STT + ElevenLabs TTS) |
 | **Android App** | Customizable wake words, long-press home button activation |
 | **Voice Call Plugin** | Telephony via Twilio, Telnyx, Plivo |
+| **ClawdTalk** | Phone calling and SMS for OpenClaw. Call your agent from any phone, with deep tool integration for calendar, Jira, web search, and more. Powered by Telnyx. |
 | **Always-On Speech** | macOS/iOS/Android with ElevenLabs |
 
 - [OpenClaw Voice](https://openclawvoice.com/)
 - [Voice Call Plugin Docs](https://docs.openclaw.ai/plugins/voice-call)
+- [ClawdTalk](https://clawdtalk.com/) — Phone calls and SMS for OpenClaw agents. Dedicated number, WebSocket client, agentic deep tools. ([GitHub](https://github.com/team-telnyx/clawdtalk-client) | [ClawHub](https://clawhub.ai/skills/clawdtalk-client))
 
 ### Home Automation
 

@@ -58,14 +58,16 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 ::-webkit-scrollbar-track{background:var(--scrollbar-track)}
 ::-webkit-scrollbar-thumb{background:var(--scrollbar-thumb);border-radius:4px}
 .nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border);transition:background .3s}
-.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:0 24px;height:64px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
 .nav-logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px;flex-shrink:0}
 .nav-logo .claw{color:var(--primary)}
-.nav-links{display:flex;gap:4px;overflow-x:auto;flex:1;min-width:0;scrollbar-width:none}
-.nav-links::-webkit-scrollbar{display:none}
-.nav-links a{color:var(--text-muted);text-decoration:none;font-size:.85rem;padding:6px 12px;border-radius:6px;white-space:nowrap;transition:color .2s,background .2s;font-weight:500}
-.nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--card)}
 .nav-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.sidebar{position:fixed;top:80px;right:max(16px,calc((100vw - 1200px)/2 - 180px));width:180px;max-height:calc(100vh - 100px);overflow-y:auto;z-index:50;scrollbar-width:none}
+.sidebar::-webkit-scrollbar{display:none}
+.sidebar-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin-bottom:8px;padding:0 8px}
+.sidebar a{display:block;color:var(--text-muted);text-decoration:none;font-size:.78rem;padding:5px 8px;border-radius:6px;border-left:2px solid transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .2s,border-color .2s;font-weight:500;line-height:1.4}
+.sidebar a:hover{color:var(--text)}
+.sidebar a.active{color:var(--primary);border-left-color:var(--primary)}
 .theme-toggle{background:var(--card);border:1px solid var(--card-border);color:var(--text);cursor:pointer;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .2s}
 .theme-toggle:hover{border-color:var(--primary)}
 .search-btn{background:var(--card);border:1px solid var(--card-border);color:var(--text-muted);cursor:pointer;padding:6px 14px;border-radius:8px;font-size:.85rem;font-family:inherit;transition:all .2s;display:flex;align-items:center;gap:8px;font-weight:500}
@@ -166,7 +168,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .loading-spinner{display:inline-block;width:32px;height:32px;border:3px solid var(--card-border);border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:16px}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media(max-width:768px){
-.nav-links{display:none}
+.sidebar{display:none}
 .nav-inner{padding:0 10px;gap:6px}
 .nav-actions{gap:6px}
 .dir-link{padding:4px 8px;font-size:.75rem}
@@ -189,14 +191,13 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .content{padding:0 16px 40px}
 .content h2{font-size:1.4rem}
 }
-@media(min-width:769px) and (max-width:1024px){.nav-links{flex:1;min-width:0}}
+@media(min-width:769px) and (max-width:1200px){.sidebar{display:none}}
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="nav-inner">
 <a href="#" class="nav-logo"><span class="claw">Open</span>Claw</a>
-<div class="nav-links" id="navLinks"></div>
 <div class="nav-actions">
 <a href="directory.html" class="dir-link">Directory</a>
 <a href="blog.html" class="dir-link">Blog</a>
@@ -244,6 +245,7 @@ GitHub Repo
 </div>
 </section>
 
+<aside class="sidebar" id="sidebar"><div class="sidebar-title">On this page</div></aside>
 <main class="content" id="mainContent">
 <div class="loading" id="loadingIndicator">
 <div class="loading-spinner"></div>
@@ -393,8 +395,9 @@ if(section) section.style.display='none';
 }
 
 function buildNav(container){
-const navLinks=$('#navLinks');
-navLinks.innerHTML='';
+const sidebar=$('#sidebar');
+const existing=sidebar.querySelectorAll('a');
+existing.forEach(a=>a.remove());
 const h2s=container.querySelectorAll('h2');
 const added=new Set();
 h2s.forEach(h2=>{
@@ -407,18 +410,18 @@ const a=document.createElement('a');
 a.href='#'+id;
 a.setAttribute('data-target',id);
 a.textContent=label;
-navLinks.appendChild(a);
+sidebar.appendChild(a);
 });
-const navObs=new IntersectionObserver(entries=>{
+const sideObs=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
 const h2=entry.target.querySelector('h2');
 if(!h2)return;
-$$('.nav-links a').forEach(a=>a.classList.toggle('active',a.getAttribute('data-target')===h2.id));
+sidebar.querySelectorAll('a').forEach(a=>a.classList.toggle('active',a.getAttribute('data-target')===h2.id));
 }
 });
 },{rootMargin:'-80px 0px -60% 0px',threshold:0});
-$$('.section').forEach(s=>{if(s.querySelector('h2'))navObs.observe(s)});
+$$('.section').forEach(s=>{if(s.querySelector('h2'))sideObs.observe(s)});
 }
 
 function initScrollReveal(){

@@ -184,6 +184,7 @@ That's it. The wizard walks you through API key setup, channel configuration, an
 | **Docker** | 5 min | Medium | Isolation & reproducibility |
 | **Cloudflare Workers** | 5 min | Medium | Serverless enthusiasts |
 | **xCloud Managed** | 5 min | None | Full managed hosting |
+| **Molty by Finna** | 30 sec | None | Multiple Molties, Mission Control, GitHub sync |
 | **Manual VPS** | 10 min | Medium | Full control |
 | **Raspberry Pi** | 10 min | Medium | Low-power, always-on |
 
@@ -305,6 +306,7 @@ These providers handle ALL the setup for you — no Docker, no terminal, no DevO
 | **[OpenClaw Hosting](https://openclawhosting.io/pricing)** | $29+ | 5 min | Managed | Solo/Team/Business tiers, annual billing saves 20% | - |
 | **[Myclawhost](https://www.myclawhost.com/)** | $9-39 | Instant | Managed | Lite ($9), Pro ($19), Max ($39), full lifecycle | One-click deploy |
 | **[Contabo OpenClaw](https://contabo.com/en/openclaw-hosting/)** | $4.95+ | Minutes | VPS | Unlimited workflows, full data ownership, predictable pricing | - |
+| **[Molty by Finna](https://molty.finna.ai)** | $19-99 | 30 sec | VM-isolated (Fly.io) | Multiple Molties per account, Mission Control (multi-agent coordination), GitHub backup sync, browser automation, auto-updates | 3-day free trial |
 
 ### Setup-as-a-Service (Freelancers)
 
@@ -346,6 +348,7 @@ Hire someone to set it up for you.
 | DigitalOcean 2GB | **$12** | 2 min | Easy | **Yes** | Recommended production |
 | xCloud Managed | **$24** | 5 min | **None** | **Yes** | Full managed hosting |
 | ClawCloud Starter | **$29** | < 1 min | **None** | **Yes** | Premium managed |
+| Molty by Finna | **$19** | 30 sec | **None** | **Yes** | Multi-Molty, Mission Control, GitHub sync |
 | Raspberry Pi 5 | **$0**/mo | 30 min | Medium | No | Low-power, always-on |
 | Mac Mini | **$0**/mo | 10 min | Easy | No | Privacy-first, local |
 

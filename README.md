@@ -176,18 +176,18 @@ That's it. The wizard walks you through API key setup, channel configuration, an
 
 | Method | Time | Difficulty | Best For |
 |--------|------|------------|----------|
-| **Agent37** | 30 sec | Easy | Cheapest managed ($0.99/mo) |
-| **SimpleClaw** | 1 min | Easy | Non-technical users |
-| **npm install** | 1 min | Easy | Developers with Node.js |
-| **DigitalOcean 1-Click** | 2 min | Easy | Quick cloud deploy |
-| **Railway Template** | 2 min | Easy | PaaS users |
-| **Zeabur** | 1 min | Easy | Docker auto-deploy |
-| **Docker** | 5 min | Medium | Isolation & reproducibility |
-| **Cloudflare Workers** | 5 min | Medium | Serverless enthusiasts |
-| **xCloud Managed** | 5 min | None | Full managed hosting |
-| **Manual VPS** | 10 min | Medium | Full control |
-| **Raspberry Pi** | 10 min | Medium | Low-power, always-on |
-| **ESP32-S3 ([MimiClaw](https://github.com/memovai/mimiclaw))** | 10 min | Medium | Cheapest hardware ($5), pure C, no OS |
+| **[Agent37](https://www.agent37.com/openclaw)** | 30 sec | Easy | Cheapest managed ($0.99/mo) |
+| **[SimpleClaw](https://www.simpleclaw.com/)** | 1 min | Easy | Non-technical users |
+| **[npm install](https://docs.openclaw.ai/quickstart)** | 1 min | Easy | Developers with Node.js |
+| **[DigitalOcean 1-Click](https://marketplace.digitalocean.com/apps/openclaw)** | 2 min | Easy | Quick cloud deploy |
+| **[Railway Template](https://railway.com/deploy/openclaw)** | 2 min | Easy | PaaS users |
+| **[Zeabur](https://zeabur.com/templates/VTZ4FX)** | 1 min | Easy | Docker auto-deploy |
+| **[Docker](https://docs.openclaw.ai/docker)** | 5 min | Medium | Isolation & reproducibility |
+| **[Cloudflare Workers](https://docs.openclaw.ai/cloudflare)** | 5 min | Medium | Serverless enthusiasts |
+| **[xCloud Managed](https://xcloud.host/openclaw-hosting)** | 5 min | None | Full managed hosting |
+| **[Manual VPS](https://docs.openclaw.ai/vps)** | 10 min | Medium | Full control |
+| **[Raspberry Pi](https://docs.openclaw.ai/raspberry-pi)** | 10 min | Medium | Low-power, always-on |
+| **[ESP32-S3 (MimiClaw)](https://github.com/memovai/mimiclaw)** | 10 min | Medium | Cheapest hardware ($5), pure C, no OS |
 
 ### Method 1: Official Installer Script
 

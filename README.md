@@ -891,6 +891,7 @@ tar -czvf ~/openclaw_backup_$(date +%Y%m%d).tar.gz -C "$HOME" .openclaw
 | **Flowise** | Chatbot builder | Rapid development | Prebuilt conversational templates |
 | **n8n** | Workflow automation | Business processes | Visual workflow builder |
 | **LangBot** | Multi-platform bots | IM integration | [GitHub](https://github.com/langbot-app/LangBot) |
+| [**LobsterX**](https://github.com/AstraBert/workflows-acp/blob/main/packages/lobsterx) | Document-related OpenClaw-like agent | Document workflows | Self-hostable (Docker, uv tool), Telegram bot support, lightweight codebase (2-3K LoC) | 
 
 ---
 

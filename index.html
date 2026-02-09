@@ -58,10 +58,10 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 ::-webkit-scrollbar-track{background:var(--scrollbar-track)}
 ::-webkit-scrollbar-thumb{background:var(--scrollbar-thumb);border-radius:4px}
 .nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border);transition:background .3s}
-.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
-.nav-logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:0 24px;height:64px}
+.nav-logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px;flex-shrink:0}
 .nav-logo .claw{color:var(--primary)}
-.nav-links{display:flex;gap:4px;overflow-x:auto;max-width:42%;scrollbar-width:none}
+.nav-links{display:flex;gap:4px;overflow-x:auto;flex:1;min-width:0;scrollbar-width:none}
 .nav-links::-webkit-scrollbar{display:none}
 .nav-links a{color:var(--text-muted);text-decoration:none;font-size:.85rem;padding:6px 12px;border-radius:6px;white-space:nowrap;transition:color .2s,background .2s;font-weight:500}
 .nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--card)}
@@ -189,7 +189,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .content{padding:0 16px 40px}
 .content h2{font-size:1.4rem}
 }
-@media(min-width:769px) and (max-width:1024px){.nav-links{max-width:32%}}
+@media(min-width:769px) and (max-width:1024px){.nav-links{flex:1;min-width:0}}
 </style>
 </head>
 <body>

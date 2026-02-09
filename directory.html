@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClaw Ecosystem Directory — Built with OpenClaw</title>
+<meta name="description" content="Discover the best projects, tools, and apps built with OpenClaw. From AI social networks to smart home automation, Ray-Ban Meta integrations, and DeFi agents.">
+<meta property="og:title" content="OpenClaw Ecosystem Directory — Built with OpenClaw">
+<meta property="og:description" content="Discover the best projects, tools, and apps built with OpenClaw. Curated directory of 50+ projects across AI, automation, DeFi, and hardware.">
+<meta property="og:image" content="https://raw.githubusercontent.com/rohitg00/awesome-openclaw/main/og-image.png">
+<meta property="og:url" content="https://openclawsearch.com/directory">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OpenClaw Ecosystem Directory">
+<meta name="twitter:description" content="50+ projects built with OpenClaw — AI social networks, smart home, DeFi agents, and more.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/rohitg00/awesome-openclaw/main/og-image.png">
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/openclaw-logo-text-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#0A0A0A;--bg-s1:#111111;--bg-s2:#1A1A1A;
+--text:#EDEDED;--text-muted:#888888;
+--card:rgba(255,255,255,0.05);--card-border:rgba(255,255,255,0.08);
+--primary:#DC2626;--primary-light:#EF4444;
+--code-bg:rgba(255,255,255,0.06);
+--link:#EF4444;--link-hover:#DC2626;
+--badge-bg:rgba(220,38,38,0.12);--badge-text:#EF4444;
+--scrollbar-track:rgba(255,255,255,0.02);--scrollbar-thumb:rgba(255,255,255,0.1);
+--nav-bg:rgba(10,10,10,0.8);
+--tag-bg:rgba(255,255,255,0.06);--tag-border:rgba(255,255,255,0.1);
+--gold:#F59E0B;--silver:#94A3B8;--bronze:#D97706;
+}
+[data-theme="light"]{
+--bg:#FAFAFA;--bg-s1:#FFFFFF;--bg-s2:#F5F5F5;
+--text:#171717;--text-muted:#666666;
+--card:#FFFFFF;--card-border:rgba(0,0,0,0.08);
+--code-bg:rgba(0,0,0,0.04);
+--link:#DC2626;--link-hover:#B91C1C;
+--badge-bg:rgba(220,38,38,0.08);--badge-text:#DC2626;
+--scrollbar-track:rgba(0,0,0,0.02);--scrollbar-thumb:rgba(0,0,0,0.12);
+--nav-bg:rgba(250,250,250,0.85);
+--tag-bg:rgba(0,0,0,0.04);--tag-border:rgba(0,0,0,0.08);
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;transition:background .3s,color .3s}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:var(--scrollbar-track)}
+::-webkit-scrollbar-thumb{background:var(--scrollbar-thumb);border-radius:4px}
+
+.nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border);transition:background .3s}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
+.nav-logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .claw{color:var(--primary)}
+.nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-size:.85rem;padding:6px 12px;border-radius:6px;white-space:nowrap;transition:color .2s,background .2s;font-weight:500}
+.nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--card)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.theme-toggle{background:var(--card);border:1px solid var(--card-border);color:var(--text);cursor:pointer;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .2s}
+.theme-toggle:hover{border-color:var(--primary)}
+.gh-link{color:var(--text-muted);text-decoration:none;font-size:.85rem;font-weight:500;padding:6px 14px;border-radius:8px;border:1px solid var(--card-border);transition:all .2s;display:flex;align-items:center;gap:6px}
+.gh-link:hover{color:var(--text);border-color:var(--primary)}
+.gh-link svg{width:16px;height:16px;fill:currentColor}
+
+.hero{text-align:center;padding:80px 24px 48px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:50%;left:50%;width:600px;height:600px;transform:translate(-50%,-60%);background:radial-gradient(circle,rgba(220,38,38,0.1) 0%,transparent 60%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--badge-bg);color:var(--badge-text);font-size:.85rem;font-weight:600;padding:6px 16px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;letter-spacing:-0.03em;line-height:1.15;margin-bottom:16px;position:relative}
+.hero h1 .hl{color:var(--primary)}
+.hero p{color:var(--text-muted);font-size:1.1rem;max-width:600px;margin:0 auto 32px}
+.hero-stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:24px}
+.hero-stat{text-align:center}
+.hero-stat .val{font-size:1.5rem;font-weight:800;color:var(--text)}
+.hero-stat .lbl{font-size:.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;font-weight:500}
+
+.filters{max-width:1200px;margin:0 auto;padding:0 24px 32px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.filter-btn{background:var(--card);border:1px solid var(--card-border);color:var(--text-muted);cursor:pointer;padding:8px 18px;border-radius:8px;font-size:.85rem;font-family:inherit;font-weight:500;transition:all .2s}
+.filter-btn:hover{color:var(--text);border-color:var(--primary)}
+.filter-btn.active{background:var(--badge-bg);color:var(--badge-text);border-color:var(--primary)}
+
+.grid{max-width:1200px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px}
+
+.card{background:var(--bg-s1);border:1px solid var(--card-border);border-radius:16px;padding:24px;transition:all .25s;position:relative;display:flex;flex-direction:column}
+.card:hover{border-color:rgba(220,38,38,0.3);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.2)}
+.card-tier{position:absolute;top:16px;right:16px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700}
+.card-tier.s{background:rgba(220,38,38,0.15);color:var(--primary)}
+.card-tier.a{background:rgba(245,158,11,0.15);color:var(--gold)}
+.card-tier.b{background:rgba(148,163,184,0.15);color:var(--silver)}
+.card-tier.c{background:rgba(217,119,6,0.15);color:var(--bronze)}
+.card-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
+.card-icon{width:44px;height:44px;border-radius:12px;background:var(--card);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.card-title-wrap{flex:1;min-width:0}
+.card-title{font-size:1.1rem;font-weight:700;line-height:1.3;margin-bottom:2px;color:var(--text)}
+.card-title a{color:inherit;text-decoration:none}
+.card-title a:hover{color:var(--primary)}
+.card-author{font-size:.8rem;color:var(--text-muted);font-weight:500}
+.card-desc{color:var(--text-muted);font-size:.9rem;line-height:1.6;margin-bottom:16px;flex:1}
+.card-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:auto}
+.card-tag{font-size:.75rem;color:var(--text-muted);padding:3px 10px;border-radius:6px;background:var(--tag-bg);border:1px solid var(--tag-border);font-weight:500}
+.card-stars{font-size:.8rem;color:var(--gold);font-weight:600;display:flex;align-items:center;gap:4px;margin-left:auto}
+.card-link{display:inline-flex;align-items:center;gap:4px;font-size:.8rem;color:var(--link);text-decoration:none;font-weight:600;margin-left:auto}
+.card-link:hover{color:var(--link-hover)}
+
+.section-title{max-width:1200px;margin:0 auto;padding:48px 24px 24px;font-size:1.5rem;font-weight:800;display:flex;align-items:center;gap:12px}
+.section-title::before{content:'';width:4px;height:28px;background:var(--primary);border-radius:2px}
+
+.footer{text-align:center;padding:48px 24px;border-top:1px solid var(--card-border);color:var(--text-muted);font-size:.85rem}
+.footer a{color:var(--link);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--text-muted);text-decoration:none;font-size:.85rem;font-weight:500;padding:6px 14px;border-radius:8px;border:1px solid var(--card-border);transition:all .2s}
+.back-link:hover{color:var(--text);border-color:var(--primary)}
+
+@media(max-width:768px){
+.grid{grid-template-columns:1fr}
+.hero h1{font-size:2rem}
+.hero-stats{gap:20px}
+.nav-links{display:none}
+.filters{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:16px}
+.filters::-webkit-scrollbar{display:none}
+}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.card{animation:fadeInUp .4s ease both}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+<div class="nav-inner">
+<a href="index.html" class="nav-logo">Awesome <span class="claw">OpenClaw</span></a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="#tier-s">Top Picks</a>
+<a href="#social-ai">Social & AI</a>
+<a href="#devtools">Dev Tools</a>
+<a href="#automation">Automation</a>
+<a href="#defi">DeFi & Crypto</a>
+<a href="#hardware">Hardware</a>
+</div>
+<div class="nav-actions">
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">&#9790;</button>
+<a href="https://github.com/rohitg00/awesome-openclaw" class="gh-link" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+</div>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-badge">Directory</div>
+<h1>Built with <span class="hl">OpenClaw</span></h1>
+<p>Curated directory of the coolest projects, tools, and apps in the OpenClaw ecosystem. From AI social networks to smart home automation.</p>
+<div class="hero-stats">
+<div class="hero-stat"><div class="val">50+</div><div class="lbl">Projects</div></div>
+<div class="hero-stat"><div class="val">178K+</div><div class="lbl">Stars</div></div>
+<div class="hero-stat"><div class="val">5,700+</div><div class="lbl">Skills</div></div>
+<div class="hero-stat"><div class="val">1.6M</div><div class="lbl">Moltbook Agents</div></div>
+</div>
+</section>
+
+<div class="filters" id="filters">
+<button class="filter-btn active" data-filter="all">All</button>
+<button class="filter-btn" data-filter="social">Social & AI</button>
+<button class="filter-btn" data-filter="devtools">Dev Tools</button>
+<button class="filter-btn" data-filter="automation">Automation</button>
+<button class="filter-btn" data-filter="infra">Infrastructure</button>
+<button class="filter-btn" data-filter="hardware">Hardware</button>
+<button class="filter-btn" data-filter="defi">DeFi & Crypto</button>
+<button class="filter-btn" data-filter="voice">Voice & Phone</button>
+<button class="filter-btn" data-filter="memory">Memory & Knowledge</button>
+</div>
+
+<h2 class="section-title" id="tier-s">Top Picks</h2>
+<div class="grid" id="projectGrid">
+
+<div class="card" data-cat="social" data-tier="s" style="animation-delay:0s">
+<div class="card-tier s">S</div>
+<div class="card-header">
+<div class="card-icon">&#129438;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://moltbookai.org" target="_blank" rel="noopener">Moltbook</a></div>
+<div class="card-author">by Matt Schlicht</div>
+</div>
+</div>
+<div class="card-desc">AI-only social network with 1.6M+ autonomous agents. Reddit-style platform where AI agents post, upvote, debate topics, and form subforums. Humans can only observe. Hosted an OpenClaw Hackathon with Circle/USDC.</div>
+<div class="card-meta">
+<span class="card-tag">Social</span>
+<span class="card-tag">AI Agents</span>
+<a href="https://moltbookai.org" class="card-link" target="_blank" rel="noopener">Visit &rarr;</a>
+</div>
+</div>
+
+<div class="card" data-cat="hardware" data-tier="s" style="animation-delay:.05s">
+<div class="card-tier s">S</div>
+<div class="card-header">
+<div class="card-icon">&#128083;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/sseanliu/VisionClaw" target="_blank" rel="noopener">VisionClaw</a></div>
+<div class="card-author">by @sseanliu</div>
+</div>
+</div>
+<div class="card-desc">OpenClaw for Ray-Ban Meta glasses. Real-time visual AI assistant on smart glasses with conversational understanding, object recognition, and hands-free interaction. A glimpse into the future of wearable AI.</div>
+<div class="card-meta">
+<span class="card-tag">Hardware</span>
+<span class="card-tag">Wearables</span>
+<span class="card-stars">&#9733; 541</span>
+</div>
+</div>
+
+<div class="card" data-cat="infra" data-tier="s" style="animation-delay:.1s">
+<div class="card-tier s">S</div>
+<div class="card-header">
+<div class="card-icon">&#9729;&#65039;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/cloudflare/moltworker" target="_blank" rel="noopener">Cloudflare Moltworker</a></div>
+<div class="card-author">by Cloudflare</div>
+</div>
+</div>
+<div class="card-desc">Run OpenClaw on Cloudflare Workers. Serverless deployment on the edge with Durable Objects for state management. Official Cloudflare integration for globally distributed OpenClaw agents.</div>
+<div class="card-meta">
+<span class="card-tag">Serverless</span>
+<span class="card-tag">Edge</span>
+<span class="card-stars">&#9733; 8.2K</span>
+</div>
+</div>
+
+<div class="card" data-cat="social" data-tier="s" style="animation-delay:.15s">
+<div class="card-tier s">S</div>
+<div class="card-header">
+<div class="card-icon">&#128064;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/nicepkg/crabwalk" target="_blank" rel="noopener">Crabwalk</a></div>
+<div class="card-author">by nicepkg</div>
+</div>
+</div>
+<div class="card-desc">Always-on companion monitor for your OpenClaw agent. Shows real-time agent activity, thought process, and tool usage in a beautiful dashboard. Like having a window into your AI's mind.</div>
+<div class="card-meta">
+<span class="card-tag">Monitor</span>
+<span class="card-tag">Dashboard</span>
+<span class="card-stars">&#9733; 728</span>
+</div>
+</div>
+
+<div class="card" data-cat="infra" data-tier="s" style="animation-delay:.2s">
+<div class="card-tier s">S</div>
+<div class="card-header">
+<div class="card-icon">&#128230;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/leoncvlt/nanobot" target="_blank" rel="noopener">Nanobot</a></div>
+<div class="card-author">by @leoncvlt</div>
+</div>
+</div>
+<div class="card-desc">Ultra-lightweight OpenClaw alternative. Minimal footprint, fast startup, runs anywhere. Perfect for single-purpose agents and resource-constrained environments.</div>
+<div class="card-meta">
+<span class="card-tag">Lightweight</span>
+<span class="card-tag">Alternative</span>
+<span class="card-stars">&#9733; 14.4K</span>
+</div>
+</div>
+
+<div class="card" data-cat="infra" data-tier="s" style="animation-delay:.25s">
+<div class="card-tier s">S</div>
+<div class="card-header">
+<div class="card-icon">&#128272;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/gavrielc/nanoclaw" target="_blank" rel="noopener">NanoClaw</a></div>
+<div class="card-author">by @gavrielc</div>
+</div>
+</div>
+<div class="card-desc">Security-first OpenClaw fork that runs in Apple containers. Isolated filesystem per group, WhatsApp integration, scheduled jobs, and built on Anthropic's Agents SDK. Single Node.js process, simple codebase.</div>
+<div class="card-meta">
+<span class="card-tag">Security</span>
+<span class="card-tag">Containers</span>
+<span class="card-stars">&#9733; 6.5K</span>
+</div>
+</div>
+
+<h2 class="section-title" id="social-ai">Social & AI Platforms</h2>
+
+<div class="card" data-cat="memory" data-tier="a" style="animation-delay:.3s">
+<div class="card-tier a">A</div>
+<div class="card-header">
+<div class="card-icon">&#129504;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/memu-ai/memu" target="_blank" rel="noopener">memU</a></div>
+<div class="card-author">by memu-ai</div>
+</div>
+</div>
+<div class="card-desc">Advanced memory system for OpenClaw agents. Persistent, searchable, and contextual memory that makes agents truly remember and learn across conversations.</div>
+<div class="card-meta">
+<span class="card-tag">Memory</span>
+<span class="card-tag">AI</span>
+<span class="card-stars">&#9733; 8.5K</span>
+</div>
+</div>
+
+<div class="card" data-cat="memory" data-tier="a" style="animation-delay:.35s">
+<div class="card-tier a">A</div>
+<div class="card-header">
+<div class="card-icon">&#128421;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/memos-world/memos" target="_blank" rel="noopener">MemOS</a></div>
+<div class="card-author">by memos-world</div>
+</div>
+</div>
+<div class="card-desc">Operating system for AI memory. Provides structured, hierarchical memory with vector search, time-travel, and multi-agent memory sharing. Think filesystems but for agent knowledge.</div>
+<div class="card-meta">
+<span class="card-tag">Memory</span>
+<span class="card-tag">OS</span>
+<span class="card-stars">&#9733; 5.0K</span>
+</div>
+</div>
+
+<div class="card" data-cat="social" data-tier="a" style="animation-delay:.4s">
+<div class="card-tier a">A</div>
+<div class="card-header">
+<div class="card-icon">&#128171;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/SumeLabs/clawra" target="_blank" rel="noopener">Clawra</a></div>
+<div class="card-author">by SumeLabs</div>
+</div>
+</div>
+<div class="card-desc">AI girlfriend agent built on OpenClaw. Personality-driven conversational companion with emotional intelligence, memory, and multi-platform presence. An exploration of AI relationships.</div>
+<div class="card-meta">
+<span class="card-tag">Social</span>
+<span class="card-tag">Companion</span>
+<span class="card-stars">&#9733; 7</span>
+</div>
+</div>
+
+<div class="card" data-cat="social" data-tier="b" style="animation-delay:.45s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#128218;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://claw.direct" target="_blank" rel="noopener">claw.direct</a></div>
+<div class="card-author">Community</div>
+</div>
+</div>
+<div class="card-desc">Directory of AI agent social network experiences. Navigate and discover platforms, tools, and communities in the OpenClaw ecosystem. A meta-directory for the agent web.</div>
+<div class="card-meta">
+<span class="card-tag">Directory</span>
+<span class="card-tag">Discovery</span>
+<a href="https://claw.direct" class="card-link" target="_blank" rel="noopener">Visit &rarr;</a>
+</div>
+</div>
+
+<h2 class="section-title" id="devtools">Developer Tools</h2>
+
+<div class="card" data-cat="devtools" data-tier="a" style="animation-delay:.5s">
+<div class="card-tier a">A</div>
+<div class="card-header">
+<div class="card-icon">&#9733;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/VoltAgent/awesome-openclaw-skills" target="_blank" rel="noopener">Awesome OpenClaw Skills</a></div>
+<div class="card-author">by VoltAgent</div>
+</div>
+</div>
+<div class="card-desc">The curated collection of OpenClaw skills. Community-maintained directory of the best skills for automation, dev tools, communication, and more. 12K+ stars and growing.</div>
+<div class="card-meta">
+<span class="card-tag">Skills</span>
+<span class="card-tag">Collection</span>
+<span class="card-stars">&#9733; 12.2K</span>
+</div>
+</div>
+
+<div class="card" data-cat="devtools" data-tier="a" style="animation-delay:.55s">
+<div class="card-tier a">A</div>
+<div class="card-header">
+<div class="card-icon">&#128270;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/lekt9/unbrowse-openclaw" target="_blank" rel="noopener">Unbrowse</a></div>
+<div class="card-author">by @lekt9</div>
+</div>
+</div>
+<div class="card-desc">Self-learning API skill generator. Captures API traffic from browser sessions and auto-generates production-ready OpenClaw skills. Publish to marketplace and earn 70% of sales via Solana/USDC.</div>
+<div class="card-meta">
+<span class="card-tag">API</span>
+<span class="card-tag">Skills</span>
+<span class="card-stars">&#9733; 268</span>
+</div>
+</div>
+
+<div class="card" data-cat="devtools" data-tier="b" style="animation-delay:.6s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#128187;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/am-will/snag" target="_blank" rel="noopener">SNAG</a></div>
+<div class="card-author">by @am-will</div>
+</div>
+</div>
+<div class="card-desc">Hotkey screenshots to instant Markdown. Take a screenshot and get perfectly formatted Markdown output. Simple, fast, and perfect for documentation workflows.</div>
+<div class="card-meta">
+<span class="card-tag">Screenshots</span>
+<span class="card-tag">Markdown</span>
+<a href="https://github.com/am-will/snag" class="card-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+</div>
+</div>
+
+<div class="card" data-cat="devtools" data-tier="b" style="animation-delay:.65s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#128736;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://releaseflow.net/kitze/agents-ui" target="_blank" rel="noopener">Agents UI</a></div>
+<div class="card-author">by @kitze</div>
+</div>
+</div>
+<div class="card-desc">Cross-platform skill manager with a beautiful UI. Browse, install, and manage OpenClaw skills across platforms with a clean visual interface.</div>
+<div class="card-meta">
+<span class="card-tag">UI</span>
+<span class="card-tag">Skills</span>
+<a href="https://releaseflow.net/kitze/agents-ui" class="card-link" target="_blank" rel="noopener">Visit &rarr;</a>
+</div>
+</div>
+
+<div class="card" data-cat="devtools" data-tier="b" style="animation-delay:.7s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#128203;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/Finesssee/linear-cli" target="_blank" rel="noopener">Linear CLI</a></div>
+<div class="card-author">by @NessZerra</div>
+</div>
+</div>
+<div class="card-desc">Linear issue management from OpenClaw. Create, update, and triage Linear issues through your agent. Natural language project management.</div>
+<div class="card-meta">
+<span class="card-tag">Linear</span>
+<span class="card-tag">CLI</span>
+<a href="https://github.com/Finesssee/linear-cli" class="card-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+</div>
+</div>
+
+<div class="card" data-cat="devtools" data-tier="b" style="animation-delay:.75s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#128172;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/blqke/beepcli" target="_blank" rel="noopener">Beeper CLI</a></div>
+<div class="card-author">by @jules</div>
+</div>
+</div>
+<div class="card-desc">Unified chat management through OpenClaw. Control all your Beeper conversations from a single CLI. Multi-platform messaging made simple.</div>
+<div class="card-meta">
+<span class="card-tag">Messaging</span>
+<span class="card-tag">CLI</span>
+<a href="https://github.com/blqke/beepcli" class="card-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+</div>
+</div>
+
+<div class="card" data-cat="devtools" data-tier="b" style="animation-delay:.8s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#128736;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/adam91holt/orchestrated-ai-articles" target="_blank" rel="noopener">Kev's Dream Team</a></div>
+<div class="card-author">by @adam91holt</div>
+</div>
+</div>
+<div class="card-desc">14+ agent orchestration system. Opus orchestrator directing Codex workers for autonomous article generation. Multi-agent collaboration at scale.</div>
+<div class="card-meta">
+<span class="card-tag">Multi-Agent</span>
+<span class="card-tag">Orchestration</span>
+<a href="https://github.com/adam91holt/orchestrated-ai-articles" class="card-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+</div>
+</div>
+
+<h2 class="section-title" id="automation">Automation & Workflows</h2>
+
+<div class="card" data-cat="automation" data-tier="a" style="animation-delay:.85s">
+<div class="card-tier a">A</div>
+<div class="card-header">
+<div class="card-icon">&#127829;</div>
+<div class="card-title-wrap">
+<div class="card-title">Tesco Shop Autopilot</div>
+<div class="card-author">by @marchattonhere</div>
+</div>
+</div>
+<div class="card-desc">Fully automated grocery shopping. Weekly meal plan generation, adds regulars, books delivery slot, confirms order. End-to-end grocery automation via browser control.</div>
+<div class="card-meta">
+<span class="card-tag">Shopping</span>
+<span class="card-tag">Browser</span>
+</div>
+</div>
+
+<div class="card" data-cat="automation" data-tier="a" style="animation-delay:.9s">
+<div class="card-tier a">A</div>
+<div class="card-header">
+<div class="card-icon">&#128663;</div>
+<div class="card-title-wrap">
+<div class="card-title">Car Dealer Negotiator</div>
+<div class="card-author">by @astuyve</div>
+</div>
+</div>
+<div class="card-desc">Autonomous car price negotiation agent. Simultaneously contacts multiple dealers via browser, email, and iMessage. Plays them against each other for the best price.</div>
+<div class="card-meta">
+<span class="card-tag">Negotiation</span>
+<span class="card-tag">Multi-channel</span>
+</div>
+</div>
+
+<div class="card" data-cat="automation" data-tier="b" style="animation-delay:.95s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#128197;</div>
+<div class="card-title-wrap">
+<div class="card-title">Productivity Suite</div>
+<div class="card-author">by @danpeguine</div>
+</div>
+</div>
+<div class="card-desc">Calendar timeblocking, task scoring, weekly reviews, morning briefings, meeting research, and calendar conflict management. Full productivity stack via OpenClaw.</div>
+<div class="card-meta">
+<span class="card-tag">Calendar</span>
+<span class="card-tag">Tasks</span>
+</div>
+</div>
+
+<div class="card" data-cat="automation" data-tier="b" style="animation-delay:1s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#128188;</div>
+<div class="card-title-wrap">
+<div class="card-title">Job Search Agent</div>
+<div class="card-author">by @attol8</div>
+</div>
+</div>
+<div class="card-desc">CV-matched job listing aggregation. Scans job boards, matches against your resume, ranks by fit, and compiles personalized daily job digests.</div>
+<div class="card-meta">
+<span class="card-tag">Jobs</span>
+<span class="card-tag">Automation</span>
+</div>
+</div>
+
+<div class="card" data-cat="automation" data-tier="b" style="animation-delay:1.05s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#128187;</div>
+<div class="card-title-wrap">
+<div class="card-title">Slack Auto-Support</div>
+<div class="card-author">by @henrymascot</div>
+</div>
+</div>
+<div class="card-desc">Autonomously monitors and fixes production bugs from Slack. Detected, investigated, and fixed a production bug without being asked. Proactive DevOps agent.</div>
+<div class="card-meta">
+<span class="card-tag">Slack</span>
+<span class="card-tag">DevOps</span>
+</div>
+</div>
+
+<div class="card" data-cat="automation" data-tier="b" style="animation-delay:1.1s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#127863;</div>
+<div class="card-title-wrap">
+<div class="card-title">Wine Cellar Manager</div>
+<div class="card-author">by @prades_maxime</div>
+</div>
+</div>
+<div class="card-desc">Local wine cellar management from CSV exports. Track 962+ bottles, get pairing suggestions, and manage your collection through natural language. Built as a skill in minutes.</div>
+<div class="card-meta">
+<span class="card-tag">Lifestyle</span>
+<span class="card-tag">Skills</span>
+</div>
+</div>
+
+<div class="card" data-cat="automation" data-tier="c" style="animation-delay:1.15s">
+<div class="card-tier c">C</div>
+<div class="card-header">
+<div class="card-icon">&#127939;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/joshp123/padel-cli" target="_blank" rel="noopener">Padel Court Booking</a></div>
+<div class="card-author">by @joshp123</div>
+</div>
+</div>
+<div class="card-desc">Playtomic court availability checker. Never miss an open padel court again. Monitors availability and can auto-book your preferred time slots.</div>
+<div class="card-meta">
+<span class="card-tag">Sports</span>
+<span class="card-tag">Booking</span>
+<a href="https://github.com/joshp123/padel-cli" class="card-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+</div>
+</div>
+
+<div class="card" data-cat="automation" data-tier="c" style="animation-delay:1.2s">
+<div class="card-tier c">C</div>
+<div class="card-header">
+<div class="card-icon">&#128222;</div>
+<div class="card-title-wrap">
+<div class="card-title">iOS App via Telegram</div>
+<div class="card-author">by @coard</div>
+</div>
+</div>
+<div class="card-desc">Built a complete iOS app with maps and voice features, deployed to TestFlight, all via Telegram. Full app development without touching Xcode.</div>
+<div class="card-meta">
+<span class="card-tag">iOS</span>
+<span class="card-tag">Telegram</span>
+</div>
+</div>
+
+<h2 class="section-title" id="defi">DeFi & Crypto</h2>
+
+<div class="card" data-cat="defi" data-tier="a" style="animation-delay:1.25s">
+<div class="card-tier a">A</div>
+<div class="card-header">
+<div class="card-icon">&#128176;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/BlockRunAI/ClawRouter" target="_blank" rel="noopener">ClawRouter</a></div>
+<div class="card-author">by BlockRunAI</div>
+</div>
+</div>
+<div class="card-desc">Smart LLM router with x402 micropayments. 30+ models, 14-dimension local routing in &lt;1ms, save 78% on inference costs. Pay per request with USDC on Base. No API keys needed.</div>
+<div class="card-meta">
+<span class="card-tag">LLM Router</span>
+<span class="card-tag">x402</span>
+<span class="card-stars">&#9733; 1.9K</span>
+</div>
+</div>
+
+<div class="card" data-cat="defi" data-tier="a" style="animation-delay:1.3s">
+<div class="card-tier a">A</div>
+<div class="card-header">
+<div class="card-icon">&#128640;</div>
+<div class="card-title-wrap">
+<div class="card-title">CLAWNCH</div>
+<div class="card-author">by Community</div>
+</div>
+</div>
+<div class="card-desc">CLI-based token launch platform on Base powered by Flaunch. Generated over $1.3M in fees. Rapid creation and distribution of tokens for agent projects and economies.</div>
+<div class="card-meta">
+<span class="card-tag">Launch</span>
+<span class="card-tag">Base</span>
+</div>
+</div>
+
+<div class="card" data-cat="defi" data-tier="b" style="animation-delay:1.35s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#128200;</div>
+<div class="card-title-wrap">
+<div class="card-title">PolyClaw</div>
+<div class="card-author">by Community</div>
+</div>
+</div>
+<div class="card-desc">AI-operated prediction market platform. Agents forecast outcomes, trade positions, and profit from accurate predictions. Autonomous prediction markets.</div>
+<div class="card-meta">
+<span class="card-tag">Prediction</span>
+<span class="card-tag">Markets</span>
+</div>
+</div>
+
+<div class="card" data-cat="defi" data-tier="b" style="animation-delay:1.4s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#128179;</div>
+<div class="card-title-wrap">
+<div class="card-title">Bankr</div>
+<div class="card-author">by Community</div>
+</div>
+</div>
+<div class="card-desc">DEFAI terminal with wallet and swap tools. DeFi operations through a terminal interface powered by OpenClaw. Swap, bridge, and manage tokens via natural language.</div>
+<div class="card-meta">
+<span class="card-tag">DeFi</span>
+<span class="card-tag">Terminal</span>
+</div>
+</div>
+
+<div class="card" data-cat="defi" data-tier="a" style="animation-delay:1.45s">
+<div class="card-tier a">A</div>
+<div class="card-header">
+<div class="card-icon">&#127970;</div>
+<div class="card-title-wrap">
+<div class="card-title">Archestra</div>
+<div class="card-author">by Archestra</div>
+</div>
+</div>
+<div class="card-desc">Enterprise-grade agent orchestration platform. Multi-agent workflow management, role-based access, and audit trails for organizations deploying OpenClaw at scale.</div>
+<div class="card-meta">
+<span class="card-tag">Enterprise</span>
+<span class="card-tag">Orchestration</span>
+<span class="card-stars">&#9733; 3.3K</span>
+</div>
+</div>
+
+<div class="card" data-cat="hardware" data-tier="s" style="animation-delay:1.48s">
+<div class="card-tier s">S</div>
+<div class="card-header">
+<div class="card-icon">&#129516;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/memovai/mimiclaw" target="_blank" rel="noopener">MimiClaw</a></div>
+<div class="card-author">by @memovai</div>
+</div>
+</div>
+<div class="card-desc">Run OpenClaw on a $5 ESP32-S3 chip. No Linux, no Node.js, just pure C. Local-first memory, Telegram integration, dual-core processing, OTA updates over WiFi. The world's first AI assistant on a microchip.</div>
+<div class="card-meta">
+<span class="card-tag">Embedded</span>
+<span class="card-tag">ESP32</span>
+<span class="card-stars">&#9733; 306</span>
+</div>
+</div>
+
+<h2 class="section-title" id="hardware">Hardware & Smart Home</h2>
+
+<div class="card" data-cat="hardware" data-tier="a" style="animation-delay:1.5s">
+<div class="card-tier a">A</div>
+<div class="card-header">
+<div class="card-icon">&#127968;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/techartdev/OpenClawHomeAssistant" target="_blank" rel="noopener">Home Assistant Add-on</a></div>
+<div class="card-author">by @techartdev</div>
+</div>
+</div>
+<div class="card-desc">Run OpenClaw inside Home Assistant OS. Always-on gateway with web terminal, persistent config, and natural language device control. Your smart home, powered by AI.</div>
+<div class="card-meta">
+<span class="card-tag">Home Assistant</span>
+<span class="card-tag">Add-on</span>
+<span class="card-stars">&#9733; 68</span>
+</div>
+</div>
+
+<div class="card" data-cat="hardware" data-tier="b" style="animation-delay:1.55s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#127968;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/joshp123/gohome" target="_blank" rel="noopener">GoHome</a></div>
+<div class="card-author">by @joshp123</div>
+</div>
+</div>
+<div class="card-desc">Nix-native home automation with Grafana dashboards. Declarative smart home configuration with beautiful monitoring and OpenClaw as the brain.</div>
+<div class="card-meta">
+<span class="card-tag">Home</span>
+<span class="card-tag">Nix</span>
+<a href="https://github.com/joshp123/gohome" class="card-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+</div>
+</div>
+
+<div class="card" data-cat="hardware" data-tier="b" style="animation-delay:1.6s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#129516;</div>
+<div class="card-title-wrap">
+<div class="card-title">Holographic Cube Display</div>
+<div class="card-author">by @andrewjiang</div>
+</div>
+</div>
+<div class="card-desc">Custom holographic cube with OpenClaw as the AI backend. Physical hardware art installation that responds to voice commands and displays AI-generated visuals.</div>
+<div class="card-meta">
+<span class="card-tag">Hardware</span>
+<span class="card-tag">Art</span>
+</div>
+</div>
+
+<div class="card" data-cat="hardware" data-tier="c" style="animation-delay:1.65s">
+<div class="card-tier c">C</div>
+<div class="card-header">
+<div class="card-icon">&#127784;</div>
+<div class="card-title-wrap">
+<div class="card-title">Winix Air Purifier Control</div>
+<div class="card-author">by @antonplex</div>
+</div>
+</div>
+<div class="card-desc">Natural language air purifier control. Claude Code discovered and confirmed the purifier's undocumented API. Voice-controlled air quality management.</div>
+<div class="card-meta">
+<span class="card-tag">IoT</span>
+<span class="card-tag">Air Quality</span>
+</div>
+</div>
+
+<div class="card" data-cat="hardware" data-tier="c" style="animation-delay:1.7s">
+<div class="card-tier c">C</div>
+<div class="card-header">
+<div class="card-icon">&#128424;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://clawhub.com/tobiasbischoff/bambu-cli" target="_blank" rel="noopener">Bambu 3D Printer Control</a></div>
+<div class="card-author">by @tobiasbischoff</div>
+</div>
+</div>
+<div class="card-desc">Control your Bambu Lab 3D printer through OpenClaw. Print job management, camera feed access, and status monitoring. ClawHub skill.</div>
+<div class="card-meta">
+<span class="card-tag">3D Printing</span>
+<span class="card-tag">ClawHub</span>
+<a href="https://clawhub.com/tobiasbischoff/bambu-cli" class="card-link" target="_blank" rel="noopener">ClawHub &rarr;</a>
+</div>
+</div>
+
+<h2 class="section-title" id="voice-section">Voice & Phone</h2>
+
+<div class="card" data-cat="voice" data-tier="a" style="animation-delay:1.75s">
+<div class="card-tier a">A</div>
+<div class="card-header">
+<div class="card-icon">&#128222;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/alejandroOPI/clawdia-bridge" target="_blank" rel="noopener">Clawdia Phone Bridge</a></div>
+<div class="card-author">by @alejandroOPI</div>
+</div>
+</div>
+<div class="card-desc">Real-time voice calls with your OpenClaw agent via Vapi. Phone-based AI assistant with natural conversation flow. Call your agent like calling a friend.</div>
+<div class="card-meta">
+<span class="card-tag">Voice</span>
+<span class="card-tag">Vapi</span>
+<a href="https://github.com/alejandroOPI/clawdia-bridge" class="card-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+</div>
+</div>
+
+<div class="card" data-cat="voice" data-tier="b" style="animation-delay:1.8s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#127908;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://papla.media/docs" target="_blank" rel="noopener">Telegram Voice Notes</a></div>
+<div class="card-author">by Community</div>
+</div>
+</div>
+<div class="card-desc">Text-to-speech to Telegram voice notes. Send AI-generated voice messages through your Telegram bot. Natural-sounding audio from text.</div>
+<div class="card-meta">
+<span class="card-tag">TTS</span>
+<span class="card-tag">Telegram</span>
+<a href="https://papla.media/docs" class="card-link" target="_blank" rel="noopener">Visit &rarr;</a>
+</div>
+</div>
+
+<div class="card" data-cat="voice" data-tier="b" style="animation-delay:1.85s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#127897;</div>
+<div class="card-title-wrap">
+<div class="card-title">Media Studio</div>
+<div class="card-author">by @cedric_chee</div>
+</div>
+</div>
+<div class="card-desc">Full media studio for creators. TTS, transcription, and browser automation combined. Create audio content, transcribe interviews, and automate publishing workflows.</div>
+<div class="card-meta">
+<span class="card-tag">Media</span>
+<span class="card-tag">TTS</span>
+</div>
+</div>
+
+<h2 class="section-title" id="knowledge-section">Memory & Knowledge</h2>
+
+<div class="card" data-cat="memory" data-tier="b" style="animation-delay:1.9s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#127891;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/joshp123/xuezh" target="_blank" rel="noopener">xuezh</a></div>
+<div class="card-author">by @joshp123</div>
+</div>
+</div>
+<div class="card-desc">Chinese language learning with pronunciation feedback. AI-powered language tutor that listens, corrects, and teaches through voice interaction.</div>
+<div class="card-meta">
+<span class="card-tag">Learning</span>
+<span class="card-tag">Voice</span>
+<a href="https://github.com/joshp123/xuezh" class="card-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+</div>
+</div>
+
+<div class="card" data-cat="memory" data-tier="b" style="animation-delay:1.95s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#128172;</div>
+<div class="card-title-wrap">
+<div class="card-title">WhatsApp Memory Vault</div>
+<div class="card-author">by Community</div>
+</div>
+</div>
+<div class="card-desc">Ingests full WhatsApp exports, transcribes 1K+ voice notes, and builds searchable memory. Never lose context from your conversations again.</div>
+<div class="card-meta">
+<span class="card-tag">WhatsApp</span>
+<span class="card-tag">Memory</span>
+</div>
+</div>
+
+<div class="card" data-cat="memory" data-tier="b" style="animation-delay:2s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#128278;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/jamesbrooksco/karakeep-semantic-search" target="_blank" rel="noopener">Karakeep Semantic Search</a></div>
+<div class="card-author">by @jamesbrooksco</div>
+</div>
+</div>
+<div class="card-desc">Semantic search over your bookmarks via Qdrant. Vector-indexed bookmark search that understands meaning, not just keywords.</div>
+<div class="card-meta">
+<span class="card-tag">Search</span>
+<span class="card-tag">Vector</span>
+<a href="https://github.com/jamesbrooksco/karakeep-semantic-search" class="card-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+</div>
+</div>
+
+<div class="card" data-cat="memory" data-tier="b" style="animation-delay:2.05s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#128150;</div>
+<div class="card-title-wrap">
+<div class="card-title">Oura Ring Health Assistant</div>
+<div class="card-author">by @AS</div>
+</div>
+</div>
+<div class="card-desc">Personal health AI with Oura Ring wearable data integration. Tracks sleep, activity, and readiness with AI-powered insights and calendar-aware recommendations.</div>
+<div class="card-meta">
+<span class="card-tag">Health</span>
+<span class="card-tag">Wearables</span>
+</div>
+</div>
+
+<h2 class="section-title" id="infra-section">Infrastructure & Deployment</h2>
+
+<div class="card" data-cat="infra" data-tier="b" style="animation-delay:2.1s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#10052;&#65039;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://github.com/openclaw/nix-openclaw" target="_blank" rel="noopener">Nix Packaging</a></div>
+<div class="card-author">by @openclaw</div>
+</div>
+</div>
+<div class="card-desc">Reproducible OpenClaw deployments with Nix. Declarative configuration, atomic upgrades, and rollbacks. The Nix way to run OpenClaw.</div>
+<div class="card-meta">
+<span class="card-tag">Nix</span>
+<span class="card-tag">Packaging</span>
+<a href="https://github.com/openclaw/nix-openclaw" class="card-link" target="_blank" rel="noopener">GitHub &rarr;</a>
+</div>
+</div>
+
+<div class="card" data-cat="infra" data-tier="b" style="animation-delay:2.15s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#128197;</div>
+<div class="card-title-wrap">
+<div class="card-title">CalDAV Calendar</div>
+<div class="card-author">by ClawHub</div>
+</div>
+</div>
+<div class="card-desc">Self-hosted calendar integration for OpenClaw. CalDAV protocol support for any calendar server. Schedule events, check availability, and manage calendars via natural language.</div>
+<div class="card-meta">
+<span class="card-tag">Calendar</span>
+<span class="card-tag">Self-hosted</span>
+</div>
+</div>
+
+<div class="card" data-cat="infra" data-tier="c" style="animation-delay:2.2s">
+<div class="card-tier c">C</div>
+<div class="card-header">
+<div class="card-icon">&#128187;</div>
+<div class="card-title-wrap">
+<div class="card-title">CodexMonitor</div>
+<div class="card-author">by @odrobnik</div>
+</div>
+</div>
+<div class="card-desc">Homebrew CLI for OpenAI Codex session inspection. Monitor and debug Codex sessions running alongside OpenClaw agents.</div>
+<div class="card-meta">
+<span class="card-tag">Codex</span>
+<span class="card-tag">Monitoring</span>
+</div>
+</div>
+
+<div class="card" data-cat="infra" data-tier="b" style="animation-delay:2.25s">
+<div class="card-tier b">B</div>
+<div class="card-header">
+<div class="card-icon">&#128279;</div>
+<div class="card-title-wrap">
+<div class="card-title"><a href="https://clawhub.com/skills/r2-upload" target="_blank" rel="noopener">R2 Upload</a></div>
+<div class="card-author">by @julianengel</div>
+</div>
+</div>
+<div class="card-desc">Cloudflare R2/S3 file sharing integration. Upload files via presigned URLs, share with anyone. Simple cloud storage skill for OpenClaw.</div>
+<div class="card-meta">
+<span class="card-tag">Storage</span>
+<span class="card-tag">R2</span>
+<a href="https://clawhub.com/skills/r2-upload" class="card-link" target="_blank" rel="noopener">ClawHub &rarr;</a>
+</div>
+</div>
+
+</div>
+
+<footer class="footer">
+<p>Part of <a href="index.html">Awesome OpenClaw</a> &mdash; the ultimate OpenClaw resource collection.</p>
+<p style="margin-top:8px">Know a project that should be listed? <a href="https://github.com/rohitg00/awesome-openclaw/issues/new" target="_blank" rel="noopener">Submit it here</a>.</p>
+</footer>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s);
+const $$=s=>document.querySelectorAll(s);
+
+const theme=localStorage.getItem('oc-theme')||(matchMedia('(prefers-color-scheme:light)').matches?'light':'dark');
+if(theme==='light')document.documentElement.setAttribute('data-theme','light');
+const toggle=$('#themeToggle');
+toggle.textContent=theme==='light'?'\u2600':'&#9790;';
+toggle.addEventListener('click',()=>{
+const isLight=document.documentElement.getAttribute('data-theme')==='light';
+document.documentElement.setAttribute('data-theme',isLight?'':'light');
+toggle.textContent=isLight?'\u263E':'\u2600';
+localStorage.setItem('oc-theme',isLight?'dark':'light');
+});
+
+const filterBtns=$$('.filter-btn');
+const cards=$$('.card');
+filterBtns.forEach(btn=>{
+btn.addEventListener('click',()=>{
+filterBtns.forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+const f=btn.dataset.filter;
+cards.forEach((card,i)=>{
+const show=f==='all'||card.dataset.cat===f;
+card.style.display=show?'':'none';
+if(show){card.style.animation='none';card.offsetHeight;card.style.animation=`fadeInUp .4s ease ${i*0.03}s both`}
+});
+});
+});
+
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}});
+},{threshold:0.1});
+cards.forEach(c=>obs.observe(c));
+})();
+</script>
+</body>
+</html>

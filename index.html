@@ -18,6 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -151,6 +152,9 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .back-to-top.show{opacity:1;transform:none;pointer-events:auto}
 .back-to-top:hover{background:var(--primary-light);transform:translateY(-2px)}
 .search-highlight{background:rgba(220,38,38,0.2);border-radius:2px;padding:0 1px}
+.loading{text-align:center;padding:80px 24px;color:var(--text-muted)}
+.loading-spinner{display:inline-block;width:32px;height:32px;border:3px solid var(--card-border);border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:16px}
+@keyframes spin{to{transform:rotate(360deg)}}
 @media(max-width:768px){
 .nav-links{display:none}
 .hero{padding:60px 16px 40px}
@@ -170,19 +174,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 
 <nav class="nav"><div class="nav-inner">
 <a href="#" class="nav-logo"><span class="claw">Open</span>Claw</a>
-<div class="nav-links" id="navLinks">
-<a href="#what-is-openclaw" data-target="what-is-openclaw">About</a>
-<a href="#quick-start-1-minute" data-target="quick-start-1-minute">Quick Start</a>
-<a href="#hosting-providers-comparison" data-target="hosting-providers-comparison">Hosting</a>
-<a href="#master-cost-comparison-table" data-target="master-cost-comparison-table">Costs</a>
-<a href="#security--hardening" data-target="security--hardening">Security</a>
-<a href="#configuration" data-target="configuration">Config</a>
-<a href="#integrations--features" data-target="integrations--features">Integrations</a>
-<a href="#skills--plugins" data-target="skills--plugins">Skills</a>
-<a href="#tutorials--guides" data-target="tutorials--guides">Tutorials</a>
-<a href="#community" data-target="community">Community</a>
-<a href="#media-coverage" data-target="media-coverage">Media</a>
-</div>
+<div class="nav-links" id="navLinks"></div>
 <div class="nav-actions">
 <button class="search-btn" id="searchBtn"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4 4"/></svg><span class="label">Search</span><span class="kbd">&#8984;K</span></button>
 <button class="theme-toggle" id="themeToggle" title="Toggle theme"><span id="themeIcon">&#9790;</span></button>
@@ -224,771 +216,10 @@ GitHub Repo
 </section>
 
 <main class="content" id="mainContent">
-
-<!-- What is OpenClaw -->
-<div class="section" id="section-what-is-openclaw">
-<h2 id="what-is-openclaw">What is OpenClaw?</h2>
-<p><strong>OpenClaw</strong> (formerly Clawdbot &rarr; Moltbot) is a free, open-source autonomous AI agent created by <strong>Peter Steinberger</strong> (<a href="https://github.com/steipete">@steipete</a>). It runs on your own hardware, connects to 10+ messaging platforms (WhatsApp, Telegram, Slack, Discord, Signal, iMessage, Google Chat, Microsoft Teams, Matrix, Zalo), and orchestrates AI agent workflows with persistent memory and 24/7 operation.</p>
-<p>OpenClaw is an <strong>agentic AI interface</strong> that:</p>
-<ul>
-<li>Runs <strong>locally on your own hardware</strong> (Mac Mini, VPS, Raspberry Pi, or serverless)</li>
-<li>Connects to <strong>10+ messaging platforms</strong> simultaneously</li>
-<li>Has <strong>persistent memory</strong> across sessions (saves files, breadcrumbs, chat histories)</li>
-<li>Handles <strong>tasks spanning hours or days</strong> without losing context</li>
-<li>Operates <strong>24/7 autonomously</strong> focusing on automation and integration</li>
-<li>Supports <strong>5,700+ community-built skills</strong> via ClawHub</li>
-<li>Works with <strong>multiple AI providers</strong> (Anthropic, OpenAI, Google, OpenRouter, DeepSeek, local LLMs)</li>
-<li>Features <strong>voice assistant</strong>, <strong>browser automation</strong>, <strong>home automation</strong>, and <strong>cron scheduling</strong></li>
-</ul>
-<h3>Core Architecture (6 Layers)</h3>
-<div class="table-wrap"><table><thead><tr><th>Layer</th><th>Purpose</th></tr></thead><tbody>
-<tr><td><strong>Gateway</strong></td><td>Central control plane &mdash; message routing, sessions, plugins, tool execution policy</td></tr>
-<tr><td><strong>Channels</strong></td><td>Adapters normalizing Telegram/WhatsApp/Discord/iMessage into standard message shapes</td></tr>
-<tr><td><strong>Routing + Sessions</strong></td><td>Determines which agent handles specific conversations</td></tr>
-<tr><td><strong>Agent Runtime</strong></td><td>Processes context, calls model providers, streams responses, requests tools</td></tr>
-<tr><td><strong>Tools</strong></td><td>Capabilities &mdash; web fetch, browser control, command execution, device pairing</td></tr>
-<tr><td><strong>Surfaces</strong></td><td>Interaction points &mdash; chat apps, web dashboard, macOS menu bar, Live Canvas</td></tr>
-</tbody></table></div>
+<div class="loading" id="loadingIndicator">
+<div class="loading-spinner"></div>
+<p>Loading content from README...</p>
 </div>
-
-<!-- Name History -->
-<div class="section" id="section-name-history">
-<h2 id="name-history">Name History</h2>
-<div class="table-wrap"><table><thead><tr><th>Date</th><th>Name</th><th>Reason</th></tr></thead><tbody>
-<tr><td>Nov 2025</td><td><strong>Clawdbot</strong></td><td>Original name at launch</td></tr>
-<tr><td>Jan 27, 2026</td><td><strong>Moltbot</strong></td><td>Anthropic trademark complaint (similarity to "Claude")</td></tr>
-<tr><td>Jan 30, 2026</td><td><strong>OpenClaw</strong></td><td>Final rebrand, community vote</td></tr>
-</tbody></table></div>
-<blockquote><p>When the team dropped the @clawdbot Twitter handle to transition to @moltbot, professional "handle snipers" immediately grabbed it. Scammers used the hijacked account to launch a fake CLAWD token on Solana.</p></blockquote>
-</div>
-
-<!-- System Requirements -->
-<div class="section" id="section-system-requirements">
-<h2 id="system-requirements">System Requirements</h2>
-<h3>Minimum</h3>
-<div class="table-wrap"><table><thead><tr><th>Component</th><th>Requirement</th></tr></thead><tbody>
-<tr><td><strong>OS</strong></td><td>macOS 11+ / Ubuntu 22.04+ / Windows (WSL2)</td></tr>
-<tr><td><strong>Runtime</strong></td><td>Node.js 22+</td></tr>
-<tr><td><strong>RAM</strong></td><td>2 GB (may crash during onboarding)</td></tr>
-<tr><td><strong>CPU</strong></td><td>2 cores</td></tr>
-<tr><td><strong>Storage</strong></td><td>10 GB SSD</td></tr>
-<tr><td><strong>Network</strong></td><td>Stable internet connection</td></tr>
-</tbody></table></div>
-<h3>Recommended</h3>
-<div class="table-wrap"><table><thead><tr><th>Component</th><th>Requirement</th></tr></thead><tbody>
-<tr><td><strong>RAM</strong></td><td>4-8 GB (cloud models) / 16-24 GB (local LLMs)</td></tr>
-<tr><td><strong>CPU</strong></td><td>2-4 cores</td></tr>
-<tr><td><strong>Storage</strong></td><td>30-50 GB SSD</td></tr>
-<tr><td><strong>GPU</strong></td><td>12-24 GB VRAM (for local model inference)</td></tr>
-</tbody></table></div>
-</div>
-
-<!-- Quick Start -->
-<div class="section" id="section-quick-start-1-minute">
-<h2 id="quick-start-1-minute">Quick Start (1 Minute)</h2>
-<pre><code>npm install -g openclaw@latest
-openclaw onboard --install-daemon
-openclaw gateway --port 18789 --verbose</code></pre>
-<p>That's it. The wizard walks you through API key setup, channel configuration, and security settings.</p>
-</div>
-
-<!-- Setup Methods -->
-<div class="section" id="section-setup-methods">
-<h2 id="setup-methods-1-10-minutes">Setup Methods (1-10 Minutes)</h2>
-<div class="table-wrap"><table><thead><tr><th>Method</th><th>Time</th><th>Difficulty</th><th>Best For</th></tr></thead><tbody>
-<tr><td><strong>Agent37</strong></td><td>30 sec</td><td>Easy</td><td>Cheapest managed ($0.99/mo)</td></tr>
-<tr><td><strong>SimpleClaw</strong></td><td>1 min</td><td>Easy</td><td>Non-technical users</td></tr>
-<tr><td><strong>npm install</strong></td><td>1 min</td><td>Easy</td><td>Developers with Node.js</td></tr>
-<tr><td><strong>DigitalOcean 1-Click</strong></td><td>2 min</td><td>Easy</td><td>Quick cloud deploy</td></tr>
-<tr><td><strong>Railway Template</strong></td><td>2 min</td><td>Easy</td><td>PaaS users</td></tr>
-<tr><td><strong>Zeabur</strong></td><td>1 min</td><td>Easy</td><td>Docker auto-deploy</td></tr>
-<tr><td><strong>Docker</strong></td><td>5 min</td><td>Medium</td><td>Isolation &amp; reproducibility</td></tr>
-<tr><td><strong>Cloudflare Workers</strong></td><td>5 min</td><td>Medium</td><td>Serverless enthusiasts</td></tr>
-<tr><td><strong>xCloud Managed</strong></td><td>5 min</td><td>None</td><td>Full managed hosting</td></tr>
-<tr><td><strong>Manual VPS</strong></td><td>10 min</td><td>Medium</td><td>Full control</td></tr>
-<tr><td><strong>Raspberry Pi</strong></td><td>10 min</td><td>Medium</td><td>Low-power, always-on</td></tr>
-</tbody></table></div>
-<h3>Method 1: Official Installer Script</h3>
-<pre><code>curl -fsSL https://openclaw.ai/install.sh | bash
-openclaw onboard --install-daemon</code></pre>
-<h3>Method 2: npm / pnpm</h3>
-<pre><code>npm install -g openclaw@latest
-# or
-pnpm add -g openclaw@latest</code></pre>
-<h3>Method 3: Docker</h3>
-<pre><code>git clone https://github.com/openclaw/openclaw.git
-cd openclaw
-./docker-setup.sh</code></pre>
-<h3>Method 4: One-Click Cloud Deploys</h3>
-<div class="table-wrap"><table><thead><tr><th>Platform</th><th>Link</th><th>Notes</th></tr></thead><tbody>
-<tr><td><strong>DigitalOcean</strong></td><td><a href="https://marketplace.digitalocean.com/apps/openclaw">1-Click Deploy</a></td><td>Security-hardened, pre-configured</td></tr>
-<tr><td><strong>Railway</strong></td><td><a href="https://railway.com/deploy/openclaw">Template</a></td><td>Web-based /setup wizard</td></tr>
-<tr><td><strong>Render</strong></td><td><a href="https://docs.openclaw.ai/render">render.yaml</a></td><td>Infrastructure as Code</td></tr>
-<tr><td><strong>SimpleClaw</strong></td><td><a href="https://www.simpleclaw.com/">simpleclaw.com</a></td><td>Deploy in under 1 minute</td></tr>
-<tr><td><strong>Zeabur</strong></td><td><a href="https://zeabur.com/templates/VTZ4FX">Template</a></td><td>One-click Docker deploy</td></tr>
-<tr><td><strong>Northflank</strong></td><td><a href="https://northflank.com/stacks/deploy-openclaw">Stack</a></td><td>No server-side terminal needed</td></tr>
-<tr><td><strong>Lightning.AI</strong></td><td><a href="https://lightning.ai/lightning-ai/environments/openclaw">Environment</a></td><td>Browser-based, no local hardware</td></tr>
-<tr><td><strong>Coolify</strong></td><td><a href="https://github.com/essamamdani/openclaw-coolify">Template</a></td><td>Self-hosted PaaS template</td></tr>
-<tr><td><strong>Elestio</strong></td><td><a href="https://elest.io/open-source/openclaw">Open Source</a></td><td>Fully managed in &lt; 3 min</td></tr>
-</tbody></table></div>
-</div>
-
-<!-- Hosting Providers Comparison -->
-<div class="section" id="section-hosting-providers-comparison">
-<h2 id="hosting-providers-comparison">Hosting Providers Comparison</h2>
-
-<h3>Free Tier ($0/month)</h3>
-<div class="table-wrap"><table><thead><tr><th>Provider</th><th>Free Resources</th><th>Limits</th><th>Permanent?</th><th>Best For</th></tr></thead><tbody>
-<tr><td><strong>Oracle Cloud</strong></td><td>4 ARM CPUs, 24 GB RAM, 200 GB storage</td><td>ARM only</td><td>Yes (forever)</td><td>Power users wanting $0 hosting</td></tr>
-<tr><td><strong>AMD Developer Cloud</strong></td><td>MI300X GPU (192 GB), $100 credits</td><td>~50 hours</td><td>No (credits)</td><td>GPU-accelerated local LLMs</td></tr>
-<tr><td><strong>Google Cloud Run</strong></td><td>180K vCPU-sec, 2M req/mo</td><td>Cold starts</td><td>Yes</td><td>Serverless testing</td></tr>
-<tr><td><strong>Azure Container Apps</strong></td><td>180K vCPU-sec, 2M req/mo</td><td>Cold starts</td><td>Yes</td><td>Enterprise users</td></tr>
-<tr><td><strong>Render</strong></td><td>Web service (spins down after 15 min)</td><td>~60s wake</td><td>Yes</td><td>Testing only</td></tr>
-<tr><td><strong>AWS Free Tier</strong></td><td>t2.micro (1 vCPU, 1 GB RAM)</td><td>12 months</td><td>No</td><td>AWS-familiar users</td></tr>
-<tr><td><strong>Railway</strong></td><td>$5 one-time credit</td><td>30 days</td><td>No</td><td>Quick testing</td></tr>
-</tbody></table></div>
-
-<h3>Budget VPS ($2-8/month)</h3>
-<div class="table-wrap"><table><thead><tr><th>Provider</th><th>Plan</th><th>Price/mo</th><th>vCPU</th><th>RAM</th><th>Storage</th><th>Bandwidth</th></tr></thead><tbody>
-<tr><td><strong>LumaDock</strong></td><td>Basic</td><td>$1.99</td><td>1</td><td>1 GB</td><td>20 GB SSD</td><td>1 TB</td></tr>
-<tr><td><strong>Vultr</strong></td><td>Regular Cloud</td><td>$2.50</td><td>1</td><td>512 MB</td><td>10 GB</td><td>0.5 TB</td></tr>
-<tr><td><strong>Hetzner</strong></td><td>CX22</td><td>&euro;3.79 (~$4.15)</td><td>2</td><td>4 GB</td><td>40 GB SSD</td><td>20 TB</td></tr>
-<tr><td><strong>Contabo</strong></td><td>Cloud VPS S</td><td>$4.95</td><td>4</td><td>8 GB</td><td>50 GB SSD</td><td>Unlimited</td></tr>
-<tr><td><strong>Hostinger</strong></td><td>KVM 1</td><td>$4.99</td><td>1</td><td>4 GB</td><td>50 GB NVMe</td><td>4 TB</td></tr>
-<tr><td><strong>Linode</strong></td><td>Shared 1GB</td><td>$5</td><td>1</td><td>1 GB</td><td>25 GB</td><td>1 TB</td></tr>
-<tr><td><strong>DigitalOcean</strong></td><td>Basic Droplet</td><td>$6</td><td>1</td><td>1 GB</td><td>25 GB</td><td>1 TB</td></tr>
-<tr><td><strong>Hetzner</strong></td><td>CX32</td><td>&euro;6.80 (~$7.45)</td><td>4</td><td>8 GB</td><td>80 GB SSD</td><td>20 TB</td></tr>
-</tbody></table></div>
-
-<h3>Serverless &amp; PaaS</h3>
-<div class="table-wrap"><table><thead><tr><th>Platform</th><th>Starting Price</th><th>Free Tier?</th><th>Auto-Scale</th><th>Notes</th></tr></thead><tbody>
-<tr><td><strong>Cloudflare Workers</strong></td><td>$5/mo</td><td>100K req/day</td><td>Yes</td><td>Moltworker PoC</td></tr>
-<tr><td><strong>Railway</strong></td><td>$5/mo</td><td>$5 credit</td><td>Yes</td><td>Best PaaS UX</td></tr>
-<tr><td><strong>Render</strong></td><td>$7/mo</td><td>Free w/ limits</td><td>Yes</td><td>YAML IaC</td></tr>
-<tr><td><strong>Fly.io</strong></td><td>Pay-as-you-go</td><td>None</td><td>Yes</td><td>Global edge</td></tr>
-<tr><td><strong>AWS Lightsail</strong></td><td>$3.50/mo</td><td>None</td><td>No</td><td>Simple AWS VPS</td></tr>
-</tbody></table></div>
-
-<h3>Managed Hosting Services</h3>
-<p>These providers handle ALL the setup for you &mdash; no Docker, no terminal, no DevOps required.</p>
-<div class="table-wrap"><table><thead><tr><th>Provider</th><th>Price/mo</th><th>Setup Time</th><th>What's Included</th></tr></thead><tbody>
-<tr><td><strong><a href="https://www.agent37.com/openclaw">Agent37</a></strong></td><td>$0.99-3.99</td><td>30 sec</td><td>Isolated instance, full UI, terminal, SSL</td></tr>
-<tr><td><strong><a href="https://myclaw.ai/pricing">MyClaw.ai</a></strong></td><td>$9 (was $29)</td><td>Instant</td><td>Auto-updates, backups, web terminal</td></tr>
-<tr><td><strong><a href="https://www.get-open-claw.com/">get-open-claw.com</a></strong></td><td>$9-49</td><td>&lt; 1 min</td><td>OpenClaw Secure, daily backups, health monitoring</td></tr>
-<tr><td><strong><a href="https://www.easyclaw.pro/en">EasyClaw</a></strong></td><td>$10+</td><td>60 sec</td><td>Multi-model, 3+ platforms, zero maintenance</td></tr>
-<tr><td><strong><a href="https://clawsimple.com/en">ClawSimple</a></strong></td><td>$8.25-29.08</td><td>2-3 min</td><td>Secure cloud, one-click updates</td></tr>
-<tr><td><strong><a href="https://xcloud.host/openclaw-hosting">xCloud</a></strong></td><td>$24</td><td>5 min</td><td>Telegram/WhatsApp pre-configured, encrypted backups</td></tr>
-<tr><td><strong><a href="https://www.clawcloud.sh/">ClawCloud</a></strong></td><td>$29-129</td><td>&lt; 1 min</td><td>All AI models (BYOK), auto-updates, daily backups</td></tr>
-<tr><td><strong><a href="https://kilo.ai/kiloclaw">Kilo Claw</a></strong></td><td>Pay-as-you-go</td><td>&lt; 60 sec</td><td>500+ models, 50+ platforms, SSO, audit logs</td></tr>
-<tr><td><strong><a href="https://contabo.com/en/openclaw-hosting/">Contabo OpenClaw</a></strong></td><td>$4.95+</td><td>Minutes</td><td>Unlimited workflows, full data ownership</td></tr>
-</tbody></table></div>
-
-<h3>Setup-as-a-Service (Freelancers)</h3>
-<div class="table-wrap"><table><thead><tr><th>Provider</th><th>Price</th><th>Type</th><th>What's Included</th></tr></thead><tbody>
-<tr><td><strong><a href="https://getclawhelp.com/">GetClawHelp</a></strong></td><td>$119-229</td><td>One-time</td><td>VPS setup, LLM config, 10-25 skills, 24/7 uptime</td></tr>
-<tr><td><strong><a href="https://getclawhelp.com/">GetClawHelp Maintenance</a></strong></td><td>$97/mo</td><td>Monthly</td><td>Updates, troubleshooting, new skills</td></tr>
-<tr><td><strong><a href="https://openclawmoney.com/">OpenClaw Money Playbook</a></strong></td><td>$9.95</td><td>E-book</td><td>Guide on monetizing OpenClaw setup services</td></tr>
-</tbody></table></div>
-<blockquote><p><strong>Business Model Insight</strong>: <em>"The move right now is doing free OpenClaw installs, upselling security/skill packages/custom builds."</em> &mdash; <a href="https://x.com/GanimCorey">@GanimCorey on X</a></p></blockquote>
-</div>
-
-<!-- Master Cost Comparison -->
-<div class="section" id="section-master-cost-comparison-table">
-<h2 id="master-cost-comparison-table">Master Cost Comparison Table</h2>
-<div class="table-wrap"><table><thead><tr><th>Provider</th><th>Monthly Cost</th><th>Setup Time</th><th>Difficulty</th><th>1-Click?</th><th>Best For</th></tr></thead><tbody>
-<tr><td>Oracle Cloud</td><td><strong>$0</strong></td><td>3 hours</td><td>Hard</td><td>No</td><td>Free-forever hosting</td></tr>
-<tr><td>Agent37</td><td><strong>$0.99</strong></td><td>30 sec</td><td><strong>None</strong></td><td><strong>Yes</strong></td><td>Cheapest managed</td></tr>
-<tr><td>LumaDock</td><td><strong>$1.99</strong></td><td>15 min</td><td>Medium</td><td>No</td><td>Cheapest VPS</td></tr>
-<tr><td>Vultr</td><td><strong>$2.50</strong></td><td>10 min</td><td>Medium</td><td>Yes</td><td>Global presence</td></tr>
-<tr><td>Hetzner CX22</td><td><strong>$4.15</strong></td><td>10 min</td><td>Medium</td><td>No</td><td>Best price/performance</td></tr>
-<tr><td>Contabo VPS S</td><td><strong>$4.95</strong></td><td>15 min</td><td>Medium</td><td>No</td><td>Unlimited bandwidth</td></tr>
-<tr><td>Hostinger KVM 1</td><td><strong>$4.99</strong></td><td>10 min</td><td>Easy</td><td>Yes</td><td>Docker templates</td></tr>
-<tr><td>Cloudflare Workers</td><td><strong>$5</strong></td><td>5 min</td><td>Medium</td><td>No</td><td>Serverless</td></tr>
-<tr><td>Railway Hobby</td><td><strong>$5</strong></td><td>2 min</td><td>Easy</td><td>Yes</td><td>Best PaaS experience</td></tr>
-<tr><td>DigitalOcean</td><td><strong>$6</strong></td><td>2 min</td><td>Easy</td><td><strong>Yes</strong></td><td>Best docs + 1-Click</td></tr>
-<tr><td>MyClaw.ai Lite</td><td><strong>$9</strong></td><td>Instant</td><td><strong>None</strong></td><td><strong>Yes</strong></td><td>Budget managed</td></tr>
-<tr><td>DigitalOcean 2GB</td><td><strong>$12</strong></td><td>2 min</td><td>Easy</td><td><strong>Yes</strong></td><td>Recommended production</td></tr>
-<tr><td>xCloud Managed</td><td><strong>$24</strong></td><td>5 min</td><td><strong>None</strong></td><td><strong>Yes</strong></td><td>Full managed hosting</td></tr>
-<tr><td>ClawCloud Starter</td><td><strong>$29</strong></td><td>&lt; 1 min</td><td><strong>None</strong></td><td><strong>Yes</strong></td><td>Premium managed</td></tr>
-<tr><td>Raspberry Pi 5</td><td><strong>$0</strong>/mo</td><td>30 min</td><td>Medium</td><td>No</td><td>Low-power, always-on</td></tr>
-<tr><td>Mac Mini</td><td><strong>$0</strong>/mo</td><td>10 min</td><td>Easy</td><td>No</td><td>Privacy-first, local</td></tr>
-</tbody></table></div>
-</div>
-
-<!-- AI Model API Costs -->
-<div class="section" id="section-ai-model-api-costs">
-<h2 id="ai-model-api-costs">AI Model API Costs</h2>
-<p>The <strong>real cost</strong> of running OpenClaw is the AI model API, not infrastructure.</p>
-<h3>Provider Pricing (per 1M tokens)</h3>
-<div class="table-wrap"><table><thead><tr><th>Provider</th><th>Model</th><th>Input Cost</th><th>Output Cost</th><th>Notes</th></tr></thead><tbody>
-<tr><td><strong>Anthropic</strong></td><td>Claude 3.5 Haiku</td><td>$0.80</td><td>$4.00</td><td>Best budget option</td></tr>
-<tr><td><strong>Anthropic</strong></td><td>Claude 3.5 Sonnet</td><td>$3.00</td><td>$15.00</td><td>Best balance</td></tr>
-<tr><td><strong>Anthropic</strong></td><td>Claude Opus 4.5</td><td>$15.00</td><td>$75.00</td><td>Most capable, expensive</td></tr>
-<tr><td><strong>OpenAI</strong></td><td>GPT-4o</td><td>$2.50</td><td>$10.00</td><td>Good alternative</td></tr>
-<tr><td><strong>OpenAI</strong></td><td>GPT-4o-mini</td><td>$0.15</td><td>$0.60</td><td>Very cheap</td></tr>
-<tr><td><strong>Google</strong></td><td>Gemini 2.0 Flash</td><td>$0.10</td><td>$0.40</td><td>Cheapest hosted</td></tr>
-<tr><td><strong>Google</strong></td><td>Gemini Flash-Lite</td><td><strong>Free</strong></td><td><strong>Free</strong></td><td>Zero cost option</td></tr>
-<tr><td><strong>DeepSeek</strong></td><td>DeepSeek V3</td><td>$0.27</td><td>$1.10</td><td>Best value reasoning</td></tr>
-<tr><td><strong>Ollama/Local</strong></td><td>Any</td><td><strong>$0</strong></td><td><strong>$0</strong></td><td>Requires 16 GB+ RAM</td></tr>
-</tbody></table></div>
-<blockquote><p><strong>75x price difference</strong> between the most expensive (Claude Opus) and cheapest (Gemini Flash) options.</p></blockquote>
-<h3>Monthly API Cost Estimates</h3>
-<div class="table-wrap"><table><thead><tr><th>Usage Level</th><th>Description</th><th>Monthly Cost</th></tr></thead><tbody>
-<tr><td><strong>Minimal</strong></td><td>Few messages/day, Gemini free tier</td><td>$0-5</td></tr>
-<tr><td><strong>Light</strong></td><td>~50 messages/day, Claude Haiku</td><td>$5-15</td></tr>
-<tr><td><strong>Moderate</strong></td><td>~200 messages/day, mixed models</td><td>$15-50</td></tr>
-<tr><td><strong>Heavy</strong></td><td>500+ messages/day, Claude Sonnet</td><td>$50-150</td></tr>
-<tr><td><strong>Power User</strong></td><td>All-day usage, Claude Opus</td><td>$150-500+</td></tr>
-</tbody></table></div>
-<h3>Cost Optimization Tips</h3>
-<ol>
-<li>Use <strong>smart model routing</strong> &mdash; cheap models for simple tasks, expensive for complex</li>
-<li>Enable <strong>prompt caching</strong> &mdash; Anthropic auto-applies 5-min cache</li>
-<li>Use <strong>local LLMs</strong> via Ollama for zero API cost</li>
-<li>Set <strong>budget alerts</strong> in your AI provider dashboard</li>
-<li>Use <a href="https://calculator.vlvt.sh/">OpenClaw Cost Calculator</a> to estimate your spend</li>
-</ol>
-</div>
-
-<!-- Total Real-World Cost Examples -->
-<div class="section" id="section-total-real-world-cost-examples">
-<h2 id="total-real-world-cost-examples">Total Real-World Cost Examples</h2>
-<div class="table-wrap"><table><thead><tr><th>Setup</th><th>Infrastructure</th><th>API</th><th>Total/month</th><th>Notes</th></tr></thead><tbody>
-<tr><td><strong>Free Tier Max</strong></td><td>Oracle Cloud ($0)</td><td>Gemini free ($0)</td><td><strong>$0</strong></td><td>Limited but functional</td></tr>
-<tr><td><strong>Cheapest Managed</strong></td><td>Agent37 ($1)</td><td>Haiku ($5)</td><td><strong>$6</strong></td><td>30-second setup</td></tr>
-<tr><td><strong>Ultra Budget</strong></td><td>LumaDock ($2)</td><td>Haiku ($5)</td><td><strong>$7</strong></td><td>Basic personal assistant</td></tr>
-<tr><td><strong>Sweet Spot</strong></td><td>Hetzner CX22 ($4)</td><td>Mixed models ($15)</td><td><strong>$19</strong></td><td>Best value-to-capability</td></tr>
-<tr><td><strong>Standard</strong></td><td>DigitalOcean ($12)</td><td>Sonnet ($40)</td><td><strong>$52</strong></td><td>Production-ready</td></tr>
-<tr><td><strong>Local LLM</strong></td><td>Raspberry Pi 5 ($0/mo)</td><td>Ollama ($0)</td><td><strong>$0</strong></td><td>After $80 hardware purchase</td></tr>
-<tr><td><strong>Power User</strong></td><td>DigitalOcean ($24)</td><td>Opus ($200)</td><td><strong>$224</strong></td><td>Heavy professional use</td></tr>
-<tr><td><strong>Extreme</strong></td><td>Dedicated ($50)</td><td>All models ($573)</td><td><strong>$623</strong></td><td>One developer's real report</td></tr>
-</tbody></table></div>
-</div>
-
-<!-- Cloudflare Workers -->
-<div class="section" id="section-cloudflare-workers">
-<h2 id="cloudflare-workers-moltworker-deep-dive">Cloudflare Workers (Moltworker) Deep Dive</h2>
-<p><a href="https://github.com/cloudflare/moltworker">Moltworker</a> is Cloudflare's official adaptation of OpenClaw for Workers.</p>
-<h3>Setup</h3>
-<pre><code>git clone https://github.com/cloudflare/moltworker.git
-cd moltworker &amp;&amp; npm install
-npx wrangler secret put ANTHROPIC_API_KEY
-export MOLTBOT_GATEWAY_TOKEN=$(openssl rand -hex 32)
-npx wrangler secret put MOLTBOT_GATEWAY_TOKEN
-npm run deploy</code></pre>
-<h3>Cost Breakdown (24/7 Operation)</h3>
-<div class="table-wrap"><table><thead><tr><th>Component</th><th>Monthly Cost</th></tr></thead><tbody>
-<tr><td>Workers Paid Plan</td><td>$5.00</td></tr>
-<tr><td>Memory (~4 GiB)</td><td>~$26.00</td></tr>
-<tr><td>CPU</td><td>~$2.00</td></tr>
-<tr><td>Disk (8 GB)</td><td>~$1.50</td></tr>
-<tr><td><strong>Total</strong></td><td><strong>~$34.50</strong></td></tr>
-</tbody></table></div>
-<h3>Limitations</h3>
-<ul>
-<li><strong>Cannot support Telegram bots</strong> (requires persistent connection for long-polling)</li>
-<li>Containers hibernate when not receiving HTTP requests</li>
-<li>Use VPS deployment for Telegram integration</li>
-</ul>
-</div>
-
-<!-- Provider Setup Guides -->
-<div class="section" id="section-digitalocean">
-<h2 id="digitalocean-1-click-deploy">DigitalOcean 1-Click Deploy</h2>
-<p>The fastest path to a production OpenClaw instance.</p>
-<ol>
-<li>Go to <a href="https://marketplace.digitalocean.com/apps/openclaw">DigitalOcean Marketplace</a></li>
-<li>Click "Create OpenClaw Droplet"</li>
-<li>Choose $12/mo plan (2 GB RAM recommended)</li>
-<li>Select region, SSH key</li>
-<li>Deploy (ready in ~90 seconds)</li>
-</ol>
-<p><strong>Pre-configured</strong>: OpenClaw 2026.1.24-1, Docker isolation, unique gateway token, security-hardened, Caddy HTTPS.</p>
-<ul>
-<li><a href="https://www.digitalocean.com/blog/moltbot-on-digitalocean">DigitalOcean Blog - Introducing OpenClaw</a></li>
-<li><a href="https://www.digitalocean.com/blog/technical-dive-openclaw-hardened-1-click-app">Technical Deep Dive - Security Hardening</a></li>
-</ul>
-</div>
-
-<div class="section" id="section-hetzner">
-<h2 id="hetzner-setup-guide">Hetzner Setup Guide</h2>
-<p>Best price-to-performance ratio for OpenClaw hosting.</p>
-<pre><code>ssh root@your-server-ip
-curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
-apt-get install -y nodejs
-npm install -g openclaw@latest
-openclaw onboard --install-daemon
-ufw allow ssh &amp;&amp; ufw allow 443/tcp &amp;&amp; ufw enable</code></pre>
-</div>
-
-<div class="section" id="section-oracle">
-<h2 id="oracle-cloud-free-tier-setup">Oracle Cloud Free Tier Setup</h2>
-<p><strong>Truly free forever</strong> &mdash; 4 ARM cores, 24 GB RAM, 200 GB storage, 10 TB/month.</p>
-<pre><code>curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
-apt-get install -y nodejs git
-npm install -g openclaw@latest
-openclaw onboard --install-daemon</code></pre>
-<p><strong>Caveats</strong>: ARM architecture, high demand (keep retrying), add credit card to prevent account termination.</p>
-</div>
-
-<div class="section" id="section-raspberry-pi">
-<h2 id="raspberry-pi-setup">Raspberry Pi Setup</h2>
-<div class="table-wrap"><table><thead><tr><th>Device</th><th>Price</th><th>RAM</th><th>Performance</th></tr></thead><tbody>
-<tr><td><strong>Pi 5 (8 GB)</strong></td><td>$80</td><td>8 GB</td><td>Best choice</td></tr>
-<tr><td><strong>Pi 5 (4 GB)</strong></td><td>$60</td><td>4 GB</td><td>Good budget option</td></tr>
-<tr><td><strong>Pi 4 (8 GB)</strong></td><td>$55</td><td>8 GB</td><td>2-2.5x slower than Pi 5</td></tr>
-</tbody></table></div>
-<pre><code>curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
-sudo apt-get install -y nodejs
-npm install -g openclaw@latest
-openclaw onboard --install-daemon</code></pre>
-</div>
-
-<div class="section" id="section-docker">
-<h2 id="docker-deployment">Docker Deployment</h2>
-<pre><code>git clone https://github.com/openclaw/openclaw.git
-cd openclaw &amp;&amp; ./docker-setup.sh</code></pre>
-<h3>Useful Commands</h3>
-<pre><code>docker compose run --rm openclaw-cli pairing approve telegram &lt;CODE&gt;
-docker compose run --rm openclaw-cli dashboard --no-open
-docker compose run --rm openclaw-cli security audit --deep</code></pre>
-</div>
-
-<!-- Security -->
-<div class="section" id="section-security">
-<h2 id="security--hardening">Security &amp; Hardening</h2>
-<h3>Known CVEs (All Patched)</h3>
-<div class="table-wrap"><table><thead><tr><th>CVE</th><th>Severity</th><th>Description</th><th>Fixed In</th></tr></thead><tbody>
-<tr><td><strong>CVE-2026-24763</strong></td><td><span class="severity-high">High</span></td><td>Docker PATH Command Injection</td><td>v2026.1.29</td></tr>
-<tr><td><strong>GHSA-g8p2-7wf7-98mq</strong></td><td><span class="severity-critical">Critical (8.8)</span></td><td>gatewayUrl Token Exfiltration (1-click RCE)</td><td>v2026.1.29</td></tr>
-<tr><td><strong>CVE-2026-25593</strong></td><td><span class="severity-critical">Critical</span></td><td>Unauthenticated Local RCE via WebSocket</td><td>v2026.1.30</td></tr>
-<tr><td><strong>CVE-2026-25475</strong></td><td><span class="severity-high">High</span></td><td>Local File Inclusion via MEDIA: Path</td><td>v2026.1.30</td></tr>
-<tr><td><strong>CVE-2026-25253</strong></td><td><span class="severity-critical">Critical (8.8)</span></td><td>1-Click RCE via Cross-Site WebSocket Hijacking</td><td>v2026.1.29</td></tr>
-</tbody></table></div>
-<blockquote><p><strong>Update immediately to v2026.2.1+</strong> to patch all known vulnerabilities.</p></blockquote>
-<h3>Security Best Practices</h3>
-<ol>
-<li><strong>Bind to <code>127.0.0.1</code> only</strong> (never <code>0.0.0.0</code>) &mdash; over 30,000 exposed instances found online</li>
-<li>Use <strong>SSH tunnels</strong> or <a href="https://tailscale.com/kb/1242/tailscale-serve">Tailscale Serve</a> for remote access</li>
-<li>Use <strong>auth profiles</strong> (system keychain): <code>openclaw auth set ANTHROPIC_API_KEY</code></li>
-<li>Configure <strong>firewall</strong>: <code>ufw default deny incoming &amp;&amp; ufw allow ssh &amp;&amp; ufw enable</code></li>
-<li>Use <strong>Docker</strong> for container isolation</li>
-<li>Run regular audits: <code>openclaw security audit --deep</code></li>
-</ol>
-<h3>Skills Marketplace Risks</h3>
-<blockquote><p><strong>~15% of community skills contain malicious instructions</strong></p></blockquote>
-<ul>
-<li><strong>341 malicious skills</strong> discovered in "ClawHavoc" campaign (Atomic Stealer malware)</li>
-<li><strong>280+ skills leak API keys and PII</strong> (<a href="https://snyk.io/blog/openclaw-skills-credential-leaks-research/">Snyk</a>)</li>
-<li>VirusTotal scanning now integrated</li>
-<li>Always audit skills before installation</li>
-</ul>
-<h3>Security Resources</h3>
-<ul>
-<li><a href="https://github.com/centminmod/explain-openclaw">centminmod/explain-openclaw</a> - Deep security analysis (73 files)</li>
-<li><a href="https://blogs.cisco.com/ai/personal-ai-agents-like-openclaw-are-a-security-nightmare">Cisco - AI Agents Are a Security Nightmare</a></li>
-<li><a href="https://www.bitdefender.com/en-us/blog/labs/helpful-skills-or-hidden-payloads-bitdefender-labs-dives-deep-into-the-openclaw-malicious-skill-trap">Bitdefender - Malicious Skill Trap</a></li>
-<li><a href="https://snyk.io/blog/openclaw-skills-credential-leaks-research/">Snyk - 280+ Leaky Skills</a></li>
-</ul>
-</div>
-
-<!-- Configuration -->
-<div class="section" id="section-configuration">
-<h2 id="configuration">Configuration</h2>
-<h3>Model Providers</h3>
-<div class="table-wrap"><table><thead><tr><th>Provider</th><th>Config Key</th><th>Free Tier?</th><th>Notes</th></tr></thead><tbody>
-<tr><td><strong>Anthropic</strong></td><td><code>ANTHROPIC_API_KEY</code></td><td>No</td><td>Primary, best quality</td></tr>
-<tr><td><strong>OpenAI</strong></td><td><code>OPENAI_API_KEY</code></td><td>No</td><td>GPT-4, GPT-4o</td></tr>
-<tr><td><strong>Google</strong></td><td><code>GOOGLE_API_KEY</code></td><td>Yes (Flash-Lite)</td><td>Cheapest hosted</td></tr>
-<tr><td><strong>OpenRouter</strong></td><td><code>OPENROUTER_API_KEY</code></td><td>No</td><td>200+ models unified API</td></tr>
-<tr><td><strong>DeepSeek</strong></td><td><code>DEEPSEEK_API_KEY</code></td><td>No</td><td>Excellent value</td></tr>
-<tr><td><strong>Ollama</strong></td><td>Local</td><td><strong>Free</strong></td><td>Requires local hardware</td></tr>
-</tbody></table></div>
-<h3>Messaging Channels</h3>
-<div class="table-wrap"><table><thead><tr><th>Channel</th><th>Setup</th><th>Auth Method</th><th>Notes</th></tr></thead><tbody>
-<tr><td><strong>Telegram</strong></td><td>2 min</td><td>BotFather token</td><td>Fastest setup, supports Topics</td></tr>
-<tr><td><strong>WhatsApp</strong></td><td>2 min</td><td>QR code scan</td><td>Separate phone recommended</td></tr>
-<tr><td><strong>Discord</strong></td><td>5 min</td><td>Bot application</td><td>Developer portal required</td></tr>
-<tr><td><strong>Slack</strong></td><td>5 min</td><td>Bot token</td><td>Socket or HTTP mode</td></tr>
-<tr><td><strong>Signal</strong></td><td>5 min</td><td>Direct integration</td><td>Privacy-focused</td></tr>
-<tr><td><strong>iMessage</strong></td><td>10 min</td><td>BlueBubbles bridge</td><td>macOS only</td></tr>
-<tr><td><strong>Microsoft Teams</strong></td><td>5 min</td><td>Enterprise integration</td><td>Business users</td></tr>
-</tbody></table></div>
-<h3>Local LLM Integration</h3>
-<h4>Ollama</h4>
-<pre><code>curl -fsSL https://ollama.com/install.sh | sh
-ollama pull llama3.1</code></pre>
-<pre><code>{ "provider": "openai", "baseUrl": "http://localhost:11434/v1", "model": "llama3.1" }</code></pre>
-</div>
-
-<!-- Integrations -->
-<div class="section" id="section-integrations">
-<h2 id="integrations--features">Integrations &amp; Features</h2>
-<h3>Voice Assistant</h3>
-<div class="table-wrap"><table><thead><tr><th>Feature</th><th>Description</th></tr></thead><tbody>
-<tr><td><strong>OpenClaw Voice</strong></td><td>Self-hosted browser-based voice chat (Whisper STT + ElevenLabs TTS)</td></tr>
-<tr><td><strong>Android App</strong></td><td>Customizable wake words, long-press home button activation</td></tr>
-<tr><td><strong>Voice Call Plugin</strong></td><td>Telephony via Twilio, Telnyx, Plivo</td></tr>
-</tbody></table></div>
-<h3>Home Automation</h3>
-<ul>
-<li><strong>Home Assistant</strong> custom add-on with ha-mcp integration</li>
-<li>Control lights, thermostats, IoT devices via messaging</li>
-<li>Voice commands through WhatsApp/Telegram</li>
-</ul>
-<h3>Email &amp; Calendar</h3>
-<ul>
-<li><strong>Gmail</strong>: Real-time processing via Pub/Sub, smart filtering, auto-responses</li>
-<li><strong>Google Calendar</strong>: Event creation, viewing, sync, daily briefings</li>
-<li><strong>Outlook</strong>: Calendar sync and management</li>
-</ul>
-<h3>Webhooks &amp; Cron Jobs</h3>
-<p><strong>Webhooks</strong>: POST to <code>/hooks/wake</code> or <code>/hooks/agent</code> with Bearer token auth. <strong>Cron Jobs</strong>: Interval-based or Unix cron expressions. <strong>Heartbeat</strong>: Agent wakes every 30 min, reads <code>HEARTBEAT.md</code>, decides if action needed.</p>
-<h3>Companion Apps</h3>
-<div class="table-wrap"><table><thead><tr><th>App</th><th>Platform</th><th>Features</th></tr></thead><tbody>
-<tr><td><strong>Menu Bar App</strong></td><td>macOS</td><td>Pixel lobster icon, voice wake, Canvas panel</td></tr>
-<tr><td><strong>Crabwalk</strong></td><td>Cross-platform</td><td>Open-source companion app (<a href="https://crabwalk.app/">crabwalk.app</a>)</td></tr>
-<tr><td><strong>iOS/Android</strong></td><td>Mobile</td><td>Camera, screen recording, notifications (Beta)</td></tr>
-</tbody></table></div>
-<h3>Monitoring &amp; Dashboards</h3>
-<div class="table-wrap"><table><thead><tr><th>Tool</th><th>Type</th><th>Features</th></tr></thead><tbody>
-<tr><td><strong>openclaw dashboard</strong></td><td>Built-in</td><td>Gateway info, stats, web UI</td></tr>
-<tr><td><strong><a href="https://www.clawcontroller.com/">ClawController</a></strong></td><td>Third-party</td><td>Real-time monitoring, task orchestration</td></tr>
-<tr><td><strong>claw-dash</strong></td><td>Community</td><td>Sessions, tokens, costs, CPU/RAM/disk metrics</td></tr>
-</tbody></table></div>
-</div>
-
-<!-- Performance Benchmarks -->
-<div class="section" id="section-performance">
-<h2 id="performance-benchmarks">Performance Benchmarks</h2>
-<div class="table-wrap"><table><thead><tr><th>Hardware</th><th>Tokens/sec</th><th>Notes</th></tr></thead><tbody>
-<tr><td><strong>RTX 4090</strong></td><td>~80 t/s</td><td>Best GPU performance</td></tr>
-<tr><td><strong>AMD MI300X</strong></td><td>High</td><td>192 GB memory, free credits available</td></tr>
-<tr><td><strong>Apple M2 Pro 64GB</strong></td><td>Good</td><td>Large memory pool for bigger models</td></tr>
-<tr><td><strong>Typical CPU</strong></td><td>~13.5 t/s</td><td>Non-time-critical tasks</td></tr>
-<tr><td><strong>Oracle ARM (7B)</strong></td><td>5-10 t/s</td><td>Free tier, acceptable</td></tr>
-<tr><td><strong>Raspberry Pi 5</strong></td><td>2-5 t/s</td><td>Slow but works</td></tr>
-</tbody></table></div>
-<p><strong>Bottleneck</strong>: Memory bandwidth and VRAM capacity, not CPU speed. Sweet spot: 7B models.</p>
-</div>
-
-<!-- OpenClaw vs Claude Code -->
-<div class="section" id="section-vs-claude-code">
-<h2 id="openclaw-vs-claude-code">OpenClaw vs Claude Code</h2>
-<p><strong>Complementary tools</strong>, not competitors. Many engineers run both simultaneously.</p>
-<div class="table-wrap"><table><thead><tr><th>Feature</th><th>Claude Code</th><th>OpenClaw</th></tr></thead><tbody>
-<tr><td><strong>Lives in</strong></td><td>Terminal / IDE</td><td>Messaging apps</td></tr>
-<tr><td><strong>Focus</strong></td><td>Coding, development</td><td>Automation, integration</td></tr>
-<tr><td><strong>Memory</strong></td><td>Session-based</td><td>Persistent (24/7)</td></tr>
-<tr><td><strong>Operation</strong></td><td>Interactive</td><td>Autonomous</td></tr>
-<tr><td><strong>Runtime</strong></td><td>Per-session</td><td>Always-on daemon</td></tr>
-<tr><td><strong>Best for</strong></td><td>Multi-file refactoring, tests</td><td>Inbox monitoring, reminders, web scraping</td></tr>
-</tbody></table></div>
-</div>
-
-<!-- Alternatives -->
-<div class="section" id="section-alternatives">
-<h2 id="alternatives--competitors">Alternatives &amp; Competitors</h2>
-<div class="table-wrap"><table><thead><tr><th>Alternative</th><th>Type</th><th>Best For</th><th>Key Advantage</th></tr></thead><tbody>
-<tr><td><strong>Nanobot</strong></td><td>Lightweight</td><td>Minimalists</td><td>99% smaller codebase</td></tr>
-<tr><td><strong>NanoClaw</strong></td><td>Security-first</td><td>Security-conscious</td><td>Isolated containers</td></tr>
-<tr><td><strong>Jan.ai</strong></td><td>Offline chat</td><td>Privacy absolutists</td><td>100% offline</td></tr>
-<tr><td><strong>AnythingLLM</strong></td><td>Doc-to-chatbot</td><td>Knowledge bases</td><td>Turn PDFs into chatbots</td></tr>
-<tr><td><strong>Claude Code</strong></td><td>Coding agent</td><td>Developers</td><td>Best coding assistant</td></tr>
-<tr><td><strong>Dify</strong></td><td>LLM app platform</td><td>Agents, RAG, MLOps</td><td>Best debugging, workflow viz</td></tr>
-<tr><td><strong>n8n</strong></td><td>Workflow automation</td><td>Business processes</td><td>Visual workflow builder</td></tr>
-</tbody></table></div>
-</div>
-
-<!-- Moltbook -->
-<div class="section" id="section-moltbook">
-<h2 id="moltbook-ai-social-network">Moltbook (AI Social Network)</h2>
-<p>Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder of Octane AI).</p>
-<div class="table-wrap"><table><thead><tr><th>Stat</th><th>Value</th></tr></thead><tbody>
-<tr><td><strong>Launched</strong></td><td>January 28, 2026</td></tr>
-<tr><td><strong>Registered AI agents</strong></td><td>1.6M+</td></tr>
-<tr><td><strong>Posts &amp; responses</strong></td><td>7.5M+ AI-generated</td></tr>
-<tr><td><strong>Format</strong></td><td>Reddit-style forum for AI agents</td></tr>
-<tr><td><strong>Human access</strong></td><td>Read-only observation</td></tr>
-</tbody></table></div>
-<blockquote><p><em>"Most interesting place on the internet right now"</em> &mdash; <strong>Fortune</strong></p></blockquote>
-<ul>
-<li><a href="https://techcrunch.com/2026/01/30/openclaws-ai-assistants-are-now-building-their-own-social-network/">TechCrunch</a> | <a href="https://fortune.com/2026/01/31/ai-agent-moltbot-clawdbot-openclaw-data-privacy-security-nightmare-moltbook-social-network/">Fortune</a> | <a href="https://www.cnbc.com/2026/02/02/openclaw-open-source-ai-agent-rise-controversy-clawdbot-moltbot-moltbook.html">CNBC</a> | <a href="https://www.ibm.com/think/news/clawdbot-ai-agent-testing-limits-vertical-integration">IBM</a></li>
-</ul>
-</div>
-
-<!-- Skills & Plugins -->
-<div class="section" id="section-skills">
-<h2 id="skills--plugins">Skills &amp; Plugins</h2>
-<h3>ClawHub (Official Registry)</h3>
-<p><a href="https://clawhub.ai/">clawhub.ai</a> &mdash; <strong>5,705+ skills</strong> | <a href="https://github.com/openclaw/clawhub">GitHub</a></p>
-<h3>Awesome OpenClaw Skills</h3>
-<p><a href="https://github.com/VoltAgent/awesome-openclaw-skills">VoltAgent/awesome-openclaw-skills</a> &mdash; <strong>3,009 curated skills</strong></p>
-<h3>Notable Skills &amp; Plugins</h3>
-<div class="table-wrap"><table><thead><tr><th>Skill</th><th>Description</th></tr></thead><tbody>
-<tr><td><strong>Mixpost</strong></td><td>Social media management integration</td></tr>
-<tr><td><strong>Luma Events</strong></td><td>Search events, RSVP, sync to Google Calendar</td></tr>
-<tr><td><strong>QMD Skill</strong></td><td>Cuts token usage by 95%</td></tr>
-<tr><td><strong>Supermemory</strong></td><td>Unlimited memory for OpenClaw</td></tr>
-<tr><td><strong>ClawRouter</strong></td><td>Smart LLM router &mdash; save 78% on inference costs</td></tr>
-</tbody></table></div>
-<h3>Install a Skill</h3>
-<pre><code>openclaw skill install &lt;skill-name&gt;</code></pre>
-<blockquote><p>Always audit skills before installation. ~15% contain malicious instructions. Use VirusTotal-scanned ClawHub skills only.</p></blockquote>
-</div>
-
-<!-- Browser Automation -->
-<div class="section" id="section-browser">
-<h2 id="browser-automation">Browser Automation</h2>
-<div class="table-wrap"><table><thead><tr><th>Mode</th><th>Description</th><th>Use Case</th></tr></thead><tbody>
-<tr><td><strong>Extension Relay</strong></td><td>Control existing Chrome tabs with logged-in sessions</td><td>Personal browsing</td></tr>
-<tr><td><strong>OpenClaw-managed</strong></td><td>Isolated automation in dedicated browser</td><td>Web scraping, testing</td></tr>
-<tr><td><strong>Remote CDP</strong></td><td>Distributed cloud deployments</td><td>Scale at cloud level</td></tr>
-</tbody></table></div>
-<p>Capabilities: CDP, ARIA snapshots, screenshots, tab management, click/type/drag, PDF export, video recording.</p>
-</div>
-
-<!-- Real-World Use Cases -->
-<div class="section" id="section-use-cases">
-<h2 id="real-world-use-cases">Real-World Use Cases</h2>
-<h3>Productivity</h3>
-<ul>
-<li><strong>Morning brief</strong>: Weather, calendar, headlines before checking your phone</li>
-<li><strong>Inbox management</strong>: Process thousands of emails autonomously</li>
-<li><strong>Grocery list</strong>: Auto-add items from household texts to shared documents</li>
-</ul>
-<h3>Development</h3>
-<ul>
-<li>Review PRs from your phone, run tests remotely, merge code</li>
-<li>Multi-instance Claude Code supervised by OpenClaw via Telegram + Tailscale</li>
-</ul>
-<h3>Smart Home</h3>
-<ul>
-<li>Control Philips Hue, Elgato, Home Assistant via messaging</li>
-<li>Adjust heating based on weather forecasts</li>
-</ul>
-<h3>Creative</h3>
-<ul>
-<li>Voice notes to clean journal entries</li>
-<li>Platform-specific content: X threads, LinkedIn posts, blog articles</li>
-<li>Weekly meal planning in Notion</li>
-</ul>
-<ul>
-<li><a href="https://www.hostinger.com/tutorials/openclaw-use-cases">25 OpenClaw Use Cases - Hostinger</a></li>
-<li><a href="https://ucstrategies.com/news/20-genius-openclaw-use-cases-people-are-using-right-now/">20 Genius Use Cases</a></li>
-</ul>
-</div>
-
-<!-- Tutorials -->
-<div class="section" id="section-tutorials">
-<h2 id="tutorials--guides">Tutorials &amp; Guides</h2>
-<h3>Getting Started</h3>
-<ul>
-<li><a href="https://docs.openclaw.ai/start/getting-started">Official Getting Started</a></li>
-<li><a href="https://www.codecademy.com/article/open-claw-tutorial-installation-to-first-chat-setup">Codecademy Tutorial (20 min)</a></li>
-<li><a href="https://www.freecodecamp.org/news/openclaw-full-tutorial-for-beginners/">freeCodeCamp Full Tutorial</a></li>
-<li><a href="https://creatoreconomy.so/p/master-openclaw-in-30-minutes-full-tutorial">Master OpenClaw in 30 Minutes</a></li>
-<li><a href="https://www.datacamp.com/tutorial/moltbot-clawdbot-tutorial">DataCamp - Control Your PC from WhatsApp</a></li>
-</ul>
-<h3>Cloud Provider Guides</h3>
-<ul>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-run-openclaw">DigitalOcean</a> | <a href="https://dev.to/brayanarrieta/how-to-set-up-openclaw-ai-on-aws-3a0j">AWS</a> | <a href="https://www.pulumi.com/blog/deploy-openclaw-aws-hetzner/">Pulumi + Tailscale</a></li>
-<li><a href="https://rizwantheanalyst.com/2026/02/04/openclaw-on-google/">GCP</a> | <a href="https://techcommunity.microsoft.com/blog/azuredevcommunityblog/complete-guide-to-deploying-openclaw-on-azure-windows-11-virtual-machine/4492001">Azure</a> | <a href="https://ryanshook.org/blog/posts/openclaw-on-oracle-free-tier-always-on-ai-for-free/">Oracle Free Tier</a></li>
-<li><a href="https://www.hostinger.com/tutorials/how-to-set-up-openclaw">Hostinger</a> | <a href="https://www.alibabacloud.com/en/campaign/ai-openclaw">Alibaba Cloud</a></li>
-</ul>
-<h3>Integration Guides</h3>
-<ul>
-<li><a href="https://lumadock.com/tutorials/openclaw-slack-integration">Slack Integration</a> | <a href="https://www.openclawexperts.io/guides/integrations/how-to-connect-openclaw-to-notion">Notion Integration</a></li>
-<li><a href="https://zenvanriel.nl/ai-engineer-blog/openclaw-github-pr-review-automation-guide/">GitHub PR Automation</a></li>
-<li><a href="https://zenvanriel.nl/ai-engineer-blog/openclaw-custom-skill-creation-guide/">Custom Skill Creation</a></li>
-<li><a href="https://openrouter.ai/docs/guides/guides/openclaw-integration">OpenRouter Integration</a></li>
-</ul>
-<h3>Security Guides</h3>
-<ul>
-<li><a href="https://composio.dev/blog/secure-openclaw-moltbot-clawdbot-setup">Composio Controls</a> | <a href="https://xcloud.host/openclaw-security-best-practices">7 Security Best Practices</a></li>
-</ul>
-<h3>Deep Dives</h3>
-<ul>
-<li><a href="https://claude-world.com/articles/openclaw-vs-claude-code/">Architecture: OpenClaw vs Claude Code</a></li>
-<li><a href="https://snowan.gitbook.io/study-notes/ai-blogs/openclaw-memory-system-deep-dive">How Memory System Works</a></li>
-<li><a href="https://zenvanriel.nl/ai-engineer-blog/openclaw-cron-jobs-proactive-ai-guide/">Cron Jobs Automation Guide</a></li>
-</ul>
-</div>
-
-<!-- Video Tutorials -->
-<div class="section" id="section-video">
-<h2 id="video-tutorials">Video Tutorials</h2>
-<div class="table-wrap"><table><thead><tr><th>Title</th><th>Platform</th><th>Topics</th></tr></thead><tbody>
-<tr><td><strong>OpenClaw Full Tutorial for Beginners</strong></td><td>freeCodeCamp (YouTube)</td><td>Installation, models, memory, Docker, skills</td></tr>
-<tr><td><strong>Master OpenClaw in 30 Minutes</strong></td><td>Creator Economy</td><td>Safe setup, 5 real use cases, memory</td></tr>
-<tr><td><strong>How OpenClaw's Creator Uses AI</strong></td><td>Creator Economy</td><td>Full demo with Peter Steinberger</td></tr>
-</tbody></table></div>
-</div>
-
-<!-- Courses -->
-<div class="section" id="section-courses">
-<h2 id="courses--learning-platforms">Courses &amp; Learning Platforms</h2>
-<div class="table-wrap"><table><thead><tr><th>Platform</th><th>Cost</th><th>Description</th></tr></thead><tbody>
-<tr><td><strong><a href="https://openclaw.academy/">OpenClaw Academy</a></strong></td><td><strong>Free</strong></td><td>All courses free, no signup, interactive quizzes</td></tr>
-<tr><td><strong><a href="https://www.freecodecamp.org/news/openclaw-full-tutorial-for-beginners/">freeCodeCamp</a></strong></td><td><strong>Free</strong></td><td>Comprehensive 1-hour course</td></tr>
-<tr><td><strong><a href="https://www.codecademy.com/article/open-claw-tutorial-installation-to-first-chat-setup">Codecademy</a></strong></td><td><strong>Free</strong></td><td>20-minute install guide</td></tr>
-<tr><td><strong><a href="https://github.com/kiankyars/openclawcourse">GitHub Course</a></strong></td><td><strong>Free</strong></td><td>1-hour crash course</td></tr>
-<tr><td><strong><a href="https://www.udemy.com/course/openclaw/">Udemy</a></strong></td><td>Paid</td><td>Azure Linux VM deployment</td></tr>
-</tbody></table></div>
-</div>
-
-<!-- Community -->
-<div class="section" id="section-community">
-<h2 id="community">Community</h2>
-<div class="table-wrap"><table><thead><tr><th>Platform</th><th>URL</th><th>Members</th><th>Best For</th></tr></thead><tbody>
-<tr><td><strong>Discord</strong></td><td><a href="https://docs.openclaw.ai/channels/discord">OpenClaw Discord</a></td><td>8,000+</td><td>Quick questions, troubleshooting</td></tr>
-<tr><td><strong>Discourse (CoClaw)</strong></td><td><a href="https://coclaw.com/">coclaw.com</a></td><td>15,000+</td><td>Long-form discussion, bug reports</td></tr>
-<tr><td><strong>X/Twitter Community</strong></td><td><a href="https://x.com/i/communities/2013441068562325602">OpenClaw Community</a></td><td>12,200+</td><td>News, updates, demos</td></tr>
-<tr><td><strong>GitHub Issues</strong></td><td><a href="https://github.com/openclaw/openclaw/issues">openclaw/openclaw/issues</a></td><td>N/A</td><td>Bug reports, feature requests</td></tr>
-<tr><td><strong>GitHub Discussions</strong></td><td><a href="https://github.com/openclaw/openclaw/discussions">openclaw/openclaw/discussions</a></td><td>N/A</td><td>Q&amp;A, show-and-tell</td></tr>
-</tbody></table></div>
-</div>
-
-<!-- Media Coverage -->
-<div class="section" id="section-media-coverage">
-<h2 id="media-coverage">Media Coverage</h2>
-<h3>Mainstream</h3>
-<ul>
-<li><a href="https://www.cnbc.com/2026/02/02/openclaw-open-source-ai-agent-rise-controversy-clawdbot-moltbot-moltbook.html">CNBC - From Clawdbot to Moltbot to OpenClaw</a></li>
-<li><a href="https://techcrunch.com/2026/01/30/openclaws-ai-assistants-are-now-building-their-own-social-network/">TechCrunch - AI assistants building their own social network</a></li>
-<li><a href="https://fortune.com/2026/01/31/ai-agent-moltbot-clawdbot-openclaw-data-privacy-security-nightmare-moltbook-social-network/">Fortune - 'Most interesting place on the internet'</a></li>
-<li><a href="https://venturebeat.com/technology/what-the-openclaw-moment-means-for-enterprises-5-big-takeaways">VentureBeat - What the OpenClaw moment means for enterprises</a></li>
-<li><a href="https://www.nature.com/articles/d41586-026-00439-0">Nature - OpenClaw AI chatbots are running amok</a></li>
-</ul>
-<h3>Security</h3>
-<ul>
-<li><a href="https://www.theregister.com/2026/02/02/openclaw_security_issues/">The Register - Security issues</a></li>
-<li><a href="https://thehackernews.com/2026/02/openclaw-bug-enables-one-click-remote.html">Hacker News - One-Click RCE</a></li>
-<li><a href="https://blogs.cisco.com/ai/personal-ai-agents-like-openclaw-are-a-security-nightmare">Cisco - Security Nightmare</a></li>
-</ul>
-<h3>Global &amp; Enterprise</h3>
-<ul>
-<li><a href="https://restofworld.org/2026/moltbot-china-ai-agent/">Rest of World - Moltbot Finds Fans in China and Silicon Valley</a></li>
-<li><a href="https://en.wikipedia.org/wiki/OpenClaw">Wikipedia - OpenClaw</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Moltbook">Wikipedia - Moltbook</a></li>
-</ul>
-<h3>Opinion</h3>
-<ul>
-<li><a href="https://www.xda-developers.com/please-stop-using-openclaw/">XDA - Please stop using OpenClaw</a></li>
-<li><a href="https://newsletter.pragmaticengineer.com/p/the-creator-of-clawd-i-ship-code">Pragmatic Engineer - "I ship code I don't read"</a></li>
-</ul>
-</div>
-
-<!-- Troubleshooting -->
-<div class="section" id="section-troubleshooting">
-<h2 id="common-issues--troubleshooting">Common Issues &amp; Troubleshooting</h2>
-<div class="table-wrap"><table><thead><tr><th>Issue</th><th>Cause</th><th>Fix</th></tr></thead><tbody>
-<tr><td>Crash during onboarding</td><td>&lt; 2 GB RAM</td><td>Upgrade to 4 GB+ RAM</td></tr>
-<tr><td>API key not working</td><td>Incorrect format or expired</td><td>Re-enter via <code>openclaw auth set</code></td></tr>
-<tr><td>Telegram not connecting</td><td>Using Cloudflare Workers</td><td>Switch to VPS</td></tr>
-<tr><td>Slow inference</td><td>CPU-only with large model</td><td>Use smaller model or add GPU</td></tr>
-<tr><td>Port conflict on 18789</td><td>Another service using port</td><td><code>openclaw gateway --port 18790</code></td></tr>
-<tr><td>Docker sandbox issues</td><td>Permissions or config</td><td>Run <code>openclaw doctor</code></td></tr>
-<tr><td>High token consumption</td><td>~35,600 tokens overhead</td><td>Reduce workspace files</td></tr>
-</tbody></table></div>
-<h3>Diagnostic Commands</h3>
-<pre><code>openclaw doctor                    # Common issues
-openclaw security audit --deep     # Deep security scan
-openclaw security audit --fix      # Auto-fix safe issues
-node --version                     # Must be 22+</code></pre>
-</div>
-
-<!-- Cost Calculator -->
-<div class="section" id="section-cost-calculator">
-<h2 id="cost-calculator--optimization">Cost Calculator &amp; Optimization</h2>
-<ul>
-<li><a href="https://calculator.vlvt.sh/">OpenClaw Cost Calculator</a></li>
-<li><a href="https://docs.openclaw.ai/reference/api-usage-costs">API Usage and Costs Docs</a></li>
-<li><a href="https://yu-wenhao.com/en/blog/2026-02-01-openclaw-deploy-cost-guide/">Deploy Cost Guide: $0-8/month</a></li>
-</ul>
-<h3>Monthly Budget Targets</h3>
-<div class="table-wrap"><table><thead><tr><th>Budget</th><th>Strategy</th></tr></thead><tbody>
-<tr><td><strong>$0</strong></td><td>Oracle Cloud + Gemini free tier + Ollama</td></tr>
-<tr><td><strong>$6</strong></td><td>Agent37 ($1) + Claude Haiku ($5)</td></tr>
-<tr><td><strong>$19</strong></td><td>Hetzner ($4) + mixed models ($15)</td></tr>
-<tr><td><strong>$50</strong></td><td>DigitalOcean ($12) + Claude Sonnet ($38)</td></tr>
-<tr><td><strong>$100</strong></td><td>Managed hosting ($24) + heavy API ($76)</td></tr>
-</tbody></table></div>
-</div>
-
-<!-- Key Contributors -->
-<div class="section" id="section-contributors">
-<h2 id="key-contributors">Key Contributors</h2>
-<div class="table-wrap"><table><thead><tr><th>Contributor</th><th>Role</th><th>GitHub</th></tr></thead><tbody>
-<tr><td><strong>Peter Steinberger</strong></td><td>Creator</td><td><a href="https://github.com/steipete">@steipete</a></td></tr>
-<tr><td><strong>Mario Zechner</strong></td><td>Pi creator, security pen-tester</td><td><a href="https://github.com/badlogicc">@badlogicc</a></td></tr>
-<tr><td><strong>500+ contributors</strong></td><td>Community</td><td><a href="https://github.com/openclaw/openclaw/graphs/contributors">All contributors</a></td></tr>
-</tbody></table></div>
-</div>
-
-<!-- Related Repositories -->
-<div class="section" id="section-related-repos">
-<h2 id="related-repositories">Related Repositories</h2>
-<div class="table-wrap"><table><thead><tr><th>Repository</th><th>Description</th></tr></thead><tbody>
-<tr><td><a href="https://github.com/openclaw/openclaw">openclaw/openclaw</a></td><td>Main repository (176K+ stars)</td></tr>
-<tr><td><a href="https://github.com/openclaw/clawhub">openclaw/clawhub</a></td><td>Official skill directory</td></tr>
-<tr><td><a href="https://github.com/openclaw/lobster">openclaw/lobster</a></td><td>Typed workflow runtime</td></tr>
-<tr><td><a href="https://github.com/cloudflare/moltworker">cloudflare/moltworker</a></td><td>Cloudflare Workers adaptation</td></tr>
-<tr><td><a href="https://github.com/VoltAgent/awesome-openclaw-skills">VoltAgent/awesome-openclaw-skills</a></td><td>3,009 curated skills</td></tr>
-<tr><td><a href="https://github.com/BlockRunAI/ClawRouter">BlockRunAI/ClawRouter</a></td><td>Smart LLM router (save 78%)</td></tr>
-</tbody></table></div>
-</div>
-
-<!-- Kubernetes -->
-<div class="section" id="section-kubernetes">
-<h2 id="kubernetes--helm-charts">Kubernetes &amp; Helm Charts</h2>
-<div class="table-wrap"><table><thead><tr><th>Chart</th><th>Source</th><th>Features</th></tr></thead><tbody>
-<tr><td><strong>serhanekicii/openclaw-helm</strong></td><td><a href="https://github.com/serhanekicii/openclaw-helm">GitHub</a></td><td>Built on bjw-s app-template</td></tr>
-<tr><td><strong>waTeim/openclaw-helm</strong></td><td><a href="https://github.com/waTeim/openclaw-helm">GitHub</a></td><td>Multi-channel support</td></tr>
-</tbody></table></div>
-<ul><li><a href="https://metoro.io/blog/openclaw-kubernetes">Running OpenClaw on Kubernetes - Metoro Blog</a></li></ul>
-</div>
-
-<!-- Enterprise -->
-<div class="section" id="section-enterprise">
-<h2 id="enterprise-considerations">Enterprise Considerations</h2>
-<blockquote><p><em>"It is not enterprise software. There is no promise of quality, no vendor support, no SLA... it ships without authentication enforced by default."</em> &mdash; <strong>Gartner</strong></p></blockquote>
-<p>For organizations needing compliance, SLAs, and vendor support, consider:</p>
-<ul>
-<li><strong>Kilo Claw</strong> &mdash; SSO, audit logs, pay-as-you-go</li>
-<li><strong>ClawCloud Business</strong> &mdash; $129/mo, dedicated resources</li>
-<li>Self-hosted with <strong>NanoClaw</strong> (security-first fork) in isolated containers</li>
-</ul>
-</div>
-
-<!-- China -->
-<div class="section" id="section-china">
-<h2 id="china--global-adoption">China &amp; Global Adoption</h2>
-<div class="table-wrap"><table><thead><tr><th>Company</th><th>Integration</th><th>Details</th></tr></thead><tbody>
-<tr><td><strong>Alibaba Cloud</strong></td><td>Simple Application Server</td><td>19 regions, from $4/mo</td></tr>
-<tr><td><strong>Tencent Cloud</strong></td><td>Lighthouse Service</td><td>One-click install</td></tr>
-<tr><td><strong>ByteDance</strong></td><td>Volcano Engine</td><td>Cloud hosting support</td></tr>
-</tbody></table></div>
-<p>v2026.2.2 added native <strong>Feishu</strong> and <strong>Lark</strong> support &mdash; first official Chinese chat client integration.</p>
-</div>
-
-<!-- Latest Releases -->
-<div class="section" id="section-releases">
-<h2 id="latest-releases">Latest Releases</h2>
-<div class="table-wrap"><table><thead><tr><th>Version</th><th>Date</th><th>Key Changes</th></tr></thead><tbody>
-<tr><td><strong>v2026.2.2</strong></td><td>Feb 2026</td><td>Feishu/Lark support, onchain integrations</td></tr>
-<tr><td><strong>v2026.2.1</strong></td><td>Feb 2026</td><td>Security hardening, streaming stability, path traversal fixes</td></tr>
-<tr><td><strong>v2026.1.30</strong></td><td>Jan 30, 2026</td><td>CVE-2026-25593 &amp; CVE-2026-25475 patches</td></tr>
-<tr><td><strong>v2026.1.29</strong></td><td>Jan 29, 2026</td><td>CVE-2026-24763, CVE-2026-25253 patches, VirusTotal scanning</td></tr>
-</tbody></table></div>
-</div>
-
-<!-- Star History -->
-<div class="section" id="section-star-history">
-<h2 id="star-history">Star History</h2>
-<a href="https://star-history.com/#openclaw/openclaw&Date"><img src="https://api.star-history.com/svg?repos=openclaw/openclaw&type=Date" alt="Star History Chart" loading="lazy" style="width:100%;max-width:800px"></a>
-</div>
-
 </main>
 
 <footer class="footer">
@@ -1005,7 +236,6 @@ node --version                     # Must be 22+</code></pre>
 'use strict';
 const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
 
-// Theme
 const html=document.documentElement;
 function setTheme(t){
 if(t==='light'){html.setAttribute('data-theme','light');$('#themeIcon').innerHTML='&#9728;'}
@@ -1017,27 +247,145 @@ if(saved)setTheme(saved);
 else if(window.matchMedia('(prefers-color-scheme:light)').matches)setTheme('light');
 $('#themeToggle').addEventListener('click',()=>setTheme(html.getAttribute('data-theme')==='light'?'dark':'light'));
 
-// Copy buttons on code blocks
-$$('.content pre').forEach(pre=>{
+const btt=$('#backToTop');
+window.addEventListener('scroll',()=>btt.classList.toggle('show',window.scrollY>400),{passive:true});
+btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+const NAV_MAP={
+'what-is-openclaw':'About',
+'quick-start-1-minute':'Quick Start',
+'hosting-providers-comparison':'Hosting',
+'master-cost-comparison-table':'Costs',
+'security--hardening':'Security',
+'configuration':'Config',
+'integrations--features':'Integrations',
+'skills--plugins':'Skills',
+'tutorials--guides':'Tutorials',
+'community':'Community',
+'media-coverage':'Media'
+};
+
+async function loadReadme(){
+try{
+const res=await fetch('README.md');
+if(!res.ok) throw new Error('Failed to fetch README.md');
+let md=await res.text();
+
+md=md.replace(/^<p align="center">[\s\S]*?<\/p>\s*/gm,'');
+md=md.replace(/^<h1 align="center">[\s\S]*?<\/h1>\s*/m,'');
+
+const rendered=marked.parse(md,{breaks:false,gfm:true});
+
+const mainContent=$('#mainContent');
+mainContent.innerHTML=rendered;
+
+postProcess(mainContent);
+buildNav(mainContent);
+initScrollReveal();
+indexSearch();
+}catch(e){
+console.error('Failed to load README:',e);
+$('#mainContent').innerHTML='<p style="text-align:center;padding:40px;color:var(--text-muted)">Failed to load content. <a href="https://github.com/rohitg00/awesome-openclaw/blob/main/README.md">View README on GitHub</a></p>';
+}
+}
+
+function postProcess(container){
+container.querySelectorAll('table').forEach(table=>{
+if(table.parentElement.classList.contains('table-wrap'))return;
+const wrap=document.createElement('div');
+wrap.className='table-wrap';
+table.parentNode.insertBefore(wrap,table);
+wrap.appendChild(table);
+});
+
+container.querySelectorAll('pre').forEach(pre=>{
 const btn=document.createElement('button');
 btn.className='copy-btn';btn.textContent='Copy';
 btn.addEventListener('click',()=>{
-const code=pre.querySelector('code');
+const code=pre.querySelector('code')||pre;
 navigator.clipboard.writeText(code.textContent).then(()=>{
 btn.textContent='Copied!';btn.classList.add('copied');
 setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied')},2000);
 });
 });
+pre.style.position='relative';
 pre.appendChild(btn);
 });
 
-// Scroll reveal
-const io=new IntersectionObserver(entries=>{
-entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
-},{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
-$$('.section').forEach(s=>io.observe(s));
+container.querySelectorAll('img').forEach(img=>{
+img.setAttribute('loading','lazy');
+});
 
-// Active nav
+const h2s=container.querySelectorAll('h2');
+const sections=[];
+h2s.forEach(h2=>{
+const id=h2.textContent.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+h2.id=id;
+
+const section=document.createElement('div');
+section.className='section';
+section.id='section-'+id;
+
+h2.parentNode.insertBefore(section,h2);
+section.appendChild(h2);
+
+let next=section.nextSibling;
+while(next){
+if(next.nodeType===1 && next.tagName==='H2')break;
+if(next.nodeType===1 && next.tagName==='DIV' && next.classList.contains('section'))break;
+const move=next;
+next=next.nextSibling;
+section.appendChild(move);
+}
+sections.push(section);
+});
+
+const toc=container.querySelector('ul');
+if(toc){
+const firstLink=toc.querySelector('a');
+if(firstLink && firstLink.getAttribute('href') && firstLink.getAttribute('href').startsWith('#')){
+const tocSection=toc.closest('.section');
+if(!tocSection){
+toc.style.display='none';
+const prev=toc.previousElementSibling;
+if(prev && prev.tagName==='H2' && prev.textContent.includes('Table of Contents')){
+prev.style.display='none';
+}
+}
+}
+}
+
+container.querySelectorAll('h2').forEach(h2=>{
+if(h2.textContent.trim()==='Table of Contents'){
+const section=h2.closest('.section');
+if(section) section.style.display='none';
+}
+});
+}
+
+function buildNav(container){
+const navLinks=$('#navLinks');
+navLinks.innerHTML='';
+const h2s=container.querySelectorAll('h2');
+const added=new Set();
+h2s.forEach(h2=>{
+if(!h2.id||h2.closest('.section[style*="display: none"]')||h2.closest('.section[style*="display:none"]'))return;
+const id=h2.id;
+const label=NAV_MAP[id]||h2.textContent.replace(/[^\w\s&]/g,'').trim().split(/\s+/).slice(0,2).join(' ');
+if(added.has(id))return;
+added.add(id);
+const a=document.createElement('a');
+a.href='#'+id;
+a.setAttribute('data-target',id);
+a.textContent=label;
+navLinks.appendChild(a);
+});
+const dirLink=document.createElement('a');
+dirLink.href='directory.html';
+dirLink.textContent='Directory';
+dirLink.style.color='var(--primary)';
+navLinks.appendChild(dirLink);
+
 const navObs=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
@@ -1048,16 +396,17 @@ $$('.nav-links a').forEach(a=>a.classList.toggle('active',a.getAttribute('data-t
 });
 },{rootMargin:'-80px 0px -60% 0px',threshold:0});
 $$('.section').forEach(s=>{if(s.querySelector('h2'))navObs.observe(s)});
+}
 
-// Back to top
-const btt=$('#backToTop');
-window.addEventListener('scroll',()=>btt.classList.toggle('show',window.scrollY>400),{passive:true});
-btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+function initScrollReveal(){
+const io=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
+},{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
+$$('.section').forEach(s=>io.observe(s));
+}
 
-// Search
-const overlay=$('#searchOverlay'),searchInput=$('#searchInput'),searchResults=$('#searchResults');
 let sections=[];
-function index(){
+function indexSearch(){
 sections=[];
 $$('.section').forEach(sec=>{
 const h=sec.querySelector('h2');
@@ -1065,7 +414,9 @@ if(!h)return;
 sections.push({title:h.textContent,id:h.id,text:sec.textContent});
 });
 }
-function openSearch(){overlay.classList.add('open');searchInput.value='';searchResults.innerHTML='';searchInput.focus();if(!sections.length)index()}
+
+const overlay=$('#searchOverlay'),searchInput=$('#searchInput'),searchResults=$('#searchResults');
+function openSearch(){overlay.classList.add('open');searchInput.value='';searchResults.innerHTML='';searchInput.focus();if(!sections.length)indexSearch()}
 function closeSearch(){overlay.classList.remove('open');clearHL()}
 function doSearch(q){
 if(!q.trim()){searchResults.innerHTML='';return}
@@ -1109,6 +460,8 @@ if(e.key==='ArrowDown'){e.preventDefault();items.forEach(i=>i.classList.remove('
 else if(e.key==='ArrowUp'){e.preventDefault();items.forEach(i=>i.classList.remove('focused'));idx=Math.max(idx-1,0);items[idx].classList.add('focused');items[idx].scrollIntoView({block:'nearest'})}
 else if(e.key==='Enter'&&idx>=0){e.preventDefault();items[idx].click()}
 });
+
+loadReadme();
 })();
 </script>
 </body>

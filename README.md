@@ -655,6 +655,7 @@ docker compose run --rm openclaw-cli security audit --deep
 | **ClawBands** | Security middleware — intercepts tool execution, human-in-the-loop approval for dangerous actions | [GitHub](https://github.com/SeyZ/clawbands) |
 | **ClawGuard** | Permission manifests, runtime enforcement, sandboxing, audit logging with hash-chaining | [GitHub](https://github.com/newtro/ClawGuard) |
 | **Claw-Hunter** | MDM-ready scripts to detect and monitor shadow OpenClaw agents across macOS/Linux/Windows endpoints | [GitHub](https://github.com/backslash-security/Claw-Hunter) |
+| **Aquaman** | Credential isolation proxy — API keys never enter the agent process. Stores secrets in Keychain/1Password/Vault/encrypted-file, injects via Unix domain socket. Process-level isolation (not detection/redaction). | [GitHub](https://github.com/tech4242/aquaman) |
 
 ### Security Resources
 
@@ -1386,6 +1387,7 @@ node --version                     # Must be 22+
 | [SeyZ/clawbands](https://github.com/SeyZ/clawbands) | Security middleware — intercepts tool execution, human-in-the-loop approval for dangerous actions |
 | [newtro/ClawGuard](https://github.com/newtro/ClawGuard) | Permission manifests, runtime enforcement, sandboxing, and audit logging for OpenClaw skills |
 | [backslash-security/Claw-Hunter](https://github.com/backslash-security/Claw-Hunter) | MDM-ready detection and monitoring of shadow OpenClaw agents on managed endpoints |
+| [tech4242/aquaman](https://github.com/tech4242/aquaman) | Credential isolation proxy — API keys never enter the agent process, injected via UDS from Keychain/1Password/Vault |
 | [BotMesh/debot](https://github.com/BotMesh/debot) | Rust+Python lightweight alternative — auto conversation compaction, intelligent LLM router |
 | [lekt9/unbrowse-openclaw](https://github.com/lekt9/unbrowse-openclaw) | Self-learning API skill generator — auto-discovers APIs from browser traffic, 100x faster |
 | [lekt9/openclaw-foundry](https://github.com/lekt9/openclaw-foundry) | Self-writing meta-extension — learns how you work, writes new capabilities into itself (97 stars) |

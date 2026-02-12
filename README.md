@@ -901,7 +901,6 @@ tar -czvf ~/openclaw_backup_$(date +%Y%m%d).tar.gz -C "$HOME" .openclaw
 | [**Ralv**](https://ralv.ai/) | 3D agent orchestration | Multi-agent management | StarCraft-like spatial UI for commanding 100+ agents |
 | [**GitClaw**](https://github.com/SawyerHood/gitclaw) | GitHub Actions agent | Serverless | Zero-infra OpenClaw via GitHub Issues & Actions |
 | [**BankrBot Skills**](https://github.com/BankrBot/openclaw-skills) | DeFi/crypto agent | Web3 traders | Polymarket, token trading, NFTs, on-chain messaging |
-| [**PumpClaw**](https://pumpclaw.com) | Free token launcher on Base | AI agents & traders | Uniswap V4, 80% creator fees, LP locked, CLI + Farcaster deploy |
 
 ---
 
@@ -1007,7 +1006,7 @@ Capabilities: CDP, ARIA snapshots, screenshots, tab management, click/type/drag,
 ### Financial
 - Calculate position sizes, manage stop-loss rules
 - Trade alert logging and automation
-- Launch tokens on Base via [PumpClaw](https://pumpclaw.com) — free deployment, 80% creator fees, Uniswap V4 pools
+- Deploy and manage token liquidity on Base via [PumpClaw](https://pumpclaw.com) (Uniswap V4 integration)
 
 ### Creative
 - Voice notes to clean journal entries

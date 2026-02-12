@@ -328,6 +328,10 @@ postProcess(mainContent);
 buildNav(mainContent);
 initScrollReveal();
 indexSearch();
+if(window.location.hash){
+const target=document.getElementById(window.location.hash.slice(1));
+if(target)setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'start'}),100);
+}
 }catch(e){
 console.error('Failed to load README:',e);
 $('#mainContent').innerHTML='<p style="text-align:center;padding:40px;color:var(--text-muted)">Failed to load content. <a href="https://github.com/rohitg00/awesome-openclaw/blob/main/README.md">View README on GitHub</a></p>';

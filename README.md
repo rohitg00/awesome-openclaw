@@ -1006,7 +1006,7 @@ Capabilities: CDP, ARIA snapshots, screenshots, tab management, click/type/drag,
 ### Financial
 - Calculate position sizes, manage stop-loss rules
 - Trade alert logging and automation
-- Deploy and manage token liquidity on Base via [PumpClaw](https://pumpclaw.com) (Uniswap V4 integration)
+- Integrate with on-chain token deployment and liquidity provisioning on Base (e.g., [PumpClaw](https://pumpclaw.com) via Uniswap V4)
 
 ### Creative
 - Voice notes to clean journal entries
@@ -1310,7 +1310,7 @@ node --version                     # Must be 22+
 | [nearai/ironclaw](https://github.com/nearai/ironclaw) | OpenClaw-inspired implementation in Rust focused on privacy and security, by NEAR AI |
 | [SawyerHood/gitclaw](https://github.com/SawyerHood/gitclaw) | OpenClaw on GitHub Actions — every issue becomes an AI chat thread, no servers needed |
 | [BankrBot/openclaw-skills](https://github.com/BankrBot/openclaw-skills) | DeFi/crypto skill library — Polymarket, token trading, NFTs, on-chain messaging |
-| [clawd800/pumpclaw](https://github.com/clawd800/pumpclaw) | Free token launcher for AI agents on Base (Uniswap V4) — 80% creator fees, LP locked forever, agent-friendly CLI |
+| [clawd800/pumpclaw](https://github.com/clawd800/pumpclaw) | Token launcher for AI agents on Base — Uniswap V4 pools, on-chain registry, CLI and Farcaster deploy bot |
 | [SamurAIGPT/awesome-openclaw](https://github.com/SamurAIGPT/awesome-openclaw) | Community-curated list of OpenClaw resources, tools, and tutorials |
 | [nearai/private-ml-sdk](https://github.com/nearai/private-ml-sdk) | Run LLMs and agents on TEEs (NVIDIA GPU TEE, Intel TDX) for private inference |
 | [eltociear/awesome-molt-ecosystem](https://github.com/eltociear/awesome-molt-ecosystem) | Curated list of Molt ecosystem services — Moltbook, MoltCities, Molthunt, MoltMatch |

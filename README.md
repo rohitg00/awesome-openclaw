@@ -901,6 +901,7 @@ tar -czvf ~/openclaw_backup_$(date +%Y%m%d).tar.gz -C "$HOME" .openclaw
 | [**Ralv**](https://ralv.ai/) | 3D agent orchestration | Multi-agent management | StarCraft-like spatial UI for commanding 100+ agents |
 | [**GitClaw**](https://github.com/SawyerHood/gitclaw) | GitHub Actions agent | Serverless | Zero-infra OpenClaw via GitHub Issues & Actions |
 | [**BankrBot Skills**](https://github.com/BankrBot/openclaw-skills) | DeFi/crypto agent | Web3 traders | Polymarket, token trading, NFTs, on-chain messaging |
+| [**PumpClaw**](https://pumpclaw.com) | Free token launcher on Base | AI agents & traders | Uniswap V4, 80% creator fees, LP locked, CLI + Farcaster deploy |
 
 ---
 
@@ -1006,6 +1007,7 @@ Capabilities: CDP, ARIA snapshots, screenshots, tab management, click/type/drag,
 ### Financial
 - Calculate position sizes, manage stop-loss rules
 - Trade alert logging and automation
+- Launch tokens on Base via [PumpClaw](https://pumpclaw.com) — free deployment, 80% creator fees, Uniswap V4 pools
 
 ### Creative
 - Voice notes to clean journal entries
@@ -1309,6 +1311,7 @@ node --version                     # Must be 22+
 | [nearai/ironclaw](https://github.com/nearai/ironclaw) | OpenClaw-inspired implementation in Rust focused on privacy and security, by NEAR AI |
 | [SawyerHood/gitclaw](https://github.com/SawyerHood/gitclaw) | OpenClaw on GitHub Actions — every issue becomes an AI chat thread, no servers needed |
 | [BankrBot/openclaw-skills](https://github.com/BankrBot/openclaw-skills) | DeFi/crypto skill library — Polymarket, token trading, NFTs, on-chain messaging |
+| [clawd800/pumpclaw](https://github.com/clawd800/pumpclaw) | Free token launcher for AI agents on Base (Uniswap V4) — 80% creator fees, LP locked forever, agent-friendly CLI |
 | [SamurAIGPT/awesome-openclaw](https://github.com/SamurAIGPT/awesome-openclaw) | Community-curated list of OpenClaw resources, tools, and tutorials |
 | [nearai/private-ml-sdk](https://github.com/nearai/private-ml-sdk) | Run LLMs and agents on TEEs (NVIDIA GPU TEE, Intel TDX) for private inference |
 | [eltociear/awesome-molt-ecosystem](https://github.com/eltociear/awesome-molt-ecosystem) | Curated list of Molt ecosystem services — Moltbook, MoltCities, Molthunt, MoltMatch |

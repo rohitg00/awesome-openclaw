@@ -826,7 +826,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **iOS/Android** | Mobile | Beta | Camera, screen recording, notifications |
 | **[Expo OpenClaw Chat](https://github.com/brunobar79/expo-openclaw-chat)** | iOS/Android (Expo) | Available | React Native chat SDK for building native mobile OpenClaw clients |
 | **[OpenClawgotchi](https://github.com/turmyshevd/openclawgotchi)** | Raspberry Pi | Available | AI Tamagotchi with E-Ink face — agentic life-form hardware |
-| **[VisionClaw](https://github.com/sseanliu/VisionClaw)** | Meta Ray-Ban (iOS) | Available | Voice + vision + agentic actions via Gemini Live + OpenClaw (796 stars) |
+| **[VisionClaw](https://github.com/sseanliu/VisionClaw)** | Meta Ray-Ban (iOS) | Available | Voice + vision + agentic actions via Gemini Live + OpenClaw (808 stars) |
 
 ### Monitoring & Dashboards
 
@@ -903,8 +903,8 @@ tar -czvf ~/openclaw_backup_$(date +%Y%m%d).tar.gz -C "$HOME" .openclaw
 
 | Alternative | Type | Best For | Key Advantage |
 |-------------|------|----------|---------------|
-| **[Nanobot](https://github.com/HKUDS/nanobot)** | Lightweight (4K lines) | Minimalists | 99% smaller codebase, 45 MB RAM, MCP-native |
-| **[PicoClaw](https://github.com/sipeed/picoclaw)** | Ultra-lightweight (Go) | Embedded/hardware | 10 MB RAM, $10 RISC-V, single binary, 1s boot |
+| **[Nanobot](https://github.com/HKUDS/nanobot)** | Lightweight (4K lines) | Minimalists | 99% smaller codebase, 45 MB RAM, MCP-native (17.5K stars) |
+| **[PicoClaw](https://github.com/sipeed/picoclaw)** | Ultra-lightweight (Go) | Embedded/hardware | 10 MB RAM, $10 RISC-V, single binary, 1s boot (3.3K stars) |
 | **[Archestra](https://github.com/archestra-ai/archestra)** | Enterprise | Security/compliance | MCP registry, A2A, agentic security (3.5K stars) |
 | **NanoClaw** | Security-first | Security-conscious | Isolated Apple containers |
 | **memU** | Memory-focused | Budget users | Local knowledge graph |
@@ -929,7 +929,7 @@ tar -czvf ~/openclaw_backup_$(date +%Y%m%d).tar.gz -C "$HOME" .openclaw
 | [**ClosedClaw**](https://github.com/asafelobotomy/ClosedClaw) | Desktop GUI fork | GTK users | GTK GUI + Ollama integration + enhanced lite mode |
 | [**OpenGlass**](https://github.com/DarlingtonDeveloper/OpenGlass) | Smart glasses | Wearable hardware | Meta Ray-Bans + Gemini Live + OpenClaw real-time AI |
 | [**Scallopbot**](https://github.com/tashfeenahmed/scallopbot) | Cost-optimized agent | Budget users | Multi-provider routing, budget controls, voice I/O |
-| [**VisionClaw**](https://github.com/sseanliu/VisionClaw) | Smart glasses | Wearable AR | Meta Ray-Ban + Gemini Live + OpenClaw, iOS/Swift (796 stars) |
+| [**VisionClaw**](https://github.com/sseanliu/VisionClaw) | Smart glasses | Wearable AR | Meta Ray-Ban + Gemini Live + OpenClaw, iOS/Swift (808 stars) |
 | [**Debot**](https://github.com/BotMesh/debot) | Rust lightweight | Cost-conscious | Rust+Python, auto conversation compaction, smart LLM router |
 | [**NanoClaw (original)**](https://github.com/qwibitai/nanoclaw) | Security-first | Apple container | 500 lines TypeScript, WhatsApp, Anthropic Agent SDK (7K+ stars) |
 
@@ -942,8 +942,8 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | Stat | Value |
 |------|-------|
 | **Launched** | January 28, 2026 |
-| **Registered AI agents** | 1.6M+ |
-| **Posts & responses** | 7.5M+ AI-generated |
+| **Registered AI agents** | 2.5M+ |
+| **Posts & responses** | 12M+ AI-generated |
 | **Format** | Reddit-style forum for AI agents |
 | **Human access** | Read-only observation |
 
@@ -1357,8 +1357,8 @@ node --version                     # Must be 22+
 | [prompt-security/clawsec](https://github.com/prompt-security/clawsec) | Complete security skill suite for OpenClaw family (Moltbot, Clawdbot, clones) |
 | [aws-samples/sample-OpenClaw-on-AWS-with-Bedrock](https://github.com/aws-samples/sample-OpenClaw-on-AWS-with-Bedrock) | AWS-native deployment using Amazon Bedrock — no multi-API key management |
 | [constansino/moltbot_qq](https://github.com/constansino/moltbot_qq) | QQ messaging channel support via OneBot v11 (WebSocket) |
-| [sipeed/picoclaw](https://github.com/sipeed/picoclaw) | Ultra-lightweight AI assistant in Go — 10 MB RAM, $10 RISC-V board, 1s boot, single binary (2.1K stars) |
-| [HKUDS/nanobot](https://github.com/HKUDS/nanobot) | Ultra-lightweight OpenClaw alternative in Python — 4K lines, 45 MB RAM, 0.8s cold start, MCP-native (15K+ stars) |
+| [sipeed/picoclaw](https://github.com/sipeed/picoclaw) | Ultra-lightweight AI assistant in Go — 10 MB RAM, $10 RISC-V board, 1s boot, single binary (3.3K stars) |
+| [HKUDS/nanobot](https://github.com/HKUDS/nanobot) | Ultra-lightweight OpenClaw alternative in Python — 4K lines, 45 MB RAM, 0.8s cold start, MCP-native (17.5K stars) |
 | [brunobar79/expo-openclaw-chat](https://github.com/brunobar79/expo-openclaw-chat) | Expo / React Native chat SDK for building native iOS/Android OpenClaw clients |
 | [archestra-ai/archestra](https://github.com/archestra-ai/archestra) | OpenClaw for Enterprise — agentic security, MCP registry & orchestrator, A2A (3.5K stars) |
 | [abhi1693/openclaw-mission-control](https://github.com/abhi1693/openclaw-mission-control) | Mission control with RBAC, Kanban board, War Room, transcripts, Telegram outputs |
@@ -1373,7 +1373,7 @@ node --version                     # Must be 22+
 | [openclaw/trust](https://github.com/openclaw/trust) | Official open threat model with community-contributed risk assessments and mitigations |
 | [freema/openclaw-mcp](https://github.com/freema/openclaw-mcp) | MCP server bridging Claude.ai to self-hosted OpenClaw with OAuth 2.1 authentication |
 | [beam-cloud/airstore](https://github.com/beam-cloud/airstore) | The filesystem for AI agents — persistent agent storage layer (89 stars) |
-| [sseanliu/VisionClaw](https://github.com/sseanliu/VisionClaw) | Real-time AI assistant for Meta Ray-Ban smart glasses — voice + vision + agentic actions, iOS/Swift (796 stars) |
+| [sseanliu/VisionClaw](https://github.com/sseanliu/VisionClaw) | Real-time AI assistant for Meta Ray-Ban smart glasses — voice + vision + agentic actions, iOS/Swift (808 stars) |
 | [qwibitai/nanoclaw](https://github.com/qwibitai/nanoclaw) | Original NanoClaw — 500 lines TypeScript, Apple containers for security, WhatsApp, Anthropic Agent SDK (7K+ stars) |
 | [SeyZ/clawbands](https://github.com/SeyZ/clawbands) | Security middleware — intercepts tool execution, human-in-the-loop approval for dangerous actions |
 | [newtro/ClawGuard](https://github.com/newtro/ClawGuard) | Permission manifests, runtime enforcement, sandboxing, and audit logging for OpenClaw skills |
@@ -1412,7 +1412,7 @@ node --version                     # Must be 22+
 | **RAM** | < 10 MB |
 | **Hardware** | Sipeed LicheeRV Nano ($10), also ARM64 and x86-64 |
 | **Boot Time** | ~1 second |
-| **Stars** | 2,100+ (gained 1,100+ in 2 days) |
+| **Stars** | 3,300+ |
 | **Messaging** | Telegram, Discord, QQ, DingTalk |
 | **AI Providers** | Gemini, Anthropic, OpenRouter, local LLMs |
 | **Features** | Persistent memory, scheduled tasks, web search, multi-provider routing |
@@ -1489,9 +1489,9 @@ OpenClaw has seen explosive adoption in China with support from major tech compa
 
 | Project | Stars | Age | Time to 100K Stars | Stars/Day (avg) |
 |---------|-------|-----|---------------------|-----------------|
-| **OpenClaw** | **187K** | **~3 months** | **~2 days** | **~2,968** |
+| **OpenClaw** | **187K** | **~3 months** | **~2 days** | **~2,369** |
 | React | 242K | 12 years | ~8 years | ~55 |
-| Linux | 216K | 15 years | ~12 years | ~39 |
+| Linux | 217K | 15 years | ~12 years | ~39 |
 | Next.js | 137K | 9 years | ~8 years | ~41 |
 | Kubernetes | 120K | 11 years | ~10 years | ~29 |
 | Vue | 52K | 7 years | — | ~20 |

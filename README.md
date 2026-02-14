@@ -655,6 +655,7 @@ docker compose run --rm openclaw-cli security audit --deep
 | **ClawBands** | Security middleware — intercepts tool execution, human-in-the-loop approval for dangerous actions | [GitHub](https://github.com/SeyZ/clawbands) |
 | **ClawGuard** | Permission manifests, runtime enforcement, sandboxing, audit logging with hash-chaining | [GitHub](https://github.com/newtro/ClawGuard) |
 | **Claw-Hunter** | MDM-ready scripts to detect and monitor shadow OpenClaw agents across macOS/Linux/Windows endpoints | [GitHub](https://github.com/backslash-security/Claw-Hunter) |
+| **Orchard Kit** | Complete alignment and safety architecture — membrane security (Calyx Protocol), continuous trust verification with heartbeat, epistemic hygiene, emergence protocols, and defence tools. Based on 30 years of cybernetic research | [GitHub](https://github.com/OrchardHarmonics/orchard-kit) |
 
 ### Security Resources
 
@@ -673,6 +674,7 @@ docker compose run --rm openclaw-cli security audit --deep
 - [Belgium CCB Advisory](https://ccb.belgium.be/advisories/warning-critical-vulnerability-openclaw-allows-1-click-remote-code-execution-when)
 - [University of Toronto Advisory](https://security.utoronto.ca/advisories/openclaw-vulnerability-notification/)
 - [n8n + OpenClaw Security White Paper](https://gripsy.com.au/research/n8n-openclaw-security-whitepaper.html) — Security analysis of n8n and OpenClaw integration patterns: credential isolation via n8n proxy, webhook hardening, network architecture, and threat modeling for production deployments. Peer-reviewed with multi-model validation. By Dr. Gaurav Caprihan.
+- [The Calyx Protocol](https://github.com/OrchardHarmonics/orchard-kit/blob/main/01_CALYX_PROTOCOL.md) — Permeability-based security model replacing binary allow/deny with membrane architecture. Addresses prompt injection, data exfiltration, and skill poisoning through ethics-weighted signal routing. Derived from the Codex Harmonicae (30 years cybernetic research). By Kimberley Asher.
 
 ---
 

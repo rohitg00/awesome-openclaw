@@ -843,6 +843,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[OpenClawgotchi](https://github.com/turmyshevd/openclawgotchi)** | Raspberry Pi | Available | AI Tamagotchi with E-Ink face — agentic life-form hardware |
 | **[VisionClaw](https://github.com/sseanliu/VisionClaw)** | Meta Ray-Ban (iOS) | Available | Voice + vision + agentic actions via Gemini Live + OpenClaw (796 stars) |
 | **[PinchChat](https://github.com/MarlBurroW/pinchchat)** | Web (PWA) | Available | Open-source webchat UI with ChatGPT-like interface, live tool calls, multi-session, token tracking, streaming, 8 languages, theming |
+| **[VibeClaw](https://vibeclaw.dev)** | Web | Available | Browser-based OpenClaw server configurator — visual builder, sandbox preview with free AI models, chat interface, server library with import/export ([source](https://github.com/jasonkneen/vibeclaw)) |
 
 ### Monitoring & Dashboards
 

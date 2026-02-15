@@ -1306,11 +1306,11 @@ node --version                     # Must be 22+
 
 ## Cost Calculator & Optimization
 
-- [**Cost Governor**](https://github.com/AtlasPA/openclaw-cost-governor) - 💰 First OpenClaw skill with x402 agent payments. Track LLM costs in real-time, enforce budget limits with circuit breakers, enable AI agents to autonomously pay for Pro features (0.5 USDT/month). If it saves >0.5 USDT/month in optimized costs, it pays for itself.
 - [OpenClaw Cost Calculator](https://calculator.vlvt.sh/)
 - [API Usage and Costs Docs](https://docs.openclaw.ai/reference/api-usage-costs)
 - [eesel.ai Pricing Guide](https://www.eesel.ai/blog/openclaw-ai-pricing)
 - [Deploy Cost Guide: $0-8/month](https://yu-wenhao.com/en/blog/2026-02-01-openclaw-deploy-cost-guide/)
+- [**Cost Governor**](https://github.com/AtlasPA/openclaw-cost-governor) — First OpenClaw skill with x402 agent payments. Track LLM costs in real-time, enforce budget limits with circuit breakers, enable AI agents to autonomously pay for Pro features (0.5 USDT/month).
 
 ### Monthly Budget Targets
 

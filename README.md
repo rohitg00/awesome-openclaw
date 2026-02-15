@@ -656,6 +656,7 @@ docker compose run --rm openclaw-cli security audit --deep
 | **ClawGuard** | Permission manifests, runtime enforcement, sandboxing, audit logging with hash-chaining | [GitHub](https://github.com/newtro/ClawGuard) |
 | **Claw-Hunter** | MDM-ready scripts to detect and monitor shadow OpenClaw agents across macOS/Linux/Windows endpoints | [GitHub](https://github.com/backslash-security/Claw-Hunter) |
 | **Aquaman** | Credential isolation proxy — API keys never enter the agent process. Stores secrets in Keychain/1Password/Vault/encrypted-file, injects via Unix domain socket. Process-level isolation (not detection/redaction). | [GitHub](https://github.com/tech4242/aquaman) |
+| **Orchard Kit** | Complete alignment and safety architecture — membrane security (Calyx Protocol), continuous trust verification with heartbeat, epistemic hygiene, and defence tools. Includes a ready-to-install OpenClaw skill for agent self-governance. Based on 30 years of cybernetic research | [GitHub](https://github.com/OrchardHarmonics/orchard-kit) |
 
 ### Security Resources
 
@@ -674,6 +675,7 @@ docker compose run --rm openclaw-cli security audit --deep
 - [Belgium CCB Advisory](https://ccb.belgium.be/advisories/warning-critical-vulnerability-openclaw-allows-1-click-remote-code-execution-when)
 - [University of Toronto Advisory](https://security.utoronto.ca/advisories/openclaw-vulnerability-notification/)
 - [n8n + OpenClaw Security White Paper](https://gripsy.com.au/research/n8n-openclaw-security-whitepaper.html) — Security analysis of n8n and OpenClaw integration patterns: credential isolation via n8n proxy, webhook hardening, network architecture, and threat modeling for production deployments. Peer-reviewed with multi-model validation. By Dr. Gaurav Caprihan.
+- [The Calyx Protocol](https://github.com/OrchardHarmonics/orchard-kit/blob/main/01_CALYX_PROTOCOL.md) — Permeability-based security model replacing binary allow/deny with membrane architecture. Addresses prompt injection, data exfiltration, and skill poisoning through ethics-weighted signal routing. Derived from the Codex Harmonicae (30 years cybernetic research). By Kimberley Asher.
 
 ---
 
@@ -805,6 +807,7 @@ Full suite access: Gmail, Calendar, Drive, Docs, Sheets. All data stays local �
 - [Webhooks Docs](https://docs.openclaw.ai/automation/webhook)
 - [Cron Jobs Docs](https://docs.openclaw.ai/automation/cron-jobs)
 - [Heartbeat Docs](https://docs.openclaw.ai/gateway/heartbeat)
+- **[ClawTick](https://clawtick.com/)** — Cloud scheduler for OpenClaw agents with performance monitoring and uptime checks.
 
 ### Live Canvas
 
@@ -841,6 +844,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[OpenClaw Mission Control](https://github.com/abhi1693/openclaw-mission-control)** | Community | RBAC, Kanban board, War Room, transcripts, Telegram output (37 stars) |
 | **[OpenClaw Studio](https://github.com/grp06/openclaw-studio)** | Community | Visual agent management with cron jobs, tool extraction, mentions (410 stars) |
 | **[Hawk Eye](https://github.com/benfoxsb/hawk-eye)** | Community | Workspace sentinel & operational dashboard |
+| **[ClawTick](https://clawtick.com/)** | Third-party | Performance monitoring, uptime checks, and real-time analytics for OpenClaw instances. |
 
 ### Backup & Restore
 
@@ -991,6 +995,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **Unbrowse** | Self-learning API skill generator — auto-discovers APIs from browser traffic, 100x faster than browser automation | [GitHub](https://github.com/lekt9/unbrowse-openclaw) |
 | **Foundry** | Self-writing meta-extension — learns how you work, researches docs, writes new capabilities into itself | [GitHub](https://github.com/lekt9/openclaw-foundry) |
 | **Supermemory (Official)** | Official Supermemory integration — perfect memory and recall, auto-stores conversations | [GitHub](https://github.com/supermemoryai/openclaw-supermemory) |
+| **AfrexAI Skills** | 13 free business skills: prospect research, cold email, competitor analysis, meeting prep, LinkedIn, ICP builder, CRM, invoicing, SEO, daily briefing, objection handling, email triage, humanizer | [Setup Wizard](https://afrexai-cto.github.io/agent-setup/) \| [Revenue Calculator](https://afrexai-cto.github.io/ai-revenue-calculator/) \| [Context Packs](https://afrexai-cto.github.io/context-packs/) |
 
 ### Third-Party Platforms
 

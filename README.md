@@ -21,7 +21,7 @@
   <a href="https://github.com/openclaw/openclaw/releases"><img src="https://img.shields.io/github/v/release/openclaw/openclaw?include_prereleases&label=Release&color=orange" alt="Release"></a>
   <a href="https://discord.gg/openclaw"><img src="https://img.shields.io/discord/1456350064065904867?label=Discord&logo=discord&logoColor=white&color=5865F2" alt="Discord"></a>
   <br>
-  <em>Fastest-growing GitHub repo ever — 9K to 179K stars in 60 days (18x faster than Kubernetes)</em>
+  <em>Fastest-growing GitHub repo ever — 9K to 195K stars in 66 days (18x faster than Kubernetes)</em>
 </p>
 
 <p align="center">

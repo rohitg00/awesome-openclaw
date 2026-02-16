@@ -145,10 +145,12 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .tweet-embed .tweet-body{font-size:.95rem;color:var(--text-muted);line-height:1.7;margin-bottom:14px}
 .tweet-embed .tweet-body strong{color:var(--text)}
 .tweet-embed .tweet-date{font-size:.75rem;color:var(--text-muted)}
-.tweet-embed .tweet-link{display:inline-flex;align-items:center;gap:4px;font-size:.8rem;color:var(--link);text-decoration:none;margin-left:8px}
-.tweet-embed .tweet-link:hover{text-decoration:underline}
 .tweet-embed .tweet-stats{display:flex;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid var(--card-border)}
 .tweet-embed .tweet-stat{font-size:.8rem;color:var(--text-muted);display:flex;align-items:center;gap:4px}
+.tweet-embed .tweet-link{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--link);text-decoration:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--card-border);transition:color .2s}
+.tweet-embed .tweet-link:hover{color:var(--link-hover);text-decoration:underline}
+a.tweet-embed{text-decoration:none;color:inherit;display:block;cursor:pointer}
+a.tweet-embed:hover{border-color:rgba(220,38,38,0.3);transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,0.2)}
 
 .source-ref{margin:16px 0;padding:14px 18px;border-radius:10px;border:1px solid var(--card-border);background:var(--bg-s1);display:flex;align-items:flex-start;gap:12px;font-size:.85rem;color:var(--text-muted);transition:border-color .2s}
 .source-ref:hover{border-color:rgba(220,38,38,0.3)}
@@ -274,7 +276,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 
 <p>While researching costs across community forums and GitHub discussions, I found users reporting <strong>180 million tokens</strong> burned in a single month &mdash; roughly <strong>$3,600 in API costs</strong> for what's supposed to be a "free" tool. And this isn't an isolated case. Here's one example that caught my attention:</p>
 
-<div class="tweet-embed">
+<a href="https://x.com/viticci" target="_blank" rel="noopener" class="tweet-embed">
 <div class="tweet-author">
 <div class="tweet-name">Federico Viticci</div>
 <div class="tweet-handle">@viticci</div>
@@ -283,7 +285,8 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 180 million tokens in a month with OpenClaw. Roughly <strong>$3,600</strong> in API costs.
 </div>
 <div class="tweet-date">Jan 2026</div>
-</div>
+<div class="tweet-link">View on X &rarr;</div>
+</a>
 
 <p>This isn't an outlier. Here's what I found across community reports:</p>
 
@@ -438,7 +441,7 @@ On every session start:
 
 <p>After testing model routing across multiple setups, the results were consistent: <strong>50-80% cost reduction</strong> just by defaulting to Haiku and reserving Sonnet for complex reasoning. Others in the community are seeing the same thing:</p>
 
-<div class="tweet-embed">
+<a href="https://x.com/zenvanriel" target="_blank" rel="noopener" class="tweet-embed">
 <div class="tweet-author">
 <div class="tweet-name">Zen Van Riel</div>
 <div class="tweet-handle">@zenvanriel</div>
@@ -447,7 +450,8 @@ On every session start:
 Smart model routing cut my OpenClaw costs by <strong>60%</strong>. Route simple tasks to Haiku or Gemini Flash-Lite. Reserve Sonnet for real work.
 </div>
 <div class="tweet-date">Jan 2026</div>
-</div>
+<div class="tweet-link">View on X &rarr;</div>
+</a>
 
 <p>The difference between $0.003/1K tokens and $0.0005/1K is <strong>6x</strong>. Most tasks simply don't need frontier-level intelligence.</p>
 

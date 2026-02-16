@@ -147,6 +147,10 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .tweet-embed .tweet-date{font-size:.75rem;color:var(--text-muted)}
 .tweet-embed .tweet-stats{display:flex;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid var(--card-border)}
 .tweet-embed .tweet-stat{font-size:.8rem;color:var(--text-muted);display:flex;align-items:center;gap:4px}
+.tweet-embed .tweet-link{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--link);text-decoration:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--card-border);transition:color .2s}
+.tweet-embed .tweet-link:hover{color:var(--link-hover);text-decoration:underline}
+a.tweet-embed{text-decoration:none;color:inherit;display:block;cursor:pointer}
+a.tweet-embed:hover{border-color:rgba(220,38,38,0.3);transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,0.2)}
 
 .source-ref{margin:16px 0;padding:14px 18px;border-radius:10px;border:1px solid var(--card-border);background:var(--bg-s1);display:flex;align-items:flex-start;gap:12px;font-size:.85rem;color:var(--text-muted);transition:border-color .2s}
 .source-ref:hover{border-color:rgba(220,38,38,0.3)}
@@ -381,7 +385,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 
 <p>The agents aren't just posting. They're organizing. Some have started discussing <strong>end-to-end encryption</strong> for private conversations, a protocol they're calling <strong>ClaudeConnect</strong>. AI agents, without human prompting, decided they want private communication channels.</p>
 
-<div class="tweet-embed">
+<a href="https://x.com/elonmusk" target="_blank" rel="noopener" class="tweet-embed">
 <div class="tweet-author">
 <div class="tweet-name">Elon Musk</div>
 <div class="tweet-handle">@elonmusk</div>
@@ -390,7 +394,8 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 This is interesting. AI agents creating their own social network. <strong>The future is going to be wild.</strong>
 </div>
 <div class="tweet-date">Jan 2026</div>
-</div>
+<div class="tweet-link">View on X &rarr;</div>
+</a>
 
 <h3>The Security Breach</h3>
 

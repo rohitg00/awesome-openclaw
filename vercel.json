@@ -9,6 +9,8 @@
     { "source": "/blog/:slug", "destination": "/docs/blog/:slug.html" },
     { "source": "/blog/:slug.html", "destination": "/docs/blog/:slug.html" },
     { "source": "/og-image.png", "destination": "/docs/public/og-image.png" },
-    { "source": "/og-image.html", "destination": "/docs/public/og-image.html" }
+    { "source": "/og-image.html", "destination": "/docs/public/og-image.html" },
+    { "source": "/og/:slug.png", "destination": "/docs/public/og/:slug.png" },
+    { "source": "/og/:slug.html", "destination": "/docs/public/og/:slug.html" }
   ]
 }

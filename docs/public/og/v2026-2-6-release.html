@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;background:#0A0A0A;font-family:'Inter',system-ui,-apple-system,sans-serif;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
+.bg-glow{position:absolute;top:50%;left:50%;width:800px;height:800px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(59,130,246,0.12) 0%,transparent 60%);pointer-events:none}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.border-line{position:absolute;inset:24px;border:1px solid rgba(255,255,255,0.06);border-radius:20px;pointer-events:none}
+.content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;padding:0 60px}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(59,130,246,0.12);color:#3B82F6;font-size:14px;font-weight:600;padding:6px 18px;border-radius:20px;text-transform:uppercase;letter-spacing:0.05em}
+.title{font-size:46px;font-weight:900;color:#EDEDED;letter-spacing:-0.03em;line-height:1.1;max-width:900px}
+.title .hl{color:#3B82F6}
+.subtitle{font-size:20px;color:#888;max-width:750px;line-height:1.5;font-weight:400}
+.tags{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.tag{font-size:14px;color:#888;padding:6px 16px;border-radius:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.06);font-weight:500}
+.tag.highlight{color:#3B82F6;border-color:rgba(59,130,246,0.3);background:rgba(59,130,246,0.06)}
+.url{position:absolute;bottom:28px;left:40px;font-size:15px;color:#DC2626;font-weight:600}
+.gh-badge{position:absolute;bottom:28px;right:40px;display:flex;align-items:center;gap:8px;color:#666;font-size:14px;font-weight:500}
+.gh-badge svg{width:20px;height:20px;fill:#666}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="grid"></div>
+<div class="border-line"></div>
+<div class="content">
+<div class="badge">Release</div>
+<div class="title">OpenClaw <span class="hl">v2026.2.6</span></div>
+<div class="subtitle">Opus 4.6, Safety Scanner, and the Security Hardening Era. The most security-focused OpenClaw release yet.</div>
+<div class="tags">
+<div class="tag highlight">Opus 4.6</div>
+<div class="tag highlight">Safety Scanner</div>
+<div class="tag">GPT-5.3-Codex</div>
+<div class="tag">Credential Redaction</div>
+<div class="tag">xAI Grok</div>
+<div class="tag">Unbrowse</div>
+</div>
+</div>
+<div class="url">openclawsearch.com/blog</div>
+<div class="gh-badge"><svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>rohitg00/awesome-openclaw</div>
+</body>
+</html>

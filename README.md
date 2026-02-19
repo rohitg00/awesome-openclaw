@@ -196,6 +196,7 @@ That's it. The wizard walks you through API key setup, channel configuration, an
 | **[PicoClaw (RISC-V)](https://github.com/sipeed/picoclaw)** | 5 min | Easy | Single Go binary, 10 MB RAM, $10 RISC-V board |
 | **[ZeroClaw (Rust)](https://github.com/theonlyhennygod/zeroclaw)** | 2 min | Easy | 3.4 MB binary, <10ms startup, 22+ providers |
 | **[TinyClaw (Shell)](https://github.com/jlia0/tinyclaw)** | 5 min | Easy | 400 LoC, Claude Code + tmux, self-healing |
+| **[Autobot (Crystal)](https://github.com/crystal-autobot/autobot)** | 2 min | Easy | 2MB binary, ~5MB RAM, <10ms startup |
 
 ### Method 1: Official Installer Script
 
@@ -317,6 +318,7 @@ These providers handle ALL the setup for you — no Docker, no terminal, no DevO
 | **[Myclawhost](https://www.myclawhost.com/)** | $9-39 | Instant | Managed | Lite ($9), Pro ($19), Max ($39), full lifecycle | One-click deploy |
 | **[Contabo OpenClaw](https://contabo.com/en/openclaw-hosting/)** | $4.95+ | Minutes | VPS | Unlimited workflows, full data ownership, predictable pricing | - |
 | **[Molty by Finna](https://molty.finna.ai)** | $19-99 | 30 sec | VM-isolated (Fly.io) | Multiple Molties per account, Mission Control (multi-agent coordination), GitHub backup sync, browser automation, auto-updates | 3-day free trial |
+| **[ClawLaunch](https://clawlaunch.ai)** | Free (30d) / $9.49 | 60 sec | Varies by plan | Includes AI Credits. Hardened sandbox via gVisor. Free TTS pre-installed (Whisper). | 30-day free trial, 50% revshare affiliate program |
 | **[OpenClaw Setup](https://openclaw-setup.me)** | Free (BYOK) | ~2 min | Managed isolated runtime | Full UI instance management (LLM providers, env vars, workspace and memory management), Telegram + Slack support, encrypted credentials, allowlist access control, per-model usage analytics | - |
 
 ### Setup-as-a-Service (Freelancers)
@@ -365,6 +367,7 @@ Hire someone to set it up for you.
 | [PicoClaw (RISC-V)](https://github.com/sipeed/picoclaw) | **$0**/mo | 5 min | Easy | No | $10 hardware, 10 MB RAM, Go binary |
 | [ZeroClaw (Rust)](https://github.com/theonlyhennygod/zeroclaw) | **$0**/mo | 2 min | Easy | No | 3.4 MB binary, Rust, <10ms startup |
 | [TinyClaw (Shell)](https://github.com/jlia0/tinyclaw) | **$0**/mo | 5 min | Easy | No | 400 LoC, Claude Code + tmux |
+| [Autobot (Crystal)](https://github.com/crystal-autobot/autobot) | **$0**/mo | 2 min | Easy | No | 2MB binary, Crystal, <10ms startup |
 | Mac Mini | **$0**/mo | 10 min | Easy | No | Privacy-first, local |
 
 ---
@@ -797,6 +800,7 @@ ollama pull llama3.1
 - **Google Calendar**: Event creation, viewing, sync, daily briefings
 - **Apple Calendar**: Via khal/vdirsyncer integration
 - **Outlook**: Calendar sync and management
+- **[BotEmail.ai](https://botemail.ai)** — Instant @botemail.ai email inboxes for AI agents. One API call creates a dedicated inbox with no human setup required. Includes an OpenClaw skill ([ClawHub](https://clawhub.ai/skills/bot-email)), MCP server, and OpenAI GPT Actions support.
 
 - [Gmail Automation Guide](https://zenvanriel.nl/ai-engineer-blog/openclaw-gmail-pubsub-automation-guide/)
 - [Google Calendar Sync](https://martin.hjartmyr.se/articles/openclaw-google-calendar-sync/)
@@ -954,6 +958,7 @@ tar -czvf ~/openclaw_backup_$(date +%Y%m%d).tar.gz -C "$HOME" .openclaw
 | **[PinchChat](https://github.com/MarlBurroW/pinchchat)** | Web (PWA) | Available | Open-source webchat UI with ChatGPT-like interface, live tool calls, multi-session, token tracking, streaming, 8 languages, theming |
 | [**Debot**](https://github.com/BotMesh/debot) | Rust lightweight | Cost-conscious | Rust+Python, auto conversation compaction, smart LLM router |
 | [**NanoClaw (original)**](https://github.com/qwibitai/nanoclaw) | Security-first | Apple container | 500 lines TypeScript, WhatsApp, Anthropic Agent SDK (7K+ stars) |
+| [**Autobot**](https://github.com/crystal-autobot/autobot) | Crystal ultra-fast | Speed and security oriented users | 2MB binary, ~5MB RAM, <10ms startup |
 
 ---
 
@@ -1006,6 +1011,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **Claude Team** | Spawns visible terminal sessions instead of background | [X/@jlehman_](https://x.com/jlehman_/status/2008644506951053492) |
 | **ClawRouter** | Smart LLM router — save 78% on inference costs, 30+ models | [GitHub](https://github.com/BlockRunAI/ClawRouter) |
 | **Honcho** | Persistent cross-session memory with user modeling and dual-peer context | [ClawHub](https://clawhub.ai/ajspig/honcho-setup) \| [GitHub](https://github.com/plastic-labs/openclaw-honcho/tree/main/clawhub/honcho-setup) |
+| **memory-mem0** | Self-hosted memory plugin using Mem0 for semantic fact extraction. Local Ollama embeddings, Qdrant vector storage, Gemini Flash extraction. | [GitHub](https://github.com/serenichron/openclaw-memory-mem0) |
 | **Agent Sessions** | Session browser + analytics + limits tracker for Codex CLI, Claude Code, OpenCode, Gemini CLI (245 stars) | [GitHub](https://github.com/jazzyalex/agent-sessions) |
 | **Announcer** | House-wide TTS announcements via AirPlay speakers | [GitHub](https://github.com/odrobnik/announcer-skill) |
 | **GitHub Search Skills** | Deep GitHub project analysis and exploration | [GitHub](https://github.com/blessonism/openclaw-search-skills) |
@@ -1425,6 +1431,7 @@ node --version                     # Must be 22+
 | [hesamsheikh/awesome-openclaw-usecases](https://github.com/hesamsheikh/awesome-openclaw-usecases) | Real-life OpenClaw use cases — Reddit digests, X analysis, YouTube summaries, multi-agent coordination |
 | [theonlyhennygod/zeroclaw](https://github.com/theonlyhennygod/zeroclaw) | ZeroClaw — pure Rust, 3.4 MB binary, <10ms startup, 22+ providers, swappable trait-based architecture |
 | [jlia0/tinyclaw](https://github.com/jlia0/tinyclaw) | TinyClaw — OpenClaw in ~400 lines of shell script, Claude Code + tmux, self-healing, WhatsApp (1.3K stars) |
+| [crystal-autobot/autobot](https://github.com/crystal-autobot/autobot) | Autobot — Ultra-efficient personal AI assistant in Crystal, 2 MB binary, ~5 MB RAM, <10ms startup, kernel-enforced sandboxing |
 | [htlin222/mini-claw](https://github.com/htlin222/mini-claw) | Mini-Claw — minimalist OpenClaw alternative using Claude Pro/Max or ChatGPT Plus directly in Telegram |
 | [Theseuschain/proof-of-lobster](https://github.com/Theseuschain/proof-of-lobster) | Proof of Lobster — verify Moltbook profiles as AI/human, launch on-chain sovereign agents with wallets |
 

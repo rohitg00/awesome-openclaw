@@ -177,11 +177,12 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 @media(max-width:768px){
 .sidebar{display:none}
 .nav-inner{padding:0 10px;gap:6px}
-.nav-actions{gap:6px;flex-wrap:nowrap}
-.dir-link{padding:4px 8px;font-size:.75rem}
-.search-btn{padding:4px 8px;min-width:0}
+.nav-actions{gap:6px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.nav-actions::-webkit-scrollbar{display:none}
+.dir-link{padding:4px 8px;font-size:.75rem;min-width:0;flex-shrink:0}
+.search-btn{padding:4px 8px;min-width:0;flex-shrink:0}
 .search-btn .label,.search-btn .kbd{display:none}
-.gh-link{padding:4px 8px;gap:4px;flex-shrink:0;overflow:visible}
+.gh-link{padding:4px 8px;gap:4px;flex-shrink:0;min-width:0;overflow:visible}
 .gh-link span:not(.gh-stars){display:none}
 .gh-stars.loaded{font-size:.7rem}
 .theme-toggle{width:30px;height:30px;font-size:.9rem}

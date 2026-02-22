@@ -849,6 +849,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[VisionClaw](https://github.com/sseanliu/VisionClaw)** | Meta Ray-Ban (iOS) | Available | Voice + vision + agentic actions via Gemini Live + OpenClaw (796 stars) |
 | **[PinchChat](https://github.com/MarlBurroW/pinchchat)** | Web (PWA) | Available | Open-source webchat UI with ChatGPT-like interface, live tool calls, multi-session, token tracking, streaming, 8 languages, theming |
 | **[VibeClaw](https://vibeclaw.dev)** | Web | Available | Runs a full OpenClaw instance entirely in the browser — visual server builder, in-browser sandbox with free AI models, server library with import/export. No install, no server required ([source](https://github.com/jasonkneen/vibeclaw)) |
+| **[MobileClaw](https://github.com/wende/mobileclaw)** | Web (PWA) | Available | Mobile-first chat UI — live tool call pills with inline diffs, sub-agent activity feed, streaming reasoning blocks, push notifications, installable PWA. Also supports LM Studio. [Live demo](https://mobileclaw.vercel.app?demo) |
 
 ### Monitoring & Dashboards
 

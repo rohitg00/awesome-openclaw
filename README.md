@@ -875,6 +875,10 @@ tar -czvf ~/openclaw_backup_$(date +%Y%m%d).tar.gz -C "$HOME" .openclaw
 
 > Never commit `~/.openclaw/` to Git (contains secrets).
 
+**Encrypted Backup Services:**
+
+- [soul-upload.com](https://soul-upload.com) - Encrypted backup storage for OpenClaw workspace artifacts (SOUL.md, MEMORY.md, IDENTITY.md, etc.). Client-side AES-256-CBC encryption, no accounts required, recovery via URL + password only.
+
 ---
 
 ## Performance Benchmarks

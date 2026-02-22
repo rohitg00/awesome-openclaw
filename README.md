@@ -862,6 +862,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[OpenClaw Studio](https://github.com/grp06/openclaw-studio)** | Community | Visual agent management with cron jobs, tool extraction, mentions (410 stars) |
 | **[Hawk Eye](https://github.com/benfoxsb/hawk-eye)** | Community | Workspace sentinel & operational dashboard |
 | **[ClawTick](https://clawtick.com/)** | Third-party | Performance monitoring, uptime checks, and real-time analytics for OpenClaw instances. |
+| **[Manifest](https://manifest.build)** ([GitHub](https://github.com/mnfst/manifest)) | Community | Real-time cost observability for OpenClaw agents — track tokens, costs, messages, and model usage with a local dashboard. 3.3k stars, MIT licensed. |
 
 ### Backup & Restore
 

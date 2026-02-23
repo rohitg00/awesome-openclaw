@@ -862,7 +862,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[OpenClaw Studio](https://github.com/grp06/openclaw-studio)** | Community | Visual agent management with cron jobs, tool extraction, mentions (410 stars) |
 | **[Hawk Eye](https://github.com/benfoxsb/hawk-eye)** | Community | Workspace sentinel & operational dashboard |
 | **[ClawTick](https://clawtick.com/)** | Third-party | Performance monitoring, uptime checks, and real-time analytics for OpenClaw instances. |
-| **[Nerve](https://github.com/daggerhashimoto/openclaw-nerve)** | Community | Self-hosted web cockpit for OpenClaw — real-time streaming with reasoning blocks, voice I/O (local STT/TTS), sub-agent session monitoring, cron job management, memory editor, inline TradingView/Recharts, code editor, model selector. One-command install. [Website](https://nerve.zone) |
+| **[Nerve](https://github.com/daggerhashimoto/openclaw-nerve)** ([Website](https://nerve.zone)) | Community | Web-based OpenClaw cockpit with real-time streaming, voice I/O, and agent management |
 
 ### Backup & Restore
 

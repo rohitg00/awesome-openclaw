@@ -960,6 +960,7 @@ tar -czvf ~/openclaw_backup_$(date +%Y%m%d).tar.gz -C "$HOME" .openclaw
 | [**Debot**](https://github.com/BotMesh/debot) | Rust lightweight | Cost-conscious | Rust+Python, auto conversation compaction, smart LLM router |
 | [**NanoClaw (original)**](https://github.com/qwibitai/nanoclaw) | Security-first | Apple container | 500 lines TypeScript, WhatsApp, Anthropic Agent SDK (7K+ stars) |
 | [**Autobot**](https://github.com/crystal-autobot/autobot) | Crystal ultra-fast | Speed and security oriented users | 2MB binary, ~5MB RAM, <10ms startup |
+| [**SupaClaw**](https://github.com/vincenzodomina/supaclaw) | Supabase first | Security oriented, Enterprise | Zero-infra cloud agent - Runs entirely on Supabase primitives - no system access, minimal code to maintain, fully managed or self-hosted |
 
 ---
 

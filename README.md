@@ -1025,6 +1025,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 
 | Platform | Integration | Description |
 |----------|------------|-------------|
+| **[TurboStarter OpenClaw Kit](https://www.turbostarter.dev/openclaw)** | Starter Kit | Opinionated OpenClaw wrapper boilerplate with infrastructure, auth, billing, integrations, admin dashboard, and deployment workflows. |
 | **[LangBot](https://github.com/langbot-app/LangBot)** | Multi-platform | Agentic IM bots with OpenClaw, Dify, n8n, Langflow, Coze |
 | **[OpenRouter](https://openrouter.ai/docs/guides/guides/openclaw-integration)** | LLM routing | Access 30+ models with smart routing (`openrouter/<author>/<slug>`) |
 | **[You.com](https://you.com/resources/openclaw-integration)** | Search/AI | OpenClaw skill for You.com search and AI integration |

@@ -181,6 +181,7 @@ That's it. The wizard walks you through API key setup, channel configuration, an
 |--------|------|------------|----------|
 | **[Agent37](https://www.agent37.com/openclaw)** | 30 sec | Easy | Cheapest managed ($0.99/mo) |
 | **[SimpleClaw](https://www.simpleclaw.com/)** | 1 min | Easy | Non-technical users |
+| **[1ClickClaw](https://1clickclaw.app/)** | < 1 min | Easy | Telegram/Discord/WhatsApp bots |
 | **[npm install](https://docs.openclaw.ai/quickstart)** | 1 min | Easy | Developers with Node.js |
 | **[DigitalOcean 1-Click](https://marketplace.digitalocean.com/apps/openclaw)** | 2 min | Easy | Quick cloud deploy |
 | **[Railway Template](https://railway.com/deploy/openclaw)** | 2 min | Easy | PaaS users |
@@ -229,6 +230,7 @@ cd openclaw
 | **Railway** | [Template](https://railway.com/deploy/openclaw) | Web-based /setup wizard |
 | **Render** | [render.yaml](https://docs.openclaw.ai/render) | Infrastructure as Code |
 | **SimpleClaw** | [simpleclaw.com](https://www.simpleclaw.com/) | Deploy in under 1 minute |
+| **1ClickClaw** | [1clickclaw.app](https://1clickclaw.app/) | One-click Telegram/Discord/WhatsApp deploy |
 | **Zeabur** | [Template](https://zeabur.com/templates/VTZ4FX) | One-click Docker deploy |
 | **Northflank** | [Stack](https://northflank.com/stacks/deploy-openclaw) | No server-side terminal needed |
 | **Lightning.AI** | [Environment](https://lightning.ai/lightning-ai/environments/openclaw) | Browser-based, no local hardware |
@@ -320,6 +322,7 @@ These providers handle ALL the setup for you — no Docker, no terminal, no DevO
 | **[Molty by Finna](https://molty.finna.ai)** | $19-99 | 30 sec | VM-isolated (Fly.io) | Multiple Molties per account, Mission Control (multi-agent coordination), GitHub backup sync, browser automation, auto-updates | 3-day free trial |
 | **[ClawLaunch](https://clawlaunch.ai)** | Free (30d) / $9.49 | 60 sec | Varies by plan | Includes AI Credits. Hardened sandbox via gVisor. Free TTS pre-installed (Whisper). | 30-day free trial, 50% revshare affiliate program |
 | **[OpenClaw Setup](https://openclaw-setup.me)** | $3.9 (Solo) / $6.9 (Trio) | ~2 min | 1 CPU, 3-12 GB RAM | Full UI instance management (LLM providers, env vars, workspace and memory management), Telegram + Slack support, encrypted credentials, allowlist access control, per-model usage analytics | AWESOMEOPENCLAWSETUP (50% off first-time customers) |
+| **[1ClickClaw](https://1clickclaw.app/)** | $49 | < 1 min | Dedicated 2 vCPU, 2 GB RAM | One-click Telegram/Discord/WhatsApp deployment, no DevOps required, 24/7 AI hosting | - |
 
 ### Setup-as-a-Service (Freelancers)
 

@@ -854,6 +854,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 
 | Tool | Type | Features |
 |------|------|----------|
+| **[ClawBridge](https://clawbridge.app)** | Third-party | Mobile-first dashboard for OpenClaw to monitor real-time thoughts, track token costs, and manage tasks securely from anywhere. |
 | **openclaw dashboard** | Built-in | Gateway info, stats, web UI |
 | **[ClawController](https://www.clawcontroller.com/)** | Third-party | Real-time monitoring, task orchestration, agent chat |
 | **claw-dash** | Community | Sessions, tokens, costs, CPU/RAM/disk metrics |

@@ -180,6 +180,7 @@ That's it. The wizard walks you through API key setup, channel configuration, an
 | Method | Time | Difficulty | Best For |
 |--------|------|------------|----------|
 | **[Agent37](https://www.agent37.com/openclaw)** | 30 sec | Easy | Cheapest managed ($0.99/mo) |
+| **[Clawdy](https://clawdy.app)** | < 60 sec | Easy | Non-technical + developers wanting zero-config hosting |
 | **[SimpleClaw](https://www.simpleclaw.com/)** | 1 min | Easy | Non-technical users |
 | **[npm install](https://docs.openclaw.ai/quickstart)** | 1 min | Easy | Developers with Node.js |
 | **[DigitalOcean 1-Click](https://marketplace.digitalocean.com/apps/openclaw)** | 2 min | Easy | Quick cloud deploy |
@@ -302,6 +303,7 @@ These providers handle ALL the setup for you — no Docker, no terminal, no DevO
 
 | Provider | Price/mo | Setup Time | Specs | What's Included | Promo |
 |----------|----------|------------|-------|-----------------|-------|
+| **[Clawdy](https://clawdy.app)** | $24 (was $49) | < 60 sec | Managed | Multi-provider (Claude, GPT, Gemini, Kimi), custom subdomain (slug.clawdy.app), SSL/auth/firewall/reverse proxy pre-configured, 99.9% uptime | Price locked at $24/mo for early subscribers |
 | **[Agent37](https://www.agent37.com/openclaw)** | $0.99-3.99 | 30 sec | 2 vCPU, 4-6 GB RAM | Isolated instance, full UI, terminal, SSL | - |
 | **[MyClaw.ai](https://myclaw.ai/pricing)** | $9 (was $29) | Instant | 2 vCPU, 4 GB RAM, 40 GB SSD | Auto-updates, backups, web terminal | 69-76% off early bird |
 | **[get-open-claw.com](https://www.get-open-claw.com/)** | $9-49 | < 1 min | Varies by plan | OpenClaw Secure, daily backups, health monitoring | Pro includes $10 AI credits |
@@ -344,6 +346,7 @@ Hire someone to set it up for you.
 
 | Provider | Monthly Cost | Setup Time | Difficulty | 1-Click? | Best For |
 |----------|-------------|------------|------------|----------|----------|
+| [Clawdy](https://clawdy.app) | **$24** | < 60 sec | **None** | **Yes** | Zero-config managed hosting |
 | [Oracle Cloud](https://www.oracle.com/cloud/free/) | **$0** | 3 hours | Hard | No | Free-forever hosting |
 | [AMD Dev Cloud](https://www.amd.com/en/developer/resources/cloud-access.html) | **$0** (credits) | 30 min | Medium | No | Free GPU inference |
 | [Agent37](https://www.agent37.com/openclaw) | **$0.99** | 30 sec | **None** | **Yes** | Cheapest managed |
@@ -425,6 +428,7 @@ The **real cost** of running OpenClaw is the AI model API, not infrastructure.
 | **Budget Managed** | MyClaw.ai Lite ($9) | BYOK ($10) | **$19** | Zero setup, instant access |
 | **Sweet Spot** | Hetzner CX22 ($4) | Mixed models ($15) | **$19** | Best value-to-capability |
 | **Standard** | DigitalOcean ($12) | Sonnet ($40) | **$52** | Production-ready |
+| **Managed Easy** | Clawdy ($24) | Mixed ($30) | **$54** | Zero technical setup, custom subdomain |
 | **Managed Easy** | xCloud ($24) | Mixed ($30) | **$54** | Zero technical setup |
 | **Cloudflare** | Workers ($5+$30) | Mixed ($20) | **$55** | Serverless architecture |
 | **Local LLM** | Raspberry Pi 5 ($0/mo) | Ollama ($0) | **$0** | After $80 hardware purchase |

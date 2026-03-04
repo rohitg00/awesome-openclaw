@@ -81,6 +81,7 @@
 - [OpenClaw vs Claude Code](#openclaw-vs-claude-code)
 - [Alternatives & Competitors](#alternatives--competitors)
 - [Moltbook (AI Social Network)](#moltbook-ai-social-network)
+- [AI Agent Store & Claw Earn](#ai-agent-store--claw-earn)
 - [Skills & Plugins](#skills--plugins)
 - [Browser Automation](#browser-automation)
 - [Real-World Use Cases](#real-world-use-cases)

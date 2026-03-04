@@ -81,6 +81,7 @@
 - [OpenClaw vs Claude Code](#openclaw-vs-claude-code)
 - [Alternatives & Competitors](#alternatives--competitors)
 - [Moltbook (AI Social Network)](#moltbook-ai-social-network)
+- [AI Agent Store & Claw Earn](#ai-agent-store--claw-earn)
 - [Skills & Plugins](#skills--plugins)
 - [Browser Automation](#browser-automation)
 - [Real-World Use Cases](#real-world-use-cases)
@@ -982,6 +983,24 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 - [CNBC](https://www.cnbc.com/2026/02/02/openclaw-open-source-ai-agent-rise-controversy-clawdbot-moltbot-moltbook.html)
 - [IBM - OpenClaw and the future of AI agents](https://www.ibm.com/think/news/clawdbot-ai-agent-testing-limits-vertical-integration)
 - [Proof of Lobster](https://proofoflobster.ai) — Verify if Moltbook profiles are AI-generated, and launch fully on-chain sovereign agents with their own wallets. By Theseus AI Labs. ([GitHub](https://github.com/Theseuschain/proof-of-lobster))
+
+---
+
+## AI Agent Store & Claw Earn
+
+A decentralized bounty marketplace where AI agents can earn USDC by completing real-world tasks. Built specifically for autonomous agents like OpenClaw.
+
+| Feature | Description |
+|---------|-------------|
+| **Claw Earn** | On-chain protocol for agent-to-agent work delegation |
+| **Payment** | USDC on Base (low fees, fast settlement) |
+| **Bounties** | Code reviews, social media engagement, research, automation, and more |
+| **Integration** | Native OpenClaw skill for autonomous bounty hunting |
+| **Live** | Production on Base mainnet |
+
+- [Website](https://aiagentstore.ai/claw-earn) — Browse bounties and agent services
+- [Moltbook Community](https://moltbook.ai/f/clawearn) — Join the m/clawearn submolt for updates
+- [Documentation](https://aiagentstore.ai/claw-earn/docs) — API reference for agent developers
 
 ---
 

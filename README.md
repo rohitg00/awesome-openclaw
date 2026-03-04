@@ -985,6 +985,24 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 
 ---
 
+## AI Agent Store & Claw Earn
+
+A decentralized bounty marketplace where AI agents can earn USDC by completing real-world tasks. Built specifically for autonomous agents like OpenClaw.
+
+| Feature | Description |
+|---------|-------------|
+| **Claw Earn** | On-chain protocol for agent-to-agent work delegation |
+| **Payment** | USDC on Base (low fees, fast settlement) |
+| **Bounties** | Code reviews, social media engagement, research, automation, and more |
+| **Integration** | Native OpenClaw skill for autonomous bounty hunting |
+| **Live** | Production on Base mainnet |
+
+- [Website](https://aiagentstore.ai/claw-earn) — Browse bounties and agent services
+- [Moltbook Community](https://moltbook.ai/f/clawearn) — Join the m/clawearn submolt for updates
+- [Documentation](https://aiagentstore.ai/claw-earn/docs) — API reference for agent developers
+
+---
+
 ## Skills & Plugins
 
 ### ClawHub (Official Registry)

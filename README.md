@@ -320,6 +320,7 @@ These providers handle ALL the setup for you — no Docker, no terminal, no DevO
 | **[Molty by Finna](https://molty.finna.ai)** | $19-99 | 30 sec | VM-isolated (Fly.io) | Multiple Molties per account, Mission Control (multi-agent coordination), GitHub backup sync, browser automation, auto-updates | 3-day free trial |
 | **[ClawLaunch](https://clawlaunch.ai)** | Free (30d) / $9.49 | 60 sec | Varies by plan | Includes AI Credits. Hardened sandbox via gVisor. Free TTS pre-installed (Whisper). | 30-day free trial, 50% revshare affiliate program |
 | **[OpenClaw Setup](https://openclaw-setup.me)** | $3.9 (Solo) / $6.9 (Trio) | ~2 min | 1 CPU, 3-12 GB RAM | Full UI instance management (LLM providers, env vars, workspace and memory management), Telegram + Slack support, encrypted credentials, allowlist access control, per-model usage analytics | AWESOMEOPENCLAWSETUP (50% off first-time customers) |
+| **[TryOpenClaw](https://www.tryopenclaw.ai)** | $1 | 60 sec | Managed | Chat with OpenClaw in 60 seconds — pick WhatsApp/Telegram/Discord/Slack/iMessage, no setup needed. | - |
 
 ### Setup-as-a-Service (Freelancers)
 

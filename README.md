@@ -309,7 +309,7 @@ These providers handle ALL the setup for you — no Docker, no terminal, no DevO
 | **[EasyClaw](https://www.easyclaw.pro/en)** | $10+ | 60 sec | Varies | Multi-model, 3+ platforms, zero maintenance | 29 min saved per deploy |
 | **[ClawSimple](https://clawsimple.com/en)** | $8.25-29.08 | 2-3 min | Varies | Secure cloud, one-click updates (coming) | 20% off with LAUNCH20 |
 | **[xCloud](https://xcloud.host/openclaw-hosting)** | $24 | 5 min | Managed | Telegram/WhatsApp pre-configured, encrypted backups | 7-day guarantee |
-| **[OctoClaw](https://octoclaw.ai)** | €19-59 | Minutes | 2-4 vCPU, 4-16 GB RAM | Hetzner Germany, GDPR-compliant, pre-provisioned phone number, AI starter budget, BYOK | - |
+| **[OctoClaw](https://octoclaw.ai)** | $19-59 | Minutes | 2-4 vCPU, 4-16 GB RAM | Hetzner Germany, GDPR-compliant, pre-provisioned phone number, AI starter budget, BYOK | - |
 | **[ClawCloud](https://www.clawcloud.sh/)** | $29-129 | < 1 min | 1-2 vCPU, 1-4 GB RAM | All AI models (BYOK), auto-updates, daily backups | 70% off with EARLYBIRD70 |
 | **[SimpleClaw](https://www.simpleclaw.com/)** | TBD | < 1 min | Managed | 1-click deploy, model selection | - |
 | **[OpenClaw Cloud](https://openclawcloud.work/)** | Beta pricing | 5 min | Managed | All AI tokens included, 99.9% uptime, $0 hidden fees | Waitlist open |
@@ -363,7 +363,7 @@ Hire someone to set it up for you.
 | [DigitalOcean 2GB](https://marketplace.digitalocean.com/apps/openclaw) | **$12** | 2 min | Easy | **Yes** | Recommended production |
 | [Molty by Finna](https://molty.finna.ai) | **$19** | 30 sec | **None** | **Yes** | Multi-Molty, Mission Control, GitHub sync |
 | [xCloud Managed](https://xcloud.host/openclaw-hosting) | **$24** | 5 min | **None** | **Yes** | Full managed hosting |
-| [OctoClaw](https://octoclaw.ai) | **€19** | Minutes | **None** | **Yes** | Fully managed EU (Germany), GDPR-compliant |
+| [OctoClaw](https://octoclaw.ai) | **$19** | Minutes | **None** | **Yes** | Fully managed EU (Germany), GDPR-compliant |
 | [ClawCloud Starter](https://www.clawcloud.sh/) | **$29** | < 1 min | **None** | **Yes** | Premium managed |
 | [Raspberry Pi 5](https://docs.openclaw.ai/raspberry-pi) | **$0**/mo | 30 min | Medium | No | Low-power, always-on |
 | [ESP32-S3 (MimiClaw)](https://github.com/memovai/mimiclaw) | **$0**/mo | 10 min | Medium | No | Cheapest ($5 chip), no OS |

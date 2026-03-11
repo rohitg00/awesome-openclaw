@@ -801,6 +801,7 @@ ollama pull llama3.1
 - **Apple Calendar**: Via khal/vdirsyncer integration
 - **Outlook**: Calendar sync and management
 - **[BotEmail.ai](https://botemail.ai)** — Instant @botemail.ai email inboxes for AI agents. One API call creates a dedicated inbox with no human setup required. Includes an OpenClaw skill ([ClawHub](https://clawhub.ai/skills/bot-email)), MCP server, and OpenAI GPT Actions support.
+- **[Nylas Plugin](https://www.npmjs.com/package/@nylas/openclaw-nylas-plugin)** — 14 typed tools for email, calendar & contacts across Gmail, Outlook, Exchange, Yahoo, iCloud, and IMAP. One-command install with auto-discovery of connected accounts. ([Guide](https://cli.nylas.com/guides/install-openclaw-nylas-plugin))
 
 - [Gmail Automation Guide](https://zenvanriel.nl/ai-engineer-blog/openclaw-gmail-pubsub-automation-guide/)
 - [Google Calendar Sync](https://martin.hjartmyr.se/articles/openclaw-google-calendar-sync/)
@@ -1020,6 +1021,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **Foundry** | Self-writing meta-extension — learns how you work, researches docs, writes new capabilities into itself | [GitHub](https://github.com/lekt9/openclaw-foundry) |
 | **Supermemory (Official)** | Official Supermemory integration — perfect memory and recall, auto-stores conversations | [GitHub](https://github.com/supermemoryai/openclaw-supermemory) |
 | **AfrexAI Skills** | 13 free business skills: prospect research, cold email, competitor analysis, meeting prep, LinkedIn, ICP builder, CRM, invoicing, SEO, daily briefing, objection handling, email triage, humanizer | [Setup Wizard](https://afrexai-cto.github.io/agent-setup/) \| [Revenue Calculator](https://afrexai-cto.github.io/ai-revenue-calculator/) \| [Context Packs](https://afrexai-cto.github.io/context-packs/) |
+| **Nylas** | Email, calendar & contacts across all major providers (Gmail, Outlook, Exchange, Yahoo, iCloud, IMAP) with auto-discovery and 14 typed tools | [npm](https://www.npmjs.com/package/@nylas/openclaw-nylas-plugin) \| [Guide](https://cli.nylas.com/guides/install-openclaw-nylas-plugin) |
 
 ### Third-Party Platforms
 

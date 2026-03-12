@@ -665,7 +665,7 @@ docker compose run --rm openclaw-cli security audit --deep
 | **ClawSec** | Complete security skill suite by Prompt Security | [GitHub](https://github.com/prompt-security/clawsec) |
 | **ClawBands** | Security middleware — intercepts tool execution, human-in-the-loop approval for dangerous actions | [GitHub](https://github.com/SeyZ/clawbands) |
 | **ClawGuard** | Permission manifests, runtime enforcement, sandboxing, audit logging with hash-chaining | [GitHub](https://github.com/newtro/ClawGuard) |
-| **OpenClaw-Guard** | First bilingual (EN/ZH) security plugin — 8 defense layers, prompt injection detection (25 rules: 13 Chinese + 12 English), Chinese PII redaction (ID card/phone/bank card with validation), data exfiltration detection, zero dependencies | [GitHub](https://github.com/jnMetaCode/clawguard) / [npm](https://www.npmjs.com/package/openclaw-guard) |
+| **ShellWard** | First bilingual (EN/ZH) security plugin — 8 defense layers, prompt injection detection (25 rules: 13 Chinese + 12 English), Chinese PII redaction (ID card/phone/bank card with validation), data exfiltration detection, zero dependencies | [GitHub](https://github.com/jnMetaCode/shellward) / [npm](https://www.npmjs.com/package/shellward) |
 | **Claw-Hunter** | MDM-ready scripts to detect and monitor shadow OpenClaw agents across macOS/Linux/Windows endpoints | [GitHub](https://github.com/backslash-security/Claw-Hunter) |
 | **Aquaman** | Credential isolation proxy — API keys never enter the agent process. Stores secrets in Keychain/1Password/Vault/encrypted-file, injects via Unix domain socket. Process-level isolation (not detection/redaction). | [GitHub](https://github.com/tech4242/aquaman) |
 | **Orchard Kit** | Complete alignment and safety architecture — membrane security (Calyx Protocol), continuous trust verification with heartbeat, epistemic hygiene, and defence tools. Includes a ready-to-install OpenClaw skill for agent self-governance. Based on 30 years of cybernetic research | [GitHub](https://github.com/OrchardHarmonics/orchard-kit) |
@@ -1420,7 +1420,7 @@ node --version                     # Must be 22+
 | [qwibitai/nanoclaw](https://github.com/qwibitai/nanoclaw) | Original NanoClaw — 500 lines TypeScript, Apple containers for security, WhatsApp, Anthropic Agent SDK (7K+ stars) |
 | [SeyZ/clawbands](https://github.com/SeyZ/clawbands) | Security middleware — intercepts tool execution, human-in-the-loop approval for dangerous actions |
 | [newtro/ClawGuard](https://github.com/newtro/ClawGuard) | Permission manifests, runtime enforcement, sandboxing, and audit logging for OpenClaw skills |
-| [jnMetaCode/clawguard](https://github.com/jnMetaCode/clawguard) | First bilingual (EN/ZH) security plugin — 8 defense layers, Chinese+English injection detection, Chinese PII redaction, zero dependencies |
+| [jnMetaCode/shellward](https://github.com/jnMetaCode/shellward) | First bilingual (EN/ZH) security plugin — 8 defense layers, Chinese+English injection detection, Chinese PII redaction, zero dependencies |
 | [backslash-security/Claw-Hunter](https://github.com/backslash-security/Claw-Hunter) | MDM-ready detection and monitoring of shadow OpenClaw agents on managed endpoints |
 | [tech4242/aquaman](https://github.com/tech4242/aquaman) | Credential isolation proxy — API keys never enter the agent process, injected via UDS from Keychain/1Password/Vault |
 | [BotMesh/debot](https://github.com/BotMesh/debot) | Rust+Python lightweight alternative — auto conversation compaction, intelligent LLM router |

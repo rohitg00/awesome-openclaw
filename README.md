@@ -875,6 +875,12 @@ tar -czvf ~/openclaw_backup_$(date +%Y%m%d).tar.gz -C "$HOME" .openclaw
 
 > Never commit `~/.openclaw/` to Git (contains secrets).
 
+### Cloud Backup
+
+| Tool | Type | Description |
+|------|------|-------------|
+| **[Keep My Claw](https://keepmyclaw.com)** | Paid skill ($5/mo or $19/yr) | Encrypted cloud backup to Cloudflare R2. Backs up workspace, memory, cron jobs, skills, credentials, and config. Client-side encryption, scheduled backups, snapshot verification, and cross-machine restore. Install: `clawhub install keepmyclaw` ([GitHub](https://github.com/Ryce/keepmyclaw) · [ClawHub](https://clawhub.com/Ryce/keepmyclaw)) |
+
 ---
 
 ## Performance Benchmarks

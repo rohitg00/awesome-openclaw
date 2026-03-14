@@ -197,6 +197,7 @@ That's it. The wizard walks you through API key setup, channel configuration, an
 | **[ZeroClaw (Rust)](https://github.com/theonlyhennygod/zeroclaw)** | 2 min | Easy | 3.4 MB binary, <10ms startup, 22+ providers |
 | **[TinyClaw (Shell)](https://github.com/jlia0/tinyclaw)** | 5 min | Easy | 400 LoC, Claude Code + tmux, self-healing |
 | **[Autobot (Crystal)](https://github.com/crystal-autobot/autobot)** | 2 min | Easy | 2MB binary, ~5MB RAM, <10ms startup |
+| **[TryClaw.xyz](https://tryclaw.xyz)** | 1 min | Easy | Quick cloud deploy |
 
 ### Method 1: Official Installer Script
 

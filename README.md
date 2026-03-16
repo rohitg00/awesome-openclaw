@@ -670,6 +670,7 @@ docker compose run --rm openclaw-cli security audit --deep
 | **Orchard Kit** | Complete alignment and safety architecture — membrane security (Calyx Protocol), continuous trust verification with heartbeat, epistemic hygiene, and defence tools. Includes a ready-to-install OpenClaw skill for agent self-governance. Based on 30 years of cybernetic research | [GitHub](https://github.com/OrchardHarmonics/orchard-kit) |
 | **Clawhatch** | Pre-install security scanner — 128 automated checks, scores skills 0-100, runs in <1 second, catches malicious patterns before installation | [GitHub](https://github.com/AISafetyLab/clawhatch) |
 | **OpenClaw Scanner** | Enterprise endpoint scanner — detects OpenClaw agents running across corporate networks, identifies exposed instances and misconfigurations | [Help Net Security](https://www.helpnetsecurity.com/2026/02/13/openclaw-scanner-enterprise/) |
+| **OneCLI** | Open-source credential vault for AI agents — Rust HTTP gateway injects API keys transparently so agents never handle raw secrets. Per-agent scoped tokens, AES-256-GCM encryption at rest | [GitHub](https://github.com/onecli/onecli) |
 
 ### Security Resources
 

@@ -862,6 +862,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[OpenClaw Studio](https://github.com/grp06/openclaw-studio)** | Community | Visual agent management with cron jobs, tool extraction, mentions (410 stars) |
 | **[Hawk Eye](https://github.com/benfoxsb/hawk-eye)** | Community | Workspace sentinel & operational dashboard |
 | **[ClawTick](https://clawtick.com/)** | Third-party | Performance monitoring, uptime checks, and real-time analytics for OpenClaw instances. |
+| **[Silos Dashboard](https://github.com/cheapestinference/silos)** | Community | Open-source React/TypeScript dashboard — manage agents, sessions, channels (WhatsApp, Telegram, Discord, Slack), cron jobs, analytics. i18n (en/es/fr/de), dark/light theme. [Managed hosting](https://silosplatform.com) available. |
 
 ### Backup & Restore
 

@@ -763,7 +763,7 @@ ollama pull llama3.1
 |--------|--------|----------|
 | **openclaw-mcp-plugin** | [GitHub](https://github.com/lunarpulse/openclaw-mcp-plugin) | HTTP/SSE transport, multi-server, unified interface |
 | **openclaw-mcp-adapter** | [npm](https://www.npmjs.com/package/openclaw-mcp-adapter) | Registers MCP tools as native agent tools |
-| **openclaw-mcp** | [GitHub](https://github.com/freema/openclaw-mcp) | Secure Claude.ai ↔ OpenClaw bridge with OAuth 2.1 authentication |
+| **openclaw-mcp** | [GitHub](https://github.com/freema/openclaw-mcp) \| [Website](https://openclaw-mcp.cloud) \| [npm](https://www.npmjs.com/package/openclaw-mcp) \| [Docker](https://github.com/freema/openclaw-mcp/pkgs/container/openclaw-mcp) | Secure Claude.ai ↔ OpenClaw bridge with OAuth 2.1, async task queue, Docker-first deployment, stdio + SSE transports, Claude Code plugin |
 | **openclaw-mcp-server** | [GitHub](https://github.com/Helms-AI/openclaw-mcp-server) | Exposes OpenClaw Gateway tools to Claude Code and MCP clients |
 
 ---
@@ -1412,7 +1412,7 @@ node --version                     # Must be 22+
 | [jazzyalex/agent-sessions](https://github.com/jazzyalex/agent-sessions) | Session browser + analytics + limits tracker for Codex CLI, Claude Code, OpenCode, Gemini CLI (245 stars) |
 | [openclaw/barnacle](https://github.com/openclaw/barnacle) | Official OpenClaw companion bot — persistent utility bot |
 | [openclaw/trust](https://github.com/openclaw/trust) | Official open threat model with community-contributed risk assessments and mitigations |
-| [freema/openclaw-mcp](https://github.com/freema/openclaw-mcp) | MCP server bridging Claude.ai to self-hosted OpenClaw with OAuth 2.1 authentication |
+| [freema/openclaw-mcp](https://github.com/freema/openclaw-mcp) | MCP server bridging Claude.ai to self-hosted OpenClaw — OAuth 2.1, async task queue, Docker images, Claude Code plugin ([Website](https://openclaw-mcp.cloud) \| [npm](https://www.npmjs.com/package/openclaw-mcp)) |
 | [beam-cloud/airstore](https://github.com/beam-cloud/airstore) | The filesystem for AI agents — persistent agent storage layer (89 stars) |
 | [sseanliu/VisionClaw](https://github.com/sseanliu/VisionClaw) | Real-time AI assistant for Meta Ray-Ban smart glasses — voice + vision + agentic actions, iOS/Swift (796 stars) |
 | [MarlBurroW/pinchchat](https://github.com/MarlBurroW/pinchchat) | Open-source webchat UI for OpenClaw — ChatGPT-like interface, live tool calls, multi-session, token tracking, streaming, PWA, 8 languages, theming |

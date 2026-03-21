@@ -1377,6 +1377,7 @@ node --version                     # Must be 22+
 | [openclaw/lobster](https://github.com/openclaw/lobster) | Typed workflow runtime |
 | [cloudflare/moltworker](https://github.com/cloudflare/moltworker) | Cloudflare Workers adaptation |
 | [VoltAgent/awesome-openclaw-skills](https://github.com/VoltAgent/awesome-openclaw-skills) | 3,009 curated skills |
+| [mergisi/awesome-openclaw-agents](https://github.com/mergisi/awesome-openclaw-agents) | 177 production-ready AI agent templates across 24 categories. Copy-paste SOUL.md files for PM, Writer, SEO, DevOps, and more. |
 | [centminmod/explain-openclaw](https://github.com/centminmod/explain-openclaw) | Deep security analysis (73 files) |
 | [lunarpulse/openclaw-mcp-plugin](https://github.com/lunarpulse/openclaw-mcp-plugin) | MCP server integration |
 | [essamamdani/openclaw-coolify](https://github.com/essamamdani/openclaw-coolify) | Coolify PaaS template |

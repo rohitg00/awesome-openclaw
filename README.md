@@ -862,6 +862,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[OpenClaw Studio](https://github.com/grp06/openclaw-studio)** | Community | Visual agent management with cron jobs, tool extraction, mentions (410 stars) |
 | **[Hawk Eye](https://github.com/benfoxsb/hawk-eye)** | Community | Workspace sentinel & operational dashboard |
 | **[ClawTick](https://clawtick.com/)** | Third-party | Performance monitoring, uptime checks, and real-time analytics for OpenClaw instances. |
+| **[laboon-self-healing](https://github.com/aretaafandi02-source/laboon-self-healing)** 🐋 | Community | 4-tier autonomous self-healing (health check → restart → doctor fix → alert). Zero dependencies, 100% safe — unlike ClawHub watchdog skills (all flagged suspicious). |
 
 ### Backup & Restore
 

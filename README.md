@@ -1555,6 +1555,11 @@ This repo powers **[openclawsearch.com](https://openclawsearch.com)** — the we
 
 - [Ecosystem Directory](https://openclawsearch.com/directory.html) — 80+ curated projects built with OpenClaw
 
+## XVARY Stock Research
+
+- [XVARY Stock Research](https://github.com/xvary-research/claude-code-stock-analysis-skill) — Claude Code skill for public SEC EDGAR + market data: `/analyze`, `/score`, `/compare`. MIT.
+
+
 ## Contributing
 
 Contributions welcome! Please read the [contribution guidelines](CONTRIBUTING.md) first.

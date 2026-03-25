@@ -1020,6 +1020,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **Foundry** | Self-writing meta-extension — learns how you work, researches docs, writes new capabilities into itself | [GitHub](https://github.com/lekt9/openclaw-foundry) |
 | **Supermemory (Official)** | Official Supermemory integration — perfect memory and recall, auto-stores conversations | [GitHub](https://github.com/supermemoryai/openclaw-supermemory) |
 | **AfrexAI Skills** | 13 free business skills: prospect research, cold email, competitor analysis, meeting prep, LinkedIn, ICP builder, CRM, invoicing, SEO, daily briefing, objection handling, email triage, humanizer | [Setup Wizard](https://afrexai-cto.github.io/agent-setup/) \| [Revenue Calculator](https://afrexai-cto.github.io/ai-revenue-calculator/) \| [Context Packs](https://afrexai-cto.github.io/context-packs/) |
+| **Northstar** | Daily business briefing for founders. Pulls Stripe, Shopify, Lemon Squeezy, Gumroad metrics into one morning summary via iMessage/Slack/Telegram/Email. Free tier available. | [GitHub](https://github.com/Daveglaser0823/northstar-skill) \| [ClawHub](https://clawhub.ai/Daveglaser0823/northstar) |
 
 ### Third-Party Platforms
 

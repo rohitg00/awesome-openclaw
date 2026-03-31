@@ -1032,6 +1032,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **[unRAID Community App](https://www.reddit.com/r/unRAID/comments/1qv4tky/openclaw_ai_assistant_gateway_now_available_on/)** | NAS/Server | Official Community Apps template for unRAID |
 | **[Expo OpenClaw Chat](https://github.com/brunobar79/expo-openclaw-chat)** | Mobile SDK | React Native / Expo chat SDK for building native iOS/Android OpenClaw clients |
 | **[Airstore](https://github.com/beam-cloud/airstore)** | Agent Storage | The filesystem for AI agents — persistent storage layer (89 stars) |
+| **[ToolRouter](https://toolrouter.com)** | Tool Gateway | Give your AI agent superpowers with access to 150+ tools on demand with just one account. Competitor research, video production, web search, image generation, security scanning, and more. Works with ChatGPT, Claude, Cursor, and any MCP client. `npx -y toolrouter-mcp` |
 
 ### Install a Skill
 

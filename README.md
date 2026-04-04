@@ -1451,7 +1451,6 @@ node --version                     # Must be 22+
 | [AliceLJY/content-alchemy](https://github.com/AliceLJY/content-alchemy) | 5-stage Claude Code skill — transforms raw ideas into professional articles (16 stars) |
 | [AliceLJY/content-publisher](https://github.com/AliceLJY/content-publisher) | Image generation, layout formatting, and WeChat publishing pipeline |
 | [AliceLJY/digital-clone-skill](https://github.com/AliceLJY/digital-clone-skill) | 6-stage Claude Code skill to create digital clones from corpus data |
-| [AliceLJY/a2a-js](https://github.com/AliceLJY/a2a-js) | JavaScript SDK for the Agent2Agent (A2A) Protocol |
 
 ---
 

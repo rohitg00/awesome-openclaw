@@ -765,6 +765,7 @@ ollama pull llama3.1
 | **openclaw-mcp-adapter** | [npm](https://www.npmjs.com/package/openclaw-mcp-adapter) | Registers MCP tools as native agent tools |
 | **openclaw-mcp** | [GitHub](https://github.com/freema/openclaw-mcp) | Secure Claude.ai ↔ OpenClaw bridge with OAuth 2.1 authentication |
 | **openclaw-mcp-server** | [GitHub](https://github.com/Helms-AI/openclaw-mcp-server) | Exposes OpenClaw Gateway tools to Claude Code and MCP clients |
+| **recallnest** | [GitHub](https://github.com/AliceLJY/recallnest) | Persistent memory MCP server for AI agents — cross-session recall, semantic search, checkpoint/resume |
 
 ---
 
@@ -836,6 +837,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 
 - [Multi-Agent Docs](https://docs.openclaw.ai/concepts/multi-agent)
 - [Build Your Own AI Agent Team in 15 Minutes](https://ai2sql.io/how-to-build-your-own-ai-agent-team-with-openclaw-in-15-minutes)
+- [ClawTeam-OpenClaw](https://github.com/win4r/ClawTeam-OpenClaw) — Multi-agent swarm coordination fork for OpenClaw (1K stars)
 
 ### Companion Apps
 
@@ -849,6 +851,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[VisionClaw](https://github.com/sseanliu/VisionClaw)** | Meta Ray-Ban (iOS) | Available | Voice + vision + agentic actions via Gemini Live + OpenClaw (796 stars) |
 | **[PinchChat](https://github.com/MarlBurroW/pinchchat)** | Web (PWA) | Available | Open-source webchat UI with ChatGPT-like interface, live tool calls, multi-session, token tracking, streaming, 8 languages, theming |
 | **[VibeClaw](https://vibeclaw.dev)** | Web | Available | Runs a full OpenClaw instance entirely in the browser — visual server builder, in-browser sandbox with free AI models, server library with import/export. No install, no server required ([source](https://github.com/jasonkneen/vibeclaw)) |
+| **[Telegram AI Bridge](https://github.com/AliceLJY/telegram-ai-bridge)** | Telegram | Available | Remote control AI coding agents (Claude Code, Codex) via Telegram — mobile workflow management |
 
 ### Monitoring & Dashboards
 
@@ -1020,6 +1023,8 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **Foundry** | Self-writing meta-extension — learns how you work, researches docs, writes new capabilities into itself | [GitHub](https://github.com/lekt9/openclaw-foundry) |
 | **Supermemory (Official)** | Official Supermemory integration — perfect memory and recall, auto-stores conversations | [GitHub](https://github.com/supermemoryai/openclaw-supermemory) |
 | **AfrexAI Skills** | 13 free business skills: prospect research, cold email, competitor analysis, meeting prep, LinkedIn, ICP builder, CRM, invoicing, SEO, daily briefing, objection handling, email triage, humanizer | [Setup Wizard](https://afrexai-cto.github.io/agent-setup/) \| [Revenue Calculator](https://afrexai-cto.github.io/ai-revenue-calculator/) \| [Context Packs](https://afrexai-cto.github.io/context-packs/) |
+| **memory-lancedb-pro** | Enhanced LanceDB memory plugin with hybrid retrieval, cross-encoder rerank, multi-scope isolation (3.9K stars) | [GitHub](https://github.com/CortexReach/memory-lancedb-pro) |
+| **openclaw-a2a-gateway** | A2A protocol gateway plugin for bidirectional agent communication (390 stars) | [GitHub](https://github.com/win4r/openclaw-a2a-gateway) |
 
 ### Third-Party Platforms
 
@@ -1435,6 +1440,13 @@ node --version                     # Must be 22+
 | [crystal-autobot/autobot](https://github.com/crystal-autobot/autobot) | Autobot — Ultra-efficient personal AI assistant in Crystal, 2 MB binary, ~5 MB RAM, <10ms startup, kernel-enforced sandboxing |
 | [htlin222/mini-claw](https://github.com/htlin222/mini-claw) | Mini-Claw — minimalist OpenClaw alternative using Claude Pro/Max or ChatGPT Plus directly in Telegram |
 | [Theseuschain/proof-of-lobster](https://github.com/Theseuschain/proof-of-lobster) | Proof of Lobster — verify Moltbook profiles as AI/human, launch on-chain sovereign agents with wallets |
+| [CortexReach/memory-lancedb-pro](https://github.com/CortexReach/memory-lancedb-pro) | Enhanced LanceDB memory plugin — hybrid retrieval, cross-encoder rerank, multi-scope isolation (3.9K stars) |
+| [win4r/openclaw-a2a-gateway](https://github.com/win4r/openclaw-a2a-gateway) | A2A protocol gateway plugin for bidirectional agent communication (390 stars) |
+| [win4r/ClawTeam-OpenClaw](https://github.com/win4r/ClawTeam-OpenClaw) | Multi-agent swarm coordination fork for OpenClaw (1K stars) |
+| [AliceLJY/recallnest](https://github.com/AliceLJY/recallnest) | Persistent memory MCP server for AI agents — cross-session recall, semantic search, checkpoint/resume |
+| [AliceLJY/openclaw-tunnel](https://github.com/AliceLJY/openclaw-tunnel) | Docker tunnel for Claude Code ↔ OpenClaw communication |
+| [AliceLJY/telegram-ai-bridge](https://github.com/AliceLJY/telegram-ai-bridge) | Remote control AI coding agents via Telegram — mobile workflow management |
+| [AliceLJY/cc-cabin](https://github.com/AliceLJY/cc-cabin) | Claude Code workflow cabin — one-click setup for development environments |
 
 ---
 

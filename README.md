@@ -1446,6 +1446,7 @@ node --version                     # Must be 22+
 | [AliceLJY/recallnest](https://github.com/AliceLJY/recallnest) | Persistent memory MCP server for AI agents — cross-session recall, semantic search, checkpoint/resume |
 | [AliceLJY/openclaw-tunnel](https://github.com/AliceLJY/openclaw-tunnel) | Docker tunnel for Claude Code ↔ OpenClaw communication |
 | [AliceLJY/telegram-ai-bridge](https://github.com/AliceLJY/telegram-ai-bridge) | Remote control AI coding agents via Telegram — mobile workflow management |
+| [AliceLJY/claude-code-studio](https://github.com/AliceLJY/claude-code-studio) | Multi-session collaboration studio — run multiple Claude Code instances as a coordinated team |
 | [AliceLJY/cc-cabin](https://github.com/AliceLJY/cc-cabin) | Claude Code workflow cabin — one-click setup for development environments |
 
 ---

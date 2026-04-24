@@ -783,6 +783,7 @@ ollama pull llama3.1
 - [OpenClaw Voice](https://openclawvoice.com/)
 - [Voice Call Plugin Docs](https://docs.openclaw.ai/plugins/voice-call)
 - [ClawdTalk](https://clawdtalk.com/) — Phone calls and SMS for OpenClaw agents. Dedicated number, WebSocket client, agentic deep tools. ([GitHub](https://github.com/team-telnyx/clawdtalk-client) | [ClawHub](https://clawhub.ai/skills/clawdtalk-client))
+- [AnveVoice](https://anvevoice.app) — Voice AI agent for websites with agentic DOM actions — navigates pages, fills forms, clicks buttons autonomously. 50+ languages, <700ms latency, one-line embed. MCP support. Free tier.
 
 ### Home Automation
 

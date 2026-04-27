@@ -122,6 +122,12 @@ Current upstream contains more than 100 plugin/extension directories. Present th
 
 Discord, Telegram, WhatsApp, Slack, Signal, iMessage, Matrix, Microsoft Teams, Google Chat, Feishu, Zalo, QQBot, Nostr, Twitch, IRC, Mattermost, Synology Chat, Nextcloud Talk, Tlon, LINE, and related channel/runtime packages.
 
+Community additions at the end of this category:
+
+- [feishu-inout](https://github.com/joe960913/feishu-inout) - Lark/Feishu docs, messaging, calendar, and bitable integration for AI coding agents.
+- [Nylas OpenClaw plugin](https://www.npmjs.com/package/@nylas/openclaw-nylas-plugin) - email, calendar, and contacts tools across major providers.
+- [discourse-openclaw](https://github.com/pranciskus/discourse-openclaw) - Discourse forum read/search/write integration.
+
 ### Model providers and agent runtimes
 
 OpenAI, Anthropic, Anthropic Vertex, OpenRouter, Google, xAI, DeepSeek, Qwen, Groq, Mistral, Cerebras, Together, Fireworks, Ollama, LM Studio, vLLM, SGLang, LiteLLM, Amazon Bedrock, Hugging Face, Moonshot, Kimi Coding, Codex, OpenCode, Kilocode, Copilot Proxy, Vercel AI Gateway, Cloudflare AI Gateway, Venice, Z.ai, and others.
@@ -129,6 +135,10 @@ OpenAI, Anthropic, Anthropic Vertex, OpenRouter, Google, xAI, DeepSeek, Qwen, Gr
 ### Voice, TTS, speech, and calling
 
 Azure Speech, ElevenLabs, Deepgram, Inworld, Local CLI TTS, Minimax, Volcengine, Xiaomi, Talk Voice, speech core packages, realtime voice/calling plugins, and provider-specific speech integrations.
+
+Community additions at the end of this category:
+
+- [clawr.ing](https://clawr.ing) - phone/calling surface for OpenClaw-style voice workflows.
 
 ### Search, web, browser, and extraction
 
@@ -142,9 +152,17 @@ Active memory, Memory Wiki, LanceDB-backed memory, Voyage embeddings, and relate
 
 Comfy, Fal, Runway, Gradium, image generation core, video generation core, media understanding core, and provider-specific media tools.
 
+Community additions at the end of this category:
+
+- [prompt-to-asset](https://github.com/MohamedAbdallah-14/prompt-to-asset) - image-generation routing through one MCP-style interface.
+
 ### Observability, diagnostics, and QA
 
 OpenTelemetry diagnostics, Prometheus diagnostics, QA Lab, QA Matrix, synthetic/test plugins, and token/trace-related diagnostics.
+
+Community additions at the end of this category:
+
+- [Manifest](https://github.com/mnfst/manifest) - local cost and model-usage observability for agents.
 
 ## Ecosystem resources
 
@@ -160,6 +178,16 @@ High-confidence resources to start with:
 | Release notes | [github.com/openclaw/openclaw/releases](https://github.com/openclaw/openclaw/releases) | Current shipped behavior. |
 | OpenClaw introduction | [openclaw.ai/blog/introducing-openclaw](https://openclaw.ai/blog/introducing-openclaw) | Naming/history and current project framing. |
 | Peter Steinberger on OpenClaw and OpenAI | [steipete.me/posts/2026/openclaw](https://steipete.me/posts/2026/openclaw) | OpenClaw foundation/OpenAI context. |
+
+Community additions, kept at the end instead of elevated above official sources:
+
+| Resource | Link | Why it belongs |
+|---|---|---|
+| Onepilot | [onepilotapp.com](https://onepilotapp.com) | iOS/iPadOS companion app for deploying, running, and chatting with remote agents. |
+| openclaw-mcp | [GitHub](https://github.com/freema/openclaw-mcp), [website](https://openclaw-mcp.cloud), [npm](https://www.npmjs.com/package/openclaw-mcp) | MCP bridge and packaging links for OpenClaw workflows. |
+| Awesome OpenClaw Personas | [GitHub](https://github.com/TravisLeeeeee/awesome-openclaw-personas) | Persona package collection for OpenClaw-style agents. |
+| Awesome OpenClaw Agents | [GitHub](https://github.com/mergisi/awesome-openclaw-agents) | Agent template collection for OpenClaw-style workflows. |
+| TurboStarter OpenClaw Kit | [turbostarter.dev/openclaw](https://www.turbostarter.dev/openclaw) | Starter kit/boilerplate for OpenClaw-adjacent applications. |
 
 ## Learning resources
 
@@ -192,6 +220,14 @@ Useful links:
 - [Updating](https://docs.openclaw.ai/install/updating)
 - [Plugins](https://docs.openclaw.ai/tools/plugin)
 - [Release policy](https://docs.openclaw.ai/reference/RELEASING)
+
+Community additions at the end of this category:
+
+- [OneCLI](https://github.com/johnnyfish/onecli) - credential vault/gateway pattern for keeping raw secrets away from agents.
+- [ShellWard](https://github.com/jnMetaCode/shellward) - bilingual prompt-injection and data-exfiltration guardrails.
+- [leashed](https://github.com/dormstern/leashed) - policy engine, audit log, and kill switch patterns for agents.
+- [SupaClaw](https://github.com/vincenzodomina/supaclaw) - Supabase-first deployment pattern for constrained OpenClaw-style agents.
+- [unslop](https://github.com/MohamedAbdallah-14/unslop) - output-cleanup utility for removing common AI writing artifacts before publishing.
 
 ## Recent release themes
 

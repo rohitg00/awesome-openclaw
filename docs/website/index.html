@@ -8,13 +8,20 @@
 <meta property="og:title" content="Awesome OpenClaw — The Ultimate Resource Collection">
 <meta property="og:description" content="The most comprehensive, curated collection of OpenClaw resources, hosting guides, cost comparisons, security hardening, skills, tutorials, and community links.">
 <meta property="og:image" content="https://openclawsearch.com/og-image.png">
-<meta property="og:url" content="https://openclawsearch.com">
+<meta property="og:url" content="https://openclawsearch.com/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Awesome OpenClaw">
+<meta property="og:locale" content="en_US">
+<meta property="og:image:alt" content="Awesome OpenClaw resource index">
+<link rel="canonical" href="https://openclawsearch.com/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Awesome OpenClaw — The Ultimate Resource Collection">
 <meta name="twitter:description" content="The most comprehensive OpenClaw resource collection. Hosting comparisons, cost breakdowns, security guides, and more.">
 <meta name="twitter:image" content="https://openclawsearch.com/og-image.png">
 <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/pixel-lobster.svg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Awesome OpenClaw","url":"https://openclawsearch.com/","description":"A curated resource index for OpenClaw resources, docs, plugins, ecosystem projects, and community learning.","sameAs":["https://github.com/rohitg00/awesome-openclaw","https://github.com/openclaw/openclaw","https://openclaw.ai/"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -301,6 +308,18 @@ sidebarEl.classList.toggle('visible',rect.bottom<0);
 btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
 const NAV_MAP={
+'official-sources':'Official',
+'what-openclaw-is-today':'About',
+'quick-start':'Quick Start',
+'architecture-map':'Architecture',
+'core-capabilities':'Capabilities',
+'plugins-and-integrations':'Plugins',
+'ecosystem-resources':'Ecosystem',
+'learning-resources':'Learning',
+'security-and-operations':'Security',
+'recent-release-themes':'Releases',
+'community-and-contribution':'Community',
+'archived-material':'Archive',
 'what-is-openclaw':'About',
 'quick-start-1-minute':'Quick Start',
 'hosting-providers-comparison':'Hosting',
@@ -342,6 +361,19 @@ $('#mainContent').innerHTML='<p style="text-align:center;padding:40px;color:var(
 }
 }
 
+function githubSlug(text,counts){
+let base=text.toLowerCase().trim()
+.replace(/<[^>]*>/g,'')
+.replace(/[\u{1F300}-\u{1FAFF}]/gu,'')
+.replace(/[^a-z0-9 -]/g,'')
+.replace(/\s+/g,'-')
+.replace(/-+/g,'-')
+.replace(/^-|-$/g,'');
+const n=counts[base]||0;
+counts[base]=n+1;
+return n?base+'-'+n:base;
+}
+
 function postProcess(container){
 container.querySelectorAll('table').forEach(table=>{
 if(table.parentElement.classList.contains('table-wrap'))return;
@@ -371,8 +403,9 @@ img.setAttribute('loading','lazy');
 
 const h2s=container.querySelectorAll('h2');
 const sections=[];
+const slugCounts={};
 h2s.forEach(h2=>{
-const id=h2.textContent.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const id=githubSlug(h2.textContent,slugCounts);
 h2.id=id;
 
 const section=document.createElement('div');

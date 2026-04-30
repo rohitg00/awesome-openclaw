@@ -749,6 +749,12 @@ docker compose run --rm openclaw-cli security audit --deep
 | **DingTalk** | [GitHub](https://github.com/soimy/openclaw-channel-dingtalk) | DingTalk app credentials | DingTalk channel plugin |
 | **QQ Bot** | [GitHub](https://github.com/tencent-connect/openclaw-qqbot) | QQ bot credentials | QQ private chat and group channel plugin with rich media and approval support |
 | **OpenClaw China** | [GitHub](https://github.com/BytePioneer-AI/openclaw-china) | China IM credentials | Plugin collection for DingTalk, QQ, WeCom, WeChat, and Feishu channels |
+| **DingTalk Connector** | [GitHub](https://github.com/DingTalk-Real-AI/dingtalk-openclaw-connector) | DingTalk app credentials | DingTalk connector package for OpenClaw channel setup |
+| **OpenClaw WeChat** | [GitHub](https://github.com/freestylefly/openclaw-wechat) | WeChat login / bot credentials | Community WeChat channel plugin for connecting OpenClaw to personal WeChat |
+| **WeChat Channel** | [GitHub](https://github.com/HenryXiaoYang/wechat-openclaw-channel) | QClaw or WorkBuddy login | WeChat channel extracted for OpenClaw compatibility |
+| **WeCom Plugin** | [GitHub](https://github.com/sunnoy/openclaw-plugin-wecom) | Enterprise WeChat credentials | Enterprise WeChat plugin with streaming output, agent management, group chat, and allowlist controls |
+| **OpenClaw-Wechat** | [GitHub](https://github.com/dingxiang-me/OpenClaw-Wechat) | WeChat / WeCom credentials | Chinese WeChat and Enterprise WeChat integration with streaming output and visual configuration docs |
+| **Feishu Guide** | [GitHub](https://github.com/AlexAnys/openclaw-feishu) | Lark / Feishu app credentials | Community Feishu and Lark setup guide covering webhook and WebSocket channel patterns |
 
 ### Local LLM Integration
 
@@ -821,6 +827,7 @@ ollama pull llama3.1
 
 - [OpenClaw on Home Assistant](https://community.home-assistant.io/t/openclaw-clawdbot-on-home-assistant/981467)
 - [OpenClaw Gave My Home Assistant an AI Agent](https://www.dan-malone.com/blog/openclaw-home-assistant)
+- [ROSClaw](https://github.com/PlaiPin/rosclaw) - ROS2 integration project for connecting OpenClaw workflows to robotics systems.
 
 ### Email & Calendar
 
@@ -868,6 +875,8 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 - [ClawTeam-OpenClaw](https://github.com/win4r/ClawTeam-OpenClaw) - Multi-agent swarm coordination adapted for OpenClaw.
 - [OpenClaw-RL](https://github.com/Gen-Verse/OpenClaw-RL) - Research project for training agents through conversational feedback.
 - [openclaw-multi-agent-kit](https://github.com/raulvidis/openclaw-multi-agent-kit) - Templates for multi-agent teams, Telegram supergroups, shared context, and bot-to-bot workflows.
+- [BMAD OpenClaw](https://github.com/ErwanLorteau/BMAD_Openclaw) - Structured development workflow bridge that adapts BMad Method agent roles for OpenClaw.
+- [openclaw-pm](https://github.com/1va7/openclaw-pm) - Project-manager configuration upgrade tool for OpenClaw agents.
 
 ### Companion Apps
 
@@ -885,6 +894,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[MobileClaw](https://github.com/wende/mobileclaw)** | Web PWA / iOS | Available | Mobile-first OpenClaw and LM Studio chat UI with streaming, tool call views, inline diffs, sub-agent activity, and embeddable widget mode |
 | **[OpenClaw Termux](https://github.com/mithun50/openclaw-termux)** | Android / Termux | Available | Flutter app and Termux CLI for running OpenClaw Gateway on Android with built-in terminal, web dashboard, and setup controls |
 | **[OpenClaw Android](https://github.com/AidanPark/openclaw-android)** | Android / Termux | Available | Lightweight Termux setup for OpenClaw on Android using a glibc linker path instead of a full Linux proot install |
+| **[WebClaw](https://github.com/ibelick/webclaw)** | Web | Available | Web client for OpenClaw conversations |
 
 ### Monitoring & Dashboards
 
@@ -902,6 +912,11 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[openclaw-dashboard](https://github.com/tugcantopaloglu/openclaw-dashboard)** | Community dashboard | Real-time dashboard with auth, MFA, cost tracking, live feed, and memory browser |
 | **[OpenClaw Control Center](https://github.com/TianyiDataScience/openclaw-control-center)** | Local dashboard | Local-first dashboard for OpenClaw health, usage, staff, collaboration, tasks, documents, memory, and settings |
 | **[OpenClaw CTL](https://github.com/byJoey/openclawctl)** | Management script | Menu-driven macOS, Linux, and Windows script for OpenClaw install, service control, provider setup, plugins, backup, and repair |
+| **[OpenClaw Bot Review](https://github.com/xmanrui/OpenClaw-bot-review)** | Community dashboard | Lightweight dashboard for reviewing OpenClaw bots, agents, models, and session status |
+| **[OpenClaw Manager](https://github.com/miaoxworld/openclaw-manager)** | Community dashboard | Web management UI for OpenClaw configuration, service control, logs, and runtime status |
+| **[OpenClaw Nerve](https://github.com/daggerhashimoto/openclaw-nerve)** | Community cockpit | Web cockpit for voice conversations, workspace files, kanban-style tasks, sub-agent sessions, charts, and usage visibility |
+| **[LobsterBoard](https://github.com/Curbob/LobsterBoard)** | Dashboard builder | Dashboard builder for creating custom OpenClaw monitoring views |
+| **[OpenClaw Office](https://github.com/WW-AI-Lab/openclaw-office)** | Community console | Visual monitoring and management frontend for OpenClaw multi-agent systems through the Gateway WebSocket |
 
 ### Backup & Restore
 
@@ -917,6 +932,7 @@ tar -czvf ~/openclaw_backup_$(date +%Y%m%d).tar.gz -C "$HOME" .openclaw
 
 - [Keep My Claw](https://keepmyclaw.com) - Encrypted OpenClaw backup and restore service with client-side encryption, scheduled snapshots, and Cloudflare R2 storage.
 - [soul-upload.com](https://soul-upload.com) - Encrypted backup storage for OpenClaw workspace artifacts, using local encryption before upload and recovery by URL plus password.
+- [openclaw-backup](https://github.com/LeoYeAI/openclaw-backup) - Backup and restore skill for OpenClaw instance migration. Review credential scope before use.
 
 ---
 
@@ -1072,6 +1088,13 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **ToolRouter** | Tool gateway that exposes external tools to AI assistants through MCP-style workflows. Verify OpenClaw compatibility and requested permissions before use. | [Website](https://toolrouter.com) |
 | **OpenClaw Medical Skills** | Biomedical and clinical skill library for OpenClaw and NanoClaw, organized as installable `SKILL.md` modules | [GitHub](https://github.com/FreedomIntelligence/OpenClaw-Medical-Skills) |
 | **OpenClaw agent templates** | Collection of OpenClaw agent templates and `SOUL.md` configurations with a machine-readable index | [GitHub](https://github.com/mergisi/awesome-openclaw-agents) |
+| **OpenClaw Skills zh** | Chinese OpenClaw skills collection translated and organized by use case | [GitHub](https://github.com/clawdbot-ai/awesome-openclaw-skills-zh) |
+| **OpenClaw Master Skills** | Curated OpenClaw skills collection maintained as a public GitHub repository | [GitHub](https://github.com/LeoYeAI/openclaw-master-skills) |
+| **Lossless Claw** | Lossless Context Management plugin for OpenClaw context compression and retention workflows | [GitHub](https://github.com/Martian-Engineering/lossless-claw) |
+| **mem9** | Memory plugin for OpenClaw agents | [GitHub](https://github.com/mem9-ai/mem9) |
+| **memory-lancedb-pro** | LanceDB memory plugin for OpenClaw with hybrid retrieval, reranking, multi-scope isolation, and a management CLI | [GitHub](https://github.com/CortexReach/memory-lancedb-pro) |
+| **MetaClaw** | Research project for conversational agent learning and evolution on OpenClaw-style agents | [GitHub](https://github.com/aiming-lab/MetaClaw) \| [paper](https://arxiv.org/abs/2603.17187) |
+| **AutoResearchClaw** | Research workflow project for idea-to-paper agents using OpenClaw and MetaClaw patterns | [GitHub](https://github.com/aiming-lab/AutoResearchClaw) |
 
 ### Third-Party Platforms
 
@@ -1089,6 +1112,13 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **[OpenClaw Ansible Installer](https://github.com/openclaw/openclaw-ansible)** | Ansible deployment | Hardened Debian and Ubuntu install path with Docker, Tailscale, UFW, Fail2ban, unattended upgrades, Node.js, pnpm, and systemd support |
 | **[OpenClaw China Docker](https://github.com/justlovemaki/openclaw-china-docker)** | Docker bundle | China IM-focused Docker packaging that bundles OpenClaw with Feishu, DingTalk, QQ, WeCom, WeChat, and related deployment docs |
 | **[OpenClawInstaller](https://github.com/miaoxworld/OpenClawInstaller)** | Installer | macOS and Linux installer with interactive configuration for model providers, channels, service management, and optional GUI manager |
+| **[openclaw-mini](https://github.com/voocel/openclaw-mini)** | Reference implementation | Minimal OpenClaw-style core covering session keys, serial queues, memory retrieval, context loading, skills, and heartbeat wakeups |
+| **[acpx](https://github.com/openclaw/acpx)** | ACP CLI | Headless CLI client for stateful Agent Client Protocol sessions |
+| **[ClawSweeper](https://github.com/openclaw/clawsweeper)** | Maintenance bot | OpenClaw issue and PR triage bot that suggests stale or closable items |
+| **[ClawX](https://github.com/ValueCell-ai/ClawX)** | Desktop app | Graphical desktop interface for OpenClaw agents and CLI-based orchestration |
+| **[clawport-ui](https://github.com/JohnRiceML/clawport-ui)** | Command center | Open-source command center for OpenClaw-backed coding agent teams |
+| **[Star Office UI](https://github.com/ringhyacinth/Star-Office-UI)** | Visual office | Pixel-office interface for showing OpenClaw work states, daily notes, and guest agents |
+| **[AlphaClaw](https://github.com/chrysb/alphaclaw)** | Setup harness | Setup UI and watchdog harness for deploying and keeping OpenClaw instances running |
 
 ### Install a Skill
 
@@ -1252,12 +1282,15 @@ Current OpenClaw operations include OpenTelemetry, Prometheus, dashboards, model
 - [Kimi K2.5 + OpenClaw Guide](https://medium.com/coding-nexus/how-to-connect-kimi-k2-5-to-openclaw-clawdbot-bf7ed5a31743) | [Kimi K2.5 Free Setup](https://apidog.com/blog/how-to-use-kimi-k2-5-for-free-with-openclaw/) | [Moonshot Official Docs](https://platform.moonshot.ai/docs/guide/use-kimi-in-openclaw)
 - [Kimi K2.5 on Baseten](https://www.baseten.co/blog/openclaw-kimi-k2-5-on-baseten-frontier-agent-performance-with-oss/) | [Kimi on Fireworks AI](https://fireworks.ai/blog/openclaw-using-kimi2p5-on-fireworks-ai)
 - [50+ Official Extensions Guide](https://help.apiyi.com/en/openclaw-extensions-ecosystem-guide-en.html)
+- [OpenClaw Feishu Guide](https://github.com/AlexAnys/openclaw-feishu) - Chinese setup guide for Feishu and Lark channel integration.
 
 ### Security Guides
 
 - [Secure on Cloudflare](https://medium.com/@williamogou/deploy-openclaw-securely-on-cloudflare) | [Proflead Guide](https://proflead.com/blog/openclaw-install-secure/)
 - [Security & Cost Control](https://www.moltbook-ai.com/blog/openclaw-guide-2026) | [Composio Controls](https://composio.dev/blog/secure-openclaw-moltbot-clawdbot-setup)
 - [7 Security Best Practices](https://xcloud.host/openclaw-security-best-practices)
+- [OpenClaw Security Practice Guide](https://github.com/slowmist/openclaw-security-practice-guide) - Agent-facing security practice guide for OpenClaw deployments.
+- [openclaw-guardian](https://github.com/LeoYeAI/openclaw-guardian) - Watchdog and operations hardening scripts for OpenClaw Gateway with checks, rollback, snapshots, and alerts.
 
 ### X/Twitter Community Guides
 
@@ -1275,6 +1308,11 @@ Current OpenClaw operations include OpenTelemetry, Prometheus, dashboards, model
 - [centminmod/explain-openclaw](https://github.com/centminmod/explain-openclaw) - Multi-AI security analysis (73 files)
 - [Cron Jobs Automation Guide](https://zenvanriel.nl/ai-engineer-blog/openclaw-cron-jobs-proactive-ai-guide/)
 - [Beyond Babel: Bridging AI's Communication Gap with MCP, A2A, and ACP](https://medium.com/@gaurav.caprihan/beyond-babel-bridging-ais-communication-gap-with-mcp-a2a-and-acp-35e348bb4233) - Deep analysis of AI agent interoperability protocols with practical MCP server integration using Melbourne open data. By Dr. Gaurav Caprihan.
+- [OpenClaw 101](https://github.com/xianyu110/awesome-openclaw-tutorial) - Chinese tutorial collection covering OpenClaw setup, configuration, examples, and troubleshooting.
+- [OpenClaw use cases zh](https://github.com/AlexAnys/awesome-openclaw-usecases-zh) - Chinese use-case catalog for office automation, content workflows, operations, personal assistants, and knowledge management.
+- [Claude Code x OpenClaw Guide Zh](https://github.com/KimYx0207/Claude-Code-x-OpenClaw-Guide-Zh) - Chinese guide series for pairing Claude Code workflows with OpenClaw.
+- [OpenClaw Chinese Docs](https://github.com/yeuxuan/openclaw-docs) - Chinese documentation site covering source analysis, setup, WhatsApp, Telegram, Discord, Feishu, and multi-channel usage.
+- [Moltbook OpenClaw use cases](https://github.com/EvoLinkAI/awesome-openclaw-usecases-moltbook) - Community collection of OpenClaw automation examples gathered from Moltbook posts.
 
 ---
 

@@ -201,6 +201,10 @@ That's it. The wizard walks you through API key setup, channel configuration, an
 | **[TinyClaw (Shell)](https://github.com/jlia0/tinyclaw)** | 5 min | Easy | 400 LoC, Claude Code + tmux, self-healing |
 | **[Autobot (Crystal)](https://github.com/crystal-autobot/autobot)** | 2 min | Easy | 2MB binary, ~5MB RAM, <10ms startup |
 | **[TryClaw.xyz](https://tryclaw.xyz)** | 1 min | Easy | $9/mo, Cloud deploy |
+| **[ClawHost](https://github.com/fastclaw-ai/clawhost)** | Varies | Advanced | Kubernetes-native platform for creating, deploying, and managing OpenClaw bot instances |
+| **[Coolify OpenClaw](https://github.com/essamamdani/openclaw-coolify)** | 5 min | Medium | Coolify-oriented OpenClaw deployment template and post-deploy checklist |
+| **[coollabsio/openclaw](https://github.com/coollabsio/openclaw)** | 5 min | Medium | Automated Docker image for OpenClaw with environment-based web UI and gateway configuration |
+| **[phioranex/openclaw-docker](https://github.com/phioranex/openclaw-docker)** | 5 min | Medium | Pre-built Docker image and install scripts for running OpenClaw without building from source |
 
 ### Method 1: Official Installer Script
 
@@ -685,6 +689,7 @@ docker compose run --rm openclaw-cli security audit --deep
 | **Clawhatch** | Pre-install security scanner - 128 automated checks, scores skills 0-100, runs in <1 second, catches malicious patterns before installation | [GitHub](https://github.com/AISafetyLab/clawhatch) |
 | **OpenClaw Scanner** | Enterprise endpoint scanner - detects OpenClaw agents running across corporate networks, identifies exposed instances and misconfigurations | [Help Net Security](https://www.helpnetsecurity.com/2026/02/13/openclaw-scanner-enterprise/) |
 | **WatchClaw** | Linux server hardening and threat-intelligence toolkit with SSH hardening, firewall baseline, Cowrie honeypot, Fail2ban, canaries, and an optional OpenClaw agent mode | [GitHub](https://github.com/kashifeqbal/watchclaw) |
+| **OpenClaw Guardian** | Watchdog for OpenClaw Gateway service checks, `doctor --fix` repair flows, git rollback, daily snapshots, and Discord alerts | [GitHub](https://github.com/LeoYeAI/openclaw-guardian) |
 
 ### Security Resources
 
@@ -705,6 +710,7 @@ docker compose run --rm openclaw-cli security audit --deep
 - [n8n + OpenClaw Security White Paper](https://gripsy.com.au/research/n8n-openclaw-security-whitepaper.html) - Security analysis of n8n and OpenClaw integration patterns: credential isolation via n8n proxy, webhook hardening, network architecture, and threat modeling for production deployments. Peer-reviewed with multi-model validation. By Dr. Gaurav Caprihan.
 - [The Calyx Protocol](https://github.com/OrchardHarmonics/orchard-kit/blob/main/01_CALYX_PROTOCOL.md) - Permeability-based security model replacing binary allow/deny with membrane architecture. Addresses prompt injection, data exfiltration, and skill poisoning through ethics-weighted signal routing. Derived from the Codex Harmonicae (30 years cybernetic research). By Kimberley Asher.
 - [Semgrep - OpenClaw Security Engineer's Cheat Sheet](https://semgrep.dev/blog/openclaw-security-cheat-sheet) - Static analysis rules for detecting insecure OpenClaw configurations, exposed API keys, and risky skill patterns
+- [OpenClaw Security Practice Guide](https://github.com/slowmist/openclaw-security-practice-guide) - Agent-facing hardening guide for OpenClaw deployments, prompt-injection risk, supply-chain review, and high-risk tool boundaries.
 
 ---
 
@@ -755,6 +761,7 @@ docker compose run --rm openclaw-cli security audit --deep
 | **WeCom Plugin** | [GitHub](https://github.com/sunnoy/openclaw-plugin-wecom) | Enterprise WeChat credentials | Enterprise WeChat plugin with streaming output, agent management, group chat, and allowlist controls |
 | **OpenClaw-Wechat** | [GitHub](https://github.com/dingxiang-me/OpenClaw-Wechat) | WeChat / WeCom credentials | Chinese WeChat and Enterprise WeChat integration with streaming output and visual configuration docs |
 | **Feishu Guide** | [GitHub](https://github.com/AlexAnys/openclaw-feishu) | Lark / Feishu app credentials | Community Feishu and Lark setup guide covering webhook and WebSocket channel patterns |
+| **Tencent WeChat Plugin** | [GitHub](https://github.com/Tencent/openclaw-weixin) | WeChat login | WeChat channel plugin for OpenClaw with QR-code login authorization and version compatibility notes |
 
 ### Local LLM Integration
 
@@ -877,6 +884,8 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 - [openclaw-multi-agent-kit](https://github.com/raulvidis/openclaw-multi-agent-kit) - Templates for multi-agent teams, Telegram supergroups, shared context, and bot-to-bot workflows.
 - [BMAD OpenClaw](https://github.com/ErwanLorteau/BMAD_Openclaw) - Structured development workflow bridge that adapts BMad Method agent roles for OpenClaw.
 - [openclaw-pm](https://github.com/1va7/openclaw-pm) - Project-manager configuration upgrade tool for OpenClaw agents.
+- [OpenClaw Agents](https://github.com/shenhao-stu/openclaw-agents) - One-command multi-agent setup with specialized agents, group routing, and safe config merge.
+- [HiClaw](https://github.com/agentscope-ai/HiClaw) - Collaborative multi-agent OS with human-in-the-loop coordination through Matrix rooms.
 
 ### Companion Apps
 
@@ -895,6 +904,9 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[OpenClaw Termux](https://github.com/mithun50/openclaw-termux)** | Android / Termux | Available | Flutter app and Termux CLI for running OpenClaw Gateway on Android with built-in terminal, web dashboard, and setup controls |
 | **[OpenClaw Android](https://github.com/AidanPark/openclaw-android)** | Android / Termux | Available | Lightweight Termux setup for OpenClaw on Android using a glibc linker path instead of a full Linux proot install |
 | **[WebClaw](https://github.com/ibelick/webclaw)** | Web | Available | Web client for OpenClaw conversations |
+| **[Clawra](https://github.com/SumeLabs/clawra)** | Companion skill | Available | OpenClaw companion setup that installs a selfie skill and visual-response workflow for chat platforms |
+| **[HappyClaw](https://github.com/riba2534/happyclaw)** | Web | Available | Self-hosted multi-user local AI agent system inspired by OpenClaw-style agent operations |
+| **[luci-app-openclaw](https://github.com/10000ge10000/luci-app-openclaw)** | OpenWrt LuCI | Available | LuCI management plugin for installing, configuring, and controlling OpenClaw on OpenWrt routers |
 
 ### Monitoring & Dashboards
 
@@ -917,6 +929,10 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[OpenClaw Nerve](https://github.com/daggerhashimoto/openclaw-nerve)** | Community cockpit | Web cockpit for voice conversations, workspace files, kanban-style tasks, sub-agent sessions, charts, and usage visibility |
 | **[LobsterBoard](https://github.com/Curbob/LobsterBoard)** | Dashboard builder | Dashboard builder for creating custom OpenClaw monitoring views |
 | **[OpenClaw Office](https://github.com/WW-AI-Lab/openclaw-office)** | Community console | Visual monitoring and management frontend for OpenClaw multi-agent systems through the Gateway WebSocket |
+| **[Mission Control GUI](https://github.com/robsannaa/openclaw-mission-control)** | Community dashboard | Browser GUI for monitoring OpenClaw agents, sessions, scheduled jobs, costs, and memory on the host machine |
+| **[OpenClaw Dashboard](https://github.com/mudrii/openclaw-dashboard)** | Local dashboard | Go-based command center for OpenClaw gateway health, costs, cron jobs, sessions, and sub-agent activity |
+| **[OpenClaw Admin](https://github.com/itq5/OpenClaw-Admin)** | Admin console | Vue-based web console for OpenClaw Gateway agents, sessions, models, channels, skills, and terminal access |
+| **[Autensa Mission Control](https://github.com/crshdn/mission-control)** | Product workflow console | Self-hosted OpenClaw Gateway product-engine workflow for market research, feature generation, PR creation, and run visibility |
 
 ### Backup & Restore
 
@@ -1095,6 +1111,8 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **memory-lancedb-pro** | LanceDB memory plugin for OpenClaw with hybrid retrieval, reranking, multi-scope isolation, and a management CLI | [GitHub](https://github.com/CortexReach/memory-lancedb-pro) |
 | **MetaClaw** | Research project for conversational agent learning and evolution on OpenClaw-style agents | [GitHub](https://github.com/aiming-lab/MetaClaw) \| [paper](https://arxiv.org/abs/2603.17187) |
 | **AutoResearchClaw** | Research workflow project for idea-to-paper agents using OpenClaw and MetaClaw patterns | [GitHub](https://github.com/aiming-lab/AutoResearchClaw) |
+| **memU** | Memory layer for long-running proactive agents such as OpenClaw, with a Python package and public docs | [GitHub](https://github.com/NevaMind-AI/memU) |
+| **Sundial Awesome OpenClaw Skills** | Curated OpenClaw skill collection organized by category with an install command for `sundial-hub` users | [GitHub](https://github.com/sundial-org/awesome-openclaw-skills) |
 
 ### Third-Party Platforms
 
@@ -1183,6 +1201,9 @@ Capabilities: CDP, ARIA snapshots, screenshots, tab management, click/type/drag,
 - [25 OpenClaw Use Cases - Hostinger](https://www.hostinger.com/tutorials/openclaw-use-cases)
 - [20 Genius Use Cases](https://ucstrategies.com/news/20-genius-openclaw-use-cases-people-are-using-right-now/)
 - [33 Automations in 30 Minutes](https://medium.com/@rentierdigital/33-openclaw-automations-you-can-set-up-in-30-minutes-that-start-making-you-money-tonight-f8c3b8a402f1)
+- [awesome-openclaw-usecases](https://github.com/hesamsheikh/awesome-openclaw-usecases) - Community use-case collection for day-to-day OpenClaw workflows.
+- [awesome-openclaw-usecases-zh](https://github.com/AlexAnys/awesome-openclaw-usecases-zh) - Chinese OpenClaw use-case catalog organized around office automation, content, operations, assistants, and knowledge-management scenarios.
+- [awesome-openclaw-usecases-moltbook](https://github.com/EvoLinkAI/awesome-openclaw-usecases-moltbook) - OpenClaw automation example collection sourced from Moltbook-style workflows. Verify examples and provider claims before adopting.
 
 ---
 
@@ -1246,6 +1267,10 @@ Current OpenClaw operations include OpenTelemetry, Prometheus, dashboards, model
 - [Jitendra Zaa - Complete Guide](https://www.jitendrazaa.com/blog/ai/clawdbot-complete-guide-open-source-ai-assistant-2026/) - 147K+ stars overview, WhatsApp, API costs, skills
 - [AI/ML API - Practical Guide for Developers](https://aimlapi.com/blog/openclaw-a-practical-guide-to-local-ai-agents-for-developers) - Shift from chatbots to autonomous agents
 - [Pi: The Minimal Agent Within OpenClaw](https://lucumr.pocoo.org/2026/1/31/pi/) - Armin Ronacher's deep dive into Pi agent architecture
+- [OpenClaw 101](https://github.com/mengjian-github/openclaw101) - Chinese OpenClaw resource site with a seven-day learning path, resource index, and setup guidance.
+- [OpenClaw Chinese Docs](https://github.com/yeuxuan/openclaw-docs) - Chinese documentation site covering installation, source walkthroughs, Gateway configuration, and multi-channel setup.
+- [OpenClaw Runbook](https://github.com/digitalknk/openclaw-runbook) - Practical operations runbook for running OpenClaw with cost control, memory boundaries, coordinator/worker roles, and guardrails.
+- [OpenClaw Course](https://github.com/kiankyars/openclawcourse) - One-hour crash course with a public lesson index for learning OpenClaw basics.
 
 ### Reviews
 
@@ -1263,6 +1288,9 @@ Current OpenClaw operations include OpenTelemetry, Prometheus, dashboards, model
 ### Serverless & Docker
 
 - [Cloudflare Moltworker](https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/) | [Docker - Simon Willison](https://til.simonwillison.net/llms/openclaw-docker)
+- [Coolify OpenClaw](https://github.com/essamamdani/openclaw-coolify) - Coolify deployment template for OpenClaw.
+- [coollabsio/openclaw](https://github.com/coollabsio/openclaw) - Automated Docker image for OpenClaw.
+- [phioranex/openclaw-docker](https://github.com/phioranex/openclaw-docker) - Pre-built Docker image and install scripts for OpenClaw.
 
 ### Local Hardware
 

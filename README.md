@@ -886,6 +886,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 - [openclaw-pm](https://github.com/1va7/openclaw-pm) - Project-manager configuration upgrade tool for OpenClaw agents.
 - [OpenClaw Agents](https://github.com/shenhao-stu/openclaw-agents) - One-command multi-agent setup with specialized agents, group routing, and safe config merge.
 - [HiClaw](https://github.com/agentscope-ai/HiClaw) - Collaborative multi-agent OS with human-in-the-loop coordination through Matrix rooms.
+- [Aurogen](https://github.com/UniRound-Tec/Aurogen) - OpenClaw-compatible multi-agent reimplementation with web-panel configuration, dynamic modules, and ClawHub skill import support.
 
 ### Companion Apps
 
@@ -906,7 +907,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[WebClaw](https://github.com/ibelick/webclaw)** | Web | Available | Web client for OpenClaw conversations |
 | **[Clawra](https://github.com/SumeLabs/clawra)** | Companion skill | Available | OpenClaw companion setup that installs a selfie skill and visual-response workflow for chat platforms |
 | **[HappyClaw](https://github.com/riba2534/happyclaw)** | Web | Available | Self-hosted multi-user local AI agent system inspired by OpenClaw-style agent operations |
-| **[luci-app-openclaw](https://github.com/10000ge10000/luci-app-openclaw)** | OpenWrt LuCI | Available | LuCI management plugin for installing, configuring, and controlling OpenClaw on OpenWrt routers |
+| **[CC Switch](https://github.com/farion1231/cc-switch)** | Desktop | Available | Tauri desktop manager for OpenClaw and other coding CLIs, with provider switching, MCP and skills management, sessions, and workspace editing. |
 
 ### Monitoring & Dashboards
 
@@ -933,6 +934,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[OpenClaw Dashboard](https://github.com/mudrii/openclaw-dashboard)** | Local dashboard | Go-based command center for OpenClaw gateway health, costs, cron jobs, sessions, and sub-agent activity |
 | **[OpenClaw Admin](https://github.com/itq5/OpenClaw-Admin)** | Admin console | Vue-based web console for OpenClaw Gateway agents, sessions, models, channels, skills, and terminal access |
 | **[Autensa Mission Control](https://github.com/crshdn/mission-control)** | Product workflow console | Self-hosted OpenClaw Gateway product-engine workflow for market research, feature generation, PR creation, and run visibility |
+| **[TenacitOS](https://github.com/carlosazaustre/tenacitOS)** | Local dashboard | Next.js control center that reads OpenClaw agents, sessions, memory, logs, cron jobs, costs, and workspace files from the local installation. |
 
 ### Backup & Restore
 
@@ -1271,6 +1273,7 @@ Current OpenClaw operations include OpenTelemetry, Prometheus, dashboards, model
 - [OpenClaw Chinese Docs](https://github.com/yeuxuan/openclaw-docs) - Chinese documentation site covering installation, source walkthroughs, Gateway configuration, and multi-channel setup.
 - [OpenClaw Runbook](https://github.com/digitalknk/openclaw-runbook) - Practical operations runbook for running OpenClaw with cost control, memory boundaries, coordinator/worker roles, and guardrails.
 - [OpenClaw Course](https://github.com/kiankyars/openclawcourse) - One-hour crash course with a public lesson index for learning OpenClaw basics.
+- [Build Your Own OpenClaw](https://github.com/czl9707/build-your-own-openclaw) - Step-by-step tutorial with runnable code that builds a lightweight OpenClaw-style agent across chat, tools, skills, channels, cron, multi-agent routing, and memory.
 
 ### Reviews
 
@@ -1299,6 +1302,8 @@ Current OpenClaw operations include OpenTelemetry, Prometheus, dashboards, model
 - [PicoClaw](https://github.com/sipeed/picoclaw) - Ultra-lightweight Go agent, 10 MB RAM, $10 RISC-V board, single binary | [CNX Software](https://www.cnx-software.com/2026/02/10/picoclaw-ultra-lightweight-personal-ai-assistant-run-on-just-10mb-of-ram/)
 - [Ollama Guide](https://codersera.com/blog/openclaw-ollama-setup-guide-2026/) | [LM Studio](https://codersera.com/blog/openclaw-lm-studio-setup-guide-2026/)
 - [vLLM on AMD Free](https://www.amd.com/en/developer/resources/technical-articles/2026/openclaw-with-vllm-running-for-free-on-amd-developer-cloud-.html)
+- [pizero-openclaw](https://github.com/sebastianvkl/pizero-openclaw) - Raspberry Pi Zero voice assistant that streams transcribed speech through an OpenClaw gateway and renders responses on a PiSugar WhisPlay LCD.
+- [luci-app-openclaw](https://github.com/10000ge10000/luci-app-openclaw) - OpenWrt LuCI management plugin for installing, configuring, and controlling OpenClaw on router hardware.
 
 ### Integration Guides
 
@@ -1336,7 +1341,6 @@ Current OpenClaw operations include OpenTelemetry, Prometheus, dashboards, model
 - [centminmod/explain-openclaw](https://github.com/centminmod/explain-openclaw) - Multi-AI security analysis (73 files)
 - [Cron Jobs Automation Guide](https://zenvanriel.nl/ai-engineer-blog/openclaw-cron-jobs-proactive-ai-guide/)
 - [Beyond Babel: Bridging AI's Communication Gap with MCP, A2A, and ACP](https://medium.com/@gaurav.caprihan/beyond-babel-bridging-ais-communication-gap-with-mcp-a2a-and-acp-35e348bb4233) - Deep analysis of AI agent interoperability protocols with practical MCP server integration using Melbourne open data. By Dr. Gaurav Caprihan.
-- [OpenClaw 101](https://github.com/xianyu110/awesome-openclaw-tutorial) - Chinese tutorial collection covering OpenClaw setup, configuration, examples, and troubleshooting.
 - [OpenClaw use cases zh](https://github.com/AlexAnys/awesome-openclaw-usecases-zh) - Chinese use-case catalog for office automation, content workflows, operations, personal assistants, and knowledge management.
 - [Claude Code x OpenClaw Guide Zh](https://github.com/KimYx0207/Claude-Code-x-OpenClaw-Guide-Zh) - Chinese guide series for pairing Claude Code workflows with OpenClaw.
 - [OpenClaw Chinese Docs](https://github.com/yeuxuan/openclaw-docs) - Chinese documentation site covering source analysis, setup, WhatsApp, Telegram, Discord, Feishu, and multi-channel usage.

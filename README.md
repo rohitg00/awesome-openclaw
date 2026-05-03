@@ -762,6 +762,8 @@ docker compose run --rm openclaw-cli security audit --deep
 | **OpenClaw-Wechat** | [GitHub](https://github.com/dingxiang-me/OpenClaw-Wechat) | WeChat / WeCom credentials | Chinese WeChat and Enterprise WeChat integration with streaming output and visual configuration docs |
 | **Feishu Guide** | [GitHub](https://github.com/AlexAnys/openclaw-feishu) | Lark / Feishu app credentials | Community Feishu and Lark setup guide covering webhook and WebSocket channel patterns |
 | **Tencent WeChat Plugin** | [GitHub](https://github.com/Tencent/openclaw-weixin) | WeChat login | WeChat channel plugin for OpenClaw with QR-code login authorization and version compatibility notes |
+| **Telegram Task Silencer** | [GitHub](https://github.com/adagues/openclaw-telegram-task-silencer) | Telegram bot token | OpenClaw plugin that suppresses Telegram background-task completion notifications without changing the task registry |
+| **Customer Bridge** | [GitHub](https://github.com/gthneo/openclaw-customer-bridge) | WeChat / WeCom credentials | OpenClaw plugin for mapping customer identity across personal WeChat, WeCom, and WeChat Open Platform identifiers |
 
 ### Local LLM Integration
 
@@ -935,6 +937,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[OpenClaw Admin](https://github.com/itq5/OpenClaw-Admin)** | Admin console | Vue-based web console for OpenClaw Gateway agents, sessions, models, channels, skills, and terminal access |
 | **[Autensa Mission Control](https://github.com/crshdn/mission-control)** | Product workflow console | Self-hosted OpenClaw Gateway product-engine workflow for market research, feature generation, PR creation, and run visibility |
 | **[TenacitOS](https://github.com/carlosazaustre/tenacitOS)** | Local dashboard | Next.js control center that reads OpenClaw agents, sessions, memory, logs, cron jobs, costs, and workspace files from the local installation. |
+| **[Monitoring OpenClaw](https://github.com/vincentlefort/monitoring-openclaw)** | Community dashboard | Dashboard for an OpenClaw infrastructure stack with service status, trading bot status, recent trades, and capital history views |
 
 ### Backup & Restore
 
@@ -951,6 +954,7 @@ tar -czvf ~/openclaw_backup_$(date +%Y%m%d).tar.gz -C "$HOME" .openclaw
 - [Keep My Claw](https://keepmyclaw.com) - Encrypted OpenClaw backup and restore service with client-side encryption, scheduled snapshots, and Cloudflare R2 storage.
 - [soul-upload.com](https://soul-upload.com) - Encrypted backup storage for OpenClaw workspace artifacts, using local encryption before upload and recovery by URL plus password.
 - [openclaw-backup](https://github.com/LeoYeAI/openclaw-backup) - Backup and restore skill for OpenClaw instance migration. Review credential scope before use.
+- [openclaw-infra](https://github.com/basi163/openclaw-infra) - Disaster-recovery bootstrap for exporting OpenClaw settings, versioning infrastructure state, and restoring a server profile.
 
 ---
 
@@ -1115,6 +1119,16 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **AutoResearchClaw** | Research workflow project for idea-to-paper agents using OpenClaw and MetaClaw patterns | [GitHub](https://github.com/aiming-lab/AutoResearchClaw) |
 | **memU** | Memory layer for long-running proactive agents such as OpenClaw, with a Python package and public docs | [GitHub](https://github.com/NevaMind-AI/memU) |
 | **Sundial Awesome OpenClaw Skills** | Curated OpenClaw skill collection organized by category with an install command for `sundial-hub` users | [GitHub](https://github.com/sundial-org/awesome-openclaw-skills) |
+| **OpenClaw Plugin Inspector** | Offline compatibility checker for OpenClaw plugin packages, manifests, hooks, registration calls, and CI artifacts | [GitHub](https://github.com/openclaw/plugin-inspector) |
+| **OpenClaw Kitchen Sink Plugin** | Credential-free fixture plugin that covers public OpenClaw plugin API surfaces for examples and compatibility testing | [GitHub](https://github.com/openclaw/kitchen-sink) |
+| **crabpot** | Compatibility testbed that pins community plugins and checks OpenClaw plugin API seams with plugin-inspector | [GitHub](https://github.com/openclaw/crabpot) |
+| **ClawBio** | Bioinformatics-native OpenClaw skill library with local-first workflows and installable skills for research tasks | [GitHub](https://github.com/ClawBio/ClawBio) |
+| **OpenClaw Materials Lab** | Native OpenClaw plugin for materials-science search, structure analysis, candidate comparison, notes, and report export | [GitHub](https://github.com/cranesun1226/openclaw-materials-lab) |
+| **Skysearch** | Flight-search skill for OpenClaw that uses browser automation across booking and airline sites without requiring API keys | [GitHub](https://github.com/Steve-reyes/Skysearch) |
+| **OpenClaw Documentation Skill** | Auto-syncing documentation skill that gives coding assistants installable OpenClaw reference material and workflows | [GitHub](https://github.com/tbdavid2019/openclaw-docs-skill) |
+| **OpenClaw Offline Seed** | Config-driven offline plugin and skill seeding tool for OpenClaw runtimes on Kubernetes, Helm, and Docker | [GitHub](https://github.com/weak-fox/openclaw-offline-seed) |
+| **AxonHub OpenClaw Plugin** | Provider plugin that routes OpenClaw model requests through a self-hosted or hosted AxonHub AI gateway | [GitHub](https://github.com/Ruelya/axonhub-openclaw-plugin) |
+| **Remnic** | Local-first memory plugin for OpenClaw-compatible agents that stores extracted memory as plain Markdown with search support | [GitHub](https://github.com/joshuaswarren/remnic) |
 
 ### Third-Party Platforms
 
@@ -1139,6 +1153,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **[clawport-ui](https://github.com/JohnRiceML/clawport-ui)** | Command center | Open-source command center for OpenClaw-backed coding agent teams |
 | **[Star Office UI](https://github.com/ringhyacinth/Star-Office-UI)** | Visual office | Pixel-office interface for showing OpenClaw work states, daily notes, and guest agents |
 | **[AlphaClaw](https://github.com/chrysb/alphaclaw)** | Setup harness | Setup UI and watchdog harness for deploying and keeping OpenClaw instances running |
+| **[OpenClaw Skills Explorer](https://github.com/Cluka-399/openclaw-skills-explorer)** | Skill browser | Static skill discovery interface for browsing, categorizing, and copying OpenClaw skill install commands |
 
 ### Install a Skill
 

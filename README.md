@@ -205,6 +205,8 @@ That's it. The wizard walks you through API key setup, channel configuration, an
 | **[Coolify OpenClaw](https://github.com/essamamdani/openclaw-coolify)** | 5 min | Medium | Coolify-oriented OpenClaw deployment template and post-deploy checklist |
 | **[coollabsio/openclaw](https://github.com/coollabsio/openclaw)** | 5 min | Medium | Automated Docker image for OpenClaw with environment-based web UI and gateway configuration |
 | **[phioranex/openclaw-docker](https://github.com/phioranex/openclaw-docker)** | 5 min | Medium | Pre-built Docker image and install scripts for running OpenClaw without building from source |
+| **[docker-gentkit-openclaw](https://github.com/lentiancn/docker-gentkit-openclaw)** | 5 min | Medium | Docker image and scripts for running OpenClaw with persistent host-mounted state |
+| **[Carapace](https://github.com/jhenderiks/carapace)** | 10 min | Medium | Hardened Docker Compose wrapper for OpenClaw with read-only root filesystem, dropped capabilities, and optional isolated browser container |
 
 ### Method 1: Official Installer Script
 
@@ -303,6 +305,8 @@ cd openclaw
 | **[Zeabur](https://zeabur.com/templates/VTZ4FX)** | Varies | Limited | Yes | Yes | One-click Docker |
 | **[Elestio](https://elest.io/open-source/openclaw)** | Varies | None | Yes | Yes | Fully managed open source |
 | **[Coolify](https://github.com/essamamdani/openclaw-coolify)** | Self-hosted | Free (self-host) | Yes | No | Open-source PaaS |
+| **[openclaw-azure-template](https://github.com/honoyr/openclaw-azure-template)** | Azure usage | No | Azure Files | No | Azure Container Instance template with Telegram, Azure OpenAI / Foundry, and runbook docs |
+| **[openclaw-cloudrun](https://github.com/t2tse/openclaw-cloudrun)** | GCP usage | No | PVC / cloud storage | No | Terraform example for sandboxed OpenClaw deployments on Google Cloud infrastructure |
 
 ### Managed Hosting Services
 
@@ -639,6 +643,8 @@ docker compose run --rm openclaw-cli security audit --deep
 - [Docker - OpenClaw Docs](https://docs.openclaw.ai/install/docker)
 - [Running OpenClaw in Docker - Simon Willison](https://til.simonwillison.net/llms/openclaw-docker)
 - [Docker Guide for Beginners - Medium](https://medium.com/@ozbillwang/run-openclaw-moltbot-clawdbot-safely-with-docker-a-practical-guide-for-beginners-94112a9b57be)
+- [docker-gentkit-openclaw](https://github.com/lentiancn/docker-gentkit-openclaw) - Docker image and scripts for running OpenClaw with persistent host-mounted state.
+- [Carapace](https://github.com/jhenderiks/carapace) - Hardened Docker Compose setup for OpenClaw with read-only root filesystem, dropped capabilities, and optional browser isolation.
 
 ---
 
@@ -690,6 +696,7 @@ docker compose run --rm openclaw-cli security audit --deep
 | **OpenClaw Scanner** | Enterprise endpoint scanner - detects OpenClaw agents running across corporate networks, identifies exposed instances and misconfigurations | [Help Net Security](https://www.helpnetsecurity.com/2026/02/13/openclaw-scanner-enterprise/) |
 | **WatchClaw** | Linux server hardening and threat-intelligence toolkit with SSH hardening, firewall baseline, Cowrie honeypot, Fail2ban, canaries, and an optional OpenClaw agent mode | [GitHub](https://github.com/kashifeqbal/watchclaw) |
 | **OpenClaw Guardian** | Watchdog for OpenClaw Gateway service checks, `doctor --fix` repair flows, git rollback, daily snapshots, and Discord alerts | [GitHub](https://github.com/LeoYeAI/openclaw-guardian) |
+| **OpenClaw Hardened** | VPS hardening guide and plugin set with configuration auditing, monitoring scripts, and defense-in-depth deployment runbooks | [GitHub](https://github.com/mj-deving/openclaw-hardened) |
 
 ### Security Resources
 
@@ -765,6 +772,8 @@ docker compose run --rm openclaw-cli security audit --deep
 | **Telegram Task Silencer** | [GitHub](https://github.com/adagues/openclaw-telegram-task-silencer) | Telegram bot token | OpenClaw plugin that suppresses Telegram background-task completion notifications without changing the task registry |
 | **Customer Bridge** | [GitHub](https://github.com/gthneo/openclaw-customer-bridge) | WeChat / WeCom credentials | OpenClaw plugin for mapping customer identity across personal WeChat, WeCom, and WeChat Open Platform identifiers |
 | **OpenClaw Stepfun** | [npm](https://www.npmjs.com/package/openclaw-stepfun) | Stepfun app credentials | WebSocket channel plugin for connecting Stepfun Bot API messages to OpenClaw |
+| **Now4real** | [GitHub](https://github.com/now4real/openclaw-now4real) | Now4real webhook secret | Live-chat widget channel plugin that routes page chat messages into OpenClaw |
+| **P2P Portal** | [GitHub](https://github.com/yananli199307-dev/p2p-channel-plugin) | Portal URL and channel config | P2P Portal channel plugin for OpenClaw with heartbeat and message-deduplication logic |
 
 ### Local LLM Integration
 
@@ -942,6 +951,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[TenacitOS](https://github.com/carlosazaustre/tenacitOS)** | Local dashboard | Next.js control center that reads OpenClaw agents, sessions, memory, logs, cron jobs, costs, and workspace files from the local installation. |
 | **[agenttrace](https://github.com/luoyuctl/agenttrace)** | Local TUI | Local-first session inspector for OpenClaw-style and other AI coding-agent logs, showing tokens, estimated cost, tool failures, latency, health, diffs, and CI gates |
 | **[Monitoring OpenClaw](https://github.com/vincentlefort/monitoring-openclaw)** | Community dashboard | Dashboard for an OpenClaw infrastructure stack with service status, trading bot status, recent trades, and capital history views |
+| **[OpenClaw Dash](https://github.com/Micar2024/openclaw-dash)** | Local macOS dashboard | Local diagnostic toolkit for monitoring OpenClaw Gateway, exporting privacy-masked support reports, and running pre-upgrade health checks |
 
 ### Backup & Restore
 
@@ -1139,6 +1149,10 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **@tloncorp/tlon-skill** | Tlon and Urbit skill package with CLI installation and OpenClaw agent usage notes | [npm](https://www.npmjs.com/package/@tloncorp/tlon-skill) |
 | **OpenClaw Meeting Minutes** | Public meeting-minutes repository generated by an OpenClaw workflow from transcripts, structured summaries, and action items | [GitHub](https://github.com/shinogw/openclaw-meeting-minutes) |
 | **Paperclip OpenClaw Gateway Adapter** | Adapter package that documents how Paperclip invokes OpenClaw through the Gateway protocol | [npm](https://www.npmjs.com/package/@paperclipai/adapter-openclaw-gateway) |
+| **openclaw-cortex** | Long-term memory plugin for OpenClaw with Cortex knowledge-graph recall, capture hooks, session goals, and health commands | [GitHub](https://github.com/Ubundi/openclaw-cortex) |
+| **xworkmate-artifacts** | Gateway plugin that exports structured workspace artifact manifests for XWorkmate bridge workflows | [GitHub](https://github.com/x-evor/xworkmate-artifacts) |
+| **Pinclaw** | Wearable AI clip ecosystem with hardware, firmware, and an OpenClaw plugin for push-to-talk agent dispatch | [GitHub](https://github.com/ericshang98/pinclaw) |
+| **OpenClaw.NET** | Independent .NET gateway and agent runtime inspired by OpenClaw, with NativeAOT-friendly CLI, desktop bundles, MCP, and channel adapters | [GitHub](https://github.com/clawdotnet/openclaw.net) |
 
 ### Third-Party Platforms
 

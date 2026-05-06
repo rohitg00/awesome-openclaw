@@ -1153,6 +1153,13 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **xworkmate-artifacts** | Gateway plugin that exports structured workspace artifact manifests for XWorkmate bridge workflows | [GitHub](https://github.com/x-evor/xworkmate-artifacts) |
 | **Pinclaw** | Wearable AI clip ecosystem with hardware, firmware, and an OpenClaw plugin for push-to-talk agent dispatch | [GitHub](https://github.com/ericshang98/pinclaw) |
 | **OpenClaw.NET** | Independent .NET gateway and agent runtime inspired by OpenClaw, with NativeAOT-friendly CLI, desktop bundles, MCP, and channel adapters | [GitHub](https://github.com/clawdotnet/openclaw.net) |
+| **OpenClaw A2A Gateway** | Plugin that implements Agent-to-Agent protocol messaging between OpenClaw agents with peer discovery and per-message agent targeting | [GitHub](https://github.com/win4r/openclaw-a2a-gateway) |
+| **MCP Adapter** | OpenClaw plugin that discovers MCP server tools at startup and exposes them as native agent tools | [GitHub](https://github.com/androidStern-personal/openclaw-mcp-adapter) |
+| **Feishu Bot Chat Plugin** | Feishu group-chat plugin that lets multiple OpenClaw bots discover each other and communicate through bot mentions | [GitHub](https://github.com/Leochens/feishu-bot-chat-plugin) |
+| **SearXNG Search Plugin** | OpenClaw web-search plugin for self-hosted SearXNG instances | [GitHub](https://github.com/5p00kyy/openclaw-plugin-searxng) |
+| **Oxylabs AI Studio Plugin** | OpenClaw plugin that adds Oxylabs AI Studio web search and fetch tools | [GitHub](https://github.com/oxylabs/oxylabs-ai-studio-openclaw) |
+| **Membase OpenClaw Plugin** | Persistent-memory plugin for OpenClaw using hybrid vector search and a knowledge graph | [GitHub](https://github.com/aristoapp/openclaw-membase) |
+| **n8n OpenClaw Nodes** | n8n community nodes for controlling OpenClaw Gateway sessions, messages, cron jobs, search, and commands from workflows | [GitHub](https://github.com/karmaniverous/n8n-nodes-openclaw) |
 
 ### Third-Party Platforms
 
@@ -1178,6 +1185,13 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **[Star Office UI](https://github.com/ringhyacinth/Star-Office-UI)** | Visual office | Pixel-office interface for showing OpenClaw work states, daily notes, and guest agents |
 | **[AlphaClaw](https://github.com/chrysb/alphaclaw)** | Setup harness | Setup UI and watchdog harness for deploying and keeping OpenClaw instances running |
 | **[OpenClaw Skills Explorer](https://github.com/Cluka-399/openclaw-skills-explorer)** | Skill browser | Static skill discovery interface for browsing, categorizing, and copying OpenClaw skill install commands |
+| **[OpenClaw Windows Hub](https://github.com/openclaw/openclaw-windows-node)** | Windows companion | Windows tray app, shared Gateway client library, CLI validator, and PowerToys Command Palette extension for OpenClaw |
+| **[OpenClaw Chat Gateway](https://github.com/liandu2024/OpenClaw-Chat-Gateway)** | Web client | Linux-hosted OpenClaw web client for managing agents, teams, model settings, browser checks, and chat history |
+| **[OpenClaw Node](https://github.com/heypinchy/openclaw-node)** | Gateway SDK | Node.js client for connecting applications to the OpenClaw Gateway WebSocket protocol |
+| **[OpenClaw WebChat SDK](https://github.com/raw34/openclaw-webchat)** | Web SDK | Framework-agnostic, React, and Vue chat SDK packages for building web interfaces on the OpenClaw Gateway |
+| **[Chatu WebHub](https://github.com/chatu-ai/webhub)** | Website channel | Channel plugin that connects OpenClaw to custom websites through HTTP and WebSocket interfaces |
+| **[MeshClaw](https://github.com/Seeed-Solution/MeshClaw)** | Meshtastic channel | OpenClaw channel plugin that bridges agents with Meshtastic LoRa mesh networks |
+| **[FoloToy OpenClaw Plugin](https://github.com/FoloToy/folotoy-openclaw-plugin)** | Smart toy channel | MQTT channel plugin that connects FoloToy devices to OpenClaw agents |
 
 ### Install a Skill
 
@@ -1313,6 +1327,7 @@ Current OpenClaw operations include OpenTelemetry, Prometheus, dashboards, model
 - [OpenClaw Runbook](https://github.com/digitalknk/openclaw-runbook) - Practical operations runbook for running OpenClaw with cost control, memory boundaries, coordinator/worker roles, and guardrails.
 - [OpenClaw Course](https://github.com/kiankyars/openclawcourse) - One-hour crash course with a public lesson index for learning OpenClaw basics.
 - [Build Your Own OpenClaw](https://github.com/czl9707/build-your-own-openclaw) - Step-by-step tutorial with runnable code that builds a lightweight OpenClaw-style agent across chat, tools, skills, channels, cron, multi-agent routing, and memory.
+- [Awesome OpenClaw Tutorial](https://github.com/xianyu110/awesome-openclaw-tutorial) - Chinese OpenClaw tutorial repository with installation, configuration, current-version notes, and scenario walkthroughs.
 
 ### Reviews
 

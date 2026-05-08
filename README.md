@@ -1325,6 +1325,7 @@ Current OpenClaw operations include OpenTelemetry, Prometheus, dashboards, model
 - [OpenClaw 101](https://github.com/mengjian-github/openclaw101) - Chinese OpenClaw resource site with a seven-day learning path, resource index, and setup guidance.
 - [OpenClaw Chinese Docs](https://github.com/yeuxuan/openclaw-docs) - Chinese documentation site covering installation, source walkthroughs, Gateway configuration, and multi-channel setup.
 - [OpenClaw Runbook](https://github.com/digitalknk/openclaw-runbook) - Practical operations runbook for running OpenClaw with cost control, memory boundaries, coordinator/worker roles, and guardrails.
+- [OpenClaw Personal Agent Starter Free](https://github.com/rbezumoff/openclaw-personal-agent-starter-free) - Free starter path for building a private Telegram assistant with OpenClaw, including a Telegram setup checklist and starter AGENTS.md/SOUL.md workspace files.
 - [OpenClaw Course](https://github.com/kiankyars/openclawcourse) - One-hour crash course with a public lesson index for learning OpenClaw basics.
 - [Build Your Own OpenClaw](https://github.com/czl9707/build-your-own-openclaw) - Step-by-step tutorial with runnable code that builds a lightweight OpenClaw-style agent across chat, tools, skills, channels, cron, multi-agent routing, and memory.
 - [Awesome OpenClaw Tutorial](https://github.com/xianyu110/awesome-openclaw-tutorial) - Chinese OpenClaw tutorial repository with installation, configuration, current-version notes, and scenario walkthroughs.

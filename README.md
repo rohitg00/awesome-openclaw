@@ -36,6 +36,9 @@
 
 ## Table of Contents
 
+- [OpenClaw Monitor](https://github.com/flik2002/openclaw-monitor) - Real-time AI agent monitoring dashboard for OpenClaw — tracks Gateway status, sessions, token usage & trends
+
+
 - [What is OpenClaw?](#what-is-openclaw)
 - [Name History](#name-history)
 - [System Requirements](#system-requirements)

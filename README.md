@@ -922,6 +922,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[Clawra](https://github.com/SumeLabs/clawra)** | Companion skill | Available | OpenClaw companion setup that installs a selfie skill and visual-response workflow for chat platforms |
 | **[HappyClaw](https://github.com/riba2534/happyclaw)** | Web | Available | Self-hosted multi-user local AI agent system inspired by OpenClaw-style agent operations |
 | **[CC Switch](https://github.com/farion1231/cc-switch)** | Desktop | Available | Tauri desktop manager for OpenClaw and other coding CLIs, with provider switching, MCP and skills management, sessions, and workspace editing. |
+| **[lucinate](https://github.com/lucinate-ai/lucinate)** | Cross-platform (CLI/TUI) | Available | Terminal-native TUI chat client for OpenClaw, Hermes, and OpenAI-compatible endpoints — streaming, markdown, tool call cards, cron management, session browsing. |
 
 ### Monitoring & Dashboards
 

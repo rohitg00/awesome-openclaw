@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coding Agents Are Becoming ChatOps Workflows</title>
+<meta name="description" content="The April Codex App Server updates show a larger pattern: coding agents are being routed through chat-native control planes.">
+<meta property="og:title" content="Coding Agents Are Becoming ChatOps Workflows">
+<meta property="og:description" content="The April Codex App Server updates show a larger pattern: coding agents are being routed through chat-native control planes.">
+<meta property="og:image" content="https://openclawsearch.com/og-image.png">
+<meta property="og:url" content="https://openclawsearch.com/blog/chatops-for-coding-agents">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Coding Agents Are Becoming ChatOps Workflows">
+<meta name="twitter:description" content="The April Codex App Server updates show a larger pattern: coding agents are being routed through chat-native control planes.">
+<meta name="twitter:image" content="https://openclawsearch.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/pixel-lobster.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0A0A0A;
+  --bg-s1:#111111;
+  --bg-s2:#1A1A1A;
+  --text:#EDEDED;
+  --text-muted:#888888;
+  --card:rgba(255,255,255,0.05);
+  --card-border:rgba(255,255,255,0.08);
+  --primary:#DC2626;
+  --primary-light:#EF4444;
+  --link:#EF4444;
+  --link-hover:#DC2626;
+  --badge-bg:rgba(220,38,38,0.12);
+  --badge-text:#EF4444;
+  --green:#22C55E;
+  --green-bg:rgba(34,197,94,0.08);
+  --green-border:rgba(34,197,94,0.25);
+  --yellow:#F59E0B;
+  --yellow-bg:rgba(245,158,11,0.08);
+  --yellow-border:rgba(245,158,11,0.25);
+  --blue:#3B82F6;
+  --blue-bg:rgba(59,130,246,0.08);
+  --blue-border:rgba(59,130,246,0.25);
+  --nav-bg:rgba(10,10,10,0.8);
+}
+[data-theme="light"]{
+  --bg:#FAFAFA;
+  --bg-s1:#FFFFFF;
+  --bg-s2:#F5F5F5;
+  --text:#171717;
+  --text-muted:#666666;
+  --card:#FFFFFF;
+  --card-border:rgba(0,0,0,0.08);
+  --link:#DC2626;
+  --link-hover:#B91C1C;
+  --badge-bg:rgba(220,38,38,0.08);
+  --badge-text:#DC2626;
+  --nav-bg:rgba(250,250,250,0.85);
+  --green-bg:rgba(34,197,94,0.06);
+  --green-border:rgba(34,197,94,0.2);
+  --yellow-bg:rgba(245,158,11,0.06);
+  --yellow-border:rgba(245,158,11,0.2);
+  --blue-bg:rgba(59,130,246,0.06);
+  --blue-border:rgba(59,130,246,0.2);
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:16px;transition:background .3s,color .3s}
+.nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
+.nav-logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .claw{color:var(--primary)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.nav-link,.gh-link{color:var(--text-muted);text-decoration:none;font-size:.85rem;font-weight:500;padding:6px 14px;border-radius:8px;border:1px solid var(--card-border);transition:all .2s}
+.nav-link:hover,.nav-link.active,.gh-link:hover{color:var(--text);border-color:var(--primary)}
+.theme-toggle{background:var(--card);border:1px solid var(--card-border);color:var(--text);cursor:pointer;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.article{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.article-header{padding:80px 0 48px;border-bottom:1px solid var(--card-border);margin-bottom:48px}
+.article-badge{display:inline-flex;align-items:center;gap:6px;background:var(--badge-bg);color:var(--badge-text);font-size:.8rem;font-weight:700;padding:4px 14px;border-radius:16px;margin-bottom:20px}
+.article-title{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-0.03em;line-height:1.15;margin-bottom:16px}
+.article-title .hl{color:var(--primary)}
+.article-subtitle{font-size:1.2rem;color:var(--text-muted);margin-bottom:24px;line-height:1.5}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;color:var(--text-muted);font-size:.85rem}
+.article-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.article-pill{font-size:.75rem;padding:4px 12px;border-radius:6px;background:var(--card);border:1px solid var(--card-border);color:var(--text-muted);font-weight:500}
+.article h2{font-size:1.55rem;font-weight:800;letter-spacing:-0.02em;margin:52px 0 18px;padding-left:16px;border-left:4px solid var(--primary);line-height:1.3}
+.article h3{font-size:1.18rem;font-weight:750;margin:34px 0 12px;color:var(--text)}
+.article p{color:var(--text-muted);margin-bottom:18px;line-height:1.85}
+.article strong{color:var(--text);font-weight:650}
+.article a{color:var(--link);text-decoration:none;transition:color .2s}
+.article a:hover{color:var(--link-hover);text-decoration:underline}
+.article ul,.article ol{margin:0 0 22px 24px;color:var(--text-muted)}
+.article li{margin-bottom:8px;line-height:1.75}
+.article li strong{color:var(--text)}
+.article code{font-family:'JetBrains Mono',monospace;font-size:.85em;background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;color:var(--primary-light)}
+.callout{margin:24px 0;padding:20px 24px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+.callout-title{font-weight:750;font-size:.9rem;margin-bottom:8px;color:var(--text);display:flex;align-items:center;gap:8px}
+.callout-info{border-color:var(--blue-border);background:var(--blue-bg)}
+.callout-solution{border-color:var(--green-border);background:var(--green-bg)}
+.callout-tip{border-color:var(--yellow-border);background:var(--yellow-bg)}
+.source-ref{margin:16px 0;padding:16px 18px;border-radius:10px;border:1px solid var(--card-border);background:var(--bg-s1);font-size:.9rem;color:var(--text-muted)}
+.source-title{font-weight:700;color:var(--text);margin-bottom:4px}
+.source-url{font-size:.8rem;color:var(--text-muted);word-break:break-all}
+.table-wrap{overflow-x:auto;margin:20px 0 28px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th{text-align:left;padding:12px 16px;font-weight:650;color:var(--text);border-bottom:1px solid var(--card-border)}
+td{padding:10px 16px;border-bottom:1px solid var(--card-border);color:var(--text-muted)}
+tr:last-child td{border-bottom:none}
+.checklist{margin:24px 0;padding:24px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+.checklist h3{margin:0 0 16px;font-size:1rem}
+.checklist-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-size:.9rem;color:var(--text-muted)}
+.checklist-box{width:18px;height:18px;border:2px solid var(--card-border);border-radius:4px;flex-shrink:0;margin-top:2px}
+.footer{text-align:center;padding:48px 24px;border-top:1px solid var(--card-border);color:var(--text-muted);font-size:.85rem}
+.footer a{color:var(--link);text-decoration:none}
+@media(max-width:768px){.nav-inner{padding:0 10px}.nav-actions{gap:6px}.nav-link,.gh-link{padding:4px 8px;font-size:.75rem}.article{padding:0 16px 40px}.article-header{padding:48px 0 32px}.article-title{font-size:1.8rem}.article-subtitle{font-size:1rem}.article h2{font-size:1.3rem}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-inner">
+<a href="/" class="nav-logo"><span class="claw">Open</span>Claw</a>
+<div class="nav-actions">
+<a href="/" class="nav-link">Home</a>
+<a href="/directory" class="nav-link">Directory</a>
+<a href="/use-cases" class="nav-link">Use Cases</a>
+<a href="/blog" class="nav-link active">Blog</a>
+<button class="theme-toggle" id="themeToggle" title="Toggle theme"><span id="themeIcon">☾</span></button>
+<a href="https://github.com/rohitg00/awesome-openclaw" target="_blank" rel="noopener" class="gh-link"><span>GitHub</span></a>
+</div>
+</div>
+</nav>
+<article class="article">
+<header class="article-header">
+<div class="article-badge">Developer Workflow</div>
+<h1 class="article-title">Coding Agents Are Becoming ChatOps Workflows</h1>
+<p class="article-subtitle">The April Codex App Server updates show a larger pattern: coding agents are being routed through chat-native control planes.</p>
+<div class="article-meta">
+<span>Rohit Ghumare · <a href="https://x.com/ghumare64" target="_blank" rel="noopener">@ghumare64</a></span>
+<span>Apr 12, 2026</span>
+<span>Long-form ecosystem analysis</span>
+<span>Week of Apr 7, 2026</span>
+</div>
+<div class="article-pills">
+<span class="article-pill">Codex</span>
+<span class="article-pill">ChatOps</span>
+<span class="article-pill">Developer Tools</span>
+</div>
+</header>
+
+<figure class="post-diagram" style="margin:36px 0;padding:18px;border:1px solid var(--card-border);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));overflow:hidden">
+<svg role="img" aria-label="ChatOps workflow for coding agents" viewBox="0 0 920 430" width="100%" style="display:block;border-radius:18px;background:#070707" xmlns="http://www.w3.org/2000/svg">
+<title>ChatOps workflow for coding agents</title>
+<rect width="920" height="430" fill="#070707"/>
+<defs>
+<marker id="chatops-arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#22C55E"/></marker>
+<style>
+.t{font-family:Inter,Arial,sans-serif}.m{font-family:JetBrains Mono,monospace}.box{fill:#101010;stroke:#2d2d2d;stroke-width:1.6}.focus{fill:#101410;stroke:#22C55E;stroke-width:2}.muted{fill:#bdbdbd}.white{fill:#f5f5f5}.green{fill:#22C55E}
+</style>
+</defs>
+<circle cx="68" cy="62" r="30" fill="#22C55E" opacity=".15"/><text x="68" y="70" text-anchor="middle" class="t green" font-size="26" font-weight="800">1</text>
+<text x="116" y="58" class="t white" font-size="25" font-weight="850">Coding agents as ChatOps workflows</text>
+<text x="116" y="86" class="m muted" font-size="15">chat is the control surface, not the execution environment</text>
+<rect x="48" y="126" width="150" height="82" rx="18" class="box"/><text x="123" y="160" text-anchor="middle" class="t white" font-size="18" font-weight="800">Chat thread</text><text x="123" y="185" text-anchor="middle" class="m muted" font-size="13">Telegram / Discord</text>
+<line x1="208" y1="167" x2="278" y2="167" stroke="#22C55E" stroke-width="3" marker-end="url(#chatops-arrow)"/>
+<rect x="288" y="110" width="180" height="114" rx="22" class="focus"/><text x="378" y="150" text-anchor="middle" class="t white" font-size="19" font-weight="900">OpenClaw bridge</text><text x="378" y="178" text-anchor="middle" class="m muted" font-size="13">bind • route • guard</text><text x="378" y="202" text-anchor="middle" class="m green" font-size="13">/cas_resume</text>
+<line x1="478" y1="167" x2="548" y2="167" stroke="#22C55E" stroke-width="3" marker-end="url(#chatops-arrow)"/>
+<rect x="558" y="126" width="150" height="82" rx="18" class="box"/><text x="633" y="160" text-anchor="middle" class="t white" font-size="18" font-weight="800">Codex thread</text><text x="633" y="185" text-anchor="middle" class="m muted" font-size="13">local CLI state</text>
+<line x1="718" y1="167" x2="788" y2="167" stroke="#22C55E" stroke-width="3" marker-end="url(#chatops-arrow)"/>
+<rect x="798" y="126" width="82" height="82" rx="18" class="box"/><text x="839" y="160" text-anchor="middle" class="t white" font-size="16" font-weight="800">PR</text><text x="839" y="185" text-anchor="middle" class="m muted" font-size="12">review</text>
+<rect x="72" y="265" width="148" height="52" rx="14" class="box"/><text x="146" y="297" text-anchor="middle" class="m white" font-size="14">explicit owner</text>
+<rect x="246" y="265" width="148" height="52" rx="14" class="box"/><text x="320" y="297" text-anchor="middle" class="m white" font-size="14">thread binding</text>
+<rect x="420" y="265" width="148" height="52" rx="14" class="box"/><text x="494" y="297" text-anchor="middle" class="m white" font-size="14">permission mode</text>
+<rect x="594" y="265" width="148" height="52" rx="14" class="box"/><text x="668" y="297" text-anchor="middle" class="m white" font-size="14">stop / compact</text>
+<rect x="768" y="265" width="100" height="52" rx="14" class="box"/><text x="818" y="297" text-anchor="middle" class="m white" font-size="14">audit</text>
+<rect x="48" y="356" width="832" height="2" fill="#22C55E" opacity=".65"/>
+<text x="464" y="383" text-anchor="middle" class="t white" font-size="16">Good ChatOps turns chat requests into bounded, reviewable software work.</text>
+</svg>
+<figcaption style="margin-top:12px;color:var(--text);opacity:.82;font-size:.95rem">The important boundary is not the chat app. It is the binding between a human request, an agent thread, a local execution environment, and a reviewable artifact.</figcaption>
+</figure>
+
+<p><strong>Coding agents are moving from private terminals into shared workflow surfaces.</strong> That is the real signal behind the OpenClaw Codex App Server plugin. It is not interesting because it lets someone type to an agent from Telegram or Discord. That part is obvious. It is interesting because it turns a chat conversation into a control surface for a real coding thread, with project selection, thread binding, model controls, permission controls, stop buttons, context compaction, and review commands around it.</p>
+
+<p>The larger developer ecosystem is moving in the same direction. GitHub describes ChatOps for agentic workflows as slash-command automation inside issues, pull requests, and comments. GitHub's Slack integration for Copilot coding agent lets developers mention GitHub in a Slack thread and receive a pull request back for review. OpenAI's Codex docs describe a coding agent that can run in an IDE, CLI, cloud task, or remote app-server setup. The pattern is clear: the agent is an execution worker that needs a collaboration surface, permissions model, and review path.</p>
+
+<h2>The short version</h2>
+<p>The old developer workflow was private: open terminal, run a tool, inspect output, commit code. The new workflow is shared. A task starts in chat, continues inside a bound agent thread, runs on a host with the repository, then returns as a branch, pull request, plan, review, or status update. The chat message is only the front door. The useful work happens when the integration keeps the agent run bounded and inspectable.</p>
+
+<h2>What the OpenClaw plugin actually shows</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Area</th><th>Observed detail</th></tr></thead>
+<tbody>
+<tr><td>Project</td><td><code>pwrdrvr/openclaw-codex-app-server</code>, an OpenClaw plugin for connecting Telegram and Discord conversations to Codex App Server / Codex CLI threads.</td></tr>
+<tr><td>Execution model</td><td>It uses the local Codex CLI and existing login state. If <code>codex</code> already works on the OpenClaw host, the plugin can reuse that setup.</td></tr>
+<tr><td>Core flow</td><td>Install plugin, run <code>/cas_resume</code> in Telegram or Discord, choose a recent or new thread, then route plain chat messages into the selected Codex thread.</td></tr>
+<tr><td>Controls</td><td>Project and thread selection, model switching, reasoning selection, fast mode, permission mode, skill shortcuts, compaction, stopping active runs, planning mode, workspace review, MCP server listing, and Codex skill listing.</td></tr>
+<tr><td>Safety signal</td><td>OpenClaw flags installation as unsafe because the plugin must launch <code>codex app-server</code>. That warning matters. The spawned process is the bridge.</td></tr>
+<tr><td>Status</td><td>Public repository, MIT license, TypeScript-heavy codebase, npm package, release and compatibility notes across OpenClaw versions around late March and early April 2026.</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>The strongest detail is not the command list. It is the fact that ambiguous filters produce a picker instead of guessing. That small product decision tells you what good agent UX should look like. When a chat message can become a repository action, ambiguity should be surfaced to the human instead of silently resolved by the bot.</p>
+
+<h2>Why this matters now</h2>
+<p>Most teams already use chat as the place where work is negotiated. Bugs are reported there. Screenshots land there. Production incidents start there. Engineers paste logs, links, and half-formed ideas into a channel before they ever become an issue or a pull request. So it is natural that coding agents will be pulled into the same surface.</p>
+
+<p>But chat is dangerous when it becomes too powerful. A channel is noisy, social, and persistent. People speak casually. They paste secrets by mistake. They tag the wrong thread. They assume someone else has context. If a coding agent treats every message as a clean instruction, the workflow will fail. A good ChatOps agent has to add friction at the right places: explicit binding, visible current project, permission mode display, stop controls, and a clear handoff into review.</p>
+
+<p>This is where the OpenClaw plugin is useful as an source worth tracking. It does not pretend the chat app is the coding environment. Chat handles conversation and control. Codex handles repository reasoning and execution. OpenClaw connects them.</p>
+
+<h2>The wrong read</h2>
+<p>The wrong read is: “Now developers can code from Telegram.” That is too shallow. Developers do not need more places to type prompts. They need fewer broken handoffs between the place where a task is discussed and the place where code changes are reviewed.</p>
+
+<p>The better question is: can the workflow preserve intent from the original chat thread all the way to the pull request? Can it show which project was selected? Can it show which Codex thread received the request? Can it stop a bad run before it writes too much? Can it keep a transcript that helps reviewers understand why a change exists? If the answer is no, the chat bot is only a novelty.</p>
+
+<h2>The operating model I would expect</h2>
+<ol>
+<li><strong>Start with a bounded task.</strong> A human asks for a fix, investigation, refactor, or test addition in a channel where the team already has context.</li>
+<li><strong>Bind the task to a project and thread.</strong> The bot should show the current repository, workspace, Codex thread, and active mode before it routes work.</li>
+<li><strong>Expose controls inline.</strong> Model, reasoning level, permission mode, compaction, planning, and stop actions should be available without hiding them in config files.</li>
+<li><strong>Return reviewable artifacts.</strong> The output should be a branch, PR, plan, diff, test result, or review summary, not just “done.”</li>
+<li><strong>Keep the audit trail readable.</strong> A teammate should be able to look at the chat later and understand who asked for work, what agent thread ran, and what changed.</li>
+</ol>
+
+<h2>Risks builders should not ignore</h2>
+<ul>
+<li><strong>Permission escalation:</strong> if a chat button can change permission mode, that control needs guardrails and visible defaults.</li>
+<li><strong>Thread confusion:</strong> a message sent to the wrong bound thread can create changes in the wrong project. The current binding should always be visible.</li>
+<li><strong>Host trust:</strong> because the bridge uses the local Codex setup, the OpenClaw host becomes part of the security boundary.</li>
+<li><strong>Chat retention:</strong> repository names, logs, errors, and partial output may persist in Telegram or Discord history.</li>
+<li><strong>Compatibility drift:</strong> channel SDKs, OpenClaw plugin interfaces, Codex CLI behavior, and app-server protocol details can all move. The compatibility matrix is a feature, but it also proves this surface needs maintenance.</li>
+</ul>
+
+<h2>How this compares to GitHub's ChatOps direction</h2>
+<p>GitHub's agentic workflow ChatOps pattern is more repository-native. Slash commands such as <code>/review</code> live inside issues, pull requests, and comments. Permissions can be restricted by repository role, and outputs can be constrained through safe operations such as review comments or summary comments.</p>
+
+<p>The OpenClaw plus Codex bridge starts from external chat, so it has to recreate some of that discipline: identity, command scope, allowed outputs, and review handoff. I do not see these as competing patterns. I see them as two versions of the same future: coding agents need command surfaces wherever teams coordinate.</p>
+
+<h2>What OpenClaw should optimize for</h2>
+<p>OpenClaw is interesting here because it can become the adapter layer between human channels and agent runtimes. That means the product quality bar is not “can it send a message?” The bar is: can it make channel-native work safe enough for real engineering teams?</p>
+
+<p>For this category, I would optimize OpenClaw around four primitives:</p>
+<ul>
+<li><strong>Bindings:</strong> explicit links between channel, user, repository, project, and agent thread.</li>
+<li><strong>Policies:</strong> clear defaults for who can start work, which commands are allowed, and what permission modes are available.</li>
+<li><strong>Artifacts:</strong> first-class branch, diff, PR, plan, and test-result handoffs.</li>
+<li><strong>Recovery:</strong> stop, resume, compact, rollback, and inspect flows that work from the same channel.</li>
+</ul>
+
+<div class="checklist">
+<h3>Adoption checklist</h3>
+<div class="checklist-item"><span class="checklist-box"></span><span>Show the active project and Codex thread before routing normal chat messages into an agent run.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Keep the default permission mode conservative, and make any elevation explicit in the chat history.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Return a reviewable artifact, not only a natural-language summary.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Test ambiguous search, expired Codex login, failed app-server launch, interrupted runs, and wrong-channel commands.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Decide what chat history can safely retain before using this with private repositories or production incidents.</span></div>
+</div>
+
+<div class="callout callout-solution">
+<div class="callout-title">My takeaway</div>
+<p>This belongs in the OpenClaw ecosystem map as a ChatOps control-plane pattern for coding agents. The important part is not that Telegram or Discord can talk to Codex. The important part is that chat becomes a bounded place to start, steer, stop, and review agentic software work.</p>
+</div>
+
+<h2>Sources</h2>
+<div class="source-ref"><a href="https://github.com/pwrdrvr/openclaw-codex-app-server" target="_blank" rel="noopener"><div class="source-title">pwrdrvr/openclaw-codex-app-server</div><div class="source-url">https://github.com/pwrdrvr/openclaw-codex-app-server</div></a></div>
+<div class="source-ref"><a href="https://www.npmjs.com/package/openclaw-codex-app-server" target="_blank" rel="noopener"><div class="source-title">openclaw-codex-app-server on npm</div><div class="source-url">https://www.npmjs.com/package/openclaw-codex-app-server</div></a></div>
+<div class="source-ref"><a href="https://github.github.com/gh-aw/patterns/chat-ops/" target="_blank" rel="noopener"><div class="source-title">GitHub Agentic Workflows: ChatOps pattern</div><div class="source-url">https://github.github.com/gh-aw/patterns/chat-ops/</div></a></div>
+<div class="source-ref"><a href="https://developers.openai.com/codex/cli/features" target="_blank" rel="noopener"><div class="source-title">OpenAI Developers: Codex CLI features</div><div class="source-url">https://developers.openai.com/codex/cli/features</div></a></div>
+<div class="source-ref"><a href="https://github.blog/changelog/2025-10-28-work-with-copilot-coding-agent-in-slack/" target="_blank" rel="noopener"><div class="source-title">GitHub Changelog: Copilot coding agent in Slack</div><div class="source-url">https://github.blog/changelog/2025-10-28-work-with-copilot-coding-agent-in-slack/</div></a></div>
+</article>
+<footer class="footer"><p>Part of <a href="/">Awesome OpenClaw</a>. See the <a href="/directory">directory</a> and <a href="/use-cases">use cases</a>.</p></footer>
+<script>
+(function(){
+const button=document.getElementById("themeToggle");
+const icon=document.getElementById("themeIcon");
+const html=document.documentElement;
+function setTheme(theme){
+if(theme==="light"){
+html.setAttribute("data-theme","light");
+icon.textContent="☀";
+}else{
+html.removeAttribute("data-theme");
+icon.textContent="☾";
+}
+localStorage.setItem("theme",theme);
+}
+const saved=localStorage.getItem("theme");
+if(saved){setTheme(saved);}
+button.addEventListener("click",function(){
+setTheme(html.getAttribute("data-theme")==="light"?"dark":"light");
+});
+})();
+</script>
+</body>
+</html>

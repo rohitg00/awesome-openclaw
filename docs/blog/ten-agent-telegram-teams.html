@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 10-Agent Telegram Pattern Became Real</title>
+<meta name="description" content="A builder-focused analysis of OpenClaw multi-agent teams in Telegram: roles, topic routing, shared context, and operational boundaries.">
+<meta property="og:title" content="The 10-Agent Telegram Pattern Became Real">
+<meta property="og:description" content="A builder-focused analysis of OpenClaw multi-agent teams in Telegram: roles, topic routing, shared context, and operational boundaries.">
+<meta property="og:image" content="https://openclawsearch.com/og-image.png">
+<meta property="og:url" content="https://openclawsearch.com/blog/ten-agent-telegram-teams">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The 10-Agent Telegram Pattern Became Real">
+<meta name="twitter:description" content="A builder-focused analysis of OpenClaw multi-agent teams in Telegram: roles, topic routing, shared context, and operational boundaries.">
+<meta name="twitter:image" content="https://openclawsearch.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/pixel-lobster.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0A0A0A;
+  --bg-s1:#111111;
+  --bg-s2:#1A1A1A;
+  --text:#EDEDED;
+  --text-muted:#888888;
+  --card:rgba(255,255,255,0.05);
+  --card-border:rgba(255,255,255,0.08);
+  --primary:#DC2626;
+  --primary-light:#EF4444;
+  --link:#EF4444;
+  --link-hover:#DC2626;
+  --badge-bg:rgba(220,38,38,0.12);
+  --badge-text:#EF4444;
+  --green:#22C55E;
+  --green-bg:rgba(34,197,94,0.08);
+  --green-border:rgba(34,197,94,0.25);
+  --yellow:#F59E0B;
+  --yellow-bg:rgba(245,158,11,0.08);
+  --yellow-border:rgba(245,158,11,0.25);
+  --blue:#3B82F6;
+  --blue-bg:rgba(59,130,246,0.08);
+  --blue-border:rgba(59,130,246,0.25);
+  --nav-bg:rgba(10,10,10,0.8);
+}
+[data-theme="light"]{
+  --bg:#FAFAFA;
+  --bg-s1:#FFFFFF;
+  --bg-s2:#F5F5F5;
+  --text:#171717;
+  --text-muted:#666666;
+  --card:#FFFFFF;
+  --card-border:rgba(0,0,0,0.08);
+  --link:#DC2626;
+  --link-hover:#B91C1C;
+  --badge-bg:rgba(220,38,38,0.08);
+  --badge-text:#DC2626;
+  --nav-bg:rgba(250,250,250,0.85);
+  --green-bg:rgba(34,197,94,0.06);
+  --green-border:rgba(34,197,94,0.2);
+  --yellow-bg:rgba(245,158,11,0.06);
+  --yellow-border:rgba(245,158,11,0.2);
+  --blue-bg:rgba(59,130,246,0.06);
+  --blue-border:rgba(59,130,246,0.2);
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:16px;transition:background .3s,color .3s}
+.nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
+.nav-logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .claw{color:var(--primary)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.nav-link,.gh-link{color:var(--text-muted);text-decoration:none;font-size:.85rem;font-weight:500;padding:6px 14px;border-radius:8px;border:1px solid var(--card-border);transition:all .2s}
+.nav-link:hover,.nav-link.active,.gh-link:hover{color:var(--text);border-color:var(--primary)}
+.theme-toggle{background:var(--card);border:1px solid var(--card-border);color:var(--text);cursor:pointer;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.article{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.article-header{padding:80px 0 48px;border-bottom:1px solid var(--card-border);margin-bottom:48px}
+.article-badge{display:inline-flex;align-items:center;gap:6px;background:var(--badge-bg);color:var(--badge-text);font-size:.8rem;font-weight:700;padding:4px 14px;border-radius:16px;margin-bottom:20px}
+.article-title{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-0.03em;line-height:1.15;margin-bottom:16px}
+.article-title .hl{color:var(--primary)}
+.article-subtitle{font-size:1.2rem;color:var(--text-muted);margin-bottom:24px;line-height:1.5}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;color:var(--text-muted);font-size:.85rem}
+.article-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.article-pill{font-size:.75rem;padding:4px 12px;border-radius:6px;background:var(--card);border:1px solid var(--card-border);color:var(--text-muted);font-weight:500}
+.article h2{font-size:1.55rem;font-weight:800;letter-spacing:-0.02em;margin:52px 0 18px;padding-left:16px;border-left:4px solid var(--primary);line-height:1.3}
+.article h3{font-size:1.18rem;font-weight:750;margin:34px 0 12px;color:var(--text)}
+.article p{color:var(--text-muted);margin-bottom:18px;line-height:1.85}
+.article strong{color:var(--text);font-weight:650}
+.article a{color:var(--link);text-decoration:none;transition:color .2s}
+.article a:hover{color:var(--link-hover);text-decoration:underline}
+.article ul,.article ol{margin:0 0 22px 24px;color:var(--text-muted)}
+.article li{margin-bottom:8px;line-height:1.75}
+.article li strong{color:var(--text)}
+.article code{font-family:'JetBrains Mono',monospace;font-size:.85em;background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;color:var(--primary-light)}
+.callout{margin:24px 0;padding:20px 24px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+.callout-title{font-weight:750;font-size:.9rem;margin-bottom:8px;color:var(--text);display:flex;align-items:center;gap:8px}
+.callout-info{border-color:var(--blue-border);background:var(--blue-bg)}
+.callout-solution{border-color:var(--green-border);background:var(--green-bg)}
+.callout-tip{border-color:var(--yellow-border);background:var(--yellow-bg)}
+.source-ref{margin:16px 0;padding:16px 18px;border-radius:10px;border:1px solid var(--card-border);background:var(--bg-s1);font-size:.9rem;color:var(--text-muted)}
+.source-title{font-weight:700;color:var(--text);margin-bottom:4px}
+.source-url{font-size:.8rem;color:var(--text-muted);word-break:break-all}
+.table-wrap{overflow-x:auto;margin:20px 0 28px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th{text-align:left;padding:12px 16px;font-weight:650;color:var(--text);border-bottom:1px solid var(--card-border)}
+td{padding:10px 16px;border-bottom:1px solid var(--card-border);color:var(--text-muted)}
+tr:last-child td{border-bottom:none}
+.checklist{margin:24px 0;padding:24px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+.checklist h3{margin:0 0 16px;font-size:1rem}
+.checklist-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-size:.9rem;color:var(--text-muted)}
+.checklist-box{width:18px;height:18px;border:2px solid var(--card-border);border-radius:4px;flex-shrink:0;margin-top:2px}
+.footer{text-align:center;padding:48px 24px;border-top:1px solid var(--card-border);color:var(--text-muted);font-size:.85rem}
+.footer a{color:var(--link);text-decoration:none}
+@media(max-width:768px){.nav-inner{padding:0 10px}.nav-actions{gap:6px}.nav-link,.gh-link{padding:4px 8px;font-size:.75rem}.article{padding:0 16px 40px}.article-header{padding:48px 0 32px}.article-title{font-size:1.8rem}.article-subtitle{font-size:1rem}.article h2{font-size:1.3rem}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-inner">
+<a href="/" class="nav-logo"><span class="claw">Open</span>Claw</a>
+<div class="nav-actions">
+<a href="/" class="nav-link">Home</a>
+<a href="/directory" class="nav-link">Directory</a>
+<a href="/use-cases" class="nav-link">Use Cases</a>
+<a href="/blog" class="nav-link active">Blog</a>
+<button class="theme-toggle" id="themeToggle" title="Toggle theme"><span id="themeIcon">☾</span></button>
+<a href="https://github.com/rohitg00/awesome-openclaw" target="_blank" rel="noopener" class="gh-link"><span>GitHub</span></a>
+</div>
+</div>
+</nav>
+<article class="article">
+<header class="article-header">
+<div class="article-badge">Multi-Agent</div>
+<h1 class="article-title">The 10-Agent Telegram Pattern Became Real</h1>
+<p class="article-subtitle">The number of agents is not the point. The real lesson is how Telegram topics, shared files, and explicit roles turn multi-agent demos into an operating model.</p>
+<div class="article-meta">
+<span>Rohit Ghumare · <a href="https://x.com/ghumare64" target="_blank" rel="noopener">@ghumare64</a></span>
+<span>Mar 31, 2026</span>
+<span>Builder/operator analysis</span>
+<span>Week of Mar 31, 2026</span>
+</div>
+<div class="article-pills">
+<span class="article-pill">Telegram</span>
+<span class="article-pill">Multi-Agent</span>
+<span class="article-pill">Teams</span>
+</div>
+</header>
+
+<figure class="post-diagram" style="margin:36px 0;padding:18px;border:1px solid var(--card-border);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));overflow:hidden">
+<svg role="img" aria-label="Diagram for The 10-Agent Telegram Pattern Became Real" viewBox="0 0 820 360" width="100%" style="display:block;border-radius:18px;background:#070707" xmlns="http://www.w3.org/2000/svg">
+<title>The 10-Agent Telegram Pattern Became Real operating map</title>
+<rect width="820" height="360" fill="#070707"/>
+<circle cx="72" cy="64" r="30" fill="#06B6D4" opacity=".16"/><text x="72" y="71" text-anchor="middle" font-family="Inter,Arial" font-size="26" font-weight="800" fill="#06B6D4">1</text>
+<text x="120" y="58" font-family="Inter,Arial" font-size="24" font-weight="800" fill="#f5f5f5">Agent team over chat</text>
+<text x="120" y="84" font-family="JetBrains Mono,monospace" font-size="15" fill="#c7c7c7">read it as an operating boundary, not a logo announcement</text>
+<defs><marker id="arrow-201913193557605011" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#06B6D4"/></marker></defs>
+<rect x="58" y="134" width="188" height="82" rx="18" fill="#0f0f0f" stroke="#2a2a2a"/>
+<text x="152" y="169" text-anchor="middle" font-family="Inter,Arial" font-size="18" font-weight="800" fill="#fff">group request</text>
+<text x="152" y="194" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#bdbdbd">input / source</text>
+<line x1="256" y1="175" x2="342" y2="175" stroke="#06B6D4" stroke-width="3" marker-end="url(#arrow-201913193557605011)"/>
+<rect x="352" y="120" width="212" height="110" rx="22" fill="#111" stroke="#06B6D4" stroke-width="2"/>
+<text x="458" y="164" text-anchor="middle" font-family="Inter,Arial" font-size="19" font-weight="900" fill="#fff">agent team</text>
+<text x="458" y="193" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#d6d6d6">policy • state • logs</text>
+<line x1="574" y1="175" x2="646" y2="175" stroke="#06B6D4" stroke-width="3" marker-end="url(#arrow-201913193557605011)"/>
+<rect x="656" y="134" width="106" height="82" rx="18" fill="#0f0f0f" stroke="#2a2a2a"/>
+<text x="709" y="169" text-anchor="middle" font-family="Inter,Arial" font-size="16" font-weight="800" fill="#fff">human-readable result</text>
+<text x="709" y="194" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#bdbdbd">output</text>
+<rect x="95" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="170" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">Telegram topic</text><rect x="275" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="350" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">agent role</text><rect x="455" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="530" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">handoff</text><rect x="635" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="710" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">summary</text>
+<rect x="58" y="312" width="704" height="2" fill="#06B6D4" opacity=".65"/>
+<text x="410" y="335" text-anchor="middle" font-family="Inter,Arial" font-size="15" fill="#eeeeee">Many agents in a chat room need roles, handoffs, and summaries, otherwise they become noise.</text>
+</svg>
+<figcaption style="margin-top:12px;color:var(--text);opacity:.82;font-size:.95rem">A simplified operating map for the post: where the user request enters, where the integration boundary sits, and what has to be true before the output is trusted.</figcaption>
+</figure>
+
+<div class="callout callout-info"><div class="callout-title">Why this matters now</div><p>This post looks at <a href="https://github.com/raulvidis/openclaw-multi-agent-kit" target="_blank" rel="noopener">raulvidis/openclaw-multi-agent-kit</a>, a March-era template kit for running OpenClaw agent teams through Telegram supergroups and topic channels.</p></div>
+<h2>The useful part is not “ten agents”</h2>
+<p>“Ten agents” is a catchy headline and a bad architecture principle. The useful part of <code>openclaw-multi-agent-kit</code> is that it treats multi-agent work as an operating system problem: identities, workspaces, topics, shared markdown context, escalation rules, cron schedules, and bot-to-bot triggers.</p>
+<p>The repository says it was built from a live production setup with ten autonomous agents. Each agent has a bot identity, personality, workspace, domain expertise, Telegram routing, and shared context workflow. Whether a team needs three agents or ten is secondary. What matters is that the kit forces builders to name the boundaries between roles.</p>
+<h2>What the kit actually contributes</h2>
+<div class="table-wrap"><table><thead><tr><th>Component</th><th>Builder value</th></tr></thead><tbody>
+<tr><td><code>SOUL.md</code> templates</td><td>Make agent behavior explicit instead of buried in ad hoc prompts.</td></tr>
+<tr><td><code>IDENTITY.md</code> templates</td><td>Document what an agent owns, what it can do, and when it should defer.</td></tr>
+<tr><td>Workspace templates</td><td>Give agents shared files for context, memory, and coordination.</td></tr>
+<tr><td><code>openclaw.json</code> snippets</td><td>Turn a concept into installable channel, binding, and agent configuration.</td></tr>
+<tr><td>Telegram topic routing docs</td><td>Show how conversations map to teams instead of one giant bot thread.</td></tr>
+<tr><td>Escalation chains</td><td>Prevent every agent from trying to answer every message.</td></tr>
+</tbody></table></div>
+<h2>The Telegram detail that matters</h2>
+<p>The most important caveat in the repo is also the most operationally honest: native topic routing changes the internal OpenClaw agent that handles a message; it does not necessarily change the visible Telegram bot identity. That distinction saves users from a lot of confusion.</p>
+<p>Telegram can provide a clean collaboration surface: one supergroup, forum topics for teams, visible handoffs, and human-readable context. But if visible identity, internal agent routing, and workspace ownership do not line up, the system becomes theatrical. People think they are talking to “Research” or “QA,” while the runtime may be using a different internal handler.</p>
+<h2>Good multi-agent design is mostly subtraction</h2>
+<p>The failure mode for multi-agent systems is not lack of agents. It is too many agents with overlapping authority. A useful team has a lead/orchestrator, clear specialist lanes, and boring rules for when to escalate. A noisy team has ten personalities all trying to be helpful.</p>
+<p>This kit is valuable because it gives builders something concrete to prune. Start from the templates, then remove roles until every remaining agent has a job that would still make sense if a human held it: research intake, code implementation, QA, deployment, content, community, or operations.</p>
+<div class="comparison"><div class="comparison-col before"><h4>Weak multi-agent setup</h4><ul><li>Agents differ only by persona.</li><li>Everyone can answer every thread.</li><li>Shared memory is implicit or stale.</li><li>No owner for final decisions.</li><li>No clear failure or escalation path.</li></ul></div><div class="comparison-col after"><h4>Stronger setup</h4><ul><li>Roles map to real work queues.</li><li>Topics route to primary owners.</li><li>Shared context is file-backed and reviewable.</li><li>Lead agent or human owns arbitration.</li><li>Escalation is written down.</li></ul></div></div>
+<h2>How I would run a pilot</h2>
+<p>I would not start with a ten-agent production deployment. I would start with three agents in one Telegram supergroup: Lead, Research, and Build. Give each one a workspace, a minimal <code>SOUL.md</code>, and a shared context file. Route one topic to each primary agent. Then test a real task: research an issue, propose a fix, implement a branch, and produce a human-readable summary.</p>
+<p>Only after that works would I add QA, Deploy, or Market roles. Every new agent should reduce cognitive load for the human operator. If a role adds notifications, debate, or duplicate output without making work easier to review, remove it.</p>
+<div class="checklist"><h3>Team deployment checklist</h3>
+<div class="checklist-item"><span class="checklist-box"></span><span>Define one owner per Telegram topic.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Write down when secondary agents may speak without being mentioned.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Keep shared context in files that humans can inspect and edit.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Separate visible Telegram identity from internal agent routing in the docs.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Measure whether the team reduces handoff time or just creates more chat.</span></div>
+</div>
+<h2>The practical takeaway</h2>
+<p>The March signal is that OpenClaw users are moving from “one assistant in one chat” toward “agent teams with operating rules.” The right benchmark is not how many agents are running. It is whether a human can see who owns the task, what context was used, what changed, and where to intervene.</p>
+<h2>How I would read the diagram</h2>
+<p>A Telegram group full of agents sounds fun until the first real incident. Then the questions become practical: who owns the task, who is allowed to call tools, where does the summary live, and how does a human stop the loop?</p>
+<p>The useful pattern is not “ten agents everywhere.” It is a small set of specialized roles with a visible coordinator. Chat is good for coordination because humans already understand it. But the agent layer has to respect the room: concise updates, clear handoffs, and no hidden long-running work without status.</p>
+<h2>What would make this real</h2>
+<p>The practical test is whether the integration can be operated on a bad day. A good demo shows the happy path. A real OpenClaw component should show the boundary conditions: what happens when the source is slow, when the account changes, when the model is unsure, when the tool returns partial data, and when the user asks for something outside the allowed scope.</p>
+<p>That is why I keep coming back to the same operator questions: who owns the credential, where does the state live, what is logged, how is failure shown, and how does a human override the agent? If those answers are visible, the integration can be trusted gradually. If they are hidden, even a useful feature becomes hard to recommend.</p>
+<h2>Sources</h2>
+<div class="source-ref"><a href="https://github.com/raulvidis/openclaw-multi-agent-kit" target="_blank" rel="noopener"><div class="source-title">raulvidis/openclaw-multi-agent-kit</div><div class="source-url">https://github.com/raulvidis/openclaw-multi-agent-kit</div></a></div>
+<div class="source-ref"><a href="https://blog.cdnsun.com/multi-agents-in-openclaw-sub-agents-and-telegram/" target="_blank" rel="noopener"><div class="source-title">Multi-agents in OpenClaw: sub-agents and Telegram</div><div class="source-url">https://blog.cdnsun.com/multi-agents-in-openclaw-sub-agents-and-telegram/</div></a></div>
+
+<h2>The bar I would use before trusting this</h2>
+<p>For OpenClaw readers, the useful question is not whether this exists as a package or repository. The useful question is whether it changes the operating model. Does it move the agent closer to a channel people already trust? Does it add a new permission boundary? Does it make debugging easier? Does it make deployment repeatable enough that a maintainer could support it after the launch week? That is the bar I am using here.</p>
+<p>I also do not want to over-claim the source. A repo, package, or release note is evidence of direction, not proof of adoption. The right way to read these posts is as a builder map: what became possible, where the integration boundary moved, and what a serious team would verify before putting it near real users.</p>
+
+</article>
+<footer class="footer"><p>Part of <a href="/">Awesome OpenClaw</a>. See the <a href="/directory">directory</a> and <a href="/use-cases">use cases</a>.</p></footer>
+<script>
+(function(){
+const button=document.getElementById("themeToggle");
+const icon=document.getElementById("themeIcon");
+const html=document.documentElement;
+function setTheme(theme){
+if(theme==="light"){
+html.setAttribute("data-theme","light");
+icon.textContent="☀";
+}else{
+html.removeAttribute("data-theme");
+icon.textContent="☾";
+}
+localStorage.setItem("theme",theme);
+}
+const saved=localStorage.getItem("theme");
+if(saved){setTheme(saved);}
+button.addEventListener("click",function(){
+setTheme(html.getAttribute("data-theme")==="light"?"dark":"light");
+});
+})();
+</script>
+</body>
+</html>

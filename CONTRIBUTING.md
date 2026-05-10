@@ -12,6 +12,18 @@ This repo powers [openclawsearch.com](https://openclawsearch.com). The website *
 - Tables, code blocks, sections, and nav links are all generated from your markdown
 - `directory.html` is a separate curated page for ecosystem projects built with OpenClaw
 
+## Validation
+
+### Before opening a PR
+
+Run the lightweight static checks:
+
+```bash
+python3 scripts/validate_static.py
+```
+
+This validates JSON, basic HTML structure, Vercel rewrite destinations, and README anchors for both GitHub and the website renderer.
+
 ## How to Add a Resource
 
 1. Fork this repository

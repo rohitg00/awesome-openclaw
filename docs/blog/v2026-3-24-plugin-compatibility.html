@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClaw v2026.3.24 Was a Plugin Compatibility Wake-Up Call</title>
+<meta name="description" content="A release-window analysis of OpenClaw v2026.3.24: API compatibility, channel SDK changes, plugin hooks, tool visibility, and upgrade discipline.">
+<meta property="og:title" content="OpenClaw v2026.3.24 Was a Plugin Compatibility Wake-Up Call">
+<meta property="og:description" content="A release-window analysis of OpenClaw v2026.3.24: API compatibility, channel SDK changes, plugin hooks, tool visibility, and upgrade discipline.">
+<meta property="og:image" content="https://openclawsearch.com/og-image.png">
+<meta property="og:url" content="https://openclawsearch.com/blog/v2026-3-24-plugin-compatibility">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OpenClaw v2026.3.24 Was a Plugin Compatibility Wake-Up Call">
+<meta name="twitter:description" content="A release-window analysis of OpenClaw v2026.3.24: API compatibility, channel SDK changes, plugin hooks, tool visibility, and upgrade discipline.">
+<meta name="twitter:image" content="https://openclawsearch.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/pixel-lobster.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0A0A0A;
+  --bg-s1:#111111;
+  --bg-s2:#1A1A1A;
+  --text:#EDEDED;
+  --text-muted:#888888;
+  --card:rgba(255,255,255,0.05);
+  --card-border:rgba(255,255,255,0.08);
+  --primary:#DC2626;
+  --primary-light:#EF4444;
+  --link:#EF4444;
+  --link-hover:#DC2626;
+  --badge-bg:rgba(220,38,38,0.12);
+  --badge-text:#EF4444;
+  --green:#22C55E;
+  --green-bg:rgba(34,197,94,0.08);
+  --green-border:rgba(34,197,94,0.25);
+  --yellow:#F59E0B;
+  --yellow-bg:rgba(245,158,11,0.08);
+  --yellow-border:rgba(245,158,11,0.25);
+  --blue:#3B82F6;
+  --blue-bg:rgba(59,130,246,0.08);
+  --blue-border:rgba(59,130,246,0.25);
+  --nav-bg:rgba(10,10,10,0.8);
+}
+[data-theme="light"]{
+  --bg:#FAFAFA;
+  --bg-s1:#FFFFFF;
+  --bg-s2:#F5F5F5;
+  --text:#171717;
+  --text-muted:#666666;
+  --card:#FFFFFF;
+  --card-border:rgba(0,0,0,0.08);
+  --link:#DC2626;
+  --link-hover:#B91C1C;
+  --badge-bg:rgba(220,38,38,0.08);
+  --badge-text:#DC2626;
+  --nav-bg:rgba(250,250,250,0.85);
+  --green-bg:rgba(34,197,94,0.06);
+  --green-border:rgba(34,197,94,0.2);
+  --yellow-bg:rgba(245,158,11,0.06);
+  --yellow-border:rgba(245,158,11,0.2);
+  --blue-bg:rgba(59,130,246,0.06);
+  --blue-border:rgba(59,130,246,0.2);
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:16px;transition:background .3s,color .3s}
+.nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
+.nav-logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .claw{color:var(--primary)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.nav-link,.gh-link{color:var(--text-muted);text-decoration:none;font-size:.85rem;font-weight:500;padding:6px 14px;border-radius:8px;border:1px solid var(--card-border);transition:all .2s}
+.nav-link:hover,.nav-link.active,.gh-link:hover{color:var(--text);border-color:var(--primary)}
+.theme-toggle{background:var(--card);border:1px solid var(--card-border);color:var(--text);cursor:pointer;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.article{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.article-header{padding:80px 0 48px;border-bottom:1px solid var(--card-border);margin-bottom:48px}
+.article-badge{display:inline-flex;align-items:center;gap:6px;background:var(--badge-bg);color:var(--badge-text);font-size:.8rem;font-weight:700;padding:4px 14px;border-radius:16px;margin-bottom:20px}
+.article-title{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-0.03em;line-height:1.15;margin-bottom:16px}
+.article-title .hl{color:var(--primary)}
+.article-subtitle{font-size:1.2rem;color:var(--text-muted);margin-bottom:24px;line-height:1.5}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;color:var(--text-muted);font-size:.85rem}
+.article-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.article-pill{font-size:.75rem;padding:4px 12px;border-radius:6px;background:var(--card);border:1px solid var(--card-border);color:var(--text-muted);font-weight:500}
+.article h2{font-size:1.55rem;font-weight:800;letter-spacing:-0.02em;margin:52px 0 18px;padding-left:16px;border-left:4px solid var(--primary);line-height:1.3}
+.article h3{font-size:1.18rem;font-weight:750;margin:34px 0 12px;color:var(--text)}
+.article p{color:var(--text-muted);margin-bottom:18px;line-height:1.85}
+.article strong{color:var(--text);font-weight:650}
+.article a{color:var(--link);text-decoration:none;transition:color .2s}
+.article a:hover{color:var(--link-hover);text-decoration:underline}
+.article ul,.article ol{margin:0 0 22px 24px;color:var(--text-muted)}
+.article li{margin-bottom:8px;line-height:1.75}
+.article li strong{color:var(--text)}
+.article code{font-family:'JetBrains Mono',monospace;font-size:.85em;background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;color:var(--primary-light)}
+.callout{margin:24px 0;padding:20px 24px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+.callout-title{font-weight:750;font-size:.9rem;margin-bottom:8px;color:var(--text);display:flex;align-items:center;gap:8px}
+.callout-info{border-color:var(--blue-border);background:var(--blue-bg)}
+.callout-solution{border-color:var(--green-border);background:var(--green-bg)}
+.callout-tip{border-color:var(--yellow-border);background:var(--yellow-bg)}
+.source-ref{margin:16px 0;padding:16px 18px;border-radius:10px;border:1px solid var(--card-border);background:var(--bg-s1);font-size:.9rem;color:var(--text-muted)}
+.source-title{font-weight:700;color:var(--text);margin-bottom:4px}
+.source-url{font-size:.8rem;color:var(--text-muted);word-break:break-all}
+.table-wrap{overflow-x:auto;margin:20px 0 28px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th{text-align:left;padding:12px 16px;font-weight:650;color:var(--text);border-bottom:1px solid var(--card-border)}
+td{padding:10px 16px;border-bottom:1px solid var(--card-border);color:var(--text-muted)}
+tr:last-child td{border-bottom:none}
+.checklist{margin:24px 0;padding:24px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+.checklist h3{margin:0 0 16px;font-size:1rem}
+.checklist-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-size:.9rem;color:var(--text-muted)}
+.checklist-box{width:18px;height:18px;border:2px solid var(--card-border);border-radius:4px;flex-shrink:0;margin-top:2px}
+.footer{text-align:center;padding:48px 24px;border-top:1px solid var(--card-border);color:var(--text-muted);font-size:.85rem}
+.footer a{color:var(--link);text-decoration:none}
+@media(max-width:768px){.nav-inner{padding:0 10px}.nav-actions{gap:6px}.nav-link,.gh-link{padding:4px 8px;font-size:.75rem}.article{padding:0 16px 40px}.article-header{padding:48px 0 32px}.article-title{font-size:1.8rem}.article-subtitle{font-size:1rem}.article h2{font-size:1.3rem}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-inner">
+<a href="/" class="nav-logo"><span class="claw">Open</span>Claw</a>
+<div class="nav-actions">
+<a href="/" class="nav-link">Home</a>
+<a href="/directory" class="nav-link">Directory</a>
+<a href="/use-cases" class="nav-link">Use Cases</a>
+<a href="/blog" class="nav-link active">Blog</a>
+<button class="theme-toggle" id="themeToggle" title="Toggle theme"><span id="themeIcon">☾</span></button>
+<a href="https://github.com/rohitg00/awesome-openclaw" target="_blank" rel="noopener" class="gh-link"><span>GitHub</span></a>
+</div>
+</div>
+</nav>
+<article class="article">
+<header class="article-header">
+<div class="article-badge">Release</div>
+<h1 class="article-title">OpenClaw v2026.3.24 Was a Plugin Compatibility Wake-Up Call</h1>
+<p class="article-subtitle">The late-March release was not just a feature drop. It showed why OpenClaw plugins now need version matrices, smoke tests, and rollback plans.</p>
+<div class="article-meta">
+<span>Rohit Ghumare · <a href="https://x.com/ghumare64" target="_blank" rel="noopener">@ghumare64</a></span>
+<span>Mar 25, 2026</span>
+<span>Builder/operator analysis</span>
+<span>Week of Mar 24, 2026</span>
+</div>
+<div class="article-pills">
+<span class="article-pill">Release</span>
+<span class="article-pill">Plugins</span>
+<span class="article-pill">Compatibility</span>
+</div>
+</header>
+
+<figure class="post-diagram" style="margin:36px 0;padding:18px;border:1px solid var(--card-border);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));overflow:hidden">
+<svg role="img" aria-label="Diagram for OpenClaw v2026.3.24 Was a Plugin Compatibility Wake-Up Call" viewBox="0 0 820 360" width="100%" style="display:block;border-radius:18px;background:#070707" xmlns="http://www.w3.org/2000/svg">
+<title>OpenClaw v2026.3.24 Was a Plugin Compatibility Wake-Up Call operating map</title>
+<rect width="820" height="360" fill="#070707"/>
+<circle cx="72" cy="64" r="30" fill="#8B5CF6" opacity=".16"/><text x="72" y="71" text-anchor="middle" font-family="Inter,Arial" font-size="26" font-weight="800" fill="#8B5CF6">1</text>
+<text x="120" y="58" font-family="Inter,Arial" font-size="24" font-weight="800" fill="#f5f5f5">Compatibility layer</text>
+<text x="120" y="84" font-family="JetBrains Mono,monospace" font-size="15" fill="#c7c7c7">read it as an operating boundary, not a logo announcement</text>
+<defs><marker id="arrow-3806648172243944320" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#8B5CF6"/></marker></defs>
+<rect x="58" y="134" width="188" height="82" rx="18" fill="#0f0f0f" stroke="#2a2a2a"/>
+<text x="152" y="169" text-anchor="middle" font-family="Inter,Arial" font-size="18" font-weight="800" fill="#fff">old plugin</text>
+<text x="152" y="194" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#bdbdbd">input / source</text>
+<line x1="256" y1="175" x2="342" y2="175" stroke="#8B5CF6" stroke-width="3" marker-end="url(#arrow-3806648172243944320)"/>
+<rect x="352" y="120" width="212" height="110" rx="22" fill="#111" stroke="#8B5CF6" stroke-width="2"/>
+<text x="458" y="164" text-anchor="middle" font-family="Inter,Arial" font-size="19" font-weight="900" fill="#fff">compatibility gate</text>
+<text x="458" y="193" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#d6d6d6">policy • state • logs</text>
+<line x1="574" y1="175" x2="646" y2="175" stroke="#8B5CF6" stroke-width="3" marker-end="url(#arrow-3806648172243944320)"/>
+<rect x="656" y="134" width="106" height="82" rx="18" fill="#0f0f0f" stroke="#2a2a2a"/>
+<text x="709" y="169" text-anchor="middle" font-family="Inter,Arial" font-size="16" font-weight="800" fill="#fff">stable host</text>
+<text x="709" y="194" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#bdbdbd">output</text>
+<rect x="95" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="170" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">host version</text><rect x="275" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="350" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">plugin API</text><rect x="455" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="530" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">channel package</text><rect x="635" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="710" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">migration</text>
+<rect x="58" y="312" width="704" height="2" fill="#8B5CF6" opacity=".65"/>
+<text x="410" y="335" text-anchor="middle" font-family="Inter,Arial" font-size="15" fill="#eeeeee">Plugin ecosystems grow only when compatibility is explicit and migrations are boring.</text>
+</svg>
+<figcaption style="margin-top:12px;color:var(--text);opacity:.82;font-size:.95rem">A simplified operating map for the post: where the user request enters, where the integration boundary sits, and what has to be true before the output is trusted.</figcaption>
+</figure>
+
+<div class="callout callout-info"><div class="callout-title">Why this matters now</div><p>This post focuses on the <a href="https://github.com/openclaw/openclaw/releases/tag/v2026.3.24" target="_blank" rel="noopener">OpenClaw v2026.3.24</a> release window and what it means for plugin builders. It is not a generic release recap; it is a compatibility read.</p></div>
+<h2>The release was a contract test for the ecosystem</h2>
+<p>OpenClaw v2026.3.24 shipped the kind of changes that make an ecosystem feel real: OpenAI-compatible gateway endpoints, clearer tools visibility, Microsoft Teams SDK migration, skills install metadata, Slack interactive reply fixes, container-aware CLI commands, Discord auto-thread naming, and plugin hook work such as <code>before_dispatch</code>.</p>
+<p>None of that is filler. Each item touches a contract external builders depend on: HTTP API shape, channel behavior, tool visibility, plugin hooks, skills metadata, runtime requirements, and deployment assumptions. This is why late March should be read as a compatibility moment, not only a feature release.</p>
+<div class="table-wrap"><table><thead><tr><th>Release area</th><th>Why plugin builders should care</th></tr></thead><tbody>
+<tr><td>OpenAI-compatible endpoints</td><td><code>/v1/models</code>, <code>/v1/embeddings</code>, and model override forwarding make more clients possible, but they also set API expectations.</td></tr>
+<tr><td>Tools visibility</td><td><code>/tools</code> and Control UI now emphasize tools available to the current agent, reducing false promises in prompts.</td></tr>
+<tr><td>Teams SDK migration</td><td>Channel integrations can change substantially when a platform SDK becomes official or gets replaced.</td></tr>
+<tr><td>Skills metadata</td><td>One-click install recipes move skills closer to packaged dependencies, which requires accurate requirements.</td></tr>
+<tr><td>Plugin hooks</td><td><code>before_dispatch</code> and canonical inbound metadata give plugins more power and a sharper need for stable contracts.</td></tr>
+<tr><td>Node floor</td><td>Supporting Node <code>22.14+</code> while recommending Node 24 affects install paths and support matrices.</td></tr>
+</tbody></table></div>
+<h2>Why “no breaking changes” does not mean “nothing can break”</h2>
+<p>The GitHub release summary did not list formal breaking changes. But ecosystem compatibility is broader than a Breaking section. A plugin can break because an export path moved, an adapter split, a channel facade changed, an update command cannot pass a needed flag, or a tool visibility rule hides something the plugin assumed was available.</p>
+<p>The Codex App Server bridge demonstrates this in practice. Its README later needed a compatibility matrix across OpenClaw <code>2026.3.22</code>, <code>2026.3.31</code>, <code>v2026.4.2</code>, and newer local checkouts. That is what a fast runtime looks like from the outside: release notes tell one story; plugin READMEs tell the operational story.</p>
+<h2>The compatibility matrix should become normal</h2>
+<p>OpenClaw is moving from a single repo to a plugin ecosystem. Once that happens, every serious integration should publish three things:</p>
+<ul>
+<li><strong>Minimum OpenClaw version:</strong> the earliest tested runtime.</li>
+<li><strong>Maximum known-good version or range:</strong> especially for channel SDKs and plugin facades.</li>
+<li><strong>Failure notes:</strong> what breaks when the runtime is too old, too new, or missing unsafe-install/update behavior.</li>
+</ul>
+<p>This is not bureaucracy. It is how maintainers avoid turning every support thread into archaeology.</p>
+<div class="comparison"><div class="comparison-col before"><h4>Weak release practice</h4><ul><li>“Install latest” as the only instruction.</li><li>No runtime range.</li><li>No channel-specific notes.</li><li>No rollback command.</li><li>No test fixture for plugin hooks.</li></ul></div><div class="comparison-col after"><h4>Better release practice</h4><ul><li>Pin and test against named OpenClaw versions.</li><li>Document install, update, and uninstall paths.</li><li>List channel SDK assumptions.</li><li>Provide a known-good matrix.</li><li>Run smoke tests for every supported channel.</li></ul></div></div>
+<h2>What operators should do before upgrading</h2>
+<div class="checklist"><h3>Upgrade checklist</h3>
+<div class="checklist-item"><span class="checklist-box"></span><span>Inventory installed plugins, channel integrations, skills, and custom hooks.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Read release notes for API endpoints, channel SDK changes, tool visibility, and runtime requirements.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Run a staging gateway with representative Telegram, Discord, Slack, Teams, and web tool flows.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Verify plugin install/update commands, including unsafe-install flags when a plugin launches subprocesses.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Keep a rollback path and the previous working OpenClaw/plugin versions.</span></div>
+</div>
+<h2>The practical takeaway</h2>
+<p>v2026.3.24 was not only a feature drop. It was a reminder that OpenClaw is now an integration surface. The more useful the runtime becomes, the more important compatibility discipline becomes: signed releases, precise version notes, plugin matrices, smoke tests, and honest documentation about what changed.</p>
+<h2>How I would read the diagram</h2>
+<p>Compatibility is not glamorous, but it decides whether an ecosystem survives. If every channel plugin breaks on every host release, developers stop building around the platform. If the compatibility story is visible, versioned, and boring, contributors can take reasonable risk.</p>
+<p>The March signal matters because OpenClaw is no longer just one repo. It is a host plus channels plus plugins plus deployment surfaces. That means release notes and compatibility ranges become part of the developer experience, not administrative noise.</p>
+<h2>What would make this real</h2>
+<p>The practical test is whether the integration can be operated on a bad day. A good demo shows the happy path. A real OpenClaw component should show the boundary conditions: what happens when the source is slow, when the account changes, when the model is unsure, when the tool returns partial data, and when the user asks for something outside the allowed scope.</p>
+<p>That is why I keep coming back to the same operator questions: who owns the credential, where does the state live, what is logged, how is failure shown, and how does a human override the agent? If those answers are visible, the integration can be trusted gradually. If they are hidden, even a useful feature becomes hard to recommend.</p>
+<h2>The product bar I would use</h2>
+<p>I would not judge this by whether it can answer one impressive prompt. I would judge it by repeatability. Can another maintainer set it up from the docs? Can a user predict when the agent will act and when it will ask? Can the system explain what changed after an update? These are the small details that decide whether an agent project feels like infrastructure or a weekend automation.</p>
+<h2>Sources</h2>
+<div class="source-ref"><a href="https://github.com/openclaw/openclaw/releases/tag/v2026.3.24" target="_blank" rel="noopener"><div class="source-title">openclaw/openclaw v2026.3.24 release</div><div class="source-url">https://github.com/openclaw/openclaw/releases/tag/v2026.3.24</div></a></div>
+<div class="source-ref"><a href="https://github.com/pwrdrvr/openclaw-codex-app-server" target="_blank" rel="noopener"><div class="source-title">pwrdrvr/openclaw-codex-app-server compatibility notes</div><div class="source-url">https://github.com/pwrdrvr/openclaw-codex-app-server</div></a></div>
+
+<h2>The bar I would use before trusting this</h2>
+<p>For OpenClaw readers, the useful question is not whether this exists as a package or repository. The useful question is whether it changes the operating model. Does it move the agent closer to a channel people already trust? Does it add a new permission boundary? Does it make debugging easier? Does it make deployment repeatable enough that a maintainer could support it after the launch week? That is the bar I am using here.</p>
+<p>I also do not want to over-claim the source. A repo, package, or release note is evidence of direction, not proof of adoption. The right way to read these posts is as a builder map: what became possible, where the integration boundary moved, and what a serious team would verify before putting it near real users.</p>
+
+</article>
+<footer class="footer"><p>Part of <a href="/">Awesome OpenClaw</a>. See the <a href="/directory">directory</a> and <a href="/use-cases">use cases</a>.</p></footer>
+<script>
+(function(){
+const button=document.getElementById("themeToggle");
+const icon=document.getElementById("themeIcon");
+const html=document.documentElement;
+function setTheme(theme){
+if(theme==="light"){
+html.setAttribute("data-theme","light");
+icon.textContent="☀";
+}else{
+html.removeAttribute("data-theme");
+icon.textContent="☾";
+}
+localStorage.setItem("theme",theme);
+}
+const saved=localStorage.getItem("theme");
+if(saved){setTheme(saved);}
+button.addEventListener("click",function(){
+setTheme(html.getAttribute("data-theme")==="light"?"dark":"light");
+});
+})();
+</script>
+</body>
+</html>

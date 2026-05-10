@@ -1,16 +1,53 @@
 {
   "rewrites": [
     { "source": "/", "destination": "/docs/website/index.html" },
+    { "source": "/robots.txt", "destination": "/docs/public/robots.txt" },
     { "source": "/index.html", "destination": "/docs/website/index.html" },
     { "source": "/directory.html", "destination": "/docs/website/directory.html" },
     { "source": "/directory", "destination": "/docs/website/directory.html" },
+    { "source": "/use-cases.html", "destination": "/docs/website/use-cases.html" },
+    { "source": "/use-cases", "destination": "/docs/website/use-cases.html" },
     { "source": "/blog.html", "destination": "/docs/blog/blog.html" },
     { "source": "/blog", "destination": "/docs/blog/blog.html" },
     { "source": "/blog/:slug", "destination": "/docs/blog/:slug.html" },
     { "source": "/blog/:slug.html", "destination": "/docs/blog/:slug.html" },
     { "source": "/og-image.png", "destination": "/docs/public/og-image.png" },
+    { "source": "/robots.txt", "destination": "/docs/public/robots.txt" },
+    { "source": "/sitemap.xml", "destination": "/docs/public/sitemap.xml" },
     { "source": "/og-image.html", "destination": "/docs/public/og-image.html" },
     { "source": "/og/:slug.png", "destination": "/docs/public/og/:slug.png" },
     { "source": "/og/:slug.html", "destination": "/docs/public/og/:slug.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)\\.(css|js|png|jpg|jpeg|svg|webp|woff2|woff|ttf|ico)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400, s-maxage=604800, stale-while-revalidate=2592000" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=86400, stale-while-revalidate=604800" }
+      ]
+    },
+    {
+      "source": "/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=86400, stale-while-revalidate=604800" }
+      ]
+    },
+    {
+      "source": "/(directory|use-cases|blog)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=86400, stale-while-revalidate=604800" }
+      ]
+    },
+    {
+      "source": "/blog/:slug",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=86400, stale-while-revalidate=604800" }
+      ]
+    }
   ]
 }

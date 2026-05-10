@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClaw on EKS Is a Signal, Not Just a Deployment Guide</title>
+<meta name="description" content="An EKS deployment example shows OpenClaw entering platform-engineering territory: Kubernetes helps standardize rollout, identity, scaling, and observability, but only if the manifests include the hard parts.">
+<meta property="og:title" content="OpenClaw on EKS Is a Signal, Not Just a Deployment Guide">
+<meta property="og:description" content="An EKS deployment example shows OpenClaw entering platform-engineering territory: Kubernetes helps standardize rollout, identity, scaling, and observability, but only if the manifests include the hard parts.">
+<meta property="og:image" content="https://openclawsearch.com/og-image.png">
+<meta property="og:url" content="https://openclawsearch.com/blog/openclaw-on-eks">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OpenClaw on EKS Is a Signal, Not Just a Deployment Guide">
+<meta name="twitter:description" content="An EKS deployment example shows OpenClaw entering platform-engineering territory: Kubernetes helps standardize rollout, identity, scaling, and observability, but only if the manifests include the hard parts.">
+<meta name="twitter:image" content="https://openclawsearch.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/pixel-lobster.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0A0A0A;
+  --bg-s1:#111111;
+  --bg-s2:#1A1A1A;
+  --text:#EDEDED;
+  --text-muted:#888888;
+  --card:rgba(255,255,255,0.05);
+  --card-border:rgba(255,255,255,0.08);
+  --primary:#DC2626;
+  --primary-light:#EF4444;
+  --link:#EF4444;
+  --link-hover:#DC2626;
+  --badge-bg:rgba(220,38,38,0.12);
+  --badge-text:#EF4444;
+  --green:#22C55E;
+  --green-bg:rgba(34,197,94,0.08);
+  --green-border:rgba(34,197,94,0.25);
+  --yellow:#F59E0B;
+  --yellow-bg:rgba(245,158,11,0.08);
+  --yellow-border:rgba(245,158,11,0.25);
+  --blue:#3B82F6;
+  --blue-bg:rgba(59,130,246,0.08);
+  --blue-border:rgba(59,130,246,0.25);
+  --nav-bg:rgba(10,10,10,0.8);
+}
+[data-theme="light"]{
+  --bg:#FAFAFA;
+  --bg-s1:#FFFFFF;
+  --bg-s2:#F5F5F5;
+  --text:#171717;
+  --text-muted:#666666;
+  --card:#FFFFFF;
+  --card-border:rgba(0,0,0,0.08);
+  --link:#DC2626;
+  --link-hover:#B91C1C;
+  --badge-bg:rgba(220,38,38,0.08);
+  --badge-text:#DC2626;
+  --nav-bg:rgba(250,250,250,0.85);
+  --green-bg:rgba(34,197,94,0.06);
+  --green-border:rgba(34,197,94,0.2);
+  --yellow-bg:rgba(245,158,11,0.06);
+  --yellow-border:rgba(245,158,11,0.2);
+  --blue-bg:rgba(59,130,246,0.06);
+  --blue-border:rgba(59,130,246,0.2);
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:16px;transition:background .3s,color .3s}
+.nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
+.nav-logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .claw{color:var(--primary)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.nav-link,.gh-link{color:var(--text-muted);text-decoration:none;font-size:.85rem;font-weight:500;padding:6px 14px;border-radius:8px;border:1px solid var(--card-border);transition:all .2s}
+.nav-link:hover,.nav-link.active,.gh-link:hover{color:var(--text);border-color:var(--primary)}
+.theme-toggle{background:var(--card);border:1px solid var(--card-border);color:var(--text);cursor:pointer;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.article{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.article-header{padding:80px 0 48px;border-bottom:1px solid var(--card-border);margin-bottom:48px}
+.article-badge{display:inline-flex;align-items:center;gap:6px;background:var(--badge-bg);color:var(--badge-text);font-size:.8rem;font-weight:700;padding:4px 14px;border-radius:16px;margin-bottom:20px}
+.article-title{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-0.03em;line-height:1.15;margin-bottom:16px}
+.article-title .hl{color:var(--primary)}
+.article-subtitle{font-size:1.2rem;color:var(--text-muted);margin-bottom:24px;line-height:1.5}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;color:var(--text-muted);font-size:.85rem}
+.article-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.article-pill{font-size:.75rem;padding:4px 12px;border-radius:6px;background:var(--card);border:1px solid var(--card-border);color:var(--text-muted);font-weight:500}
+.article h2{font-size:1.55rem;font-weight:800;letter-spacing:-0.02em;margin:52px 0 18px;padding-left:16px;border-left:4px solid var(--primary);line-height:1.3}
+.article h3{font-size:1.18rem;font-weight:750;margin:34px 0 12px;color:var(--text)}
+.article p{color:var(--text-muted);margin-bottom:18px;line-height:1.85}
+.article strong{color:var(--text);font-weight:650}
+.article a{color:var(--link);text-decoration:none;transition:color .2s}
+.article a:hover{color:var(--link-hover);text-decoration:underline}
+.article ul,.article ol{margin:0 0 22px 24px;color:var(--text-muted)}
+.article li{margin-bottom:8px;line-height:1.75}
+.article li strong{color:var(--text)}
+.article code{font-family:'JetBrains Mono',monospace;font-size:.85em;background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;color:var(--primary-light)}
+.callout{margin:24px 0;padding:20px 24px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+.callout-title{font-weight:750;font-size:.9rem;margin-bottom:8px;color:var(--text);display:flex;align-items:center;gap:8px}
+.callout-info{border-color:var(--blue-border);background:var(--blue-bg)}
+.callout-solution{border-color:var(--green-border);background:var(--green-bg)}
+.callout-tip{border-color:var(--yellow-border);background:var(--yellow-bg)}
+.source-ref{margin:16px 0;padding:16px 18px;border-radius:10px;border:1px solid var(--card-border);background:var(--bg-s1);font-size:.9rem;color:var(--text-muted)}
+.source-title{font-weight:700;color:var(--text);margin-bottom:4px}
+.source-url{font-size:.8rem;color:var(--text-muted);word-break:break-all}
+.table-wrap{overflow-x:auto;margin:20px 0 28px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th{text-align:left;padding:12px 16px;font-weight:650;color:var(--text);border-bottom:1px solid var(--card-border)}
+td{padding:10px 16px;border-bottom:1px solid var(--card-border);color:var(--text-muted)}
+tr:last-child td{border-bottom:none}
+.checklist{margin:24px 0;padding:24px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+.checklist h3{margin:0 0 16px;font-size:1rem}
+.checklist-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-size:.9rem;color:var(--text-muted)}
+.checklist-box{width:18px;height:18px;border:2px solid var(--card-border);border-radius:4px;flex-shrink:0;margin-top:2px}
+.footer{text-align:center;padding:48px 24px;border-top:1px solid var(--card-border);color:var(--text-muted);font-size:.85rem}
+.footer a{color:var(--link);text-decoration:none}
+@media(max-width:768px){.nav-inner{padding:0 10px}.nav-actions{gap:6px}.nav-link,.gh-link{padding:4px 8px;font-size:.75rem}.article{padding:0 16px 40px}.article-header{padding:48px 0 32px}.article-title{font-size:1.8rem}.article-subtitle{font-size:1rem}.article h2{font-size:1.3rem}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-inner">
+<a href="/" class="nav-logo"><span class="claw">Open</span>Claw</a>
+<div class="nav-actions">
+<a href="/" class="nav-link">Home</a>
+<a href="/directory" class="nav-link">Directory</a>
+<a href="/use-cases" class="nav-link">Use Cases</a>
+<a href="/blog" class="nav-link active">Blog</a>
+<button class="theme-toggle" id="themeToggle" title="Toggle theme"><span id="themeIcon">☾</span></button>
+<a href="https://github.com/rohitg00/awesome-openclaw" target="_blank" rel="noopener" class="gh-link"><span>GitHub</span></a>
+</div>
+</div>
+</nav>
+<article class="article">
+<header class="article-header">
+<div class="article-badge">Kubernetes</div>
+<h1 class="article-title">OpenClaw on EKS Is a Signal, Not Just a Deployment Guide</h1>
+<p class="article-subtitle">An EKS deployment example shows OpenClaw entering platform-engineering territory: Kubernetes helps standardize rollout, identity, scaling, and observability, but only if the manifests include the hard parts.</p>
+<div class="article-meta">
+<span>Rohit Ghumare · <a href="https://x.com/ghumare64" target="_blank" rel="noopener">@ghumare64</a></span>
+<span>Apr 15, 2026</span>
+<span>Practical infrastructure analysis</span>
+<span>Week of Apr 14, 2026</span>
+</div>
+<div class="article-pills">
+<span class="article-pill">EKS</span>
+<span class="article-pill">Kubernetes</span>
+<span class="article-pill">Platform Engineering</span>
+<span class="article-pill">Security</span>
+</div>
+</header>
+
+<figure class="post-diagram" style="margin:36px 0;padding:18px;border:1px solid var(--card-border);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));overflow:hidden">
+<svg role="img" aria-label="Diagram for OpenClaw on EKS Is a Signal, Not Just a Deployment Guide" viewBox="0 0 820 360" width="100%" style="display:block;border-radius:18px;background:#070707" xmlns="http://www.w3.org/2000/svg">
+<title>OpenClaw on EKS Is a Signal, Not Just a Deployment Guide operating map</title>
+<rect width="820" height="360" fill="#070707"/>
+<circle cx="72" cy="64" r="30" fill="#F97316" opacity=".16"/><text x="72" y="71" text-anchor="middle" font-family="Inter,Arial" font-size="26" font-weight="800" fill="#F97316">1</text>
+<text x="120" y="58" font-family="Inter,Arial" font-size="24" font-weight="800" fill="#f5f5f5">Kubernetes path</text>
+<text x="120" y="84" font-family="JetBrains Mono,monospace" font-size="15" fill="#c7c7c7">read it as an operating boundary, not a logo announcement</text>
+<defs><marker id="arrow-8571511239380693140" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#F97316"/></marker></defs>
+<rect x="58" y="134" width="188" height="82" rx="18" fill="#0f0f0f" stroke="#2a2a2a"/>
+<text x="152" y="169" text-anchor="middle" font-family="Inter,Arial" font-size="18" font-weight="800" fill="#fff">EKS cluster</text>
+<text x="152" y="194" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#bdbdbd">input / source</text>
+<line x1="256" y1="175" x2="342" y2="175" stroke="#F97316" stroke-width="3" marker-end="url(#arrow-8571511239380693140)"/>
+<rect x="352" y="120" width="212" height="110" rx="22" fill="#111" stroke="#F97316" stroke-width="2"/>
+<text x="458" y="164" text-anchor="middle" font-family="Inter,Arial" font-size="19" font-weight="900" fill="#fff">OpenClaw deployment</text>
+<text x="458" y="193" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#d6d6d6">policy • state • logs</text>
+<line x1="574" y1="175" x2="646" y2="175" stroke="#F97316" stroke-width="3" marker-end="url(#arrow-8571511239380693140)"/>
+<rect x="656" y="134" width="106" height="82" rx="18" fill="#0f0f0f" stroke="#2a2a2a"/>
+<text x="709" y="169" text-anchor="middle" font-family="Inter,Arial" font-size="16" font-weight="800" fill="#fff">operated service</text>
+<text x="709" y="194" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#bdbdbd">output</text>
+<rect x="95" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="170" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">cluster</text><rect x="275" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="350" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">secrets</text><rect x="455" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="530" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">pods</text><rect x="635" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="710" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">observability</text>
+<rect x="58" y="312" width="704" height="2" fill="#F97316" opacity=".65"/>
+<text x="410" y="335" text-anchor="middle" font-family="Inter,Arial" font-size="15" fill="#eeeeee">Kubernetes only helps if the agent runtime is packaged with clear secrets, health, and upgrade rules.</text>
+</svg>
+<figcaption style="margin-top:12px;color:var(--text);opacity:.82;font-size:.95rem">A simplified operating map for the post: where the user request enters, where the integration boundary sits, and what has to be true before the output is trusted.</figcaption>
+</figure>
+<div class="callout callout-info"><div class="callout-title">Research note</div><p>This post treats the linked OpenClaw project as a public source worth tracking, not as proof of official endorsement or production maturity. The claims below are intentionally bounded: what the source appears to solve, what operators should verify, and which industry practices apply before a team depends on it.</p></div>
+<h2>Kubernetes is not the point</h2>
+<p>The important part of <strong>hitsub2/openclaw-on-eks</strong> is not that OpenClaw can be wrapped in Kubernetes YAML. Almost anything can. The important signal is that users are asking whether OpenClaw can fit into the same platform machinery teams already use for services: deployments, rollouts, secrets, ingress, IAM, logs, autoscaling, and policy.</p>
+<p>AWS describes EKS as a managed Kubernetes service that reduces the complexity of operating Kubernetes clusters. Kubernetes Deployments provide declarative updates for Pods and ReplicaSets, including rollout and rollback behavior. Those are useful primitives for agent systems, but they do not answer the agent-specific questions by themselves.</p>
+<h2>What an EKS guide must cover</h2>
+<div class="table-wrap"><table><thead><tr><th>Layer</th><th>Minimum useful answer</th></tr></thead><tbody>
+<tr><td>Workload</td><td>Deployment with probes, resource requests/limits, rollout strategy, and a pinned image.</td></tr>
+<tr><td>Secrets</td><td>Model and integration credentials handled through Kubernetes Secrets or an external secret store, with encryption at rest enabled.</td></tr>
+<tr><td>Identity</td><td>IRSA or EKS Pod Identity for AWS permissions instead of static credentials in containers.</td></tr>
+<tr><td>Network</td><td>Ingress only where needed, admin paths protected, NetworkPolicies enforced by a supporting CNI.</td></tr>
+<tr><td>Observability</td><td>Logs, metrics, traces, cost signals, and run-level identifiers that survive pod restarts.</td></tr>
+<tr><td>Cost</td><td>Right-sized requests, autoscaling stance, and awareness of idle clusters and over-provisioned nodes.</td></tr>
+</tbody></table></div>
+<h2>The EKS-specific security trap</h2>
+<p>EKS makes AWS integration convenient, but convenience can broaden blast radius. AWS IRSA lets teams scope IAM permissions to a Kubernetes service account so a Pod can receive the permissions it needs without static AWS keys. The warning in the AWS docs is still important: containers are not a hard security boundary. A compromised Pod should not have broad node permissions, broad Kubernetes permissions, or access to every secret in the namespace.</p>
+<p>Kubernetes Secrets are also not magic. The Kubernetes docs warn that Secrets are stored unencrypted in etcd by default unless encryption at rest is enabled. A serious EKS guide should say how secrets are encrypted, who can read them, and whether an external secret provider is used.</p>
+<h2>Network policy matters for agents</h2>
+<p>Agent workloads are unusually sensitive to egress. A normal web service may need a narrow set of outbound targets. An agent may call model providers, search APIs, webhook endpoints, package registries, or arbitrary URLs depending on its skills. Kubernetes NetworkPolicies can restrict pod ingress and egress at Layer 3/4, but only if the cluster's networking plugin enforces them. A YAML example without an enforcement story can create false confidence.</p>
+<div class="callout callout-tip"><div class="callout-title">The platform question</div><p>Do not ask only whether OpenClaw boots on EKS. Ask whether the cluster makes the agent easier to govern: narrower AWS permissions, safer rollouts, observable failures, bounded egress, and predictable spend.</p></div>
+<h2>When EKS is the right choice</h2>
+<p>EKS makes sense when a team already operates Kubernetes, needs standardized deployment workflows, has multiple agents or services, or wants to integrate OpenClaw into existing platform controls. It is probably overkill for a single personal agent where a small VPS, container, and Tailscale-style access pattern would be simpler.</p>
+<p>The AWS EKS Best Practices Guide is explicitly about day-two operations: security, reliability, networking, scaling, upgrades, and cost. That is the correct lens for OpenClaw. The deployment example is the start; the day-two model is the work.</p>
+<div class="checklist"><h3>EKS review checklist</h3>
+<div class="checklist-item"><span class="checklist-box"></span><span>Pods use service accounts with least-privilege AWS access.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Secrets are encrypted at rest and not exposed to unrelated workloads.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Readiness/liveness probes reflect actual agent health, not only process existence.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>NetworkPolicies restrict admin ingress and unnecessary outbound traffic.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Rollbacks, logs, costs, and failed tool calls are visible to operators.</span></div>
+</div>
+<h2>How I would read the diagram</h2>
+<p>EKS changes the conversation from “can I run it?” to “can my platform team own it?” That brings useful primitives: scheduling, health checks, secrets, ingress, autoscaling, and observability. It also brings complexity that should not be added without a reason.</p>
+<p>For OpenClaw, the Kubernetes path makes sense when agents become shared infrastructure rather than a personal bot. Then the platform team needs manifests, resource requests, upgrade strategy, and failure isolation. Without those, Kubernetes just makes the demo more expensive.</p>
+<h2>What would make this real</h2>
+<p>The practical test is whether the integration can be operated on a bad day. A good demo shows the happy path. A real OpenClaw component should show the boundary conditions: what happens when the source is slow, when the account changes, when the model is unsure, when the tool returns partial data, and when the user asks for something outside the allowed scope.</p>
+<p>That is why I keep coming back to the same operator questions: who owns the credential, where does the state live, what is logged, how is failure shown, and how does a human override the agent? If those answers are visible, the integration can be trusted gradually. If they are hidden, even a useful feature becomes hard to recommend.</p>
+<h2>The product bar I would use</h2>
+<p>I would not judge this by whether it can answer one impressive prompt. I would judge it by repeatability. Can another maintainer set it up from the docs? Can a user predict when the agent will act and when it will ask? Can the system explain what changed after an update? These are the small details that decide whether an agent project feels like infrastructure or a weekend automation.</p>
+<h2>Sources</h2>
+<div class="source-ref">
+<a href="https://github.com/hitsub2/openclaw-on-eks" target="_blank" rel="noopener">
+<div class="source-title">hitsub2/openclaw-on-eks</div>
+<div class="source-url">https://github.com/hitsub2/openclaw-on-eks</div>
+</a>
+</div><div class="source-ref">
+<a href="https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html" target="_blank" rel="noopener">
+<div class="source-title">AWS: What is Amazon EKS?</div>
+<div class="source-url">https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html</div>
+</a>
+</div><div class="source-ref">
+<a href="https://docs.aws.amazon.com/eks/latest/best-practices/introduction.html" target="_blank" rel="noopener">
+<div class="source-title">AWS EKS Best Practices Guide</div>
+<div class="source-url">https://docs.aws.amazon.com/eks/latest/best-practices/introduction.html</div>
+</a>
+</div><div class="source-ref">
+<a href="https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html" target="_blank" rel="noopener">
+<div class="source-title">AWS EKS: IAM roles for service accounts</div>
+<div class="source-url">https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html</div>
+</a>
+</div><div class="source-ref">
+<a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/" target="_blank" rel="noopener">
+<div class="source-title">Kubernetes Deployments</div>
+<div class="source-url">https://kubernetes.io/docs/concepts/workloads/controllers/deployment/</div>
+</a>
+</div><div class="source-ref">
+<a href="https://kubernetes.io/docs/concepts/configuration/secret/" target="_blank" rel="noopener">
+<div class="source-title">Kubernetes Secrets</div>
+<div class="source-url">https://kubernetes.io/docs/concepts/configuration/secret/</div>
+</a>
+</div><div class="source-ref">
+<a href="https://kubernetes.io/docs/concepts/services-networking/network-policies/" target="_blank" rel="noopener">
+<div class="source-title">Kubernetes Network Policies</div>
+<div class="source-url">https://kubernetes.io/docs/concepts/services-networking/network-policies/</div>
+</a>
+</div><div class="source-ref">
+<a href="https://docs.aws.amazon.com/eks/latest/best-practices/cost-opt.html" target="_blank" rel="noopener">
+<div class="source-title">AWS EKS Cost Optimization</div>
+<div class="source-url">https://docs.aws.amazon.com/eks/latest/best-practices/cost-opt.html</div>
+</a>
+</div>
+<h2>The bar I would use before trusting this</h2>
+<p>For OpenClaw readers, the useful question is not whether this exists as a package or repository. The useful question is whether it changes the operating model. Does it move the agent closer to a channel people already trust? Does it add a new permission boundary? Does it make debugging easier? Does it make deployment repeatable enough that a maintainer could support it after the launch week? That is the bar I am using here.</p>
+<p>I also do not want to over-claim the source. A repo, package, or release note is evidence of direction, not proof of adoption. The right way to read these posts is as a builder map: what became possible, where the integration boundary moved, and what a serious team would verify before putting it near real users.</p>
+
+</article>
+<footer class="footer"><p>Part of <a href="/">Awesome OpenClaw</a>. See the <a href="/directory">directory</a> and <a href="/use-cases">use cases</a>.</p></footer>
+<script>
+(function(){
+const button=document.getElementById("themeToggle");
+const icon=document.getElementById("themeIcon");
+const html=document.documentElement;
+function setTheme(theme){
+if(theme==="light"){
+html.setAttribute("data-theme","light");
+icon.textContent="☀";
+}else{
+html.removeAttribute("data-theme");
+icon.textContent="☾";
+}
+localStorage.setItem("theme",theme);
+}
+const saved=localStorage.getItem("theme");
+if(saved){setTheme(saved);}
+else if(window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches){setTheme("light");}
+button.addEventListener("click",function(){
+setTheme(html.getAttribute("data-theme")==="light"?"dark":"light");
+});
+})();
+</script>
+</body>
+</html>

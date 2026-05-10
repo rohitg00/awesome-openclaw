@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swarm Coordination Needs Boundaries Before Scale</title>
+<meta name="description" content="ClawTeam-OpenClaw is a strong multi-agent signal, but swarm systems only help when roles and review paths are explicit.">
+<meta property="og:title" content="Swarm Coordination Needs Boundaries Before Scale">
+<meta property="og:description" content="ClawTeam-OpenClaw is a strong multi-agent signal, but swarm systems only help when roles and review paths are explicit.">
+<meta property="og:image" content="https://openclawsearch.com/og-image.png">
+<meta property="og:url" content="https://openclawsearch.com/blog/swarm-coordination-needs-boundaries">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Swarm Coordination Needs Boundaries Before Scale">
+<meta name="twitter:description" content="ClawTeam-OpenClaw is a strong multi-agent signal, but swarm systems only help when roles and review paths are explicit.">
+<meta name="twitter:image" content="https://openclawsearch.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/pixel-lobster.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0A0A0A;
+  --bg-s1:#111111;
+  --bg-s2:#1A1A1A;
+  --text:#EDEDED;
+  --text-muted:#888888;
+  --card:rgba(255,255,255,0.05);
+  --card-border:rgba(255,255,255,0.08);
+  --primary:#DC2626;
+  --primary-light:#EF4444;
+  --link:#EF4444;
+  --link-hover:#DC2626;
+  --badge-bg:rgba(220,38,38,0.12);
+  --badge-text:#EF4444;
+  --green:#22C55E;
+  --green-bg:rgba(34,197,94,0.08);
+  --green-border:rgba(34,197,94,0.25);
+  --yellow:#F59E0B;
+  --yellow-bg:rgba(245,158,11,0.08);
+  --yellow-border:rgba(245,158,11,0.25);
+  --blue:#3B82F6;
+  --blue-bg:rgba(59,130,246,0.08);
+  --blue-border:rgba(59,130,246,0.25);
+  --nav-bg:rgba(10,10,10,0.8);
+}
+[data-theme="light"]{
+  --bg:#FAFAFA;
+  --bg-s1:#FFFFFF;
+  --bg-s2:#F5F5F5;
+  --text:#171717;
+  --text-muted:#666666;
+  --card:#FFFFFF;
+  --card-border:rgba(0,0,0,0.08);
+  --link:#DC2626;
+  --link-hover:#B91C1C;
+  --badge-bg:rgba(220,38,38,0.08);
+  --badge-text:#DC2626;
+  --nav-bg:rgba(250,250,250,0.85);
+  --green-bg:rgba(34,197,94,0.06);
+  --green-border:rgba(34,197,94,0.2);
+  --yellow-bg:rgba(245,158,11,0.06);
+  --yellow-border:rgba(245,158,11,0.2);
+  --blue-bg:rgba(59,130,246,0.06);
+  --blue-border:rgba(59,130,246,0.2);
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:16px;transition:background .3s,color .3s}
+.nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
+.nav-logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .claw{color:var(--primary)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.nav-link,.gh-link{color:var(--text-muted);text-decoration:none;font-size:.85rem;font-weight:500;padding:6px 14px;border-radius:8px;border:1px solid var(--card-border);transition:all .2s}
+.nav-link:hover,.nav-link.active,.gh-link:hover{color:var(--text);border-color:var(--primary)}
+.theme-toggle{background:var(--card);border:1px solid var(--card-border);color:var(--text);cursor:pointer;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.article{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.article-header{padding:80px 0 48px;border-bottom:1px solid var(--card-border);margin-bottom:48px}
+.article-badge{display:inline-flex;align-items:center;gap:6px;background:var(--badge-bg);color:var(--badge-text);font-size:.8rem;font-weight:700;padding:4px 14px;border-radius:16px;margin-bottom:20px}
+.article-title{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-0.03em;line-height:1.15;margin-bottom:16px}
+.article-title .hl{color:var(--primary)}
+.article-subtitle{font-size:1.2rem;color:var(--text-muted);margin-bottom:24px;line-height:1.5}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;color:var(--text-muted);font-size:.85rem}
+.article-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.article-pill{font-size:.75rem;padding:4px 12px;border-radius:6px;background:var(--card);border:1px solid var(--card-border);color:var(--text-muted);font-weight:500}
+.article h2{font-size:1.55rem;font-weight:800;letter-spacing:-0.02em;margin:52px 0 18px;padding-left:16px;border-left:4px solid var(--primary);line-height:1.3}
+.article h3{font-size:1.18rem;font-weight:750;margin:34px 0 12px;color:var(--text)}
+.article p{color:var(--text-muted);margin-bottom:18px;line-height:1.85}
+.article strong{color:var(--text);font-weight:650}
+.article a{color:var(--link);text-decoration:none;transition:color .2s}
+.article a:hover{color:var(--link-hover);text-decoration:underline}
+.article ul,.article ol{margin:0 0 22px 24px;color:var(--text-muted)}
+.article li{margin-bottom:8px;line-height:1.75}
+.article li strong{color:var(--text)}
+.article code{font-family:'JetBrains Mono',monospace;font-size:.85em;background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;color:var(--primary-light)}
+.callout{margin:24px 0;padding:20px 24px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+.callout-title{font-weight:750;font-size:.9rem;margin-bottom:8px;color:var(--text);display:flex;align-items:center;gap:8px}
+.callout-info{border-color:var(--blue-border);background:var(--blue-bg)}
+.callout-solution{border-color:var(--green-border);background:var(--green-bg)}
+.callout-tip{border-color:var(--yellow-border);background:var(--yellow-bg)}
+.source-ref{margin:16px 0;padding:16px 18px;border-radius:10px;border:1px solid var(--card-border);background:var(--bg-s1);font-size:.9rem;color:var(--text-muted)}
+.source-title{font-weight:700;color:var(--text);margin-bottom:4px}
+.source-url{font-size:.8rem;color:var(--text-muted);word-break:break-all}
+.table-wrap{overflow-x:auto;margin:20px 0 28px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th{text-align:left;padding:12px 16px;font-weight:650;color:var(--text);border-bottom:1px solid var(--card-border)}
+td{padding:10px 16px;border-bottom:1px solid var(--card-border);color:var(--text-muted)}
+tr:last-child td{border-bottom:none}
+.checklist{margin:24px 0;padding:24px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+.checklist h3{margin:0 0 16px;font-size:1rem}
+.checklist-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-size:.9rem;color:var(--text-muted)}
+.checklist-box{width:18px;height:18px;border:2px solid var(--card-border);border-radius:4px;flex-shrink:0;margin-top:2px}
+.footer{text-align:center;padding:48px 24px;border-top:1px solid var(--card-border);color:var(--text-muted);font-size:.85rem}
+.footer a{color:var(--link);text-decoration:none}
+@media(max-width:768px){.nav-inner{padding:0 10px}.nav-actions{gap:6px}.nav-link,.gh-link{padding:4px 8px;font-size:.75rem}.article{padding:0 16px 40px}.article-header{padding:48px 0 32px}.article-title{font-size:1.8rem}.article-subtitle{font-size:1rem}.article h2{font-size:1.3rem}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-inner">
+<a href="/" class="nav-logo"><span class="claw">Open</span>Claw</a>
+<div class="nav-actions">
+<a href="/" class="nav-link">Home</a>
+<a href="/directory" class="nav-link">Directory</a>
+<a href="/use-cases" class="nav-link">Use Cases</a>
+<a href="/blog" class="nav-link active">Blog</a>
+<button class="theme-toggle" id="themeToggle" title="Toggle theme"><span id="themeIcon">☾</span></button>
+<a href="https://github.com/rohitg00/awesome-openclaw" target="_blank" rel="noopener" class="gh-link"><span>GitHub</span></a>
+</div>
+</div>
+</nav>
+<article class="article">
+<header class="article-header">
+<div class="article-badge">Multi-Agent</div>
+<h1 class="article-title">Swarm Coordination Needs Boundaries Before Scale</h1>
+<p class="article-subtitle">ClawTeam-OpenClaw is a strong multi-agent signal, but swarm systems only help when roles and review paths are explicit.</p>
+<div class="article-meta">
+<span>Rohit Ghumare · <a href="https://x.com/ghumare64" target="_blank" rel="noopener">@ghumare64</a></span>
+<span>Apr 14, 2026</span>
+<span>Long-form ecosystem analysis</span>
+<span>Week of Apr 14, 2026</span>
+</div>
+<div class="article-pills">
+<span class="article-pill">Swarm</span>
+<span class="article-pill">Multi-Agent</span>
+<span class="article-pill">Coordination</span>
+</div>
+</header>
+
+<figure class="post-diagram" style="margin:36px 0;padding:18px;border:1px solid var(--card-border);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));overflow:hidden">
+<svg role="img" aria-label="Diagram for Swarm Coordination Needs Boundaries Before Scale" viewBox="0 0 820 360" width="100%" style="display:block;border-radius:18px;background:#070707" xmlns="http://www.w3.org/2000/svg">
+<title>Swarm Coordination Needs Boundaries Before Scale operating map</title>
+<rect width="820" height="360" fill="#070707"/>
+<circle cx="72" cy="64" r="30" fill="#8B5CF6" opacity=".16"/><text x="72" y="71" text-anchor="middle" font-family="Inter,Arial" font-size="26" font-weight="800" fill="#8B5CF6">1</text>
+<text x="120" y="58" font-family="Inter,Arial" font-size="24" font-weight="800" fill="#f5f5f5">Swarm boundary</text>
+<text x="120" y="84" font-family="JetBrains Mono,monospace" font-size="15" fill="#c7c7c7">read it as an operating boundary, not a logo announcement</text>
+<defs><marker id="arrow-5666523145390565609" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#8B5CF6"/></marker></defs>
+<rect x="58" y="134" width="188" height="82" rx="18" fill="#0f0f0f" stroke="#2a2a2a"/>
+<text x="152" y="169" text-anchor="middle" font-family="Inter,Arial" font-size="18" font-weight="800" fill="#fff">big task</text>
+<text x="152" y="194" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#bdbdbd">input / source</text>
+<line x1="256" y1="175" x2="342" y2="175" stroke="#8B5CF6" stroke-width="3" marker-end="url(#arrow-5666523145390565609)"/>
+<rect x="352" y="120" width="212" height="110" rx="22" fill="#111" stroke="#8B5CF6" stroke-width="2"/>
+<text x="458" y="164" text-anchor="middle" font-family="Inter,Arial" font-size="19" font-weight="900" fill="#fff">agent swarm</text>
+<text x="458" y="193" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#d6d6d6">policy • state • logs</text>
+<line x1="574" y1="175" x2="646" y2="175" stroke="#8B5CF6" stroke-width="3" marker-end="url(#arrow-5666523145390565609)"/>
+<rect x="656" y="134" width="106" height="82" rx="18" fill="#0f0f0f" stroke="#2a2a2a"/>
+<text x="709" y="169" text-anchor="middle" font-family="Inter,Arial" font-size="16" font-weight="800" fill="#fff">approved result</text>
+<text x="709" y="194" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#bdbdbd">output</text>
+<rect x="95" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="170" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">roles</text><rect x="275" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="350" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">shared memory</text><rect x="455" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="530" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">budget</text><rect x="635" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="710" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">review</text>
+<rect x="58" y="312" width="704" height="2" fill="#8B5CF6" opacity=".65"/>
+<text x="410" y="335" text-anchor="middle" font-family="Inter,Arial" font-size="15" fill="#eeeeee">Swarms need constraints first. More agents without boundaries usually means more confusion.</text>
+</svg>
+<figcaption style="margin-top:12px;color:var(--text);opacity:.82;font-size:.95rem">A simplified operating map for the post: where the user request enters, where the integration boundary sits, and what has to be true before the output is trusted.</figcaption>
+</figure>
+<div class="callout callout-info">
+<div class="callout-title">Why this matters now</div>
+<p>The public source is <a href="https://github.com/win4r/ClawTeam-OpenClaw" target="_blank" rel="noopener">win4r/ClawTeam-OpenClaw</a>, a fork of HKUDS/ClawTeam adapted to use OpenClaw as the default agent.</p>
+<p>The signal is not “more agents are always better.” The signal is that OpenClaw users are experimenting with agent teams, worktrees, dashboards, and explicit coordination mechanics.</p>
+</div>
+
+<p><strong>Multi-agent coding is mostly a coordination problem.</strong> Spawning workers is the easy part. The hard part is deciding who owns which files, how work is merged, when a worker is done, and how a human can see the state before the system loops itself into noise.</p>
+
+<p>ClawTeam-OpenClaw is interesting because it is concrete about those mechanics. It keeps OpenClaw as the default agent, supports other CLI agents, gives each worker its own git worktree and backend session, and uses CLI commands plus a board interface for task and inbox coordination. That is much more useful to study than a vague “agent swarm” announcement.</p>
+
+<h2>What the source actually shows</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Area</th><th>Observed detail</th></tr></thead>
+<tbody>
+<tr><td>Repository</td><td><code>win4r/ClawTeam-OpenClaw</code></td></tr>
+<tr><td>Upstream</td><td>Fork of <code>HKUDS/ClawTeam</code>, with OpenClaw integration and upstream fixes synced according to the README.</td></tr>
+<tr><td>Execution model</td><td>Leader agents can spawn workers, assign tasks, exchange messages, and merge results.</td></tr>
+<tr><td>Isolation</td><td>Workers get separate git worktrees and backend sessions.</td></tr>
+<tr><td>Monitoring</td><td>Humans can watch through a Web UI or tmux dashboard; native Windows falls back to a subprocess backend.</td></tr>
+<tr><td>License</td><td>MIT in the public repository snapshot reviewed.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>The architecture pattern</h2>
+<p>The practical model is closer to a small software team than a magic swarm:</p>
+<ul>
+<li><strong>Leader:</strong> decomposes the goal, creates tasks, assigns owners, and decides when to integrate.</li>
+<li><strong>Workers:</strong> run in isolated worktrees so their changes can be inspected before merge.</li>
+<li><strong>Mailbox / task board:</strong> gives agents a low-friction coordination channel without requiring humans to write a custom orchestrator.</li>
+<li><strong>Backend sessions:</strong> use tmux on Linux / macOS and a subprocess fallback on Windows, so the runtime assumptions are visible.</li>
+<li><strong>Human dashboard:</strong> lets a person inspect liveness and progress instead of trusting the agent's final summary.</li>
+</ul>
+
+<h2>Where swarms fail</h2>
+<p>The failure mode is not usually dramatic. It is duplicated work, incompatible edits, vague completion criteria, and workers that keep asking each other for clarification. More agents can increase throughput only when the work is separable and the integration point is controlled.</p>
+
+<p>For coding work, the merge boundary matters more than the number of workers. Separate worktrees help, but they do not solve architecture decisions, shared migrations, test ownership, or product judgment. A leader agent still needs a stop rule and a review rule.</p>
+
+<h2>Boundaries before scale</h2>
+<ul>
+<li><strong>Task boundaries:</strong> each worker needs a small, testable outcome, not a vague domain like “frontend.”</li>
+<li><strong>File ownership:</strong> prevent two workers from rewriting the same API contract or config file without an integration step.</li>
+<li><strong>Merge policy:</strong> decide whether workers produce patches, branches, PRs, or direct commits into an integration worktree.</li>
+<li><strong>Review path:</strong> require a human or reviewer agent to inspect diffs, tests, and assumptions before accepting work.</li>
+<li><strong>Budget limits:</strong> cap worker count, run time, token spend, and retry loops.</li>
+</ul>
+
+<div class="checklist">
+<h3>Adoption checklist</h3>
+<div class="checklist-item"><span class="checklist-box"></span><span>Use agent teams only for work that can be split into independent tasks with clear acceptance criteria.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Inspect each worker's worktree before merging; do not trust a swarm-level summary as the review artifact.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Define a stop condition: tests pass, diff reviewed, owner signs off, or time / budget expires.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Keep a visible board or log of task ownership, worker liveness, messages, and merge decisions.</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Run a small two-worker trial before allowing an agent to spawn a larger team.</span></div>
+</div>
+
+<h2>The practical signal</h2>
+<p>ClawTeam-OpenClaw shows that the OpenClaw ecosystem is moving from single-agent prompting toward operating models: spawn, isolate, coordinate, observe, review, merge. That is a meaningful signal, but it should be described carefully. It is not evidence that autonomous swarms are production-ready for every repository. It is evidence that builders want agent teamwork tools with real filesystem and monitoring primitives.</p>
+
+<div class="callout callout-solution">
+<div class="callout-title">My takeaway</div>
+<p>Track this as a multi-agent coordination resource. The high-quality read is not “scale agents.” It is “give each agent a bounded role, isolated workspace, visible status, and a review gate.”</p>
+</div>
+
+<h2>Where swarms actually help</h2>
+<p>Swarms are strongest when the work can be decomposed cleanly: one agent researches sources, another checks code, another writes tests, another reviews edge cases. They are weakest when the task needs one coherent taste judgment or one careful product decision. That difference should shape when OpenClaw exposes swarm patterns to users.</p>
+<p>A swarm should also have a visible stop condition. Without one, the system can keep producing more notes, more proposed fixes, and more summaries without converging. The coordinator role matters because someone, human or agent, has to decide when enough information exists to act.</p>
+<h2>The maintainer question</h2>
+<p>The maintainer question is simple: if the swarm fails, can I understand which part failed? If the answer is no, the swarm is not an architecture. It is a bundle of side effects. Good coordination makes failure local: planner issue, worker issue, memory issue, tool issue, or review issue.</p>
+<p>That may sound like implementation detail, but it is the difference between a demo and a system people can run for months. Agents fail in small ways before they fail loudly: stale context, unclear handoffs, repeated work, accidental authority, and summaries that sound confident but cannot be traced. The integration should make those problems visible early.</p>
+<h2>Source</h2>
+<div class="source-ref"><a href="https://github.com/win4r/ClawTeam-OpenClaw" target="_blank" rel="noopener"><div class="source-title">win4r/ClawTeam-OpenClaw</div><div class="source-url">https://github.com/win4r/ClawTeam-OpenClaw</div></a></div>
+<h2>The bar I would use before trusting this</h2>
+<p>For OpenClaw readers, the useful question is not whether this exists as a package or repository. The useful question is whether it changes the operating model. Does it move the agent closer to a channel people already trust? Does it add a new permission boundary? Does it make debugging easier? Does it make deployment repeatable enough that a maintainer could support it after the launch week? That is the bar I am using here.</p>
+<p>I also do not want to over-claim the source. A repo, package, or release note is evidence of direction, not proof of adoption. The right way to read these posts is as a builder map: what became possible, where the integration boundary moved, and what a serious team would verify before putting it near real users.</p>
+
+</article>
+<footer class="footer"><p>Part of <a href="/">Awesome OpenClaw</a>. See the <a href="/directory">directory</a> and <a href="/use-cases">use cases</a>.</p></footer>
+<script>
+(function(){
+const button=document.getElementById("themeToggle");
+const icon=document.getElementById("themeIcon");
+const html=document.documentElement;
+function setTheme(theme){
+if(theme==="light"){
+html.setAttribute("data-theme","light");
+icon.textContent="☀";
+}else{
+html.removeAttribute("data-theme");
+icon.textContent="☾";
+}
+localStorage.setItem("theme",theme);
+}
+const saved=localStorage.getItem("theme");
+if(saved){setTheme(saved);}
+button.addEventListener("click",function(){
+setTheme(html.getAttribute("data-theme")==="light"?"dark":"light");
+});
+})();
+</script>
+</body>
+</html>

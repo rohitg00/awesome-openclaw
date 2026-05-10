@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClaw v2026.4.25 Is a Maintenance Release, Not a Hype Cycle</title>
+<meta name="description" content="A researched read on OpenClaw v2026.4.25: TTS, cold plugin registry, OpenTelemetry, browser automation, install hardening, and what a fast release cadence means for operators.">
+<meta property="og:title" content="OpenClaw v2026.4.25 Is a Maintenance Release, Not a Hype Cycle">
+<meta property="og:description" content="A researched read on OpenClaw v2026.4.25: TTS, cold plugin registry, OpenTelemetry, browser automation, install hardening, and what a fast release cadence means for operators.">
+<meta property="og:image" content="https://openclawsearch.com/og-image.png">
+<meta property="og:url" content="https://openclawsearch.com/blog/v2026-4-25-release-cadence">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OpenClaw v2026.4.25 Is a Maintenance Release, Not a Hype Cycle">
+<meta name="twitter:description" content="A researched read on OpenClaw v2026.4.25: TTS, cold plugin registry, OpenTelemetry, browser automation, install hardening, and what a fast release cadence means for operators.">
+<meta name="twitter:image" content="https://openclawsearch.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/pixel-lobster.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0A0A0A;
+  --bg-s1:#111111;
+  --bg-s2:#1A1A1A;
+  --text:#EDEDED;
+  --text-muted:#888888;
+  --card:rgba(255,255,255,0.05);
+  --card-border:rgba(255,255,255,0.08);
+  --primary:#DC2626;
+  --primary-light:#EF4444;
+  --link:#EF4444;
+  --link-hover:#DC2626;
+  --badge-bg:rgba(220,38,38,0.12);
+  --badge-text:#EF4444;
+  --green:#22C55E;
+  --green-bg:rgba(34,197,94,0.08);
+  --green-border:rgba(34,197,94,0.25);
+  --yellow:#F59E0B;
+  --yellow-bg:rgba(245,158,11,0.08);
+  --yellow-border:rgba(245,158,11,0.25);
+  --blue:#3B82F6;
+  --blue-bg:rgba(59,130,246,0.08);
+  --blue-border:rgba(59,130,246,0.25);
+  --nav-bg:rgba(10,10,10,0.8);
+}
+[data-theme="light"]{
+  --bg:#FAFAFA;
+  --bg-s1:#FFFFFF;
+  --bg-s2:#F5F5F5;
+  --text:#171717;
+  --text-muted:#666666;
+  --card:#FFFFFF;
+  --card-border:rgba(0,0,0,0.08);
+  --link:#DC2626;
+  --link-hover:#B91C1C;
+  --badge-bg:rgba(220,38,38,0.08);
+  --badge-text:#DC2626;
+  --nav-bg:rgba(250,250,250,0.85);
+  --green-bg:rgba(34,197,94,0.06);
+  --green-border:rgba(34,197,94,0.2);
+  --yellow-bg:rgba(245,158,11,0.06);
+  --yellow-border:rgba(245,158,11,0.2);
+  --blue-bg:rgba(59,130,246,0.06);
+  --blue-border:rgba(59,130,246,0.2);
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:16px;transition:background .3s,color .3s}
+.nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
+.nav-logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .claw{color:var(--primary)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.nav-link,.gh-link{color:var(--text-muted);text-decoration:none;font-size:.85rem;font-weight:500;padding:6px 14px;border-radius:8px;border:1px solid var(--card-border);transition:all .2s}
+.nav-link:hover,.nav-link.active,.gh-link:hover{color:var(--text);border-color:var(--primary)}
+.theme-toggle{background:var(--card);border:1px solid var(--card-border);color:var(--text);cursor:pointer;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.article{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.article-header{padding:80px 0 48px;border-bottom:1px solid var(--card-border);margin-bottom:48px}
+.article-badge{display:inline-flex;align-items:center;gap:6px;background:var(--badge-bg);color:var(--badge-text);font-size:.8rem;font-weight:700;padding:4px 14px;border-radius:16px;margin-bottom:20px}
+.article-title{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-0.03em;line-height:1.15;margin-bottom:16px}
+.article-title .hl{color:var(--primary)}
+.article-subtitle{font-size:1.2rem;color:var(--text-muted);margin-bottom:24px;line-height:1.5}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;color:var(--text-muted);font-size:.85rem}
+.article-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.article-pill{font-size:.75rem;padding:4px 12px;border-radius:6px;background:var(--card);border:1px solid var(--card-border);color:var(--text-muted);font-weight:500}
+.article h2{font-size:1.55rem;font-weight:800;letter-spacing:-0.02em;margin:52px 0 18px;padding-left:16px;border-left:4px solid var(--primary);line-height:1.3}
+.article h3{font-size:1.18rem;font-weight:750;margin:34px 0 12px;color:var(--text)}
+.article p{color:var(--text-muted);margin-bottom:18px;line-height:1.85}
+.article strong{color:var(--text);font-weight:650}
+.article a{color:var(--link);text-decoration:none;transition:color .2s}
+.article a:hover{color:var(--link-hover);text-decoration:underline}
+.article ul,.article ol{margin:0 0 22px 24px;color:var(--text-muted)}
+.article li{margin-bottom:8px;line-height:1.75}
+.article li strong{color:var(--text)}
+.article code{font-family:'JetBrains Mono',monospace;font-size:.85em;background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;color:var(--primary-light)}
+.callout{margin:24px 0;padding:20px 24px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+.callout-title{font-weight:750;font-size:.9rem;margin-bottom:8px;color:var(--text);display:flex;align-items:center;gap:8px}
+.callout-info{border-color:var(--blue-border);background:var(--blue-bg)}
+.callout-solution{border-color:var(--green-border);background:var(--green-bg)}
+.callout-tip{border-color:var(--yellow-border);background:var(--yellow-bg)}
+.source-ref{margin:16px 0;padding:16px 18px;border-radius:10px;border:1px solid var(--card-border);background:var(--bg-s1);font-size:.9rem;color:var(--text-muted)}
+.source-title{font-weight:700;color:var(--text);margin-bottom:4px}
+.source-url{font-size:.8rem;color:var(--text-muted);word-break:break-all}
+.table-wrap{overflow-x:auto;margin:20px 0 28px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th{text-align:left;padding:12px 16px;font-weight:650;color:var(--text);border-bottom:1px solid var(--card-border)}
+td{padding:10px 16px;border-bottom:1px solid var(--card-border);color:var(--text-muted)}
+tr:last-child td{border-bottom:none}
+.checklist{margin:24px 0;padding:24px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+.checklist h3{margin:0 0 16px;font-size:1rem}
+.checklist-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-size:.9rem;color:var(--text-muted)}
+.checklist-box{width:18px;height:18px;border:2px solid var(--card-border);border-radius:4px;flex-shrink:0;margin-top:2px}
+.footer{text-align:center;padding:48px 24px;border-top:1px solid var(--card-border);color:var(--text-muted);font-size:.85rem}
+.footer a{color:var(--link);text-decoration:none}
+@media(max-width:768px){.nav-inner{padding:0 10px}.nav-actions{gap:6px}.nav-link,.gh-link{padding:4px 8px;font-size:.75rem}.article{padding:0 16px 40px}.article-header{padding:48px 0 32px}.article-title{font-size:1.8rem}.article-subtitle{font-size:1rem}.article h2{font-size:1.3rem}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-inner">
+<a href="/" class="nav-logo"><span class="claw">Open</span>Claw</a>
+<div class="nav-actions">
+<a href="/" class="nav-link">Home</a>
+<a href="/directory" class="nav-link">Directory</a>
+<a href="/use-cases" class="nav-link">Use Cases</a>
+<a href="/blog" class="nav-link active">Blog</a>
+<button class="theme-toggle" id="themeToggle" title="Toggle theme"><span id="themeIcon">☾</span></button>
+<a href="https://github.com/rohitg00/awesome-openclaw" target="_blank" rel="noopener" class="gh-link"><span>GitHub</span></a>
+</div>
+</div>
+</nav>
+<article class="article">
+<header class="article-header">
+<div class="article-badge">Release</div>
+<h1 class="article-title">OpenClaw v2026.4.25 Is a Maintenance Release, Not a Hype Cycle</h1>
+<p class="article-subtitle">The April 25 release is useful because it shows the project moving from launch energy into operational detail: voice controls, plugin registry hardening, telemetry, browser reliability, and safer updates.</p>
+<div class="article-meta">
+<span>Rohit Ghumare · <a href="https://x.com/ghumare64" target="_blank" rel="noopener">@ghumare64</a></span>
+<span>Apr 27, 2026</span>
+<span>Release analysis</span>
+<span>Week of Apr 21, 2026</span>
+</div>
+<div class="article-pills">
+<span class="article-pill">v2026.4.25</span>
+<span class="article-pill">Release cadence</span>
+<span class="article-pill">Operations</span>
+</div>
+</header>
+
+<figure class="post-diagram" style="margin:36px 0;padding:18px;border:1px solid var(--card-border);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));overflow:hidden">
+<svg role="img" aria-label="Diagram for OpenClaw v2026.4.25 Is a Maintenance Release, Not a Hype Cycle" viewBox="0 0 820 360" width="100%" style="display:block;border-radius:18px;background:#070707" xmlns="http://www.w3.org/2000/svg">
+<title>OpenClaw v2026.4.25 Is a Maintenance Release, Not a Hype Cycle operating map</title>
+<rect width="820" height="360" fill="#070707"/>
+<circle cx="72" cy="64" r="30" fill="#3B82F6" opacity=".16"/><text x="72" y="71" text-anchor="middle" font-family="Inter,Arial" font-size="26" font-weight="800" fill="#3B82F6">1</text>
+<text x="120" y="58" font-family="Inter,Arial" font-size="24" font-weight="800" fill="#f5f5f5">Release cadence</text>
+<text x="120" y="84" font-family="JetBrains Mono,monospace" font-size="15" fill="#c7c7c7">read it as an operating boundary, not a logo announcement</text>
+<defs><marker id="arrow-8743898629438173840" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#3B82F6"/></marker></defs>
+<rect x="58" y="134" width="188" height="82" rx="18" fill="#0f0f0f" stroke="#2a2a2a"/>
+<text x="152" y="169" text-anchor="middle" font-family="Inter,Arial" font-size="18" font-weight="800" fill="#fff">new version</text>
+<text x="152" y="194" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#bdbdbd">input / source</text>
+<line x1="256" y1="175" x2="342" y2="175" stroke="#3B82F6" stroke-width="3" marker-end="url(#arrow-8743898629438173840)"/>
+<rect x="352" y="120" width="212" height="110" rx="22" fill="#111" stroke="#3B82F6" stroke-width="2"/>
+<text x="458" y="164" text-anchor="middle" font-family="Inter,Arial" font-size="19" font-weight="900" fill="#fff">maintenance loop</text>
+<text x="458" y="193" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#d6d6d6">policy • state • logs</text>
+<line x1="574" y1="175" x2="646" y2="175" stroke="#3B82F6" stroke-width="3" marker-end="url(#arrow-8743898629438173840)"/>
+<rect x="656" y="134" width="106" height="82" rx="18" fill="#0f0f0f" stroke="#2a2a2a"/>
+<text x="709" y="169" text-anchor="middle" font-family="Inter,Arial" font-size="16" font-weight="800" fill="#fff">stable operator path</text>
+<text x="709" y="194" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#bdbdbd">output</text>
+<rect x="95" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="170" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">release notes</text><rect x="275" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="350" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">plugin registry</text><rect x="455" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="530" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">telemetry</text><rect x="635" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="710" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">upgrade</text>
+<rect x="58" y="312" width="704" height="2" fill="#3B82F6" opacity=".65"/>
+<text x="410" y="335" text-anchor="middle" font-family="Inter,Arial" font-size="15" fill="#eeeeee">A healthy release cadence is not only features. It is update reliability, observability, and compatibility.</text>
+</svg>
+<figcaption style="margin-top:12px;color:var(--text);opacity:.82;font-size:.95rem">A simplified operating map for the post: where the user request enters, where the integration boundary sits, and what has to be true before the output is trusted.</figcaption>
+</figure>
+<div class="callout callout-info">
+<div class="callout-title">Evidence used</div>
+<p>This note is based on the public <a href="https://github.com/openclaw/openclaw/releases/tag/v2026.4.25" target="_blank" rel="noopener">OpenClaw 2026.4.25 GitHub release</a>, the repository release index, and OpenClaw documentation for updating, getting started, model selection, and failover. I am not inferring hidden roadmap details from the tag.</p>
+</div>
+<h2>The useful read</h2>
+<p>OpenClaw v2026.4.25 is not interesting because it has a dramatic feature name. It is interesting because it is full of maintenance work that only appears once a project is being used in real environments: text-to-speech controls, plugin startup paths, telemetry coverage, browser automation failure modes, setup repair, and cross-platform install hardening.</p>
+<p>That is what a fast agent project looks like after the first wave. The public repo can have hundreds of thousands of stars, but operators still care about smaller questions: Can I update without corrupting state? Can I see why a model call failed? Can plugin discovery be deterministic? Can browser automation survive a slower host?</p>
+<h2>What the release source shows</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Field</th><th>Public release detail</th></tr></thead>
+<tbody>
+<tr><td>Release</td><td>OpenClaw 2026.4.25</td></tr>
+<tr><td>Tag</td><td><code>v2026.4.25</code></td></tr>
+<tr><td>Published</td><td>Apr 27, 2026 on GitHub</td></tr>
+<tr><td>Commit</td><td><code>aa36ee6</code>, verified SSH signature shown by GitHub</td></tr>
+<tr><td>Release train context</td><td>Beta tags for 2026.4.25 preceded the stable release; 2026.4.26 followed shortly after</td></tr>
+<tr><td>Main areas</td><td>TTS, plugin registry, OpenTelemetry, browser automation, Control UI/setup, install/update hardening</td></tr>
+</tbody>
+</table>
+</div>
+<h2>Voice moved from demo to controls</h2>
+<p>The release notes put TTS first. That is appropriate: voice is where personal assistants quickly stop being a toy. The release adds or expands commands such as <code>/tts latest</code>, <code>/tts chat on|off|default</code>, <code>/tts audio</code>, <code>/tts status</code>, and <code>/tts persona</code>. It also documents per-agent and per-channel or per-account overrides.</p>
+<p>The important part is not simply “more providers.” The release mentions Azure Speech, Xiaomi, Local CLI, Inworld, Volcengine, and ElevenLabs v3 coverage, but the operational improvement is control scope. A user may want auto-TTS in one chat and silence in another. A team may want a specific provider for one agent and a local path for another. Global voice settings are too blunt for a multi-channel assistant.</p>
+<h2>The plugin registry change is a reliability signal</h2>
+<p>The release says plugin startup and install paths move to a <strong>cold persisted registry</strong>, reducing broad manifest scans and making plugin update, repair, provider discovery, and install metadata more deterministic. That is the kind of change most users will not notice when it works, but it matters for a project with many plugins and provider integrations.</p>
+<p>OpenClaw’s plugin ecosystem creates a boot-time problem: every startup cannot be an expensive rediscovery exercise. A persisted registry gives the runtime a stable snapshot to inspect, refresh, and repair. The release also points users to commands such as <code>openclaw plugins registry</code>, <code>openclaw plugins registry --refresh</code>, <code>openclaw plugins list</code>, and <code>openclaw doctor --fix</code>. That is maintenance UX, not launch-page UX.</p>
+<div class="callout callout-tip">
+<div class="callout-title">Why this matters</div>
+<p>Agent projects tend to fail through boring infrastructure: stale plugin metadata, half-installed dependencies, duplicated provider entries, or startup scans that become slow enough that users stop restarting. A deterministic registry is a direct response to those boring failures.</p>
+</div>
+<h2>Telemetry became more specific</h2>
+<p>v2026.4.25 expands OpenTelemetry coverage across model calls, token usage, tool loops, harness runs, exec processes, outbound delivery, context assembly, and memory pressure. The release also calls out bounded low-cardinality attributes. That detail matters: telemetry that explodes cardinality is expensive and often unusable.</p>
+<p>The release names signals such as <code>openclaw.harness.run</code>, <code>openclaw.harness.duration_ms</code>, <code>openclaw.context.assembled</code>, <code>openclaw.tool.loop</code>, <code>openclaw.exec</code>, <code>gen_ai.client.token.usage</code>, and <code>gen_ai.client.operation.duration</code>. For operators, those names are the difference between “the bot felt slow” and “context assembly grew, model latency increased, then a tool loop retried.”</p>
+<h2>Browser automation got safer in the details</h2>
+<p>The release notes mention safer tab URLs, iframe-aware role snapshots, CDP readiness tuning, headless one-shot launch, and deeper browser doctor probes for slow hosts. Those are not glamorous changes, but browser automation is one of the fastest ways for an agent to surprise users. It touches identity, sessions, live web pages, and sometimes payment or admin screens.</p>
+<p>The new <code>openclaw browser start --headless</code> flag is described as a one-shot managed browser launch override, not a persisted config rewrite. That distinction is good design. Operators often need a temporary diagnostic path without accidentally changing the long-running browser configuration.</p>
+<h2>Install and update hardening is the real release-cadence story</h2>
+<p>The OpenClaw updating docs describe <code>openclaw update</code> as the recommended path. It detects npm or git installs, fetches a target version, runs <code>openclaw doctor</code>, and restarts the gateway. The docs also describe stable, beta, and dev channels, dry runs, and switching between npm and git installs while keeping user state in <code>~/.openclaw</code>.</p>
+<p>That context explains why the v2026.4.25 hardening work matters. The release mentions Windows, macOS, Linux, Docker, bundled plugin runtime dependencies, Node service restarts, LaunchAgent token rotation, and mixed-version gateway verification. A project can only ship daily or near-daily releases if the update path is boring. Otherwise cadence becomes churn.</p>
+<h2>What users should do with this release</h2>
+<p>If you run OpenClaw casually, the practical advice is simple: use the documented updater, read the release notes, and run <code>openclaw doctor</code> after updates. If you run it as part of a workflow, treat v2026.4.25 as a reason to tighten your own release process.</p>
+<ul>
+<li><strong>Pin what matters.</strong> Know which OpenClaw version, plugin versions, provider settings, and Node runtime your workflow depends on.</li>
+<li><strong>Use dry runs where possible.</strong> The update docs expose <code>--dry-run</code> for channel switches and previews.</li>
+<li><strong>Check plugin registry state.</strong> Use the new registry inspection and refresh commands when startup behavior changes.</li>
+<li><strong>Watch telemetry after update.</strong> Compare model latency, token usage, context assembly, tool loops, and exec spans before and after.</li>
+<li><strong>Test browser automation separately.</strong> Browser changes deserve dedicated checks because failures may be stateful and host-specific.</li>
+</ul>
+<h2>What maintainers should take from it</h2>
+<p>The release is a reminder that the ecosystem now needs compatibility language. Daily tags can be a strength, but only if users can understand which releases are stable, which are beta, and what changed across the train. The release index shows 2026.4.25 beta tags, then stable 2026.4.25, then 2026.4.26 soon after. That cadence is fine if changelogs remain specific and upgrade paths remain testable.</p>
+<p>For a directory or blog, the right coverage is not “OpenClaw ships fast.” The right coverage is: <strong>fast releases are now carrying operational work</strong>. TTS settings, plugin registries, telemetry, browser diagnostics, and updater safety are the features that make a personal assistant survivable after the first install.</p>
+<h2>What I would not claim</h2>
+<p>I would not claim v2026.4.25 is a stability guarantee. I would not claim every plugin is now safe because registry handling improved. I would not claim voice is production-ready for every provider or channel. The release notes show meaningful work, not universal maturity.</p>
+<p>The bounded claim is stronger: v2026.4.25 is a concrete snapshot of OpenClaw entering release-cadence mode, where much of the engineering value is in repair paths, diagnostics, and predictable runtime behavior.</p>
+<div class="callout callout-solution">
+<div class="callout-title">My takeaway</div>
+<p>This release is worth writing about because it is specific. It shows OpenClaw paying down operational complexity: voice scope, plugin state, telemetry, browser readiness, setup repair, and updates. That is exactly the work an agent project has to do if it wants daily usage instead of one viral demo.</p>
+</div>
+<h2>How I would read the diagram</h2>
+<p>The April release is useful to read as a maintenance signal. A project with channels, plugins, and deployment modes cannot rely only on exciting features. It needs the boring pieces: update flow, registry persistence, telemetry coverage, browser reliability, and clear release notes.</p>
+<p>That is why I would judge this kind of release by operator confidence. Can someone upgrade without guessing? Can they see what changed? Can plugin authors understand compatibility? Can a broken browser action be debugged? Those questions matter as much as the headline feature list.</p>
+<h2>Sources</h2>
+<div class="source-ref"><a href="https://github.com/openclaw/openclaw/releases/tag/v2026.4.25" target="_blank" rel="noopener"><div class="source-title">OpenClaw 2026.4.25 GitHub release</div><div class="source-url">https://github.com/openclaw/openclaw/releases/tag/v2026.4.25</div></a></div>
+<div class="source-ref"><a href="https://github.com/openclaw/openclaw/releases" target="_blank" rel="noopener"><div class="source-title">OpenClaw release index</div><div class="source-url">https://github.com/openclaw/openclaw/releases</div></a></div>
+<div class="source-ref"><a href="https://docs.openclaw.ai/install/updating" target="_blank" rel="noopener"><div class="source-title">OpenClaw updating documentation</div><div class="source-url">https://docs.openclaw.ai/install/updating</div></a></div>
+<div class="source-ref"><a href="https://docs.openclaw.ai/start/getting-started" target="_blank" rel="noopener"><div class="source-title">OpenClaw getting started documentation</div><div class="source-url">https://docs.openclaw.ai/start/getting-started</div></a></div>
+<div class="source-ref"><a href="https://docs.openclaw.ai/concepts/models" target="_blank" rel="noopener"><div class="source-title">OpenClaw models documentation</div><div class="source-url">https://docs.openclaw.ai/concepts/models</div></a></div>
+<div class="source-ref"><a href="https://docs.openclaw.ai/concepts/model-failover" target="_blank" rel="noopener"><div class="source-title">OpenClaw model failover documentation</div><div class="source-url">https://docs.openclaw.ai/concepts/model-failover</div></a></div>
+</article>
+<footer class="footer"><p>Part of <a href="/">Awesome OpenClaw</a>. See the <a href="/directory">directory</a> and <a href="/use-cases">use cases</a>.</p></footer>
+<script>
+(function(){
+const button=document.getElementById("themeToggle");
+const icon=document.getElementById("themeIcon");
+const html=document.documentElement;
+function setTheme(theme){
+if(theme==="light"){
+html.setAttribute("data-theme","light");
+icon.textContent="☀";
+}else{
+html.removeAttribute("data-theme");
+icon.textContent="☾";
+}
+localStorage.setItem("theme",theme);
+}
+const saved=localStorage.getItem("theme");
+if(saved){setTheme(saved);}
+button.addEventListener("click",function(){
+setTheme(html.getAttribute("data-theme")==="light"?"dark":"light");
+});
+})();
+</script>
+</body>
+</html>

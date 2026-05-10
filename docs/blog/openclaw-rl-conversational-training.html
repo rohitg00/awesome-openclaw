@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClaw-RL Turns Conversation Into a Training Surface</title>
+<meta name="description" content="A researched read on OpenClaw-RL: asynchronous agent training, next-state feedback, OPD, process rewards, and what builders should verify before using it.">
+<meta property="og:title" content="OpenClaw-RL Turns Conversation Into a Training Surface">
+<meta property="og:description" content="A researched read on OpenClaw-RL: asynchronous agent training, next-state feedback, OPD, process rewards, and what builders should verify before using it.">
+<meta property="og:image" content="https://openclawsearch.com/og-image.png">
+<meta property="og:url" content="https://openclawsearch.com/blog/openclaw-rl-conversational-training">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OpenClaw-RL Turns Conversation Into a Training Surface">
+<meta name="twitter:description" content="A researched read on OpenClaw-RL: asynchronous agent training, next-state feedback, OPD, process rewards, and what builders should verify before using it.">
+<meta name="twitter:image" content="https://openclawsearch.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/openclaw/openclaw/main/docs/assets/pixel-lobster.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0A0A0A;
+  --bg-s1:#111111;
+  --bg-s2:#1A1A1A;
+  --text:#EDEDED;
+  --text-muted:#888888;
+  --card:rgba(255,255,255,0.05);
+  --card-border:rgba(255,255,255,0.08);
+  --primary:#DC2626;
+  --primary-light:#EF4444;
+  --link:#EF4444;
+  --link-hover:#DC2626;
+  --badge-bg:rgba(220,38,38,0.12);
+  --badge-text:#EF4444;
+  --green:#22C55E;
+  --green-bg:rgba(34,197,94,0.08);
+  --green-border:rgba(34,197,94,0.25);
+  --yellow:#F59E0B;
+  --yellow-bg:rgba(245,158,11,0.08);
+  --yellow-border:rgba(245,158,11,0.25);
+  --blue:#3B82F6;
+  --blue-bg:rgba(59,130,246,0.08);
+  --blue-border:rgba(59,130,246,0.25);
+  --nav-bg:rgba(10,10,10,0.8);
+}
+[data-theme="light"]{
+  --bg:#FAFAFA;
+  --bg-s1:#FFFFFF;
+  --bg-s2:#F5F5F5;
+  --text:#171717;
+  --text-muted:#666666;
+  --card:#FFFFFF;
+  --card-border:rgba(0,0,0,0.08);
+  --link:#DC2626;
+  --link-hover:#B91C1C;
+  --badge-bg:rgba(220,38,38,0.08);
+  --badge-text:#DC2626;
+  --nav-bg:rgba(250,250,250,0.85);
+  --green-bg:rgba(34,197,94,0.06);
+  --green-border:rgba(34,197,94,0.2);
+  --yellow-bg:rgba(245,158,11,0.06);
+  --yellow-border:rgba(245,158,11,0.2);
+  --blue-bg:rgba(59,130,246,0.06);
+  --blue-border:rgba(59,130,246,0.2);
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:16px;transition:background .3s,color .3s}
+.nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
+.nav-logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo .claw{color:var(--primary)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.nav-link,.gh-link{color:var(--text-muted);text-decoration:none;font-size:.85rem;font-weight:500;padding:6px 14px;border-radius:8px;border:1px solid var(--card-border);transition:all .2s}
+.nav-link:hover,.nav-link.active,.gh-link:hover{color:var(--text);border-color:var(--primary)}
+.theme-toggle{background:var(--card);border:1px solid var(--card-border);color:var(--text);cursor:pointer;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.article{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.article-header{padding:80px 0 48px;border-bottom:1px solid var(--card-border);margin-bottom:48px}
+.article-badge{display:inline-flex;align-items:center;gap:6px;background:var(--badge-bg);color:var(--badge-text);font-size:.8rem;font-weight:700;padding:4px 14px;border-radius:16px;margin-bottom:20px}
+.article-title{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-0.03em;line-height:1.15;margin-bottom:16px}
+.article-title .hl{color:var(--primary)}
+.article-subtitle{font-size:1.2rem;color:var(--text-muted);margin-bottom:24px;line-height:1.5}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;color:var(--text-muted);font-size:.85rem}
+.article-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.article-pill{font-size:.75rem;padding:4px 12px;border-radius:6px;background:var(--card);border:1px solid var(--card-border);color:var(--text-muted);font-weight:500}
+.article h2{font-size:1.55rem;font-weight:800;letter-spacing:-0.02em;margin:52px 0 18px;padding-left:16px;border-left:4px solid var(--primary);line-height:1.3}
+.article h3{font-size:1.18rem;font-weight:750;margin:34px 0 12px;color:var(--text)}
+.article p{color:var(--text-muted);margin-bottom:18px;line-height:1.85}
+.article strong{color:var(--text);font-weight:650}
+.article a{color:var(--link);text-decoration:none;transition:color .2s}
+.article a:hover{color:var(--link-hover);text-decoration:underline}
+.article ul,.article ol{margin:0 0 22px 24px;color:var(--text-muted)}
+.article li{margin-bottom:8px;line-height:1.75}
+.article li strong{color:var(--text)}
+.article code{font-family:'JetBrains Mono',monospace;font-size:.85em;background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;color:var(--primary-light)}
+.callout{margin:24px 0;padding:20px 24px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+.callout-title{font-weight:750;font-size:.9rem;margin-bottom:8px;color:var(--text);display:flex;align-items:center;gap:8px}
+.callout-info{border-color:var(--blue-border);background:var(--blue-bg)}
+.callout-solution{border-color:var(--green-border);background:var(--green-bg)}
+.callout-tip{border-color:var(--yellow-border);background:var(--yellow-bg)}
+.source-ref{margin:16px 0;padding:16px 18px;border-radius:10px;border:1px solid var(--card-border);background:var(--bg-s1);font-size:.9rem;color:var(--text-muted)}
+.source-title{font-weight:700;color:var(--text);margin-bottom:4px}
+.source-url{font-size:.8rem;color:var(--text-muted);word-break:break-all}
+.table-wrap{overflow-x:auto;margin:20px 0 28px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th{text-align:left;padding:12px 16px;font-weight:650;color:var(--text);border-bottom:1px solid var(--card-border)}
+td{padding:10px 16px;border-bottom:1px solid var(--card-border);color:var(--text-muted)}
+tr:last-child td{border-bottom:none}
+.checklist{margin:24px 0;padding:24px;border-radius:12px;border:1px solid var(--card-border);background:var(--bg-s1)}
+.checklist h3{margin:0 0 16px;font-size:1rem}
+.checklist-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-size:.9rem;color:var(--text-muted)}
+.checklist-box{width:18px;height:18px;border:2px solid var(--card-border);border-radius:4px;flex-shrink:0;margin-top:2px}
+.footer{text-align:center;padding:48px 24px;border-top:1px solid var(--card-border);color:var(--text-muted);font-size:.85rem}
+.footer a{color:var(--link);text-decoration:none}
+@media(max-width:768px){.nav-inner{padding:0 10px}.nav-actions{gap:6px}.nav-link,.gh-link{padding:4px 8px;font-size:.75rem}.article{padding:0 16px 40px}.article-header{padding:48px 0 32px}.article-title{font-size:1.8rem}.article-subtitle{font-size:1rem}.article h2{font-size:1.3rem}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-inner">
+<a href="/" class="nav-logo"><span class="claw">Open</span>Claw</a>
+<div class="nav-actions">
+<a href="/" class="nav-link">Home</a>
+<a href="/directory" class="nav-link">Directory</a>
+<a href="/use-cases" class="nav-link">Use Cases</a>
+<a href="/blog" class="nav-link active">Blog</a>
+<button class="theme-toggle" id="themeToggle" title="Toggle theme"><span id="themeIcon">☾</span></button>
+<a href="https://github.com/rohitg00/awesome-openclaw" target="_blank" rel="noopener" class="gh-link"><span>GitHub</span></a>
+</div>
+</div>
+</nav>
+<article class="article">
+<header class="article-header">
+<div class="article-badge">Research</div>
+<h1 class="article-title">OpenClaw-RL Turns Conversation Into a Training Surface</h1>
+<p class="article-subtitle">The interesting claim is not that a chatbot can be “trained by talking.” It is that ordinary agent traces can become structured next-state feedback without stopping the assistant from serving users.</p>
+<div class="article-meta">
+<span>Rohit Ghumare · <a href="https://x.com/ghumare64" target="_blank" rel="noopener">@ghumare64</a></span>
+<span>Apr 21, 2026</span>
+<span>Research note</span>
+<span>Week of Apr 21, 2026</span>
+</div>
+<div class="article-pills">
+<span class="article-pill">RL</span>
+<span class="article-pill">Agent training</span>
+<span class="article-pill">OpenClaw-RL</span>
+</div>
+</header>
+
+<figure class="post-diagram" style="margin:36px 0;padding:18px;border:1px solid var(--card-border);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));overflow:hidden">
+<svg role="img" aria-label="Diagram for OpenClaw-RL Turns Conversation Into a Training Surface" viewBox="0 0 820 360" width="100%" style="display:block;border-radius:18px;background:#070707" xmlns="http://www.w3.org/2000/svg">
+<title>OpenClaw-RL Turns Conversation Into a Training Surface operating map</title>
+<rect width="820" height="360" fill="#070707"/>
+<circle cx="72" cy="64" r="30" fill="#8B5CF6" opacity=".16"/><text x="72" y="71" text-anchor="middle" font-family="Inter,Arial" font-size="26" font-weight="800" fill="#8B5CF6">1</text>
+<text x="120" y="58" font-family="Inter,Arial" font-size="24" font-weight="800" fill="#f5f5f5">Training feedback loop</text>
+<text x="120" y="84" font-family="JetBrains Mono,monospace" font-size="15" fill="#c7c7c7">read it as an operating boundary, not a logo announcement</text>
+<defs><marker id="arrow-746762713385900514" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#8B5CF6"/></marker></defs>
+<rect x="58" y="134" width="188" height="82" rx="18" fill="#0f0f0f" stroke="#2a2a2a"/>
+<text x="152" y="169" text-anchor="middle" font-family="Inter,Arial" font-size="18" font-weight="800" fill="#fff">agent run</text>
+<text x="152" y="194" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#bdbdbd">input / source</text>
+<line x1="256" y1="175" x2="342" y2="175" stroke="#8B5CF6" stroke-width="3" marker-end="url(#arrow-746762713385900514)"/>
+<rect x="352" y="120" width="212" height="110" rx="22" fill="#111" stroke="#8B5CF6" stroke-width="2"/>
+<text x="458" y="164" text-anchor="middle" font-family="Inter,Arial" font-size="19" font-weight="900" fill="#fff">RL loop</text>
+<text x="458" y="193" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#d6d6d6">policy • state • logs</text>
+<line x1="574" y1="175" x2="646" y2="175" stroke="#8B5CF6" stroke-width="3" marker-end="url(#arrow-746762713385900514)"/>
+<rect x="656" y="134" width="106" height="82" rx="18" fill="#0f0f0f" stroke="#2a2a2a"/>
+<text x="709" y="169" text-anchor="middle" font-family="Inter,Arial" font-size="16" font-weight="800" fill="#fff">improved behavior</text>
+<text x="709" y="194" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#bdbdbd">output</text>
+<rect x="95" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="170" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">conversation</text><rect x="275" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="350" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">judge</text><rect x="455" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="530" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">reward</text><rect x="635" y="248" width="150" height="42" rx="12" fill="#111" stroke="#303030"/><text x="710" y="274" text-anchor="middle" font-size="14" fill="#f4f4f4">policy update</text>
+<rect x="58" y="312" width="704" height="2" fill="#8B5CF6" opacity=".65"/>
+<text x="410" y="335" text-anchor="middle" font-family="Inter,Arial" font-size="15" fill="#eeeeee">Conversational training is powerful only when feedback, privacy, and evaluation are designed together.</text>
+</svg>
+<figcaption style="margin-top:12px;color:var(--text);opacity:.82;font-size:.95rem">A simplified operating map for the post: where the user request enters, where the integration boundary sits, and what has to be true before the output is trusted.</figcaption>
+</figure>
+<div class="callout callout-info">
+<div class="callout-title">Evidence used</div>
+<p>This post is based on the public <a href="https://github.com/Gen-Verse/OpenClaw-RL" target="_blank" rel="noopener">Gen-Verse/OpenClaw-RL</a> repository, the arXiv paper <a href="https://arxiv.org/abs/2603.10165" target="_blank" rel="noopener">“OpenClaw-RL: Train Any Agent Simply by Talking”</a>, the project page, and related infrastructure references from THUDM slime and Thinking Machines Tinker. I am not adding adoption claims beyond those sources.</p>
+</div>
+<h2>The useful read</h2>
+<p>OpenClaw-RL is best read as a proposal for turning <strong>agent use</strong> into <strong>agent training data</strong>. The paper’s central observation is simple and practical: after an agent acts, something happens next. A user replies, a command exits, a test passes or fails, a GUI changes state, or a tool returns an error. OpenClaw-RL calls that follow-up a <strong>next-state signal</strong>.</p>
+<p>That framing matters because it avoids a common trap in agent training. If every workflow needs a separate annotation pipeline, only large labs can improve deployed agents. If the interaction trace itself contains usable feedback, smaller teams can at least begin to collect learning signals from the places where agents already run.</p>
+<h2>What the source actually says</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Item</th><th>Public evidence</th></tr></thead>
+<tbody>
+<tr><td>Repository</td><td><a href="https://github.com/Gen-Verse/OpenClaw-RL" target="_blank" rel="noopener">Gen-Verse/OpenClaw-RL</a></td></tr>
+<tr><td>Paper</td><td>arXiv:2603.10165, submitted Mar 10, 2026</td></tr>
+<tr><td>License</td><td>Apache-2.0 in the GitHub repository</td></tr>
+<tr><td>Implementation</td><td>Primarily Python, with shell/C++/CUDA support shown by GitHub</td></tr>
+<tr><td>Positioning</td><td>“Train any agent simply by talking” and “scalable RL in real-world settings”</td></tr>
+<tr><td>Related frameworks</td><td>slime for RL scaling; Tinker for training API infrastructure</td></tr>
+</tbody>
+</table>
+</div>
+<h2>The architecture is the point</h2>
+<p>The strongest part of the design is not the slogan. It is the asynchronous separation between serving, collecting trajectories, judging, and training. The project describes a four-component loop: <strong>agent serving</strong>, <strong>rollout collection</strong>, <strong>PRM or judge evaluation</strong>, and <strong>policy training</strong>. Those pieces run independently so the assistant can continue answering while feedback is scored and training jobs run in the background.</p>
+<p>That is the right constraint for personal agents. A deployed assistant cannot pause every time the training stack needs to label a trace. If learning makes the product slower or unreliable, users will disable it. OpenClaw-RL’s practical bet is that training has to be downstream of usage, not in the hot path of every message.</p>
+<h2>Two kinds of feedback</h2>
+<p>The paper separates next-state signals into two categories. <strong>Evaluative feedback</strong> says whether the previous action worked. A user approval, a failed command, or a passing test can become a scalar reward. The OpenClaw-RL materials describe using a process reward model or judge to turn those signals into binary or ternary rewards such as good, bad, or neutral.</p>
+<p><strong>Directive feedback</strong> is richer. A correction like “No, use the staging database” does not merely say the previous answer was wrong; it tells the model what should have changed. OpenClaw-RL’s On-Policy Distillation path, described as OPD, extracts hindsight hints from that next state and uses them to create a more directional training signal.</p>
+<div class="callout callout-tip">
+<div class="callout-title">Why this distinction matters</div>
+<p>A thumbs-down can help a reward model rank behavior. A correction can teach the policy what information was missing. Serious conversational training needs both, and should not pretend that all feedback has the same value.</p>
+</div>
+<h2>Why this is relevant to OpenClaw</h2>
+<p>OpenClaw is a local-first personal assistant that connects to real channels and tools. That creates a different training surface from a web chatbot. It sees multi-turn conversations, tool calls, browser or terminal outcomes, and messaging-channel context. Those traces are exactly the kind of next-state signals OpenClaw-RL is trying to organize.</p>
+<p>This also explains why OpenClaw-RL is not just another plugin. A plugin changes where an agent can run. A training loop changes what the system can learn from once it is running. That is a deeper operating question: what feedback is safe to store, who approves it, how models are versioned, and how a bad update is rolled back.</p>
+<h2>The risks are not theoretical</h2>
+<p>Live learning from personal interactions is sensitive. The repository and project page emphasize self-hosting and privacy: the model, judge, trainer, and data can live on user-controlled infrastructure. That is the right default, but it does not remove the hard parts. Conversation data may contain credentials, private messages, personal preferences, and mistakes that should not become permanent model behavior.</p>
+<p>There is also a data-quality problem. Re-queries, sarcasm, channel noise, and ambiguous tool failures are not clean labels. A user asking again may mean the model failed, or it may mean the user changed the goal. A terminal error may be the agent’s fault, the environment’s fault, or a missing dependency. Any adoption plan needs a review layer before turning traces into training updates.</p>
+<h2>How I would evaluate it before trusting it</h2>
+<div class="checklist">
+<h3>Builder checklist</h3>
+<div class="checklist-item"><span class="checklist-box"></span><span>Can you inspect exactly which conversations and tool traces become training samples?</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Is there a clear distinction between logs, candidate training data, approved data, and discarded data?</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Can you disable learning for specific channels, users, workspaces, or tools?</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Are judge prompts, reward thresholds, and majority-vote behavior auditable?</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Is every trained policy version traceable to data and rollback metadata?</span></div>
+<div class="checklist-item"><span class="checklist-box"></span><span>Does serving continue safely if the trainer, judge, or rollout queue fails?</span></div>
+</div>
+<h2>What this does not prove</h2>
+<p>OpenClaw-RL does not prove that every personal agent should continuously fine-tune itself. It does not prove that noisy conversational feedback beats curated evaluation. It does not remove the need for redaction, evaluation sets, holdout workflows, and human approval for sensitive domains.</p>
+<p>The honest claim is narrower: the project makes a credible research case that ordinary agent interactions contain reusable feedback, and it provides an open implementation path for experimenting with that idea in OpenClaw-like environments.</p>
+<h2>The broader context</h2>
+<p>The related infrastructure references are useful signals. THUDM’s slime is an RL post-training framework that combines high-performance training and flexible rollout/data generation. Thinking Machines’ Tinker exposes training primitives such as forward/backward, sampling, optimizer steps, and state saving while hiding some infrastructure burden. OpenClaw-RL sits closer to the application edge: it asks how those training ideas meet a real assistant that is already talking to users and tools.</p>
+<p>That is why the project is worth tracking. The next generation of agent systems will need a boundary between <strong>immediate execution</strong> and <strong>slower learning</strong>. OpenClaw-RL is one concrete attempt to draw that boundary.</p>
+<div class="callout callout-solution">
+<div class="callout-title">My takeaway</div>
+<p>OpenClaw-RL is interesting because it treats feedback as an operational system, not as a marketing phrase. The right response is not to hype “agents that learn from chat.” The right response is to inspect the data path, judge path, training path, and rollback path before letting conversational traces update a model.</p>
+</div>
+<h2>How I would read the diagram</h2>
+<p>The reason this topic needs a careful read is that learning from conversations sounds obvious until you operate it. A chat transcript can contain useful feedback, private data, bad instructions, sarcasm, and accidental success. Turning that into a training signal requires more than saving messages.</p>
+<p>The promising part of OpenClaw-RL is the framing: ordinary interaction can become a source of improvement. The dangerous part is the same thing. A serious implementation needs judges, privacy boundaries, opt-in controls, rollback paths, and evaluation before the loop is trusted.</p>
+<h2>Sources</h2>
+<div class="source-ref"><a href="https://github.com/Gen-Verse/OpenClaw-RL" target="_blank" rel="noopener"><div class="source-title">Gen-Verse/OpenClaw-RL</div><div class="source-url">https://github.com/Gen-Verse/OpenClaw-RL</div></a></div>
+<div class="source-ref"><a href="https://arxiv.org/abs/2603.10165" target="_blank" rel="noopener"><div class="source-title">OpenClaw-RL: Train Any Agent Simply by Talking</div><div class="source-url">https://arxiv.org/abs/2603.10165</div></a></div>
+<div class="source-ref"><a href="https://yinjjiew.github.io/projects/openclawrl1" target="_blank" rel="noopener"><div class="source-title">OpenClaw-RL project page</div><div class="source-url">https://yinjjiew.github.io/projects/openclawrl1</div></a></div>
+<div class="source-ref"><a href="https://github.com/THUDM/slime" target="_blank" rel="noopener"><div class="source-title">THUDM/slime</div><div class="source-url">https://github.com/THUDM/slime</div></a></div>
+<div class="source-ref"><a href="https://thinkingmachines.ai/tinker/" target="_blank" rel="noopener"><div class="source-title">Thinking Machines Tinker</div><div class="source-url">https://thinkingmachines.ai/tinker/</div></a></div>
+</article>
+<footer class="footer"><p>Part of <a href="/">Awesome OpenClaw</a>. See the <a href="/directory">directory</a> and <a href="/use-cases">use cases</a>.</p></footer>
+<script>
+(function(){
+const button=document.getElementById("themeToggle");
+const icon=document.getElementById("themeIcon");
+const html=document.documentElement;
+function setTheme(theme){
+if(theme==="light"){
+html.setAttribute("data-theme","light");
+icon.textContent="☀";
+}else{
+html.removeAttribute("data-theme");
+icon.textContent="☾";
+}
+localStorage.setItem("theme",theme);
+}
+const saved=localStorage.getItem("theme");
+if(saved){setTheme(saved);}
+button.addEventListener("click",function(){
+setTheme(html.getAttribute("data-theme")==="light"?"dark":"light");
+});
+})();
+</script>
+</body>
+</html>

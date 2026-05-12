@@ -713,6 +713,8 @@ docker compose run --rm openclaw-cli security audit --deep
 | **WatchClaw** | Linux server hardening and threat-intelligence toolkit with SSH hardening, firewall baseline, Cowrie honeypot, Fail2ban, canaries, and an optional OpenClaw agent mode | [GitHub](https://github.com/kashifeqbal/watchclaw) |
 | **OpenClaw Guardian** | Watchdog for OpenClaw Gateway service checks, `doctor --fix` repair flows, git rollback, daily snapshots, and Discord alerts | [GitHub](https://github.com/LeoYeAI/openclaw-guardian) |
 | **OpenClaw Hardened** | VPS hardening guide and plugin set with configuration auditing, monitoring scripts, and defense-in-depth deployment runbooks | [GitHub](https://github.com/mj-deving/openclaw-hardened) |
+| **EDAMAME for OpenClaw** | Runtime security integration for OpenClaw agents with MCP plugin, provisioning, and behavioral monitoring documentation | [GitHub](https://github.com/edamametechnologies/edamame_openclaw) |
+| **Guardrail Bridge Plugin** | Pre-agent policy plugin that checks content before OpenClaw dispatches work to an agent | [GitHub](https://github.com/guardrail-bridge/guardrail-bridge-plugin) |
 
 ### Security Resources
 
@@ -980,6 +982,11 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[AgentPulse](https://agentpulse.dev)** | Third-party | LLM cost and observability dashboard for tokens, latency, errors, and model usage across agent workloads |
 | **[tokscale](https://github.com/junhoyeo/tokscale)** | Usage CLI | Token-usage tracker that reads OpenClaw agent data paths alongside other coding-agent tools and renders CLI usage reports. |
 | **[ClawPanel](https://github.com/zhaoxinyi02/ClawPanel)** | Management panel | Go-based OpenClaw management panel for channel runtime management, logs, and external gateway operations. |
+| **[Mission Control Center](https://github.com/YJ-Software/mission-control-center)** | Operations dashboard | Ubuntu-focused dashboard for OpenClaw agent conversations, scheduled tasks, daily reports, service status, and local MCP services |
+| **[ClawMetry](https://github.com/vivekchand/clawmetry)** | Observability dashboard | Reads local OpenClaw configuration and renders channel activity, session flow, and agent monitoring views |
+| **[costclaw-telemetry](https://github.com/queenvest0-ux/costclaw-telemetry)** | Cost dashboard | Local dashboard for tracking OpenClaw LLM calls, run-level cost estimates, and usage breakdowns |
+| **[AgentBridge](https://github.com/Vann-Dev/AgentBridge)** | Coordination dashboard | OpenClaw-first dashboard and API for assigning, tracking, and reviewing work across AI agent teams |
+| **[VibeLens](https://github.com/CHATS-lab/VibeLens)** | Session analytics | Session visualization and analytics tool that documents OpenClaw JSONL paths alongside other agent hosts |
 
 ### Backup & Restore
 
@@ -1196,12 +1203,32 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **[n8n OpenClaw Nodes](https://github.com/karmaniverous/n8n-nodes-openclaw)** | n8n community nodes for controlling OpenClaw Gateway sessions, messages, cron jobs, search, and commands from workflows | [GitHub](https://github.com/karmaniverous/n8n-nodes-openclaw) |
 | **[skillshare](https://github.com/runkids/skillshare)** | Cross-tool skill sync CLI with OpenClaw support for sharing skill installs across machines and agent tools | [GitHub](https://github.com/runkids/skillshare) |
 | **[Build With Claude](https://github.com/davepoon/buildwithclaude)** | Public directory for skills, agents, commands, hooks, plugins, and marketplace collections that includes OpenClaw-related entries | [GitHub](https://github.com/davepoon/buildwithclaude) |
+| **[EDAMAME for OpenClaw](https://github.com/edamametechnologies/edamame_openclaw)** | Security integration for OpenClaw agents with MCP plugin, skills, provisioning, and host-side behavioral monitoring docs | [GitHub](https://github.com/edamametechnologies/edamame_openclaw) |
+| **[Zenzap OpenClaw Plugin](https://github.com/zenzap-co/zenzap-public-openclaw-plugin)** | Channel plugin that connects OpenClaw to Zenzap team topics, tasks, and messages | [GitHub](https://github.com/zenzap-co/zenzap-public-openclaw-plugin) |
+| **[quality-guard](https://github.com/Timelaglepomispunctatus405/quality-guard)** | OpenClaw plugin that blocks dangerous shell commands and checks tool output quality before agent dispatch | [GitHub](https://github.com/Timelaglepomispunctatus405/quality-guard) |
+| **[weixin-agent-gateway](https://github.com/cyberg0bl1n/weixin-agent-gateway)** | WeChat gateway that routes messages to OpenClaw and other local agent backends. Review platform policy before enabling account automation. | [GitHub](https://github.com/cyberg0bl1n/weixin-agent-gateway) |
+| **[openclaw-plugin-a2a](https://github.com/jinwon-int/openclaw-plugin-a2a)** | Plugin adapter for A2A broker integration with task request, status, cancel, and monitoring bridge boundaries | [GitHub](https://github.com/jinwon-int/openclaw-plugin-a2a) |
+| **[openclaw-multi-session-plugins](https://github.com/x-evor/openclaw-multi-session-plugins)** | Plugin support for logical multi-session isolation and scoped XWorkmate artifact manifests in OpenClaw runtimes | [GitHub](https://github.com/x-evor/openclaw-multi-session-plugins) |
+| **[Guardrail Bridge Plugin](https://github.com/guardrail-bridge/guardrail-bridge-plugin)** | Pre-agent security plugin for OpenClaw with compatibility metadata and policy checks before agent dispatch | [GitHub](https://github.com/guardrail-bridge/guardrail-bridge-plugin) |
+| **[openclaw-adapter](https://github.com/windows150/openclaw-adapter)** | Adapter that wraps Eliza plugin actions, providers, and services for use from OpenClaw | [GitHub](https://github.com/windows150/openclaw-adapter) |
+| **[PowerMem](https://github.com/oceanbase/powermem)** | Long-term memory system with documented OpenClaw integration through the `memory-powermem` plugin | [GitHub](https://github.com/oceanbase/powermem) |
+| **[localsetup](https://github.com/CruxExperts/localsetup)** | Repo-local workflow engine that can install shared skills and context across Cursor, Claude Code, Codex, OpenClaw, Kilo, and OpenCode | [GitHub](https://github.com/CruxExperts/localsetup) |
+| **[SkillNote](https://github.com/luna-prompts/skillnote)** | Skill registry for creating, versioning, and sharing `SKILL.md` files with OpenClaw connection docs | [GitHub](https://github.com/luna-prompts/skillnote) |
+| **[customs-skill](https://github.com/yak33/customs-skill)** | Chinese customs-service OpenClaw skill for Feishu-connected read workflows, controlled writes, document handling, and status notifications | [GitHub](https://github.com/yak33/customs-skill) |
+| **[zenodo-skill](https://github.com/Georgiannebedded725/zenodo-skill)** | Research artifact skill for Zenodo deposits and DOI workflows that documents use from OpenClaw-compatible agent hosts | [GitHub](https://github.com/Georgiannebedded725/zenodo-skill) |
+| **[llm-wiki-skill](https://github.com/v3x709/llm-wiki-skill)** | OpenClaw and Codex Agent skill for compiling source material into persistent cross-linked Markdown knowledge bases | [GitHub](https://github.com/v3x709/llm-wiki-skill) |
+| **[bibigpt-skill](https://github.com/JimmyLv/bibigpt-skill)** | BibiGPT Desktop and CLI skill with documented OpenClaw installation for summarizing video and audio sources | [GitHub](https://github.com/JimmyLv/bibigpt-skill) |
+| **[huskylens2-mcp-skill](https://github.com/zaowuworld/huskylens2-mcp-skill)** | DFRobot HUSKYLENS 2 MCP service skill with OpenClaw endpoint setup notes | [GitHub](https://github.com/zaowuworld/huskylens2-mcp-skill) |
 
 ### Setup Guides & Starters
 
 - [OpenClaw Personal Agent Starter Free](https://github.com/rbezumoff/openclaw-personal-agent-starter-free) - Starter repository for building a private Telegram assistant with OpenClaw, including setup checklist material and AGENTS.md/SOUL.md templates.
 - [OpenClaw setup guide I wish I had](https://github.com/ishwarjha/openclaw-setup-guide-i-wish-i-had) - Step-by-step OpenClaw setup and optimization guide covering install, models, memory, heartbeat, cron, channels, security, and use-case building.
 - [NetworkChuck OpenClaw setup](https://github.com/theNetworkChuck/openclaw-setup) - Companion guide for a VPS-based OpenClaw setup video, with ordered commands for install, Telegram pairing, cron jobs, skills, browser access, sub-agents, and security checks.
+- [openclaw-n8n-stack](https://github.com/foot8319/openclaw-n8n-stack) - Docker stack for running OpenClaw with n8n, MCP, and workflow automation components in one local setup.
+- [awesome-openclaw-configs](https://github.com/AbdNour627/awesome-openclaw-configs) - OpenClaw configuration templates for Chinese LLM providers, multi-channel chat, and automation setups.
+- [OpenClaw Push-to-Talk Client](https://github.com/Venando/openclaw-ptt-client) - Desktop console client for microphone push-to-talk interaction with an OpenClaw Gateway.
+- [AgentServer](https://github.com/agentserver/agentserver) - Self-hosted browser environment with Helm values for OpenClaw gateway image, port, and sandbox subdomain configuration.
 
 ### Third-Party Platforms
 

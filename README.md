@@ -1303,6 +1303,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **[OpenClaw Ansible Installer](https://github.com/openclaw/openclaw-ansible)** | Ansible deployment | Hardened Debian and Ubuntu install path with Docker, Tailscale, UFW, Fail2ban, unattended upgrades, Node.js, pnpm, and systemd support |
 | **[OpenClaw China Docker](https://github.com/justlovemaki/openclaw-china-docker)** | Docker bundle | China IM-focused Docker packaging that bundles OpenClaw with Feishu, DingTalk, QQ, WeCom, WeChat, and related deployment docs |
 | **[OpenClawInstaller](https://github.com/miaoxworld/OpenClawInstaller)** | Installer | macOS and Linux installer with interactive configuration for model providers, channels, service management, and optional GUI manager |
+| **[VelaClaw](https://github.com/Zavianx/velaclaw)** | Team control plane | Local-first AI runtime for teams with isolated member runtimes, governed shared assets, review/publish workflows, audit trails, backup/restore, and ClawHub skill distribution |
 | **[openclaw-mini](https://github.com/voocel/openclaw-mini)** | Reference implementation | Minimal OpenClaw-style core covering session keys, serial queues, memory retrieval, context loading, skills, and heartbeat wakeups |
 | **[acpx](https://github.com/openclaw/acpx)** | ACP CLI | Headless CLI client for stateful Agent Client Protocol sessions |
 | **[ClawSweeper](https://github.com/openclaw/clawsweeper)** | Maintenance bot | OpenClaw issue and PR triage bot that suggests stale or closable items |

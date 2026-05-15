@@ -719,6 +719,9 @@ docker compose run --rm openclaw-cli security audit --deep
 | **GatewayStack Governance** | Governance layer for OpenClaw Gateway with identity, scope, rate limiting, injection detection, and audit logging boundaries | [GitHub](https://github.com/davidcrowe/openclaw-gatewaystack-governance) |
 | **openclaw-detect** | MDM deployment scripts for identifying OpenClaw installations on managed devices | [GitHub](https://github.com/knostic/openclaw-detect) |
 | **ClawShield** | Security preflight and guardrail toolkit for OpenClaw and Moltbot deployments | [GitHub](https://github.com/kappa9999/ClawShield) |
+| **ClawKeeper** | Safety plugin and watcher stack for OpenClaw agents, focused on skills, plugins, and runtime protection checks | [GitHub](https://github.com/SafeAI-Lab-X/ClawKeeper) |
+| **OpenClaw Security Watchdog** | Security audit workflow that runs OpenClaw-focused checks and generates reviewable reports | [GitHub](https://github.com/CTCT-CT2/openclaw-security-watchdog) |
+| **ClawVault** | OpenClaw security vault project for tracking and controlling agent access boundaries | [GitHub](https://github.com/tophant-ai/ClawVault) |
 
 ### Security Resources
 
@@ -965,6 +968,9 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 - [Golutra](https://github.com/golutra/golutra) - Multi-agent orchestration workspace that includes OpenClaw alongside other CLI agents for parallel tasks and long-running workflows.
 - [linear-agent-bridge](https://github.com/tokezooo/linear-agent-bridge) - OpenClaw plugin that maps Linear issues into a multi-agent workspace with delegation, progress tracking, and review surfaces.
 - [openclaw-swarm](https://github.com/kddige/openclaw-swarm) - Gateway management project for coordinating multiple OpenClaw gateways at scale.
+- [ClawChief](https://github.com/snarktank/clawchief) - Chief-of-staff workspace pattern for organizing OpenClaw agent responsibilities.
+- [MultiUserClaw](https://github.com/johnson7788/MultiUserClaw) - Multi-user wrapper around OpenClaw that keeps the upstream gateway unchanged while adding user-level routing.
+- [ClawSwarm](https://github.com/1Panel-dev/ClawSwarm) - Multi-agent orchestration system for OpenClaw that coordinates swarm-style work through group chat.
 
 ### Companion Apps
 
@@ -992,6 +998,9 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[nexu](https://github.com/nexu-io/nexu)** | Desktop | Available | Local-first desktop client for connecting OpenClaw agents to WeChat, Feishu, Slack, Discord, and related IM channels. |
 | **[BlueClaw](https://github.com/brandon-dacrib/blueclaw)** | iOS | Available | Native iOS client for OpenClaw gateways with SSH tunneling and direct WebSocket modes |
 | **[openclaw-gateway-client](https://github.com/Brani5/openclaw-gateway-client)** | Reference client | Available | Minimal custom Gateway WebSocket client with V3 device-auth challenge-response flow |
+| **[ClawApp](https://github.com/qingchencloud/clawapp)** | Mobile / PWA | Available | Mobile chat client for OpenClaw agents with streaming conversations, image handling, tool calls, PWA support, and APK packaging |
+| **[ClawPal](https://github.com/zhixianio/clawpal)** | Desktop / visual manager | Available | Visual interface for managing OpenClaw agents, models, and configuration files |
+| **[EasyClaw](https://github.com/ybgwon96/easyclaw)** | macOS / Windows | Available | One-click OpenClaw installer for desktop operators |
 
 ### Monitoring & Dashboards
 
@@ -1036,6 +1045,10 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[OpenClaw Watchdog](https://github.com/Yash-Kavaiya/openclaw-watchdog)** | Windows service monitor | Windows service monitor that restarts OpenClaw Gateway when it stops responding |
 | **[clawctl](https://github.com/TimBeyer/clawctl)** | VM manager | Tooling for running OpenClaw gateways inside isolated virtual machines |
 | **[clawdhome](https://github.com/ThinkInAIXYZ/clawdhome)** | Multi-instance manager | Mac-focused manager for isolating multiple OpenClaw gateway instances on one host |
+| **[Crabwalk](https://github.com/crabwise-ai/crabwalk)** | Companion monitor | Real-time companion monitor for OpenClaw agents |
+| **[ClawLibrary](https://github.com/shengyu-meng/ClawLibrary)** | Visual asset dashboard | 2D library interface for browsing OpenClaw generated assets, runtime activity, and working state |
+| **[ClawProBench](https://github.com/suyoumo/ClawProBench)** | Benchmark harness | Live-first benchmark harness for evaluating agents in the OpenClaw runtime with deterministic grading and repeated trials |
+| **[botmaker](https://github.com/jgarzik/botmaker)** | Bot builder | UI for creating containerized OpenClaw bots |
 
 ### Backup & Restore
 
@@ -1053,6 +1066,7 @@ tar -czvf ~/openclaw_backup_$(date +%Y%m%d).tar.gz -C "$HOME" .openclaw
 - [soul-upload.com](https://soul-upload.com) - Encrypted backup storage for OpenClaw workspace artifacts, using local encryption before upload and recovery by URL plus password.
 - [openclaw-backup](https://github.com/LeoYeAI/openclaw-backup) - Backup and restore skill for OpenClaw instance migration. Review credential scope before use.
 - [openclaw-infra](https://github.com/basi163/openclaw-infra) - Disaster-recovery bootstrap for exporting OpenClaw settings, versioning infrastructure state, and restoring a server profile.
+- [openclaw-killer](https://github.com/orange2ai/openclaw-killer) - Uninstall and cleanup script for removing OpenClaw components from a host after review.
 
 ---
 
@@ -1300,6 +1314,11 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 - [openclaw-kubernetes](https://github.com/feiskyer/openclaw-kubernetes) - Kubernetes Helm chart for OpenClaw deployments.
 - [moltbot-azure-container-apps](https://github.com/BandaruDheeraj/moltbot-azure-container-apps) - Azure Container Apps deployment template for ClawdBot.
 - [cloud-claw](https://github.com/miantiao-me/cloud-claw) - Cloudflare Containers deployment path for running OpenClaw with one-click setup.
+- [OpenClaw Android Setup Guide](https://github.com/AbuZar-Ansarii/Clawbot) - Termux and Ubuntu proot guide for running OpenClaw on Android devices without a PC or cloud server.
+- [OpenClaw WSL Guide](https://github.com/spoto-team/openclaw-wsl-guide) - Windows 11 WSL installation guide for OpenClaw.
+- [openclaw-setup](https://github.com/tuanminhhole/openclaw-setup) - Docker-based Telegram bot setup path for OpenClaw with Gemini configuration.
+- [OpenClaw Dev Guide](https://github.com/MindDock/OpenClaw-Dev-Guide) - Chinese architecture and secondary-development manual for OpenClaw.
+- [OpenClaw Java](https://github.com/yuenkang/openclaw-java) - Spring Boot based Java implementation of an OpenClaw-style AI Agent Gateway.
 
 ### Third-Party Platforms
 
@@ -1344,6 +1363,11 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **[OpenClaw Lark Multi-Agent](https://github.com/hackerphysics/openclaw-lark-multi-agent)** | Lark bridge | Multi-bot Lark/Feishu bridge that routes bot identities to OpenClaw Gateway sessions with isolated conversation state |
 | **[OpenClaw Dashboard Live Data](https://github.com/natanaelhx/openclaw-dashboard-live-data)** | Dashboard data feed | JSON data feed repository for an OpenClaw Vercel dashboard |
 | **[OpenClaw Shared Docs](https://github.com/dnd5fj5gjy-bit/openclaw-shared-docs)** | Workspace docs | Auto-published documentation from OpenClaw agent workspaces |
+| **[OpenClaw Cloud](https://github.com/openperf/openclaw-cloud)** | Cloud runtime | Cloud-native deployment surface for OpenClaw agents with a deploy-once, converse-through-channels model |
+| **[openclaw-onebot](https://github.com/LSTM-Kirigaya/openclaw-onebot)** | OneBot channel | OneBot framework for connecting OpenClaw to QQ-compatible bot surfaces |
+| **[graph-memory](https://github.com/adoresever/graph-memory)** | Memory plugin | Knowledge-graph memory engine for OpenClaw that extracts structured triples from conversations and reuses context across sessions |
+| **[ComfyUI-OpenClaw](https://github.com/rookiestar28/ComfyUI-OpenClaw)** | Media workflow | ComfyUI-oriented OpenClaw project for image and video generation workflows |
+| **[OpenUtter](https://github.com/sumansid/openutter)** | Meeting channel | Meeting assistant that lets OpenClaw join meetings and send updates |
 
 ### Install a Skill
 
@@ -1503,6 +1527,9 @@ Current OpenClaw operations include OpenTelemetry, Prometheus, dashboards, model
 - [Coolify OpenClaw](https://github.com/essamamdani/openclaw-coolify) - Coolify deployment template for OpenClaw.
 - [coollabsio/openclaw](https://github.com/coollabsio/openclaw) - Automated Docker image for OpenClaw.
 - [phioranex/openclaw-docker](https://github.com/phioranex/openclaw-docker) - Pre-built Docker image and install scripts for OpenClaw.
+- [serverless-openclaw](https://github.com/serithemage/serverless-openclaw) - AWS serverless deployment for OpenClaw with Web UI and Telegram interfaces.
+- [openclaw-in-docker](https://github.com/ozbillwang/openclaw-in-docker) - Beginner-oriented Docker guide for running OpenClaw in a safer container setup.
+- [clawbox](https://github.com/joshavant/clawbox) - OpenClaw-ready macOS virtual machine tooling.
 
 ### Local Hardware
 
@@ -1526,6 +1553,7 @@ Current OpenClaw operations include OpenTelemetry, Prometheus, dashboards, model
 - [Kimi K2.5 on Baseten](https://www.baseten.co/blog/openclaw-kimi-k2-5-on-baseten-frontier-agent-performance-with-oss/) | [Kimi on Fireworks AI](https://fireworks.ai/blog/openclaw-using-kimi2p5-on-fireworks-ai)
 - [50+ Official Extensions Guide](https://help.apiyi.com/en/openclaw-extensions-ecosystem-guide-en.html)
 - [OpenClaw Feishu Guide](https://github.com/AlexAnys/openclaw-feishu) - Chinese setup guide for Feishu and Lark channel integration.
+- [OpenClaw Guide](https://github.com/liyupi/openclaw-guide) - Chinese documentation site covering setup, messaging channels, agent architecture, skills, model providers, CLI commands, gateway operations, and sandbox guidance.
 
 ### Security Guides
 

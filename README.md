@@ -1368,6 +1368,25 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **[graph-memory](https://github.com/adoresever/graph-memory)** | Memory plugin | Knowledge-graph memory engine for OpenClaw that extracts structured triples from conversations and reuses context across sessions |
 | **[ComfyUI-OpenClaw](https://github.com/rookiestar28/ComfyUI-OpenClaw)** | Media workflow | ComfyUI-oriented OpenClaw project for image and video generation workflows |
 | **[OpenUtter](https://github.com/sumansid/openutter)** | Meeting channel | Meeting assistant that lets OpenClaw join meetings and send updates |
+| **[@tencent-weixin/openclaw-weixin-cli](https://www.npmjs.com/package/@tencent-weixin/openclaw-weixin-cli)** | Weixin installer | Lightweight installer for the OpenClaw Weixin channel plugin |
+| **[@lark-apaas/openclaw-scripts-diagnose-cli](https://www.npmjs.com/package/@lark-apaas/openclaw-scripts-diagnose-cli)** | Config diagnostics | CLI for diagnosing and repairing OpenClaw config files with JSON5 support |
+| **[@rudderhq/agent-runtime-openclaw-gateway](https://www.npmjs.com/package/@rudderhq/agent-runtime-openclaw-gateway)** | Gateway adapter | Agent runtime adapter that invokes OpenClaw through the Gateway protocol |
+| **[@lark-apaas/openclaw-extension-miaoda](https://www.npmjs.com/package/@lark-apaas/openclaw-extension-miaoda)** | Miaoda plugin | Miaoda OpenClaw extension package |
+| **[@volcengine/apmplus-openclaw-plugin](https://www.npmjs.com/package/@volcengine/apmplus-openclaw-plugin)** | Observability plugin | OpenClaw plugin for reporting traces through OpenTelemetry |
+| **[superpowers-openclaw-plugin](https://www.npmjs.com/package/superpowers-openclaw-plugin)** | Workflow bridge | OpenClaw plugin that bridges to Superpowers workflow skills |
+| **[@vincentwei1021/synapse-openclaw-plugin](https://www.npmjs.com/package/@vincentwei1021/synapse-openclaw-plugin)** | Research orchestration | OpenClaw plugin for Synapse research orchestration, SSE notifications, MCP tools, and experiment lifecycle flows |
+| **[@2en/clawly-plugins](https://www.npmjs.com/package/@2en/clawly-plugins)** | Utility RPC | OpenClaw plugin package that provides Clawly utility RPC methods |
+| **[ofiere-openclaw-plugin](https://www.npmjs.com/package/ofiere-openclaw-plugin)** | Project management | OpenClaw plugin for Ofiere PM task, agent, project, scheduling, knowledge, workflow, and notification tools |
+| **[@ryzome-ai/openclaw-ryzome](https://www.npmjs.com/package/@ryzome-ai/openclaw-ryzome)** | Canvas plugin | Ryzome Canvas plugin for OpenClaw |
+| **[@memorycrystal/crystal-memory](https://www.npmjs.com/package/@memorycrystal/crystal-memory)** | Memory plugin | Memory Crystal plugin for OpenClaw memory workflows |
+| **[openclaw-dna](https://www.npmjs.com/package/openclaw-dna)** | Governance plugin | DNA governance system plugin for OpenClaw and agentic-dna workflows |
+| **[@feeble/blay-openclaw-plugin](https://www.npmjs.com/package/@feeble/blay-openclaw-plugin)** | Project collaboration | OpenClaw plugin for Blay project management tools, real-time events, and agent collaboration |
+| **[@volcengine/apmplus-openclaw-plugin-onboard-cli](https://www.npmjs.com/package/@volcengine/apmplus-openclaw-plugin-onboard-cli)** | Observability installer | Installer CLI for onboarding the APMPlus OpenClaw plugin |
+| **[OpenClaw Plugin Marketplace](https://github.com/Douglas88/openclaw-plugins)** | Plugin registry | Git-based registry project for OpenClaw community skills and MCP server scripts |
+| **[Bricks](https://github.com/askman-dev/bricks)** | Agent console | Native console with OpenClaw plugin integration docs for connecting local agents to cloud-visible control surfaces |
+| **[TH Fleet Dashboard](https://github.com/thtopher/th-fleet-dashboard)** | Fleet dashboard | GitHub Pages dashboard and workflow controls for monitoring OpenClaw gateway health across an agent fleet |
+| **[JClaw](https://github.com/tsukhani/jclaw)** | Java implementation | Java-based assistant platform that documents OpenClaw-derived feature designs and gateway concepts |
+| **[HoneyBadge](https://github.com/xiaohanarch/HoneyBadge)** | ERP knowledge graph | Enterprise ERP knowledge-graph assistant whose MVP documents OpenClaw with an MCP Neo4j plugin as part of the validation stack |
 
 ### Install a Skill
 

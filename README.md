@@ -1228,6 +1228,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **OpenClaw Skills zh** | Chinese OpenClaw skills collection translated and organized by use case | [GitHub](https://github.com/clawdbot-ai/awesome-openclaw-skills-zh) |
 | **OpenClaw Master Skills** | Curated OpenClaw skills collection maintained as a public GitHub repository | [GitHub](https://github.com/LeoYeAI/openclaw-master-skills) |
 | **Lossless Claw** | Lossless Context Management plugin for OpenClaw context compression and retention workflows | [GitHub](https://github.com/Martian-Engineering/lossless-claw) |
+| **Parley** | ClawHub plugin for durable coordination state, obligations, plans, artifacts, scoped identity, and recovery across long-running multi-agent work | [ClawHub](https://clawhub.ai/plugins/@nkuhanas/parley) \| [GitHub](https://github.com/nkuhanas/Parley) |
 | **mem9** | Memory plugin for OpenClaw agents | [GitHub](https://github.com/mem9-ai/mem9) |
 | **OpenViking OpenClaw Plugin** | Context-engine plugin that connects OpenClaw to OpenViking for remote memory, session archiving, semantic retrieval, and resource import workflows | [GitHub](https://github.com/volcengine/OpenViking/tree/main/examples/openclaw-plugin) |
 | **memory-lancedb-pro** | LanceDB memory plugin for OpenClaw with hybrid retrieval, reranking, multi-scope isolation, and a management CLI | [GitHub](https://github.com/CortexReach/memory-lancedb-pro) |

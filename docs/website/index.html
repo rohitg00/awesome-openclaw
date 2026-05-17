@@ -69,9 +69,9 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .nav-logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px;flex-shrink:0}
 .nav-logo img{height:28px;width:auto}
 .nav-logo img.nav-logo-dark,.nav-logo img.nav-logo-light{display:none}
-:root:not([data-theme="light"]) .nav-logo-dark{display:block}
-[data-theme="light"] .nav-logo-light{display:block}
-[data-theme="light"] .nav-logo-dark{display:none}
+:root:not([data-theme="light"]) .nav-logo img.nav-logo-dark{display:block}
+[data-theme="light"] .nav-logo img.nav-logo-light{display:block}
+[data-theme="light"] .nav-logo img.nav-logo-dark{display:none}
 .nav-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
 .sidebar{position:fixed;top:80px;right:max(16px,calc((100vw - 1200px)/2 - 180px));width:180px;max-height:calc(100vh - 100px);overflow-y:auto;z-index:50;scrollbar-width:none;opacity:0;pointer-events:none;transform:translateX(10px);transition:opacity .3s,transform .3s}
 .sidebar.visible{opacity:1;pointer-events:auto;transform:none}

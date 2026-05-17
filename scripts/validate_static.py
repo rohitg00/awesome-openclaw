@@ -102,6 +102,20 @@ def check_directory_layout() -> None:
     print("Directory card grids OK")
 
 
+def check_nav_logo_theme_rules() -> None:
+    html_paths = list((ROOT / "docs" / "website").glob("*.html")) + list((ROOT / "docs" / "blog").glob("*.html"))
+    bad: list[str] = []
+    for path in html_paths:
+        text = path.read_text(errors="ignore")
+        if "nav-logo-light" not in text:
+            continue
+        if "[data-theme=\"light\"] .nav-logo img.nav-logo-light{display:block}" not in text:
+            bad.append(str(path.relative_to(ROOT)))
+    if bad:
+        fail("Theme logo display rules are missing or too weak in: " + ", ".join(bad))
+    print("Theme logo rules OK")
+
+
 def check_vercel() -> None:
     config = json.loads((ROOT / "vercel.json").read_text())
     missing: list[tuple[str, str]] = []
@@ -149,6 +163,7 @@ def main() -> None:
     check_json()
     check_html()
     check_directory_layout()
+    check_nav_logo_theme_rules()
     check_vercel()
     check_readme_anchors()
     print("All static validations passed")

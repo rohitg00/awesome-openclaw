@@ -59,9 +59,9 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .nav-logo{color:var(--text);text-decoration:none;display:flex;align-items:center;flex-shrink:0;min-width:0;overflow:hidden}
 .nav-logo img{display:block;height:24px;width:auto;max-width:150px}
 .nav-logo img.nav-logo-dark,.nav-logo img.nav-logo-light{display:none}
-:root:not([data-theme="light"]) .nav-logo-dark{display:block}
-[data-theme="light"] .nav-logo-light{display:block}
-[data-theme="light"] .nav-logo-dark{display:none}
+:root:not([data-theme="light"]) .nav-logo img.nav-logo-dark{display:block}
+[data-theme="light"] .nav-logo img.nav-logo-light{display:block}
+[data-theme="light"] .nav-logo img.nav-logo-dark{display:none}
 .nav-links{display:flex;align-items:center;justify-content:center;gap:4px;min-width:0;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
 .nav-links::-webkit-scrollbar{display:none}
 .nav-links a{color:var(--text-muted);text-decoration:none;font-size:.82rem;padding:6px 10px;border-radius:6px;white-space:nowrap;transition:color .2s,background .2s;font-weight:500;flex:0 0 auto}

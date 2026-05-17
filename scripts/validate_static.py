@@ -55,6 +55,32 @@ class Parser(HTMLParser):
     pass
 
 
+class CardGridParser(HTMLParser):
+    """Check directory cards stay inside their responsive grid containers."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.stack: list[tuple[str, set[str], int]] = []
+        self.bad_cards: list[int] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attr = {key: value or "" for key, value in attrs}
+        classes = set(attr.get("class", "").split())
+        line = self.getpos()[0]
+        parent = self.stack[-1] if self.stack else None
+        if tag == "div" and "card" in classes:
+            parent_is_grid = bool(parent and parent[0] == "div" and "grid" in parent[1])
+            if not parent_is_grid:
+                self.bad_cards.append(line)
+        self.stack.append((tag, classes, line))
+
+    def handle_endtag(self, tag: str) -> None:
+        for index in range(len(self.stack) - 1, -1, -1):
+            if self.stack[index][0] == tag:
+                self.stack = self.stack[:index]
+                return
+
+
 def check_html() -> None:
     for path in list((ROOT / "docs" / "website").glob("*.html")) + list((ROOT / "docs" / "blog").glob("*.html")) + list((ROOT / "docs" / "public").rglob("*.html")):
         parser = Parser()
@@ -63,6 +89,17 @@ def check_html() -> None:
         except Exception as exc:
             fail(f"HTML parse issue in {path.relative_to(ROOT)}: {exc}")
     print("HTML parse OK")
+
+
+def check_directory_layout() -> None:
+    path = ROOT / "docs" / "website" / "directory.html"
+    parser = CardGridParser()
+    parser.feed(path.read_text(errors="ignore"))
+    if parser.bad_cards:
+        lines = ", ".join(str(line) for line in parser.bad_cards[:20])
+        more = "" if len(parser.bad_cards) <= 20 else f" (+{len(parser.bad_cards) - 20} more)"
+        fail(f"Directory cards outside .grid containers at lines: {lines}{more}")
+    print("Directory card grids OK")
 
 
 def check_vercel() -> None:
@@ -111,6 +148,7 @@ def check_readme_anchors() -> None:
 def main() -> None:
     check_json()
     check_html()
+    check_directory_layout()
     check_vercel()
     check_readme_anchors()
     print("All static validations passed")

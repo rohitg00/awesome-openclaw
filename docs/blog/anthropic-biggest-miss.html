@@ -62,7 +62,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border);transition:background .3s}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
 .nav-logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
-.nav-logo .claw{color:var(--primary)}.nav-logo img{display:block;height:28px;width:auto;max-width:190px}.nav-logo-dark,.nav-logo-light{display:none}:root:not([data-theme="light"]) .nav-logo-dark{display:block}[data-theme="light"] .nav-logo-light{display:block}[data-theme="light"] .nav-logo-dark{display:none}
+.nav-logo .claw{color:var(--primary)}.nav-logo img{display:block;height:28px;width:auto;max-width:190px}.nav-logo img.nav-logo-dark,.nav-logo img.nav-logo-light{display:none}:root:not([data-theme="light"]) .nav-logo-dark{display:block}[data-theme="light"] .nav-logo-light{display:block}[data-theme="light"] .nav-logo-dark{display:none}
 .nav-actions{display:flex;align-items:center;gap:12px}
 .nav-link{color:var(--text-muted);text-decoration:none;font-size:.85rem;font-weight:500;padding:6px 14px;border-radius:8px;border:1px solid var(--card-border);transition:all .2s}
 .nav-link:hover,.nav-link.active{color:var(--text);border-color:var(--primary)}
@@ -190,6 +190,23 @@ a.tweet-embed:hover{border-color:rgba(220,38,38,0.3);transform:translateY(-1px);
 .tweet-embed{padding:16px}
 .tweet-embed::before{width:24px;height:24px;top:16px;left:16px}
 .tweet-embed .tweet-author{margin-left:36px}
+}
+
+@media(max-width:768px){
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+.nav,.nav-inner,.nav-actions,.hero,.posts,.post-card,.article,.article-header,.grid,.card,.content,.footer{min-width:0;max-width:100%}
+.nav-logo img{max-width:120px!important}
+.nav-actions{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.nav-actions::-webkit-scrollbar{display:none}
+.hero{padding-left:16px!important;padding-right:16px!important}
+.hero h1{font-size:clamp(1.45rem,6.8vw,1.75rem)!important;line-height:1.16!important;white-space:normal!important;overflow-wrap:anywhere}
+.hero h1 .hl{display:inline;overflow-wrap:anywhere}
+.hero-inline-logo{width:min(30vw,118px)!important;max-width:118px!important}
+.posts,.grid,.article,.content{padding-left:16px!important;padding-right:16px!important}
+.post-card,.card{width:100%;max-width:calc(100vw - 32px)}
+.article-title{font-size:clamp(1.45rem,7vw,1.75rem)!important;overflow-wrap:anywhere}
+.post-title,.card h2{font-size:clamp(1rem,5.5vw,1.15rem)!important;overflow-wrap:anywhere}
+.content p,.article p,.post-excerpt,.card p{overflow-wrap:anywhere}
 }
 </style>
 </head>

@@ -68,7 +68,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
 .nav-logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px;flex-shrink:0}
 .nav-logo img{height:28px;width:auto}
-.nav-logo-dark,.nav-logo-light{display:none}
+.nav-logo img.nav-logo-dark,.nav-logo img.nav-logo-light{display:none}
 :root:not([data-theme="light"]) .nav-logo-dark{display:block}
 [data-theme="light"] .nav-logo-light{display:block}
 [data-theme="light"] .nav-logo-dark{display:none}
@@ -231,8 +231,10 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 }
 @media(max-width:420px){
 .nav-inner{padding:8px 10px}
-.nav-logo{max-width:136px}
-.nav-logo img{max-width:136px;height:23px}
+.hero h1{font-size:clamp(1.75rem,8vw,2.15rem);gap:2px 6px}
+.hero-inline-logo{width:min(34vw,128px)}
+.nav-logo{max-width:128px}
+.nav-logo img{max-width:128px;height:22px}
 .dir-link{padding:6px 9px;font-size:.75rem}
 .theme-toggle{display:none}
 .hero{padding-top:38px}
@@ -242,6 +244,23 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .content pre,.table-wrap{margin-left:-16px;margin-right:-16px}
 }
 @media(min-width:769px) and (max-width:1200px){.sidebar{display:none}}
+
+@media(max-width:768px){
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+.nav,.nav-inner,.nav-actions,.hero,.posts,.post-card,.article,.article-header,.grid,.card,.content,.footer{min-width:0;max-width:100%}
+.nav-logo img{max-width:120px!important}
+.nav-actions{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.nav-actions::-webkit-scrollbar{display:none}
+.hero{padding-left:16px!important;padding-right:16px!important}
+.hero h1{font-size:clamp(1.45rem,6.8vw,1.75rem)!important;line-height:1.16!important;white-space:normal!important;overflow-wrap:anywhere}
+.hero h1 .hl{display:inline;overflow-wrap:anywhere}
+.hero-inline-logo{width:min(30vw,118px)!important;max-width:118px!important}
+.posts,.grid,.article,.content{padding-left:16px!important;padding-right:16px!important}
+.post-card,.card{width:100%;max-width:calc(100vw - 32px)}
+.article-title{font-size:clamp(1.45rem,7vw,1.75rem)!important;overflow-wrap:anywhere}
+.post-title,.card h2{font-size:clamp(1rem,5.5vw,1.15rem)!important;overflow-wrap:anywhere}
+.content p,.article p,.post-excerpt,.card p{overflow-wrap:anywhere}
+}
 </style>
 </head>
 <body>

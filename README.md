@@ -702,6 +702,7 @@ docker compose run --rm openclaw-cli security audit --deep
 
 | Tool | Description | Source |
 |------|-------------|--------|
+| [APort Agent Guardrails](https://aport.io) | Pre-action authorization guardrails for AI agents and MCP/tool-use workflows. | Runtime authorization guardrails |
 | **ClawSec** | Complete security skill suite by Prompt Security | [GitHub](https://github.com/prompt-security/clawsec) |
 | **ClawBands** | Security middleware - intercepts tool execution, human-in-the-loop approval for dangerous actions | [GitHub](https://github.com/SeyZ/clawbands) |
 | **ClawGuard** | Permission manifests, runtime enforcement, sandboxing, audit logging with hash-chaining | [GitHub](https://github.com/newtro/ClawGuard) |

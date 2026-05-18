@@ -722,6 +722,9 @@ docker compose run --rm openclaw-cli security audit --deep
 | **ClawKeeper** | Safety plugin and watcher stack for OpenClaw agents, focused on skills, plugins, and runtime protection checks | [GitHub](https://github.com/SafeAI-Lab-X/ClawKeeper) |
 | **OpenClaw Security Watchdog** | Security audit workflow that runs OpenClaw-focused checks and generates reviewable reports | [GitHub](https://github.com/CTCT-CT2/openclaw-security-watchdog) |
 | **ClawVault** | OpenClaw security vault project for tracking and controlling agent access boundaries | [GitHub](https://github.com/tophant-ai/ClawVault) |
+| **ShieldCortex Realtime** | OpenClaw plugin for real-time defense scanning and optional memory extraction | [npm](https://www.npmjs.com/package/@drakon-systems/shieldcortex-realtime) |
+| **AIP OpenClaw** | Security plugin for OpenClaw skill signing, capability manifests, and runtime enforcement | [npm](https://www.npmjs.com/package/aip-openclaw) |
+| **skill-security-scanner** | Static security scanner and linter for OpenClaw skill directories | [npm](https://www.npmjs.com/package/skill-security-scanner) |
 
 ### Security Resources
 
@@ -1049,6 +1052,10 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[ClawLibrary](https://github.com/shengyu-meng/ClawLibrary)** | Visual asset dashboard | 2D library interface for browsing OpenClaw generated assets, runtime activity, and working state |
 | **[ClawProBench](https://github.com/suyoumo/ClawProBench)** | Benchmark harness | Live-first benchmark harness for evaluating agents in the OpenClaw runtime with deterministic grading and repeated trials |
 | **[botmaker](https://github.com/jgarzik/botmaker)** | Bot builder | UI for creating containerized OpenClaw bots |
+| **[openclaw-models-ui](https://github.com/oneles/openclaw-models-ui)** | Model UI | Visual model-priority manager for OpenClaw Gateway Dashboard |
+| **[openclaw-quickfix](https://github.com/myyxfishcat/openclaw-quickfix)** | Diagnostics toolkit | Quick diagnostic and repair toolkit for OpenClaw Gateway configuration and runtime issues |
+| **[RuView Presence](https://github.com/DevvGwardo/openclaw-ruview-presence)** | Presence plugin | Presence-aware behavior plugin for OpenClaw using RuView WiFi sensing signals |
+| **[AgentTown Observer](https://www.npmjs.com/package/@shaoweiz/openclaw-agenttown-observer)** | Read-only observer | OpenClaw Gateway plugin for observing AgentTown state without write actions |
 
 ### Backup & Restore
 
@@ -1298,6 +1305,31 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **[openclaw-skills](https://github.com/blessonism/openclaw-skills)** | Collection of OpenClaw agent skills for search, analysis, and content extraction | [GitHub](https://github.com/blessonism/openclaw-skills) |
 | **[jincai openclaw-skills](https://github.com/jincai/openclaw-skills)** | Reusable OpenClaw skills collection for local agent workflows | [GitHub](https://github.com/jincai/openclaw-skills) |
 | **[agent flywheel skills](https://github.com/Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations)** | Clawdbot skill collection for agentic coding workflows, cloud CLIs, and development tools | [GitHub](https://github.com/Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations) |
+| **[Plugin-GBT](https://github.com/PeiranLi0930/Plugin-GBT)** | OpenClaw plugin for compressing agent context and reducing repeated prompt tokens | [GitHub](https://github.com/PeiranLi0930/Plugin-GBT) |
+| **[Claw Sama](https://github.com/luckybugqqq/claw-sama)** | VRM avatar desktop-pet plugin for connecting OpenClaw workflows to a local character surface | [GitHub](https://github.com/luckybugqqq/claw-sama) |
+| **[openclaw-codex-image-gen](https://github.com/jkf87/openclaw-codex-image-gen)** | OpenClaw plugin that adds a Codex CLI image-generation command workflow | [GitHub](https://github.com/jkf87/openclaw-codex-image-gen) |
+| **[Coze OpenClaw Plugin](https://github.com/coze-dev/coze-openclaw-plugin)** | Plugin for connecting Coze workflows to OpenClaw | [GitHub](https://github.com/coze-dev/coze-openclaw-plugin) |
+| **[mkhlab](https://github.com/Moshe-ship/mkhlab)** | Arabic-first OpenClaw plugin with dialect-aware skills and localized workflows | [GitHub](https://github.com/Moshe-ship/mkhlab) |
+| **[openclaw-better-gateway](https://github.com/ThisIsJeron/openclaw-better-gateway)** | Gateway UI enhancement plugin with automatic refresh and WebSocket handling improvements | [GitHub](https://github.com/ThisIsJeron/openclaw-better-gateway) |
+| **[openclaw-memory-auto-recall](https://github.com/code-yeongyu/openclaw-memory-auto-recall)** | Memory plugin that injects relevant stored context before each OpenClaw prompt | [GitHub](https://github.com/code-yeongyu/openclaw-memory-auto-recall) |
+| **[web-search-plus-plugin](https://github.com/robbyczgw-cla/web-search-plus-plugin)** | Multi-provider web search and extraction plugin for OpenClaw research workflows | [GitHub](https://github.com/robbyczgw-cla/web-search-plus-plugin) |
+| **[openclaw-langfuse](https://github.com/MCKRUZ/openclaw-langfuse)** | Langfuse observability plugin for tracing OpenClaw agent turns, sessions, token use, latency, and cost | [GitHub](https://github.com/MCKRUZ/openclaw-langfuse) |
+| **[GetNote OpenClaw](https://github.com/iswalle/getnote-openclaw)** | OpenClaw skill for GetNote note workflows | [GitHub](https://github.com/iswalle/getnote-openclaw) |
+| **[scholar-skill](https://github.com/EESJGong/scholar-skill)** | Academic reading and knowledge-linking skill for OpenClaw with Obsidian-oriented workflows | [GitHub](https://github.com/EESJGong/scholar-skill) |
+| **[dingtalk-ai-table](https://github.com/aliramw/dingtalk-ai-table)** | DingTalk AI table operation skill for OpenClaw workflows | [GitHub](https://github.com/aliramw/dingtalk-ai-table) |
+| **[openclaw-chat-history-import](https://github.com/dashhuang/openclaw-chat-history-import)** | Skill for importing external chat history into OpenClaw archive, daily memory, and `MEMORY.md` workflows | [GitHub](https://github.com/dashhuang/openclaw-chat-history-import) |
+| **[openclaw-skill-n8n](https://github.com/RamithaW/openclaw-skill-n8n)** | OpenClaw skill for n8n workflow operations | [GitHub](https://github.com/RamithaW/openclaw-skill-n8n) |
+| **[jobradar](https://github.com/jason-huanghao/jobradar)** | Job-search skill that documents OpenClaw usage for Germany and China tech-role workflows | [GitHub](https://github.com/jason-huanghao/jobradar) |
+| **[Clawlett](https://github.com/Creator-Bid/Clawlett)** | OpenClaw skill for permissioned on-chain actions with human control boundaries | [GitHub](https://github.com/Creator-Bid/Clawlett) |
+| **[principles-disciple](https://www.npmjs.com/package/principles-disciple)** | Native OpenClaw plugin package for Principles Disciple workflows | [npm](https://www.npmjs.com/package/principles-disciple) |
+| **[openclaw-ynabro](https://www.npmjs.com/package/openclaw-ynabro)** | OpenClaw plugin that registers YNABro tools for budget workflows | [npm](https://www.npmjs.com/package/openclaw-ynabro) |
+| **[n8n-as-code OpenClaw plugin](https://www.npmjs.com/package/@n8n-as-code/n8nac)** | Plugin for creating and managing n8n workflows from OpenClaw | [npm](https://www.npmjs.com/package/@n8n-as-code/n8nac) |
+| **[agent-changelog](https://www.npmjs.com/package/agent-changelog)** | Installable OpenClaw skill for keeping an agent changelog in a workspace | [npm](https://www.npmjs.com/package/agent-changelog) |
+| **[openclaw-skill-easy-learn](https://www.npmjs.com/package/openclaw-skill-easy-learn)** | OpenClaw skill for generating beginner-friendly learning notes | [npm](https://www.npmjs.com/package/openclaw-skill-easy-learn) |
+| **[openclaw-skill-article-summarizer](https://www.npmjs.com/package/openclaw-skill-article-summarizer)** | Skill for summarizing articles, web pages, PDFs, and Feishu docs with opt-in note saving | [npm](https://www.npmjs.com/package/openclaw-skill-article-summarizer) |
+| **[openclaw-skill-optimizer](https://www.npmjs.com/package/openclaw-skill-optimizer)** | Package for analyzing and optimizing OpenClaw skill performance | [npm](https://www.npmjs.com/package/openclaw-skill-optimizer) |
+| **[openclaw-crawleo-skill](https://www.npmjs.com/package/openclaw-crawleo-skill)** | Self-contained OpenClaw skill package for Crawleo web search and crawling workflows | [npm](https://www.npmjs.com/package/openclaw-crawleo-skill) |
+| **[rugbyclaw](https://www.npmjs.com/package/rugbyclaw)** | Rugby scores, fixtures, and results CLI with an OpenClaw skill package | [npm](https://www.npmjs.com/package/rugbyclaw) |
 
 ### Setup Guides & Starters
 
@@ -1320,6 +1352,9 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 - [openclaw-setup](https://github.com/tuanminhhole/openclaw-setup) - Docker-based Telegram bot setup path for OpenClaw with Gemini configuration.
 - [OpenClaw Dev Guide](https://github.com/MindDock/OpenClaw-Dev-Guide) - Chinese architecture and secondary-development manual for OpenClaw.
 - [OpenClaw Java](https://github.com/yuenkang/openclaw-java) - Spring Boot based Java implementation of an OpenClaw-style AI Agent Gateway.
+- [openclaw-docker-config](https://github.com/andreesg/openclaw-docker-config) - Docker configuration for OpenClaw Gateway, paired with a Hetzner Terraform setup path.
+- [openclaw-remote-minimax-setup-skill](https://github.com/win4r/openclaw-remote-minimax-setup-skill) - Reusable skill for remote Linux OpenClaw deployment with MiniMax M2.1 and Telegram setup notes.
+- [volcengine diagnostics TLS skill](https://www.npmjs.com/package/@volcengine/diagnostics-tls-skill) - OpenClaw skill package for installing or updating Volcengine diagnostics TLS tooling.
 
 ### Third-Party Platforms
 
@@ -1357,6 +1392,12 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **[CordysCRM](https://github.com/1Panel-dev/CordysCRM)** | CRM platform | Open-source CRM with documented OpenClaw skills support for AI sales-assistant workflows. |
 | **[Casdoor](https://github.com/casdoor/casdoor)** | IAM and gateway | Agent-first IAM, MCP gateway, and authentication server whose public metadata lists OpenClaw support. |
 | **[MateClaw](https://github.com/matevip/mateclaw)** | Team agent runtime | Spring AI Alibaba based agent runtime with multi-agent orchestration, memory, skills, and multi-channel support |
+| **[Paperclip OpenClaw Bridge](https://www.npmjs.com/package/paperclip-openclaw-bridge)** | Gateway adapter | Third-party adapter package for connecting Paperclip workflows to OpenClaw Gateway |
+| **[BeeOS Claw](https://www.npmjs.com/package/beeos-claw)** | Local platform bridge | OpenClaw plugin that bridges BeeOS with the local Gateway for file transfer, ACP bridge, and observability workflows |
+| **[openclaw-client](https://www.npmjs.com/package/openclaw-client)** | TypeScript SDK | Lightweight TypeScript client for OpenClaw Gateway WebSocket RPC |
+| **[clawg-ui](https://www.npmjs.com/package/@contextableai/clawg-ui)** | AG-UI channel | AG-UI protocol channel plugin for connecting CopilotKit and AG-UI clients to OpenClaw Gateway |
+| **[openclaw-control-mcp](https://www.npmjs.com/package/openclaw-control-mcp)** | MCP bridge | MCP server for OpenClaw Gateway management-plane operations through WebSocket JSON-RPC |
+| **[ChatBuddy OpenClaw Plugin](https://www.npmjs.com/package/@onethum/openclaw-plugin-chatbuddy)** | Mobile bridge | Package for connecting ChatBuddy iOS to an OpenClaw Gateway without VPN or port forwarding |
 | **[OpenClaw Kubernetes Operator](https://github.com/openclaw-rocks/openclaw-operator)** | Kubernetes operator | Operator for deploying and managing OpenClaw agent instances on Kubernetes with lifecycle, isolation, storage, and observability controls |
 | **[ClawHub CLI](https://www.npmjs.com/package/clawhub)** | Skill registry CLI | CLI for installing, updating, searching, and publishing skills and OpenClaw packages |
 | **[OpenClaw Plugin Inspector](https://www.npmjs.com/package/@openclaw/plugin-inspector)** | Compatibility checker | Offline compatibility checker for OpenClaw plugin packages and fixture suites |

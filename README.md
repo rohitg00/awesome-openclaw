@@ -837,6 +837,11 @@ docker compose run --rm openclaw-cli security audit --deep
 | **DMWork Channel** | [npm](https://www.npmjs.com/package/openclaw-channel-dmwork) | DMWork credentials | WuKongIM WebSocket channel plugin for OpenClaw messaging workflows |
 | **Ozaiya Chat Channel** | [npm](https://www.npmjs.com/package/@ozaiya/openclaw-channel) | Ozaiya account credentials | Channel plugin for connecting OpenClaw agents to Ozaiya encrypted group chats |
 | **Zalo npm package** | [npm](https://www.npmjs.com/package/@openclaw/zalo) | Zalo credentials | OpenClaw Zalo channel plugin published through npm |
+| **OpenClaw QQBot Send Skill** | [GitHub](https://github.com/ZJunCher/openclaw-qqbot-send-skill) | QQBot media relay | Skill for staging and sending local files, images, audio, and video through a QQBot media relay, with temporary-copy cleanup. |
+| **Octo Channel** | [GitHub](https://github.com/Mininglamp-OSS/openclaw-channel-octo) | Octo WebSocket | ClawHub-published channel plugin that connects OpenClaw to Octo through WebSocket messaging. |
+| **Agent QQ Sandbox Bot** | [GitHub](https://github.com/CeylanCLC/agent-qq-sandbox-bot) | NapCat OneBot / QQ | Python bridge that routes QQ group and private messages through OpenClaw Gateway for sandboxed bot experiments. |
+| **OpenClaw Team in Feishu** | [GitHub](https://github.com/nativeProductor/openclaw-team-in-feishu) | Feishu group chats | Coordination daemon for multiple OpenClaw agents in Feishu groups with round-robin and free-speak discussion modes. |
+| **WeClaws** | [GitHub](https://github.com/baseclaw/weclaws) | WeChat team console | Self-hosted multi-user WeChat agent control plane with web management, sandboxes, skills, memory, and scheduled tasks. |
 
 ### Local LLM Integration
 
@@ -975,6 +980,9 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 - [ClawChief](https://github.com/snarktank/clawchief) - Chief-of-staff workspace pattern for organizing OpenClaw agent responsibilities.
 - [MultiUserClaw](https://github.com/johnson7788/MultiUserClaw) - Multi-user wrapper around OpenClaw that keeps the upstream gateway unchanged while adding user-level routing.
 - [ClawSwarm](https://github.com/1Panel-dev/ClawSwarm) - Multi-agent orchestration system for OpenClaw that coordinates swarm-style work through group chat.
+- [openclaw-superpowers](https://github.com/rqlangley/openclaw-superpowers) - Native OpenClaw port of a three-agent software-development framework with install guidance for agent-led setup.
+- [openclaw_agent_party](https://github.com/mixmash11/openclaw_agent_party) - OpenClaw skill for talking to multiple agents in one conversation.
+- [openclaw-hawkins](https://github.com/parijatmukherjee/openclaw-hawkins) - OpenClaw plugin for durable orchestration state and shared multi-agent memory backed by MariaDB.
 
 ### Companion Apps
 
@@ -1005,6 +1013,12 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[ClawApp](https://github.com/qingchencloud/clawapp)** | Mobile / PWA | Available | Mobile chat client for OpenClaw agents with streaming conversations, image handling, tool calls, PWA support, and APK packaging |
 | **[ClawPal](https://github.com/zhixianio/clawpal)** | Desktop / visual manager | Available | Visual interface for managing OpenClaw agents, models, and configuration files |
 | **[EasyClaw](https://github.com/ybgwon96/easyclaw)** | macOS / Windows | Available | One-click OpenClaw installer for desktop operators |
+| **[OpenClaw Desktop](https://github.com/wzdavid/openclaw-desktop)** | Desktop | Available | Cross-platform desktop client that connects to OpenClaw Gateway and packages a local app experience. |
+| **[MicroClaw](https://github.com/microsofthackathons/MicroClaw)** | Windows | Experimental | Windows package for installing and running OpenClaw with a desktop client, local runtime, skills, and permission-controlled sandbox. |
+| **[iClaw](https://github.com/iClawApp/iClaw)** | Web | Available | Local chat UI for a running OpenClaw Gateway, with local history storage. |
+| **[OpenClaw Manager](https://github.com/Nixer-2301/OpenClaw-Manager)** | Desktop / web manager | Available | Vue, TypeScript, and Python GUI manager for OpenClaw with Chinese and English interface support. |
+| **[SuperClaw](https://github.com/youF4/SuperClaw)** | Windows | Available | Chinese desktop client that embeds an OpenClaw Gateway runtime with a separate data directory. |
+| **[AI Memory Reader](https://github.com/nvwalj/ai-memory-reader)** | macOS / iOS | Available | Native viewer for local agent memory and session files, including OpenClaw memory paths. |
 
 ### Monitoring & Dashboards
 
@@ -1057,6 +1071,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[openclaw-quickfix](https://github.com/myyxfishcat/openclaw-quickfix)** | Diagnostics toolkit | Quick diagnostic and repair toolkit for OpenClaw Gateway configuration and runtime issues |
 | **[RuView Presence](https://github.com/DevvGwardo/openclaw-ruview-presence)** | Presence plugin | Presence-aware behavior plugin for OpenClaw using RuView WiFi sensing signals |
 | **[AgentTown Observer](https://www.npmjs.com/package/@shaoweiz/openclaw-agenttown-observer)** | Read-only observer | OpenClaw Gateway plugin for observing AgentTown state without write actions |
+| **[ClawLens](https://github.com/nk3750/clawlens)** | Observability and guardrails | Local OpenClaw plugin that records tool calls, scores risky behavior, shows sessions in a dashboard, and supports guardrail actions |
 
 ### Backup & Restore
 
@@ -1075,6 +1090,7 @@ tar -czvf ~/openclaw_backup_$(date +%Y%m%d).tar.gz -C "$HOME" .openclaw
 - [openclaw-backup](https://github.com/LeoYeAI/openclaw-backup) - Backup and restore skill for OpenClaw instance migration. Review credential scope before use.
 - [openclaw-infra](https://github.com/basi163/openclaw-infra) - Disaster-recovery bootstrap for exporting OpenClaw settings, versioning infrastructure state, and restoring a server profile.
 - [openclaw-killer](https://github.com/orange2ai/openclaw-killer) - Uninstall and cleanup script for removing OpenClaw components from a host after review.
+- [backup-openclaw](https://github.com/OleksiyM/backup-openclaw) - Python CLI for compressed OpenClaw installation backups with metadata files and optional encrypted upload paths. Review backup contents before remote storage.
 
 ---
 
@@ -1373,6 +1389,18 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **[@agent-pulse/openclaw-skill](https://www.npmjs.com/package/@agent-pulse/openclaw-skill)** | AgentPulse skill integration for liveness-based gate checks around OpenClaw requests | [npm](https://www.npmjs.com/package/@agent-pulse/openclaw-skill) |
 | **[@censgate/openclaw-redact](https://www.npmjs.com/package/@censgate/openclaw-redact)** | Privacy plugin for redacting PII before OpenClaw sends content to model workflows | [npm](https://www.npmjs.com/package/@censgate/openclaw-redact) |
 | **[@agentseo/openclaw-plugin](https://www.npmjs.com/package/@agentseo/openclaw-plugin)** | AgentSEO plugin package for connecting OpenClaw agents to AgentSEO tools | [npm](https://www.npmjs.com/package/@agentseo/openclaw-plugin) |
+| **Research Paper Push Skill** | Scheduled OpenAlex paper alerts and concise daily Chinese summaries through OpenClaw cron | [GitHub](https://github.com/ZJunCher/openclaw-research-paper-push-skill) |
+| **Research Papers Skill** | OpenAlex paper search, DOI lookup, citation inspection, open-access PDF discovery, and Markdown literature reviews for OpenClaw | [GitHub](https://github.com/ZJunCher/openclaw-research-papers-skill) |
+| **Intention Hint Plugin** | Pre-agent intent scanner that injects routing hints through the `before_prompt_build` hook | [GitHub](https://github.com/ani6439walc/openclaw-plugin-intention-hint) |
+| **carapace-plugin-sdk** | SDK for generating typed OpenClaw plugin manifests, helper code, and standalone CLIs | [GitHub](https://github.com/JeffSteinbok/carapace-plugin-sdk) |
+| **unCAGd memory** | Validated decision-memory skill for OpenClaw tools and skills, published as `@uncagd/openclaw-cag-memory` | [GitHub](https://github.com/GuideboardLabs/openclaw-cag-memory) |
+| **Engram OpenClaw Skill** | Skill that exposes Engram memory operations to OpenClaw through an MCP server bridge | [GitHub](https://github.com/lumetra-io/engram-openclaw-skill) |
+| **Nutty** | Knowledge-collection OpenClaw skill for saving links, ideas, projects, and tasks to Feishu Bitable | [GitHub](https://github.com/dethan3/openclaw-nutty) |
+| **OpenClaw HDU Skill** | Campus assistant skill package for Hangzhou Dianzi University workflows such as schedules, exams, seats, and campus services | [GitHub](https://github.com/wither0526/openclaw-HDU-skill) |
+| **TencentDB Agent Memory** | Local memory package with documented OpenClaw integration for symbolic short-term memory and layered long-term memory | [GitHub](https://github.com/Tencent/TencentDB-Agent-Memory) |
+| **memX** | Self-maintaining memory layer with native OpenClaw support and MCP-compatible access | [GitHub](https://github.com/NeoLi00/memX) |
+| **Open Second Brain** | Filesystem-first second-brain toolkit with OpenClaw and MCP-aware client support for Markdown vault workflows | [GitHub](https://github.com/itechmeat/open-second-brain) |
+| **SkillLens** | Self-hosted web tool for evaluating Agent Skills, including skills intended for OpenClaw-style ecosystems | [GitHub](https://github.com/AndrewNgGirl/SkillLens) |
 
 ### Setup Guides & Starters
 
@@ -1398,6 +1426,9 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 - [openclaw-docker-config](https://github.com/andreesg/openclaw-docker-config) - Docker configuration for OpenClaw Gateway, paired with a Hetzner Terraform setup path.
 - [openclaw-remote-minimax-setup-skill](https://github.com/win4r/openclaw-remote-minimax-setup-skill) - Reusable skill for remote Linux OpenClaw deployment with MiniMax M2.1 and Telegram setup notes.
 - [volcengine diagnostics TLS skill](https://www.npmjs.com/package/@volcengine/diagnostics-tls-skill) - OpenClaw skill package for installing or updating Volcengine diagnostics TLS tooling.
+- [OpenClaw Quickstart Skill](https://github.com/ariel198989/openclaw-quickstart-skill) - Interactive Playwright walkthrough for setting up OpenClaw on a Hostinger VPS with checkpoints for sensitive steps.
+- [OpenClaw Update Runbook](https://github.com/BKF-Gitty/openclaw-update-runbook) - Operator-focused skill and reference pack for updating OpenClaw and debugging post-update regressions.
+- [OpenClaw Clean-Room Recovery](https://github.com/tyc0on/openclaw-clean-room-recovery) - Recovery runbook for rebuilding a contaminated OpenClaw install without editing global package files.
 
 ### Third-Party Platforms
 
@@ -1532,6 +1563,11 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **[@sabha-co/openclaw-sabha](https://www.npmjs.com/package/@sabha-co/openclaw-sabha)** | Sabha channel | Sabha channel plugin package for OpenClaw integrations |
 | **[openclaw-threema](https://www.npmjs.com/package/openclaw-threema)** | Threema channel | Threema Gateway channel plugin package for OpenClaw |
 | **[@peac/adapter-openclaw](https://www.npmjs.com/package/@peac/adapter-openclaw)** | Evidence adapter | OpenClaw adapter for PEAC interaction evidence capture workflows |
+| **[ClawLens](https://github.com/nk3750/clawlens)** | Guardrails | OpenClaw observability and guardrail plugin for tool-call audit trails and risk scoring |
+| **[OpenClaw Exposure Guard](https://github.com/Dragon-Lady/openclaw-exposure-guard)** | Security checker | Read-only checker for OpenClaw server exposure, vulnerable versions, risky configs, and credential-adjacent surfaces |
+| **[OpenClaw on OpenShift](https://github.com/ryannix123/openclaw-on-openshift)** | OpenShift deployment | Container and Ansible pattern for running OpenClaw on Red Hat UBI or OpenShift environments |
+| **[Hyperlift OpenClaw Template](https://github.com/NCCloud/hyperlift-openclaw)** | Deployment template | Spaceship Hyperlift template for deploying OpenClaw Gateway with optional git-synced workspace state |
+| **[Openclaw-Android](https://github.com/ChaceLcq/Openclaw-Android)** | Android gateway fork | Experimental rooted-Android local gateway fork with app-managed startup and provider configuration |
 
 ### Install a Skill
 
@@ -1726,6 +1762,7 @@ Current OpenClaw operations include OpenTelemetry, Prometheus, dashboards, model
 - [7 Security Best Practices](https://xcloud.host/openclaw-security-best-practices)
 - [OpenClaw Security Practice Guide](https://github.com/slowmist/openclaw-security-practice-guide) - Agent-facing security practice guide for OpenClaw deployments.
 - [openclaw-guardian](https://github.com/LeoYeAI/openclaw-guardian) - Watchdog and operations hardening scripts for OpenClaw Gateway with checks, rollback, snapshots, and alerts.
+- [OpenClaw Exposure Guard](https://github.com/Dragon-Lady/openclaw-exposure-guard) - Read-only local checker for OpenClaw exposure, version, and risky configuration review.
 
 ### X/Twitter Community Guides
 
@@ -1911,7 +1948,7 @@ node --version                     # Must be 22+
 - [eesel.ai Pricing Guide](https://www.eesel.ai/blog/openclaw-ai-pricing)
 - [Deploy Cost Guide: $0-8/month](https://yu-wenhao.com/en/blog/2026-02-01-openclaw-deploy-cost-guide/)
 - [Cost Governor](https://github.com/AtlasPA/openclaw-cost-governor) - First OpenClaw skill with x402 agent payments. Track LLM costs in real-time, enforce budget limits with circuit breakers, enable AI agents to autonomously pay for Pro features (0.5 USDT/month).
-- [llm-prices](https://github.com/benbencodes/llm-prices) - CLI and Python library to compare LLM API costs across 273 models and 44 providers (OpenAI, Anthropic, Google, Mistral, DeepSeek, xAI, and more). Zero-dependency, no API key required — run  to find cheapest model for any workload.
+- [llm-prices](https://github.com/benbencodes/llm-prices) - CLI, Python library, and MCP server for comparing LLM API costs across published provider price tables. No API key is required because pricing data ships with the package.
 
 ### Monthly Budget Targets
 
@@ -2036,9 +2073,12 @@ node --version                     # Must be 22+
 | **serhanekicii/openclaw-helm** | [GitHub](https://github.com/serhanekicii/openclaw-helm) | Built on bjw-s app-template |
 | **waTeim/openclaw-helm** | [GitHub](https://github.com/waTeim/openclaw-helm) | Multi-channel support |
 | **khal3d/openclaw** | [GitHub](https://github.com/khal3d/openclaw) | Docker & HELM deployment |
+| **openclaw-on-openshift** | [GitHub](https://github.com/ryannix123/openclaw-on-openshift) | OpenShift-oriented image and Ansible deployment path |
 
 - [Running OpenClaw on Kubernetes - Metoro Blog](https://metoro.io/blog/openclaw-kubernetes)
 - [openclaw-on-eks](https://github.com/hitsub2/openclaw-on-eks) - Example deployment pattern for OpenClaw on Amazon EKS.
+
+- [Hyperlift OpenClaw Template](https://github.com/NCCloud/hyperlift-openclaw) - Deployable OpenClaw Gateway container template with optional git-synced agent workspace.
 
 ---
 

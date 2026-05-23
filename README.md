@@ -853,6 +853,11 @@ docker compose run --rm openclaw-cli security audit --deep
 | **WeClaws** | [GitHub](https://github.com/baseclaw/weclaws) | WeChat team console | Self-hosted multi-user WeChat agent control plane with web management, sandboxes, skills, memory, and scheduled tasks. |
 | **WeCom OpenClaw Integration** | [GitHub](https://github.com/11haonb/wecom-openclaw-plugin) | WeCom app credentials | WeCom channel plugin that connects WeChat Work messages to an OpenClaw agent workflow. |
 | **OpenClaw Matrix Voice** | [GitHub](https://github.com/scottgl9/openclaw-matrix-voice) | Matrix / LiveKit config | Matrix voice-call bot that routes speech-to-text turns through an OpenClaw Gateway agent. |
+| **clawd-feishu** | [GitHub](https://github.com/m1heng/clawdbot-feishu) | Lark / Feishu app credentials | Feishu and Lark channel plugin for OpenClaw with Chinese setup wiki and contribution docs. |
+| **OpenClaw QQ OneBot** | [GitHub](https://github.com/constansino/openclaw_qq) | OneBot v11 / QQ credentials | QQ channel extension for OpenClaw with quickstart, configuration reference, and OneBot v11 bridge docs. Review platform policy before enabling account automation. |
+| **OpenClaw Kakao** | [GitHub](https://github.com/tornado1014/openclaw-kakao) | KakaoTalk / bridge config | KakaoTalk bridge that routes messages through an OpenClaw Gateway. Review platform policy before enabling account automation. |
+| **clawdbot-channel-linq** | [GitHub](https://github.com/nickvasilescu/clawdbot-channel-linq) | Linq Partner API credentials | iMessage, RCS, and SMS channel for Clawdbot through the Linq Partner API, with webhook-based inbound delivery. |
+| **Relay Spine** | [GitHub](https://github.com/CzsGit/wechat-openclaw-plugin) | WeChat / webhook credentials | OpenClaw WeChat channel bridge with QR-authenticated socket sessions and encrypted webhook handling. Review platform policy before enabling account automation. |
 
 ### Local LLM Integration
 
@@ -938,6 +943,7 @@ ollama pull llama3.1
 - [OpenClaw on Home Assistant](https://community.home-assistant.io/t/openclaw-clawdbot-on-home-assistant/981467)
 - [OpenClaw Gave My Home Assistant an AI Agent](https://www.dan-malone.com/blog/openclaw-home-assistant)
 - [ROSClaw](https://github.com/PlaiPin/rosclaw) - ROS2 integration project for connecting OpenClaw workflows to robotics systems.
+- [Casa](https://github.com/openclaw/casa) - Mac Catalyst app that exposes local HomeKit data through a localhost-only REST API and CLI for OpenClaw automation workflows.
 
 ### Email & Calendar
 
@@ -990,6 +996,9 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 - [BMAD OpenClaw](https://github.com/ErwanLorteau/BMAD_Openclaw) - Structured development workflow bridge that adapts BMad Method agent roles for OpenClaw.
 - [openclaw-pm](https://github.com/1va7/openclaw-pm) - Project-manager configuration upgrade tool for OpenClaw agents.
 - [OpenClaw Agents](https://github.com/shenhao-stu/openclaw-agents) - One-command multi-agent setup with specialized agents, group routing, and safe config merge.
+- [Claw Orchestrator](https://github.com/Enderfga/claw-orchestrator) - Runtime for wrapping multiple coding CLIs as persistent sessions, with OpenClaw plugin support documented by the project.
+- [openclaw-skill-claude-code](https://github.com/VsevolodUstinov/openclaw-skill-claude-code) - OpenClaw skill for running long coding tasks in the background and returning progress notifications to chat.
+- [claude-code-clawdbot-skill](https://github.com/win4r/claude-code-clawdbot-skill) - Clawdbot skill wrapper for running host CLI coding tasks through a pseudo-terminal in headless sessions.
 - [HiClaw](https://github.com/agentscope-ai/HiClaw) - Collaborative multi-agent OS with human-in-the-loop coordination through Matrix rooms.
 - [Aurogen](https://github.com/UniRound-Tec/Aurogen) - OpenClaw-compatible multi-agent reimplementation with web-panel configuration, dynamic modules, and ClawHub skill import support.
 - [edict](https://github.com/cft0808/edict) - OpenClaw multi-agent orchestration system with specialized agent roles, a dashboard, model configuration, and audit logs.
@@ -1030,6 +1039,8 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[BlueClaw](https://github.com/brandon-dacrib/blueclaw)** | iOS | Available | Native iOS client for OpenClaw gateways with SSH tunneling and direct WebSocket modes |
 | **[openclaw-gateway-client](https://github.com/Brani5/openclaw-gateway-client)** | Reference client | Available | Minimal custom Gateway WebSocket client with V3 device-auth challenge-response flow |
 | **[ClawApp](https://github.com/qingchencloud/clawapp)** | Mobile / PWA | Available | Mobile chat client for OpenClaw agents with streaming conversations, image handling, tool calls, PWA support, and APK packaging |
+| **[ClawdbotMenu](https://github.com/magimetal/moltbot-menubar)** | macOS | Available | Menu bar app for starting, stopping, restarting, and checking the status of a local Clawdbot or OpenClaw gateway |
+| **[CloudToLocalLLM](https://github.com/CloudToLocalLLM-online/CloudToLocalLLM)** | Desktop | Available | Privacy-focused desktop companion that includes OpenClaw Gateway connectivity, local desktop control, chat, avatar, and vision modules |
 | **[ClawPal](https://github.com/zhixianio/clawpal)** | Desktop / visual manager | Available | Visual interface for managing OpenClaw agents, models, and configuration files |
 | **[EasyClaw](https://github.com/ybgwon96/easyclaw)** | macOS / Windows | Available | One-click OpenClaw installer for desktop operators |
 | **[OpenClaw Desktop](https://github.com/wzdavid/openclaw-desktop)** | Desktop | Available | Cross-platform desktop client that connects to OpenClaw Gateway and packages a local app experience. |
@@ -1104,6 +1115,8 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[Mission Control Board](https://github.com/jamesxu81/openclaw-dashboard)** | Mission-control dashboard | Visual board for OpenClaw agent tasks, cron jobs, team status, and daily digest workflows |
 | **[OpenClaw Command Center v2](https://github.com/alexandremaciel-ai/openclaw-dashboard-v2)** | Orchestration dashboard | WebSocket RPC dashboard for sessions, cron jobs, kanban tasks, and chat against OpenClaw Gateway |
 | **[OpenClaw Probe Rust](https://github.com/Edison94hu/openclaw-probe-rs)** | Host agent | Rust host probe for OpenClaw health checks, restarts, session token scanning, system metrics, and backup tasks |
+| **[clawdbot-cost-monitor](https://github.com/bokonon23/clawdbot-cost-monitor)** | Cost dashboard | Local dashboard for parsing OpenClaw session files and showing token and cost history |
+| **[Moltcraft](https://github.com/askmojo/moltcraft)** | Visual dashboard | Isometric dashboard that connects to a Moltbot or OpenClaw gateway to visualize agent activity |
 
 ### Backup & Restore
 
@@ -1447,6 +1460,11 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **OpenClaw Memory RAG** | Hybrid vector and BM25 memory search package for OpenClaw cross-session recall | [GitHub](https://github.com/YIING99/openclaw-memory-rag) |
 | **memory-convex** | Convex-backed persistent-memory plugin for OpenClaw Gateway workflows | [GitHub](https://github.com/Primo-Studio/openclaw-memory-convex) |
 | **OpenClaw Memory Search** | Local-first SQLite FTS5 memory-search architecture built for OpenClaw message stores | [GitHub](https://github.com/jacklevin74/openclaw-memory) |
+| **OpenClaw Plugin Continuity** | Persistent-memory plugin that archives conversations and retrieves relevant cross-session context for OpenClaw agents | [GitHub](https://github.com/CoderofTheWest/openclaw-plugin-continuity) |
+| **OpenClaw Plugin Stability** | Introspection and loop-guard plugin for OpenClaw agents, with entropy monitoring and structured heartbeat decision support | [GitHub](https://github.com/CoderofTheWest/openclaw-plugin-stability) |
+| **Awesome OpenClaw Plugins** | Community-maintained plugin directory with inspectable plugin folders and install notes for OpenClaw users | [GitHub](https://github.com/composio-community/awesome-openclaw-plugins) |
+| **Awesome OpenClaw Skills CN** | Chinese OpenClaw skills directory organized for local model, workflow, and plugin discovery | [GitHub](https://github.com/AIPMAndy/awesome-openclaw-skills-CN) |
+| **gstack OpenClaw Skills** | OpenClaw-adapted development workflow skill suite with planning, implementation, testing, review, and release roles | [GitHub](https://github.com/AICreator-Wind/gstack-openclaw-skills) |
 
 ### Setup Guides & Starters
 
@@ -1483,6 +1501,9 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 - [OpenClaw Containerization](https://github.com/accorvin/openclaw-container) - Podman multi-container OpenClaw deployment pattern with separate gateway, transcription, and proxy services.
 - [OpenClaw one-click deployment scripts](https://github.com/Fuppppping/openclaw-deploy) - Cross-platform install scripts for macOS, Linux, Windows, and Android OpenClaw setups.
 - [OpenClaw Deployment Toolkit](https://github.com/t2krew/openclaw-toolkit) - Deployment and management toolkit for OpenClaw Gateway with Docker, Nginx, Tailscale, and service controls.
+- [clawdbot-docker](https://github.com/CrocSwap/clawdbot-docker) - Docker Compose runtime for running Clawdbot or OpenClaw with persistent storage, configurable environment variables, and container isolation.
+- [openclaw-fly-template](https://github.com/kentcdodds/flying-jarvis) - Fly.io deployment template with persistent volume, GitHub Actions deploys, Cloudflare Tunnel, and an operations runbook.
+- [lobsterd](https://github.com/tsconfigdotjson/lobsterd) - Firecracker MicroVM tenant orchestrator that can launch isolated guests with an OpenClaw gateway in each VM.
 
 ### Third-Party Platforms
 

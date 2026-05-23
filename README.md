@@ -854,7 +854,7 @@ docker compose run --rm openclaw-cli security audit --deep
 | **WeCom OpenClaw Integration** | [GitHub](https://github.com/11haonb/wecom-openclaw-plugin) | WeCom app credentials | WeCom channel plugin that connects WeChat Work messages to an OpenClaw agent workflow. |
 | **OpenClaw Matrix Voice** | [GitHub](https://github.com/scottgl9/openclaw-matrix-voice) | Matrix / LiveKit config | Matrix voice-call bot that routes speech-to-text turns through an OpenClaw Gateway agent. |
 | **clawd-feishu** | [GitHub](https://github.com/m1heng/clawdbot-feishu) | Lark / Feishu app credentials | Feishu and Lark channel plugin for OpenClaw with Chinese setup wiki and contribution docs. |
-| **OpenClaw QQ OneBot** | [GitHub](https://github.com/constansino/openclaw_qq) | OneBot v11 / QQ credentials | QQ channel extension for OpenClaw with quickstart, configuration reference, and OneBot v11 bridge docs. Review platform policy before enabling account automation. |
+| **OpenClaw QQ OneBot** | [GitHub](https://github.com/constansino/openclaw_qq) | OneBot v11 / QQ credentials | QQ channel extension for OpenClaw with quickstart, configuration reference, and OneBot v11 bridge docs (canonical repo renamed from `constansino/moltbot_qq`). Review platform policy before enabling account automation. |
 | **OpenClaw Kakao** | [GitHub](https://github.com/tornado1014/openclaw-kakao) | KakaoTalk / bridge config | KakaoTalk bridge that routes messages through an OpenClaw Gateway. Review platform policy before enabling account automation. |
 | **clawdbot-channel-linq** | [GitHub](https://github.com/nickvasilescu/clawdbot-channel-linq) | Linq Partner API credentials | iMessage, RCS, and SMS channel for Clawdbot through the Linq Partner API, with webhook-based inbound delivery. |
 | **Relay Spine** | [GitHub](https://github.com/CzsGit/wechat-openclaw-plugin) | WeChat / webhook credentials | OpenClaw WeChat channel bridge with QR-authenticated socket sessions and encrypted webhook handling. Review platform policy before enabling account automation. |
@@ -2079,7 +2079,7 @@ node --version                     # Must be 22+
 | [grp06/openclaw-studio](https://github.com/grp06/moltbot-agent-ui) | Visual agent management UI with cron jobs, tool extraction, mentions |
 | [prompt-security/clawsec](https://github.com/prompt-security/clawsec) | Complete security skill suite for OpenClaw family (Moltbot, Clawdbot, clones) |
 | [aws-samples/sample-OpenClaw-on-AWS-with-Bedrock](https://github.com/aws-samples/sample-OpenClaw-on-AWS-with-Bedrock) | AWS-native deployment using Amazon Bedrock - no multi-API key management |
-| [constansino/moltbot_qq](https://github.com/constansino/moltbot_qq) | QQ messaging channel support via OneBot v11 (WebSocket) |
+| [constansino/openclaw_qq](https://github.com/constansino/openclaw_qq) | QQ messaging channel support via OneBot v11 (WebSocket), canonical repo renamed from `constansino/moltbot_qq` |
 | [sipeed/picoclaw](https://github.com/sipeed/picoclaw) | Ultra-lightweight AI assistant in Go - 10 MB RAM, $10 RISC-V board, 1s boot, single binary (5K stars) |
 | [HKUDS/nanobot](https://github.com/HKUDS/nanobot) | Ultra-lightweight OpenClaw alternative in Python - 4K lines, 45 MB RAM, 0.8s cold start, MCP-native (15K+ stars) |
 | [brunobar79/expo-openclaw-chat](https://github.com/brunobar79/expo-openclaw-chat) | Expo / React Native chat SDK for building native iOS/Android OpenClaw clients |

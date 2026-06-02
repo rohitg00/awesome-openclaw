@@ -1468,6 +1468,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **Awesome OpenClaw Plugins** | Community-maintained plugin directory with inspectable plugin folders and install notes for OpenClaw users | [GitHub](https://github.com/composio-community/awesome-openclaw-plugins) |
 | **Awesome OpenClaw Skills CN** | Chinese OpenClaw skills directory organized for local model, workflow, and plugin discovery | [GitHub](https://github.com/AIPMAndy/awesome-openclaw-skills-CN) |
 | **gstack OpenClaw Skills** | OpenClaw-adapted development workflow skill suite with planning, implementation, testing, review, and release roles | [GitHub](https://github.com/AICreator-Wind/gstack-openclaw-skills) |
+| **[brewpage-publish](https://clawhub.ai/kochetkov-ma/brewpage-publish)** | Publishes HTML, Markdown, JSON, files, or multi-file sites to brewpage.app and returns a public URL | [ClawHub](https://clawhub.ai/kochetkov-ma/brewpage-publish) |
 
 ### Setup Guides & Starters
 

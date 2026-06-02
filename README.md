@@ -952,6 +952,7 @@ ollama pull llama3.1
 - **Apple Calendar**: Via khal/vdirsyncer integration
 - **Outlook**: Calendar sync and management
 - **[BotEmail.ai](https://botemail.ai)** - Instant @botemail.ai email inboxes for AI agents. One API call creates a dedicated inbox with no human setup required. Includes an OpenClaw skill ([ClawHub](https://clawhub.ai/skills/bot-email)), MCP server, and OpenAI GPT Actions support.
+- **[Openmail](https://openmail.sh)** - Email infrastructure for AI agents with reliable sending, receiving, and routing. Includes an OpenClaw skill ([ClawHub](https://clawhub.ai/armandokun/openmail)) for direct integration into OpenClaw-based workflows.
 
 - [Gmail Automation Guide](https://zenvanriel.nl/ai-engineer-blog/openclaw-gmail-pubsub-automation-guide/)
 - [Google Calendar Sync](https://martin.hjartmyr.se/articles/openclaw-google-calendar-sync/)

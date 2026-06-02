@@ -975,6 +975,8 @@ Full suite access: Gmail, Calendar, Drive, Docs, Sheets. All data stays local - 
 - [Cron Jobs Docs](https://docs.openclaw.ai/automation/cron-jobs)
 - [Heartbeat Docs](https://docs.openclaw.ai/gateway/heartbeat)
 - **[ClawTick](https://clawtick.com/)** - Cloud scheduler for OpenClaw agents with performance monitoring and uptime checks.
+- [Send to OpenClaw](https://github.com/Nateliason/send-to-openclaw) - Chrome extension and local webhook server for sending page content or selected text into a Clawdbot session.
+- [clawhip](https://github.com/Yeachan-Heo/clawhip) - Event-to-channel notification router for OpenClaw-related workflows that keeps alerts out of gateway chat sessions.
 
 ### Live Canvas
 
@@ -1505,6 +1507,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 - [clawdbot-docker](https://github.com/CrocSwap/clawdbot-docker) - Docker Compose runtime for running Clawdbot or OpenClaw with persistent storage, configurable environment variables, and container isolation.
 - [openclaw-fly-template](https://github.com/kentcdodds/flying-jarvis) - Fly.io deployment template with persistent volume, GitHub Actions deploys, Cloudflare Tunnel, and an operations runbook.
 - [lobsterd](https://github.com/tsconfigdotjson/lobsterd) - Firecracker MicroVM tenant orchestrator that can launch isolated guests with an OpenClaw gateway in each VM.
+- [clawdinators](https://github.com/openclaw/clawdinators) - Declarative NixOS-on-AWS reference for OpenClaw maintainer hosts and image-based provisioning.
 
 ### Third-Party Platforms
 
@@ -1551,6 +1554,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **[OpenClaw Kubernetes Operator](https://github.com/openclaw-rocks/openclaw-operator)** | Kubernetes operator | Operator for deploying and managing OpenClaw agent instances on Kubernetes with lifecycle, isolation, storage, and observability controls |
 | **[ClawHub CLI](https://www.npmjs.com/package/clawhub)** | Skill registry CLI | CLI for installing, updating, searching, and publishing skills and OpenClaw packages |
 | **[OpenClaw Plugin Inspector](https://www.npmjs.com/package/@openclaw/plugin-inspector)** | Compatibility checker | Offline compatibility checker for OpenClaw plugin packages and fixture suites |
+| **[OpenClaw Composio](https://github.com/ComposioHQ/openclaw-composio)** | Tool-auth fork | OpenClaw fork with an integrated Composio plugin for tool authentication and provider setup experiments |
 | **[OpenClaw Docker Sync](https://github.com/dr34m-cn/openclaw-docker)** | Docker image sync | GitHub Actions based sync from the official OpenClaw container image to Docker Hub |
 | **[OpenClaw Lark Multi-Agent](https://github.com/hackerphysics/openclaw-lark-multi-agent)** | Lark bridge | Multi-bot Lark/Feishu bridge that routes bot identities to OpenClaw Gateway sessions with isolated conversation state |
 | **[OpenClaw Dashboard Live Data](https://github.com/natanaelhx/openclaw-dashboard-live-data)** | Dashboard data feed | JSON data feed repository for an OpenClaw Vercel dashboard |
@@ -1839,6 +1843,7 @@ Current OpenClaw operations include OpenTelemetry, Prometheus, dashboards, model
 - [OpenClaw Security Practice Guide](https://github.com/slowmist/openclaw-security-practice-guide) - Agent-facing security practice guide for OpenClaw deployments.
 - [openclaw-guardian](https://github.com/LeoYeAI/openclaw-guardian) - Watchdog and operations hardening scripts for OpenClaw Gateway with checks, rollback, snapshots, and alerts.
 - [OpenClaw Exposure Guard](https://github.com/Dragon-Lady/openclaw-exposure-guard) - Read-only local checker for OpenClaw exposure, version, and risky configuration review.
+- [byebyeclaw](https://github.com/wanikua/byebyeclaw) - Uninstall and cleanup scripts for Claw-family agents, with dry-run and keep-config modes documented before destructive cleanup.
 
 ### X/Twitter Community Guides
 

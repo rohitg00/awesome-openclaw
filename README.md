@@ -1470,6 +1470,26 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **Awesome OpenClaw Skills CN** | Chinese OpenClaw skills directory organized for local model, workflow, and plugin discovery | [GitHub](https://github.com/AIPMAndy/awesome-openclaw-skills-CN) |
 | **gstack OpenClaw Skills** | OpenClaw-adapted development workflow skill suite with planning, implementation, testing, review, and release roles | [GitHub](https://github.com/AICreator-Wind/gstack-openclaw-skills) |
 | **[brewpage-publish](https://clawhub.ai/kochetkov-ma/brewpage-publish)** | Publishes HTML, Markdown, JSON, files, or multi-file sites to brewpage.app and returns a public URL | [ClawHub](https://clawhub.ai/kochetkov-ma/brewpage-publish) |
+| **OpenClaw Skill Scanner** | Security gate that scans local folders or ClawHub skills before adding them to an OpenClaw environment | [GitHub](https://github.com/jason-allen-oneal/openclaw-skill-scanner) |
+| **PaperClaw** | OpenClaw skill framework for generating field-specific paper review and critique agents from research topics | [GitHub](https://github.com/guhaohao0991/PaperClaw) |
+| **NEIS School CLI** | Korean school search, meal, and timetable CLI with an OpenClaw skill adapter and ClawHub publishing notes | [GitHub](https://github.com/techkwon/neis-school-cli) |
+| **OpenClaw Rocket.Chat Plugin** | Rocket.Chat plugin that routes inbound messages and OpenClaw replies through a native channel bridge | [GitHub](https://github.com/RocketChat/OpenClaw.Plugin) |
+| **SmartThingsClaw** | OpenClaw skill for listing, checking, and controlling Samsung SmartThings devices through documented scripts | [GitHub](https://github.com/danbryant201/SmartThingsClaw) |
+| **OpenClaw Radware Agentic Protection** | Security integration for routing OpenClaw provider traffic or lifecycle hooks through Radware checks | [GitHub](https://github.com/rdwr-seanr/openclaw-radware-agentic-protection) |
+| **Lightpanda Agent Skill** | Browser automation and extraction skill that documents Lightpanda usage from OpenClaw-compatible agents | [GitHub](https://github.com/lightpanda-io/agent-skill) |
+| **ask-search** | Self-hosted web search skill for OpenClaw agents using SearxNG as the search backend | [GitHub](https://github.com/ythx-101/ask-search) |
+| **Bruce Draw.io** | Draw.io diagram-generation skill for OpenClaw-compatible agents with XML self-check and image export workflow | [GitHub](https://github.com/bruc3van/bruce-drawio) |
+| **OpenClaw Odoo ERP Connector** | Odoo ERP integration skill for OpenClaw covering CRM, sales, purchasing, inventory, projects, HR, and fleet modules | [GitHub](https://github.com/NullNaveen/openclaw-odoo-skill) |
+| **Skill Checkup OpenClaw** | OpenClaw-only audit skill that returns an executive readiness report with risks and next actions | [GitHub](https://github.com/okjpg/skill-checkup-openclaw) |
+| **OpenClaw Vertex AI Memory Bank** | Memory plugin that connects OpenClaw agents to Vertex AI Memory Bank with user-scoped recall | [GitHub](https://github.com/Shubhamsaboo/openclaw-vertexai-memorybank) |
+| **openclaw-autoresearch** | OpenClaw plugin for autonomous edit, benchmark, measurement, and experiment logging loops | [GitHub](https://github.com/gianfrancopiana/openclaw-autoresearch) |
+| **OpenClaw Unity Plugin** | Unity Editor plugin that exposes HTTP controls for OpenClaw-assisted game-development workflows | [GitHub](https://github.com/TomLeeLive/openclaw-unity-plugin) |
+| **Composio for OpenClaw** | Marketplace plugin entry that points OpenClaw users to Composio CLI tool access and setup flow | [GitHub](https://github.com/ComposioHQ/openclaw-composio-plugin) |
+| **OpenClaw Observability** | OpenTelemetry observability plugin for OpenClaw agents with version-track documentation and backend examples | [GitHub](https://github.com/henrikrexed/openclaw-observability-plugin) |
+| **OpenClaw Shield** | Security plugin for checking secret leaks, PII exposure, and destructive-command risk in OpenClaw environments | [GitHub](https://github.com/knostic/openclaw-shield) |
+| **AgentAegis** | Runtime protection plugin for OpenClaw-style agents with lifecycle security checks and bilingual documentation | [GitHub](https://github.com/antgroup/agent-aegis) |
+| **openclaw-linear** | Linear integration plugin that receives webhooks, maintains a work queue, and exposes issue tools to OpenClaw agents | [GitHub](https://github.com/stepandel/openclaw-linear) |
+| **openclaw-simplex** | SimpleX Chat channel plugin for OpenClaw with invite-based contact paths and channel-policy integration | [GitHub](https://github.com/dangoldbj/openclaw-simplex) |
 
 ### Setup Guides & Starters
 

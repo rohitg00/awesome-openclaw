@@ -1509,6 +1509,26 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **MemoryBox** | Memory health CLI for markdown-based agents including OpenClaw, with cleanup and maintenance workflows | [GitHub](https://github.com/Ramsbaby/openclaw-memorybox) |
 | **OpenClaw Memory Kit** | Template and runtime kit for OpenClaw context persistence, memory files, and session continuity | [GitHub](https://github.com/AlekseiUL/openclaw-memory-kit) |
 | **OpenClaw Dashboard Chat Mark Plugin** | Browser-side dashboard plugin for bookmarking OpenClaw chat messages and reinserting marked context later | [GitHub](https://github.com/TinaQian2017/openclaw-dashboard-chat-mark-plugin) |
+| **@openclaw/memory-lancedb** | LanceDB-backed long-term memory plugin for OpenClaw with auto-recall, auto-capture, and vector search | [npm](https://www.npmjs.com/package/@openclaw/memory-lancedb) |
+| **@lyriel/openclaw-plugin** | OpenClaw integration for the Lyriel substrate with a native npm package and setup notes | [npm](https://www.npmjs.com/package/@lyriel/openclaw-plugin) |
+| **@openclaw/synology-chat** | Synology Chat channel plugin for OpenClaw conversations and direct messages | [npm](https://www.npmjs.com/package/@openclaw/synology-chat) |
+| **@openclaw/amazon-bedrock-provider** | Amazon Bedrock provider plugin for OpenClaw model discovery, embeddings, and guardrail configuration | [npm](https://www.npmjs.com/package/@openclaw/amazon-bedrock-provider) |
+| **@evermore.work/adapter-openclaw-gateway** | Adapter package that invokes OpenClaw through the Gateway protocol for Evermore Work runtime integrations | [npm](https://www.npmjs.com/package/@evermore.work/adapter-openclaw-gateway) |
+| **@shareclz/openclaw-mem0-plugin** | OpenClaw memory plugin that connects Gateway workflows to a mem0-backed recall layer | [npm](https://www.npmjs.com/package/@shareclz/openclaw-mem0-plugin) |
+| **@wangbren/memoxxx-openclaw-plugin** | Lifecycle memory plugin that adds recall and add-memory hooks for OpenClaw agents | [npm](https://www.npmjs.com/package/@wangbren/memoxxx-openclaw-plugin) |
+| **@lobu/openclaw-plugin** | Lobu memory plugin for OpenClaw agents with an npm-distributed install path | [npm](https://www.npmjs.com/package/@lobu/openclaw-plugin) |
+| **@openclaw/openshell-sandbox** | Sandbox backend that mirrors local workspaces and exposes SSH command execution for OpenClaw sessions | [npm](https://www.npmjs.com/package/@openclaw/openshell-sandbox) |
+| **@supermemory/openclaw-supermemory** | Supermemory plugin that adds memory capture and recall workflows to OpenClaw agents | [npm](https://www.npmjs.com/package/@supermemory/openclaw-supermemory) |
+| **@openclaw/tokenjuice** | Exec output compaction plugin for OpenClaw sessions that need shorter command-output context | [npm](https://www.npmjs.com/package/@openclaw/tokenjuice) |
+| **openclaw-channel-cocraft** | CoCraft LaTeX editor channel plugin for OpenClaw collaboration workflows | [npm](https://www.npmjs.com/package/openclaw-channel-cocraft) |
+| **@openclaw/amazon-bedrock-mantle-provider** | Amazon Bedrock Mantle provider plugin for OpenClaw model routing through OpenAI-compatible endpoints | [npm](https://www.npmjs.com/package/@openclaw/amazon-bedrock-mantle-provider) |
+| **@openclaw/anthropic-vertex-provider** | Vertex AI provider plugin that routes OpenClaw model calls to Anthropic models on Google Vertex AI | [npm](https://www.npmjs.com/package/@openclaw/anthropic-vertex-provider) |
+| **openclaw-weiyuan-init** | One-command initializer for the Weiyuan OpenClaw skill package | [npm](https://www.npmjs.com/package/openclaw-weiyuan-init) |
+| **@ubundi/openclaw-cortex** | Cortex memory plugin for OpenClaw auto-recall, auto-capture, and memory tooling | [npm](https://www.npmjs.com/package/@ubundi/openclaw-cortex) |
+| **@roamhq/openclaw-roam** | Roam HQ channel plugin for connecting OpenClaw to Roam HQ chat workflows | [npm](https://www.npmjs.com/package/@roamhq/openclaw-roam) |
+| **@vulcanen/openclaw-monitor** | Real-time monitoring console package for OpenClaw runtime status and telemetry views | [npm](https://www.npmjs.com/package/@vulcanen/openclaw-monitor) |
+| **@a1hvdy/cc-openclaw** | OpenClaw bridge plugin for routing CLI assistant traffic through an OpenAI-compatible HTTP interface | [npm](https://www.npmjs.com/package/@a1hvdy/cc-openclaw) |
+| **@openclaw/voice-call** | Voice-call channel plugin for OpenClaw integrations using Twilio, Telnyx, and Plivo transports | [npm](https://www.npmjs.com/package/@openclaw/voice-call) |
 
 ### Setup Guides & Starters
 

@@ -1727,6 +1727,39 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **[OCD OpenClaw Dashboard](https://github.com/Keeeeeeeks/opencode-dashboard)** | Kanban dashboard | Self-hosted dashboard where OpenClaw and related agents can push task status updates to a live board |
 | **[Little Hammer Monitor](https://github.com/kdnsna/openclaw-dashboard)** | Local dashboard | OpenClaw local monitoring console for sessions, usage, cost tracking, mobile PWA access, and automation diagnostics |
 | **[OpenClaw Dashboard v2](https://github.com/rockylam0706/openclaw-dashboard)** | Local dashboard | Node, React, and Vite dashboard for OpenClaw status, tasks, sessions, memory files, cron jobs, and command execution |
+| **[@openclaw/pixverse-provider](https://www.npmjs.com/package/@openclaw/pixverse-provider)** | Video provider | PixVerse video generation provider plugin for OpenClaw model and media workflows |
+| **[@kvasar/openclaw-storyblok-plugin](https://www.npmjs.com/package/@kvasar/openclaw-storyblok-plugin)** | CMS plugin | Storyblok CMS plugin for OpenClaw interactions with Management API and Delivery API surfaces |
+| **[fastgrc-openclaw](https://www.npmjs.com/package/fastgrc-openclaw)** | Policy plugin | Tool-call compliance plugin that evaluates OpenClaw actions against policy before execution |
+| **[openclaw-smartpi](https://www.npmjs.com/package/openclaw-smartpi)** | Voice control | SmartPi voice-control plugin package for OpenClaw |
+| **[@honcho-ai/openclaw-honcho](https://www.npmjs.com/package/@honcho-ai/openclaw-honcho)** | Memory plugin | Honcho memory integration package for OpenClaw agents |
+| **[@kynver-app/openclaw-agent-os](https://www.npmjs.com/package/@kynver-app/openclaw-agent-os)** | AgentOS tools | Plugin package that exposes Kynver AgentOS tools to OpenClaw |
+| **[forge-openclaw-plugin](https://www.npmjs.com/package/forge-openclaw-plugin)** | Collaboration adapter | Forge collaboration API adapter with an OpenClaw UI entrypoint and localhost runtime setup |
+| **[openclaw-diag-cli](https://www.npmjs.com/package/openclaw-diag-cli)** | Diagnostic CLI | Observer-only diagnostic CLI for OpenClaw runtime checks through an npx-friendly package |
+| **[openclaw-channel-bgos](https://www.npmjs.com/package/openclaw-channel-bgos)** | BGOS channel | Channel plugin for connecting OpenClaw agents to BGOS chat workflows |
+| **[@signetai/signet-memory-openclaw](https://www.npmjs.com/package/@signetai/signet-memory-openclaw)** | Memory adapter | Signet runtime memory adapter package for OpenClaw agents |
+| **[@looki-ai/openclaw-looki-cli](https://www.npmjs.com/package/@looki-ai/openclaw-looki-cli)** | Looki installer | Lightweight installer for the OpenClaw Looki channel plugin |
+| **[@memorilabs/openclaw-memori](https://www.npmjs.com/package/@memorilabs/openclaw-memori)** | Memory plugin | MemoriLabs long-term memory plugin package for OpenClaw |
+| **[@memtensor/memos-cloud-openclaw-plugin](https://www.npmjs.com/package/@memtensor/memos-cloud-openclaw-plugin)** | Cloud memory | MemOS Cloud lifecycle memory plugin for OpenClaw add and recall flows |
+| **[@vectorize-io/hindsight-openclaw](https://www.npmjs.com/package/@vectorize-io/hindsight-openclaw)** | Memory plugin | Hindsight memory plugin for OpenClaw fact extraction and long-term recall workflows |
+| **[openclaw-channel-voice-sip](https://www.npmjs.com/package/openclaw-channel-voice-sip)** | SIP voice channel | SIP telephony channel plugin for OpenClaw with STT, agent, and TTS call handling |
+| **[@opik/opik-openclaw](https://www.npmjs.com/package/@opik/opik-openclaw)** | Trace exporter | Opik exporter package for sending OpenClaw LLM traces to Opik |
+| **[@martian-engineering/lossless-claw](https://www.npmjs.com/package/@martian-engineering/lossless-claw)** | Context management | Lossless context-management plugin for OpenClaw conversation compaction workflows |
+| **[openclaw-channel-agentclub](https://www.npmjs.com/package/openclaw-channel-agentclub)** | Agent Club channel | Channel plugin connecting OpenClaw agents to an Agent Club IM server |
+| **[@openclaw/diffs-language-pack](https://www.npmjs.com/package/@openclaw/diffs-language-pack)** | Diff viewer extension | Syntax-highlighting language pack for the OpenClaw diffs viewer |
+| **[@teith/openclaw-runware-provider](https://www.npmjs.com/package/@teith/openclaw-runware-provider)** | Model provider | Runware provider plugin for routing OpenClaw model calls through an OpenAI-compatible interface |
+| **[@partme.ai/openclaw-nacos](https://www.npmjs.com/package/@partme.ai/openclaw-nacos)** | Config center plugin | Nacos Config Center plugin for OpenClaw Gateway and hooks naming workflows |
+| **[@agent-vm/openclaw-mcp-portal-plugin](https://www.npmjs.com/package/@agent-vm/openclaw-mcp-portal-plugin)** | MCP portal plugin | Plugin package that registers OpenClaw tools over configured upstream MCP servers |
+| **[@atbash/openclaw](https://www.npmjs.com/package/@atbash/openclaw)** | Tool-audit plugin | ATBASH tool-audit adapter that maps OpenClaw before-tool-call hooks to policy checks |
+| **[@kaiporalabs/openclaw-memory-zvec](https://www.npmjs.com/package/@kaiporalabs/openclaw-memory-zvec)** | Vector memory | Long-term memory plugin for OpenClaw backed by Alibaba Zvec dense-vector search |
+| **[@memmachine/openclaw-memmachine](https://www.npmjs.com/package/@memmachine/openclaw-memmachine)** | Memory plugin | MemMachine memory plugin package for OpenClaw |
+| **[openclaw-hy-memory](https://www.npmjs.com/package/openclaw-hy-memory)** | Memory backend | HY Memory backend for OpenClaw with extraction, memory evolution, and layered recall flows |
+| **[@meego-harness/openclaw-integration](https://www.npmjs.com/package/@meego-harness/openclaw-integration)** | Harness integration | Native OpenClaw plugin package for Meego Harness integrations |
+| **[@coremail/lunkr-openclaw](https://www.npmjs.com/package/@coremail/lunkr-openclaw)** | Coremail channel | Lunkr and Coremail channel plugin package for OpenClaw setup flows |
+| **[@memtensor/memos-local-openclaw-plugin](https://www.npmjs.com/package/@memtensor/memos-local-openclaw-plugin)** | Local memory | MemOS Local memory plugin for OpenClaw full-write, hybrid-recall, and progressive retrieval flows |
+| **[openclaw-swarm-layer](https://www.npmjs.com/package/openclaw-swarm-layer)** | Workflow orchestration | Spec-driven workflow orchestrator package for OpenClaw |
+| **[snipara-openclaw-install](https://www.npmjs.com/package/snipara-openclaw-install)** | MCP onboarding | Snipara onboarding wrapper for Hosted MCP and OpenClaw hooks setup |
+| **[@paleo/openclaw-discord-mock](https://www.npmjs.com/package/@paleo/openclaw-discord-mock)** | Test fixture channel | Synthetic Discord-shaped channel plugin for OpenClaw automated test scenarios |
+| **[@twsxtd/hapi-openclaw](https://www.npmjs.com/package/@twsxtd/hapi-openclaw)** | Gateway bridge | HAPI bridge plugin that maps native tools to the OpenClaw Gateway route surface |
 
 ### Install a Skill
 

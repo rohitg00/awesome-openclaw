@@ -284,6 +284,7 @@ cd openclaw
 | **[Kamatera](https://www.kamatera.com/)** | Custom | $4+ | Custom | Custom | Custom | Pay-as-you-go | Global |
 | **[Zap-Hosting](https://zap-hosting.com/)** | VPS | Varies | Varies | Varies | Varies | Varies | EU |
 | **[BoostedHost](https://boostedhost.com/)** | OpenClaw VPS | Varies | Varies | Varies | Varies | Varies | Global |
+| **[EQVPS](https://eqvps.com/)** | Micro (NAT) | $5 | 1 | 2 GB | 25 GB NVMe | Unmetered | EU (DE) |
 
 ### Mid-Range ($5-25/month)
 
@@ -1529,6 +1530,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **@vulcanen/openclaw-monitor** | Real-time monitoring console package for OpenClaw runtime status and telemetry views | [npm](https://www.npmjs.com/package/@vulcanen/openclaw-monitor) |
 | **@a1hvdy/cc-openclaw** | OpenClaw bridge plugin for routing CLI assistant traffic through an OpenAI-compatible HTTP interface | [npm](https://www.npmjs.com/package/@a1hvdy/cc-openclaw) |
 | **@openclaw/voice-call** | Voice-call channel plugin for OpenClaw integrations using Twilio, Telnyx, and Plivo transports | [npm](https://www.npmjs.com/package/@openclaw/voice-call) |
+| **EQVPS** | API-native, pay-per-use VPS an agent can provision and manage over MCP — list plans, order, power, reinstall, set hostname, cancel. | [ClawHub](https://clawhub.ai/poiuyhje/eqvps) |
 
 ### Setup Guides & Starters
 

@@ -730,6 +730,7 @@ docker compose run --rm openclaw-cli security audit --deep
 | **OpenClaw Secure Stack** | Hardened deployment wrapper with authentication, skill scanning, prompt-injection checks, and policy controls | [GitHub](https://github.com/yi-john-huang/openclaw-secure-stack) |
 | **OpenClaw Security Dashboard** | Dashboard for reviewing gateway exposure, skill risks, configuration hardening, and identity checks | [GitHub](https://github.com/piti/openclaw-security-dashboard) |
 | **Clawpinch** | Security audit toolkit for OpenClaw deployments with grouped local checks | [GitHub](https://github.com/MikeeBuilds/clawpinch) |
+| **iClaw** | Local-first AI workspace — sandboxed file execution, malware & credential theft detection. Drops files into isolated containers before they touch your machine. npm: @iclawapp/iclaw | [GitHub](https://github.com/iclawapp/iclaw) |
 | **ClawShield** | PolicyGate security audit tool for OpenClaw agent misconfiguration checks | [GitHub](https://github.com/policygate/clawshield) |
 | **Security Watchdog** | Host-posture watchdog for OpenClaw with firewall, SSH, exposure, and listening-port checks | [GitHub](https://github.com/lashawrelay/security-watchdog-openclaw) |
 | **Security Agent** | Daily security posture auditor for OpenClaw hosts and hosted services with baseline comparison reports | [GitHub](https://github.com/clwdtch/openclaw-security-agent) |

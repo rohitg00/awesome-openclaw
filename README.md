@@ -1566,6 +1566,56 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **@onequery/openclaw-plugin** | OneQuery plugin package for OpenClaw workflows | [npm](https://www.npmjs.com/package/@onequery/openclaw-plugin) |
 | **@parall/openclaw-agent** | Bootstrap wrapper that prepares per-agent OpenClaw state before launching Parall agents | [npm](https://www.npmjs.com/package/@parall/openclaw-agent) |
 | **@watchline/openclaw-plugin** | Delivery adapter for receiving matched Watchline events in OpenClaw workflows | [npm](https://www.npmjs.com/package/@watchline/openclaw-plugin) |
+| **@agent-vm/openclaw-agent-vm-plugin** | Sandbox backend package that delegates OpenClaw execution to a Gondolin-managed VM | [npm](https://www.npmjs.com/package/@agent-vm/openclaw-agent-vm-plugin) |
+| **@agentclub/openclaw-adapter** | Adapter package for connecting local OpenClaw Gateway agents to Agent Hub workflows | [npm](https://www.npmjs.com/package/@agentclub/openclaw-adapter) |
+| **@akalsey/openclaw-gatepass** | Gatepass secrets-management plugin package for OpenClaw environments | [npm](https://www.npmjs.com/package/@akalsey/openclaw-gatepass) |
+| **@ama2/openclaw-channel** | Self-hosted AMA2 channel plugin for OpenClaw messaging workflows | [npm](https://www.npmjs.com/package/@ama2/openclaw-channel) |
+| **@ambient-os/openclaw-channel** | Ambient iOS channel plugin for OpenClaw messaging, pairing, and push-notification workflows | [npm](https://www.npmjs.com/package/@ambient-os/openclaw-channel) |
+| **@aporthq/openclaw-aport** | Pre-action authorization plugin that routes OpenClaw tool calls through APort guardrails | [npm](https://www.npmjs.com/package/@aporthq/openclaw-aport) |
+| **@archermindim/openclaw-channel** | OpenIM channel plugin for OpenClaw Gateway messaging | [npm](https://www.npmjs.com/package/@archermindim/openclaw-channel) |
+| **@arinova-ai/openclaw-arinova-ai** | Arinova Chat plugin package with A2A streaming and virtual-office status events for OpenClaw | [npm](https://www.npmjs.com/package/@arinova-ai/openclaw-arinova-ai) |
+| **@artflo-ai/artflo-openclaw-plugin** | Plugin that connects OpenClaw to the Artflo canvas WebSocket runtime | [npm](https://www.npmjs.com/package/@artflo-ai/artflo-openclaw-plugin) |
+| **@athenafleet/bridge** | CLI bridge for connecting a local OpenClaw Gateway to an Athena dashboard over WebSocket | [npm](https://www.npmjs.com/package/@athenafleet/bridge) |
+| **@attest-protocol/openclaw-attest** | Audit-trail plugin that records OpenClaw agent actions with Attest Protocol receipts | [npm](https://www.npmjs.com/package/@attest-protocol/openclaw-attest) |
+| **@awareness-sdk/openclaw-memory** | Awareness memory plugin for cross-session recall and learning workflows in OpenClaw | [npm](https://www.npmjs.com/package/@awareness-sdk/openclaw-memory) |
+| **@axonflow/openclaw** | Policy enforcement, PII scanning, approval-gate, and audit-trail plugin for OpenClaw agents | [npm](https://www.npmjs.com/package/@axonflow/openclaw) |
+| **@beeos-ai/claw** | BeeOS bridge plugin for OpenClaw Gateway file transfer, ACP bridge, and observability workflows | [npm](https://www.npmjs.com/package/@beeos-ai/claw) |
+| **@botschat/openclaw-plugin** | BotsChat channel plugin for connecting OpenClaw agents to the BotsChat cloud platform | [npm](https://www.npmjs.com/package/@botschat/openclaw-plugin) |
+| **@bouncer-protocol/openclaw** | WebSocket channel plugin for Bouncer Protocol agent negotiation workflows in OpenClaw | [npm](https://www.npmjs.com/package/@bouncer-protocol/openclaw) |
+| **@brightdeck/openclaw-deck** | Brightdeck plugin package for managing presentation decks through OpenClaw tools | [npm](https://www.npmjs.com/package/@brightdeck/openclaw-deck) |
+| **@cfio/cohort-sync** | Telemetry sync plugin that sends OpenClaw sessions and activity records to Cohort dashboards | [npm](https://www.npmjs.com/package/@cfio/cohort-sync) |
+| **@chatu-ai/webhub** | Channel SDK package for building custom OpenClaw channel plugins | [npm](https://www.npmjs.com/package/@chatu-ai/webhub) |
+| **@clackhq/openclaw-plugin** | Clack workspace channel plugin for human and agent collaboration through OpenClaw | [npm](https://www.npmjs.com/package/@clackhq/openclaw-plugin) |
+| **@claw-fact-bus/openclaw-plugin** | OpenClaw plugin package for Claw Fact Bus integrations | [npm](https://www.npmjs.com/package/@claw-fact-bus/openclaw-plugin) |
+| **@claw_chat/clawchat-proxy** | SSE and POST proxy server package for connecting ClawChat surfaces to OpenClaw Gateway | [npm](https://www.npmjs.com/package/@claw_chat/clawchat-proxy) |
+| **@clawboo/gateway-client** | Typed WebSocket client for OpenClaw Gateway RPC calls and event subscriptions | [npm](https://www.npmjs.com/package/@clawboo/gateway-client) |
+| **@clawboo/gateway-proxy** | Same-origin WebSocket proxy for OpenClaw Gateway with server-side auth injection | [npm](https://www.npmjs.com/package/@clawboo/gateway-proxy) |
+| **@clawdb/openclaw** | ClawDB memory plugin for OpenClaw retrieval, persistence, branching, sync, and reflection workflows | [npm](https://www.npmjs.com/package/@clawdb/openclaw) |
+| **@clawmem-ai/clawmem** | GitHub-native memory runtime for OpenClaw transcript mirroring, recall, and memory maintenance | [npm](https://www.npmjs.com/package/@clawmem-ai/clawmem) |
+| **@clawnify/agent-control-ui** | Control UI package for inspecting and operating OpenClaw agent sessions | [npm](https://www.npmjs.com/package/@clawnify/agent-control-ui) |
+| **@clawos-dev/openclaw-extensions** | Runtime and registry package for hosting user-defined ClawOS extensions inside OpenClaw | [npm](https://www.npmjs.com/package/@clawos-dev/openclaw-extensions) |
+| **@compresh/openclaw-hook** | Context-compression hook for OpenClaw Plugin SDK turns and episodic-memory workflows | [npm](https://www.npmjs.com/package/@compresh/openclaw-hook) |
+| **@consensus-tools/openclaw** | Adapter package that exposes consensus-tools integrations to OpenClaw plugins | [npm](https://www.npmjs.com/package/@consensus-tools/openclaw) |
+| **@context-security/openclaw-email-guard-plugin** | Email Guard plugin that routes OpenClaw email composition and sending through policy checks | [npm](https://www.npmjs.com/package/@context-security/openclaw-email-guard-plugin) |
+| **@controluiclaw/sdk** | TypeScript SDK for connecting OpenClaw clients to Gateway WebSocket APIs | [npm](https://www.npmjs.com/package/@controluiclaw/sdk) |
+| **@corev/openclaw-plugin** | Corev plugin that exposes versioned configuration operations as OpenClaw tools | [npm](https://www.npmjs.com/package/@corev/openclaw-plugin) |
+| **@cozeloop/openclaw-cozeloop-trace** | OpenTelemetry trace reporter for sending OpenClaw runtime spans to CozeLoop | [npm](https://www.npmjs.com/package/@cozeloop/openclaw-cozeloop-trace) |
+| **openclaw-agent-builder** | Wizard for creating and deploying OpenClaw agents and multi-agent teams from a desktop app or npx flow | [npm](https://www.npmjs.com/package/openclaw-agent-builder) |
+| **openclaw-agent-runtime-contracts** | Shared runtime contracts for OpenClaw planner, todo, and session-state integrations | [npm](https://www.npmjs.com/package/openclaw-agent-runtime-contracts) |
+| **openclaw-agent-sdk** | Agent SDK for OpenClaw Hub session management, tool registration, and streaming integrations | [npm](https://www.npmjs.com/package/openclaw-agent-sdk) |
+| **openclaw-agent-wake-protocol** | Gateway lifecycle extension for OpenClaw multi-agent registration, interviews, and wake-state tracking | [npm](https://www.npmjs.com/package/openclaw-agent-wake-protocol) |
+| **openclaw-aegis** | Self-healing sidecar daemon for monitoring and recovering OpenClaw Gateway processes | [npm](https://www.npmjs.com/package/openclaw-aegis) |
+| **openclaw-code-agent** | Managed background-process plugin for launching, monitoring, and controlling coding-agent sessions from OpenClaw | [npm](https://www.npmjs.com/package/openclaw-code-agent) |
+| **openclaw-cost-optimizer** | Skill package that audits OpenClaw configuration for model-cost optimization opportunities | [npm](https://www.npmjs.com/package/openclaw-cost-optimizer) |
+| **openclaw-daemon** | Background daemon package for persistent OpenClaw Gateway process management | [npm](https://www.npmjs.com/package/openclaw-daemon) |
+| **openclaw-engram** | Plugin package that connects OpenClaw to an Engram persistent-memory server | [npm](https://www.npmjs.com/package/openclaw-engram) |
+| **openclaw-gateway-chat** | React chat SDK for OpenClaw Gateway HTTP, SSE, and WebSocket chat surfaces | [npm](https://www.npmjs.com/package/openclaw-gateway-chat) |
+| **openclaw-keeper** | Health monitor and auto-recovery daemon with log diagnostics for OpenClaw Gateway | [npm](https://www.npmjs.com/package/openclaw-keeper) |
+| **openclaw-mcp-tools** | Plugin package that bridges MCP server tools into native OpenClaw tools | [npm](https://www.npmjs.com/package/openclaw-mcp-tools) |
+| **openclaw-plugin-memory-pro** | Enhanced memory plugin for OpenClaw with vector storage, knowledge graph, and document-level workflows | [npm](https://www.npmjs.com/package/openclaw-plugin-memory-pro) |
+| **openclaw-quest** | Observability dashboard plugin for OpenClaw agent sessions and runtime status | [npm](https://www.npmjs.com/package/openclaw-quest) |
+| **openclaw-skill-boilerplate** | Boilerplate package for scaffolding, developing, and publishing OpenClaw skills | [npm](https://www.npmjs.com/package/openclaw-skill-boilerplate) |
+| **n8n-nodes-openclaw-chat** | n8n community node for interacting with OpenClaw Gateway chat, embeddings, models, responses, and tools APIs | [npm](https://www.npmjs.com/package/n8n-nodes-openclaw-chat) |
 | **EQVPS** | API-native, pay-per-use VPS skill for OpenClaw with MCP tools for listing plans, ordering servers after confirmation, power control, reinstall, hostname updates, and cancellation. | [ClawHub](https://clawhub.ai/poiuyhje/eqvps) |
 
 ### Setup Guides & Starters

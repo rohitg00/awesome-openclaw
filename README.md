@@ -924,6 +924,10 @@ ollama pull llama3.1
 | **MCP Bootstrap** | [GitHub](https://github.com/keoy7am/openclaw-mcp-bootstrap) | Bootstrap package for adding Sequential Thinking and Context7 MCP servers to OpenClaw |
 | **MCP Router** | [GitHub](https://github.com/lunarmoon26/openclaw-mcp-router) | Dynamic MCP tool router that searches large MCP catalogs before calling tools from OpenClaw |
 
+**Connectable MCP servers** (remote servers you point OpenClaw at, rather than bridge plugins):
+
+- [Cashflow](https://cashflow.tech) - Personal finance for your agent. Connect a bank, then have OpenClaw run a daily `query { digest: true }` for low-balance forecasts, missed bills, and unusual charges. Remote streamable-HTTP MCP server; OAuth or bearer-token auth. ([Docs](https://cashflow.tech/docs))
+
 ---
 
 ## Integrations & Features

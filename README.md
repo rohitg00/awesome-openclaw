@@ -425,6 +425,7 @@ The **real cost** of running OpenClaw is the AI model API, not infrastructure.
 | **[Moonshot](https://platform.moonshot.cn/)** | Kimi K2.5 | $3.00 | $3.00 | Great agentic performance, free built-in provider since v2026.2.6 |
 | **[Grok](https://console.x.ai/)** | Grok 4.1 mini | $0.20 | $0.50 | Budget alternative |
 | **[OpenRouter](https://openrouter.ai/)** | Various | Varies | Varies | Unified API for 200+ models |
+| **[Omnicall](https://omnicall.gocreativeai.com)** | 248 models | Pay-per-call | Pay-per-call | Keyless x402 gateway (Base/Solana), free tier, no API key or signup |
 | **[Ollama](https://ollama.com/)** | Any | **$0** | **$0** | Requires hardware (16 GB+ RAM) |
 
 > **75x price difference** between the most expensive (Claude Opus) and cheapest (Gemini Flash) options.

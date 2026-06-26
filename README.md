@@ -1087,6 +1087,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[OpenClaw Studio](https://github.com/grp06/openclaw-studio)** | Community | Visual agent management with cron jobs, tool extraction, mentions (410 stars) |
 | **[Hawk Eye](https://github.com/benfoxsb/hawk-eye)** | Community | Workspace sentinel & operational dashboard |
 | **[ClawTick](https://clawtick.com/)** | Third-party | Performance monitoring, uptime checks, and real-time analytics for OpenClaw instances. |
+| **[flik2002/openclaw-monitor](https://github.com/flik2002/openclaw-monitor)** | Community | Free monitoring dashboard: token usage, session tracking, 7-day trends, multi-model support. Vue 3 + ECharts |
 | **[Opik OpenClaw](https://github.com/comet-ml/opik-openclaw)** | Observability | Exports agent traces to Opik for monitoring cost, tokens, errors, and behavior |
 | **[openclaw-dashboard](https://github.com/tugcantopaloglu/openclaw-dashboard)** | Community dashboard | Real-time dashboard with auth, MFA, cost tracking, live feed, and memory browser |
 | **[OpenClaw Control Center](https://github.com/TianyiDataScience/openclaw-control-center)** | Local dashboard | Local-first dashboard for OpenClaw health, usage, staff, collaboration, tasks, documents, memory, and settings |

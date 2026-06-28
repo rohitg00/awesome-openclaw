@@ -923,6 +923,7 @@ ollama pull llama3.1
 | **Enhanced MCP Bridge Skill** | [GitHub](https://github.com/cc-fuyu/openclaw-mcp-bridge) | Skill that documents MCP server discovery, search, installation, and native tool calls from OpenClaw |
 | **MCP Bootstrap** | [GitHub](https://github.com/keoy7am/openclaw-mcp-bootstrap) | Bootstrap package for adding Sequential Thinking and Context7 MCP servers to OpenClaw |
 | **MCP Router** | [GitHub](https://github.com/lunarmoon26/openclaw-mcp-router) | Dynamic MCP tool router that searches large MCP catalogs before calling tools from OpenClaw |
+| **Shieldz Payments** | [GitHub](https://github.com/ShieldZCash/shieldz-openclaw) · [npm](https://www.npmjs.com/package/@shieldz/mcp) | Keyless, non-custodial crypto payment links and tip jars from just a wallet address; no API key. Remote MCP at shieldz.cash/mcp, OFAC-screened |
 
 ---
 

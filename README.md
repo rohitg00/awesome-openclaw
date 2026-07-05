@@ -518,6 +518,7 @@ Access: `https://your-worker.workers.dev/?token=YOUR_GATEWAY_TOKEN`
 - [Blog - Introducing Moltworker](https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/)
 - [openclaw-nearai-worker](https://github.com/nearai/openclaw-nearai-worker) - Worker for hosting OpenClaw in NEAR AI Cloud.
 
+- **[Context Kit](https://github.com/JDDavenport/context-kit)** — Personal Context Artifacts: 4 Markdown templates (wiki, mental-models, voice, protocols) + 5 Claude Code skills. Solves context amnesia — every session starts context-full. MIT, one-command install.
 ---
 
 ## DigitalOcean 1-Click Deploy

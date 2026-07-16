@@ -1567,6 +1567,8 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **@parall/openclaw-agent** | Bootstrap wrapper that prepares per-agent OpenClaw state before launching Parall agents | [npm](https://www.npmjs.com/package/@parall/openclaw-agent) |
 | **@watchline/openclaw-plugin** | Delivery adapter for receiving matched Watchline events in OpenClaw workflows | [npm](https://www.npmjs.com/package/@watchline/openclaw-plugin) |
 | **EQVPS** | API-native, pay-per-use VPS skill for OpenClaw with MCP tools for listing plans, ordering servers after confirmation, power control, reinstall, hostname updates, and cancellation. | [ClawHub](https://clawhub.ai/poiuyhje/eqvps) |
+| **LinkedIn Skills** | Social media marketing for 7 platforms (LinkedIn, X, Instagram, YouTube, TikTok, Threads, Facebook): corpus-validated hooks, humanizer, audience insights | [ClawHub](https://clawhub.ai/sergebulaev/linkedin-post-writer) \| [GitHub](https://github.com/sergebulaev/linkedin-skills) |
+
 
 ### Setup Guides & Starters
 

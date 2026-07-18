@@ -738,6 +738,7 @@ docker compose run --rm openclaw-cli security audit --deep
 | **Security Agent** | Daily security posture auditor for OpenClaw hosts and hosted services with baseline comparison reports | [GitHub](https://github.com/clwdtch/openclaw-security-agent) |
 | **ReefWatch** | Host-based monitoring skill for OpenClaw machines, with local detection for auth, malware, privilege, and persistence signals | [GitHub](https://github.com/yasnaak/reefwatch) |
 | **trentclaw** | Security assessment skill for OpenClaw - scans gateway config, tool permissions, installed skills, and MCP servers for risks, then proposes fixes you review before applying. | [GitHub](https://github.com/trnt-ai/trent-openclaw-security-assessment) |
+| **OpenClaw VPS Security Preflight** | Free browser-only 12-control checklist for reviewing gateway exposure, SSH, firewall, backups, monitoring, rollback, and recovery readiness before a Linux VPS deployment. | [GitHub](https://github.com/tinyopsstudio/openclaw-vps-security-preflight) |
 
 ### Security Resources
 

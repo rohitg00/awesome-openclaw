@@ -1236,6 +1236,7 @@ tar -czvf ~/openclaw_backup_$(date +%Y%m%d).tar.gz -C "$HOME" .openclaw
 | [**Ralv**](https://ralv.ai/) | 3D agent orchestration | Multi-agent management | StarCraft-like spatial UI for commanding 100+ agents |
 | [**GitClaw**](https://github.com/SawyerHood/gitclaw) | GitHub Actions agent | Serverless | Zero-infra OpenClaw via GitHub Issues & Actions |
 | [**BankrBot Skills**](https://github.com/BankrBot/openclaw-skills) | DeFi/crypto agent | Web3 traders | Polymarket, token trading, NFTs, on-chain messaging |
+| [**AgentLayer**](https://github.com/lopushok9/Agent-Layer) | Local-first wallet plugin | OpenClaw agents | x402 payments and DeFi tools for Base, Solana, and Ethereum, including swaps, lending, and borrowing. Install with `openclaw plugins install clawhub:@agentlayertech/agent-wallet-plugin` |
 | [**ClosedClaw**](https://github.com/asafelobotomy/ClosedClaw) | Desktop GUI fork | GTK users | GTK GUI + Ollama integration + enhanced lite mode |
 | [**OpenGlass**](https://github.com/DarlingtonDeveloper/OpenGlass) | Smart glasses | Wearable hardware | Meta Ray-Bans + Gemini Live + OpenClaw real-time AI |
 | [**Scallopbot**](https://github.com/tashfeenahmed/scallopbot) | Cost-optimized agent | Budget users | Multi-provider routing, budget controls, voice I/O |

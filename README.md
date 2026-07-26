@@ -1139,7 +1139,7 @@ Configure multiple agents with separate workspaces, personas, auth profiles, and
 | **[OpenClaw Probe Rust](https://github.com/Edison94hu/openclaw-probe-rs)** | Host agent | Rust host probe for OpenClaw health checks, restarts, session token scanning, system metrics, and backup tasks |
 | **[clawdbot-cost-monitor](https://github.com/bokonon23/clawdbot-cost-monitor)** | Cost dashboard | Local dashboard for parsing OpenClaw session files and showing token and cost history |
 | **[Moltcraft](https://github.com/askmojo/moltcraft)** | Visual dashboard | Isometric dashboard that connects to a Moltbot or OpenClaw gateway to visualize agent activity |
-| **[ClawBench](https://github.com/reacher-z/ClawBench)** | Browser-agent benchmark | Live-website benchmark with a selectable OpenClaw harness, request-level task scoring, and five-layer run traces across 283 tasks ([project](https://claw-bench.com/)) |
+| **[ClawBench](https://github.com/reacher-z/ClawBench)** | Browser-agent benchmark | Live-website benchmark with a selectable OpenClaw harness, interception plus judge-based scoring, and five-layer run traces across 283 tasks ([project](https://claw-bench.com/)) |
 
 ### Backup & Restore
 

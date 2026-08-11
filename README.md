@@ -1798,6 +1798,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **[snipara-openclaw-install](https://www.npmjs.com/package/snipara-openclaw-install)** | MCP onboarding | Snipara onboarding wrapper for Hosted MCP and OpenClaw hooks setup |
 | **[@paleo/openclaw-discord-mock](https://www.npmjs.com/package/@paleo/openclaw-discord-mock)** | Test fixture channel | Synthetic Discord-shaped channel plugin for OpenClaw automated test scenarios |
 | **[@twsxtd/hapi-openclaw](https://www.npmjs.com/package/@twsxtd/hapi-openclaw)** | Gateway bridge | HAPI bridge plugin that maps native tools to the OpenClaw Gateway route surface |
+| **[Hexis](https://github.com/Bevel-Software/Hexis)** | Skills and context platform | Git-backed platform for skills, tools, and context for AI agents, accessible from OpenClaw through its remote MCP server |
 
 ### Install a Skill
 

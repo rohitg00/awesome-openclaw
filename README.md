@@ -1567,6 +1567,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **@parall/openclaw-agent** | Bootstrap wrapper that prepares per-agent OpenClaw state before launching Parall agents | [npm](https://www.npmjs.com/package/@parall/openclaw-agent) |
 | **@watchline/openclaw-plugin** | Delivery adapter for receiving matched Watchline events in OpenClaw workflows | [npm](https://www.npmjs.com/package/@watchline/openclaw-plugin) |
 | **EQVPS** | API-native, pay-per-use VPS skill for OpenClaw with MCP tools for listing plans, ordering servers after confirmation, power control, reinstall, hostname updates, and cancellation. | [ClawHub](https://clawhub.ai/poiuyhje/eqvps) |
+| **youtube-skills** | MIT licensed agent skills for YouTube transcripts, video search, channel browsing, and playlist extraction. | [ClawHub](https://clawhub.ai/therohitdas/youtube-full) \| [GitHub](https://github.com/ZeroPointRepo/youtube-skills) |
 
 ### Setup Guides & Starters
 

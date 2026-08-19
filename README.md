@@ -2395,7 +2395,7 @@ OpenClaw has seen explosive adoption in China with support from major tech compa
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=openclaw/openclaw,facebook/react,vercel/next.js,torvalds/linux,kubernetes/kubernetes&type=Date)](https://star-history.com/#openclaw/openclaw&facebook/react&vercel/next.js&torvalds/linux&kubernetes/kubernetes&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=openclaw/openclaw,facebook/react,vercel/next.js,torvalds/linux,kubernetes/kubernetes&type=Date)](https://star-history.dera.page/#openclaw/openclaw&facebook/react&vercel/next.js&torvalds/linux&kubernetes/kubernetes&Date)
 
 ### Growth Comparison
 

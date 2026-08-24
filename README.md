@@ -328,7 +328,7 @@ These providers handle ALL the setup for you - no Docker, no terminal, no DevOps
 | **[EasyClaw](https://www.easyclaw.pro/en)** | $10+ | 60 sec | Varies | Multi-model, 3+ platforms, zero maintenance | 29 min saved per deploy |
 | **[ClawSimple](https://clawsimple.com/en)** | $8.25-29.08 | 2-3 min | Varies | Secure cloud, one-click updates (coming) | 20% off with LAUNCH20 |
 | **[xCloud](https://xcloud.host/openclaw-hosting)** | $24 | 5 min | Managed | Telegram/WhatsApp pre-configured, encrypted backups | 7-day guarantee |
-| **[OneClickClaw](https://oneclickclaw.io)** | €14.99 (€10.42 annual) | 5 min | Dedicated EU VPS | Your own AI assistant on Telegram/WhatsApp/Discord, BYOK no markup, managed updates/backups, hardened by default, EU/GDPR data residency | - |
+| **[OneClickClaw](https://oneclickclaw.io)** | €14.99 (€12.49 annual) | 5 min | Dedicated EU VPS | Your own AI assistant on Telegram/WhatsApp/Discord, BYOK no markup, managed updates/backups, hardened by default, EU/GDPR data residency | - |
 | **[OctoClaw](https://octoclaw.ai)** | $19-59 | Minutes | 2-4 vCPU, 4-16 GB RAM | Hetzner Germany, GDPR-compliant, pre-provisioned phone number, AI starter budget, BYOK | - |
 | **[ClawCloud](https://www.clawcloud.sh/)** | $29-129 | < 1 min | 1-2 vCPU, 1-4 GB RAM | All AI models (BYOK), auto-updates, daily backups | 70% off with EARLYBIRD70 |
 | **[SimpleClaw](https://www.simpleclaw.com/)** | TBD | < 1 min | Managed | 1-click deploy, model selection | - |

@@ -1884,6 +1884,8 @@ OpenClaw use cases increasingly combine cron jobs, webhook triggers, Gmail Pub/S
 
 Current projects around OpenClaw include active memory, Memory Wiki style systems, QMD memory, long-term memory plugins, skill collections, personas, and context databases. Directory entries in this area should explain what is stored, where it is stored, and what approval or deletion controls exist.
 
+- [Hyperconsciousness](https://github.com/louis030195/hyperconsciousness) — Developer-alpha local encrypted, append-only knowledge store. Connect its stdio MCP server through mcporter; note retrieval is limited by scoped, expiring grants.
+
 ### Web, network, and remote access
 
 Current OpenClaw setups often include WebChat, Control UI pairing, Tailscale or trusted-proxy access, local browser automation, remote workers, and private dashboards. Public entries should avoid implying a hosted service is safe by default unless the source documents auth, network boundaries, and secrets handling.

@@ -2294,6 +2294,7 @@ node --version                     # Must be 22+
 | [win4r/ClawTeam-OpenClaw](https://github.com/win4r/ClawTeam-OpenClaw) | Multi-agent swarm coordination adapted for OpenClaw |
 | [Gen-Verse/OpenClaw-RL](https://github.com/Gen-Verse/OpenClaw-RL) | Research project for training agents through conversational feedback |
 | [raulvidis/openclaw-multi-agent-kit](https://github.com/raulvidis/openclaw-multi-agent-kit) | Templates for multi-agent OpenClaw teams and Telegram supergroup workflows |
+| [mlamplugh-max/clawhire-openclaw-gateway](https://github.com/mlamplugh-max/clawhire-openclaw-gateway) | Multi-tenant worker: per-agent sandboxes, brokered tenant credentials, enforced cost cap (ELv2) |
 
 ---
 

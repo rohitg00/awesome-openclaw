@@ -1290,6 +1290,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | Skill | Description | Source |
 |-------|-------------|--------|
 | **Mixpost** | Social media management integration | [ClawHub](https://mixpost.app/blog/openclaw-skill) |
+| **YouTube Transcript Skills** | YouTube transcript fetching, video/channel search, channel browsing, and playlist extraction via getyoutubetranscript.com's free-tier API | [ClawHub](https://clawhub.ai/) \| [GitHub](https://github.com/tubeagentkit/youtube-transcript-skills) |
 | **AIsa Skills** | Streamlined AI agent deployment | [PheMex](https://phemex.com/news/article/aisa-skills-launches-on-openclaws-plugin-marketplace-streamlining-ai-agent-deployment-57375) |
 | **Luma Events** | Search events, RSVP, sync to Google Calendar (no API needed) | [X/@bilbeny](https://x.com/bilbeny/status/2017046033759686929) |
 | **QMD Skill** | Cuts token usage by 95% | [X/@milesdeutscher](https://x.com/milesdeutscher/status/2018768974872449100) |

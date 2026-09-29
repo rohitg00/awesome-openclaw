@@ -1567,6 +1567,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **@parall/openclaw-agent** | Bootstrap wrapper that prepares per-agent OpenClaw state before launching Parall agents | [npm](https://www.npmjs.com/package/@parall/openclaw-agent) |
 | **@watchline/openclaw-plugin** | Delivery adapter for receiving matched Watchline events in OpenClaw workflows | [npm](https://www.npmjs.com/package/@watchline/openclaw-plugin) |
 | **EQVPS** | API-native, pay-per-use VPS skill for OpenClaw with MCP tools for listing plans, ordering servers after confirmation, power control, reinstall, hostname updates, and cancellation. | [ClawHub](https://clawhub.ai/poiuyhje/eqvps) |
+| **tlgr** | Operate a personal Telegram account (MTProto) from OpenClaw: read and search chats, send and edit messages, manage contacts; JSON output, and a daemon that pushes Telegram events to a webhook | [ClawHub](https://clawhub.ai/erfnzdeh/skills/tlgr) \| [GitHub](https://github.com/tlgrcli/tlgr) |
 
 ### Setup Guides & Starters
 

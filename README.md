@@ -937,7 +937,7 @@ ollama pull llama3.1
 | **Voice Call Plugin** | Telephony via Twilio, Telnyx, Plivo |
 | **ClawdTalk** | Phone calling and SMS for OpenClaw. Call your agent from any phone, with deep tool integration for calendar, Jira, web search, and more. Powered by Telnyx. |
 | **Always-On Speech** | macOS/iOS/Android with ElevenLabs |
-- [AI Group Call](https://aigroupcall.app) - You set a goal and six to eight AI voices run a round-table call with you: drop-ins, barge-in, and a written recap.
+- [AI Group Call](https://aigroupcall.app) - You set a goal and two to eight AI voices run a round-table call with you: drop-ins, barge-in, and a written recap.
 
 - [OpenClaw Voice](https://openclawvoice.com/)
 - [VoxClaw](https://github.com/malpern/VoxClaw) - Voice output for OpenClaw from a Mac on the local network.

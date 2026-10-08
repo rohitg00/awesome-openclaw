@@ -1567,6 +1567,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **@parall/openclaw-agent** | Bootstrap wrapper that prepares per-agent OpenClaw state before launching Parall agents | [npm](https://www.npmjs.com/package/@parall/openclaw-agent) |
 | **@watchline/openclaw-plugin** | Delivery adapter for receiving matched Watchline events in OpenClaw workflows | [npm](https://www.npmjs.com/package/@watchline/openclaw-plugin) |
 | **EQVPS** | API-native, pay-per-use VPS skill for OpenClaw with MCP tools for listing plans, ordering servers after confirmation, power control, reinstall, hostname updates, and cancellation. | [ClawHub](https://clawhub.ai/poiuyhje/eqvps) |
+| **Scalekit Agent Auth** | Gives OpenClaw access to 500+ connectors and 20,000+ tools. Scalekit's AgentKit provides auth and actions on behalf of users. Install with `clawhub install scalekit-agent-auth`. | [ClawHub](https://clawhub.ai/scalekit-inc/skills/scalekit-agent-auth) \| [GitHub](https://github.com/scalekit-inc/openclaw-skill) \| [Docs](https://docs.scalekit.com/agentkit/openclaw/) |
 
 ### Setup Guides & Starters
 

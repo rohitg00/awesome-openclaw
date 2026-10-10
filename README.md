@@ -759,6 +759,7 @@ docker compose run --rm openclaw-cli security audit --deep
 - [The Calyx Protocol](https://github.com/OrchardHarmonics/orchard-kit/blob/main/01_CALYX_PROTOCOL.md) - Permeability-based security model replacing binary allow/deny with membrane architecture. Addresses prompt injection, data exfiltration, and skill poisoning through ethics-weighted signal routing. Derived from the Codex Harmonicae (30 years cybernetic research). By Kimberley Asher.
 - [Semgrep - OpenClaw Security Engineer's Cheat Sheet](https://semgrep.dev/blog/openclaw-security-cheat-sheet) - Static analysis rules for detecting insecure OpenClaw configurations, exposed API keys, and risky skill patterns
 - [OpenClaw Security Practice Guide](https://github.com/slowmist/openclaw-security-practice-guide) - Agent-facing hardening guide for OpenClaw deployments, prompt-injection risk, supply-chain review, and high-risk tool boundaries.
+- [Orca AI Incident Archive](https://github.com/Continuum-AI-Corp/Orca-AI-Incident-Archive) - Open dataset of AI agent security events, each record source-linked and graded for source quality; its OpenClaw records cover the malicious ClawHub skills surge, ClawHavoc, ClawJacked, exposed control panels and infostealers harvesting gateway tokens.
 
 ---
 

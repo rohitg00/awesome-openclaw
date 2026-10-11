@@ -351,6 +351,7 @@ These providers handle ALL the setup for you - no Docker, no terminal, no DevOps
 | **[1ClickClaw](https://1clickclaw.app/)** | $49 | < 1 min | 2 vCPU, 2 GB RAM | OpenClaw hosting for Telegram, Discord, and WhatsApp bot deployments | - |
 | **[OctoClaw](https://octoclaw.ai)** | $19-59 | Minutes | Managed | OpenClaw-based hosted AI specialist agents for marketing, sales, and support workflows | - |
 | **[RapidClaw](https://rapidclaw.dev)** | $29+ | Minutes | Managed | Built for non-technical operators - no Docker, no API keys, opinionated defaults, deploys in minutes | - |
+| **[Aplite](https://aplite.ai/docs/openclaw)** | Free / $20-50 | ~1 min | Own container per workspace, 1-2 vCPU, 2.5-4 GB RAM | Managed OpenClaw with a markdown workspace, scheduled routines, approval queue, Telegram/email delivery; models via OpenRouter, no API key needed; hosted in Germany (EU) | Free plan, 300 credits included |
 
 ### Setup-as-a-Service (Freelancers)
 

@@ -738,6 +738,7 @@ docker compose run --rm openclaw-cli security audit --deep
 | **Security Agent** | Daily security posture auditor for OpenClaw hosts and hosted services with baseline comparison reports | [GitHub](https://github.com/clwdtch/openclaw-security-agent) |
 | **ReefWatch** | Host-based monitoring skill for OpenClaw machines, with local detection for auth, malware, privilege, and persistence signals | [GitHub](https://github.com/yasnaak/reefwatch) |
 | **trentclaw** | Security assessment skill for OpenClaw - scans gateway config, tool permissions, installed skills, and MCP servers for risks, then proposes fixes you review before applying. | [GitHub](https://github.com/trnt-ai/trent-openclaw-security-assessment) |
+| **Ironheights** | Open-source (Apache-2.0) pre-install scanner and integrity monitor for OpenClaw skills: flags prompt injection, credential reads, remote-exec installs and persistence, with SARIF output, local baselines, and quarantine. No telemetry. | [GitHub](https://github.com/Frank-Masciopinto/ironheights) |
 
 ### Security Resources
 

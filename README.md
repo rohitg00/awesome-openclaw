@@ -716,6 +716,7 @@ docker compose run --rm openclaw-cli security audit --deep
 | **WatchClaw** | Linux server hardening and threat-intelligence toolkit with SSH hardening, firewall baseline, Cowrie honeypot, Fail2ban, canaries, and an optional OpenClaw agent mode | [GitHub](https://github.com/kashifeqbal/watchclaw) |
 | **OpenClaw Guardian** | Watchdog for OpenClaw Gateway service checks, `doctor --fix` repair flows, git rollback, daily snapshots, and Discord alerts | [GitHub](https://github.com/LeoYeAI/openclaw-guardian) |
 | **OpenClaw Hardened** | VPS hardening guide and plugin set with configuration auditing, monitoring scripts, and defense-in-depth deployment runbooks | [GitHub](https://github.com/mj-deving/openclaw-hardened) |
+| **OpenClaw Hardening Checklist** | Plain-English, doc-linked checklist covering the audit, Gateway exposure, DM/group access, tool limits, plugins, secrets on disk, spend caps and incident response | [GitHub](https://github.com/ismyagentsafe/openclaw-hardening-checklist) |
 | **EDAMAME for OpenClaw** | Runtime security integration for OpenClaw agents with MCP plugin, provisioning, and behavioral monitoring documentation | [GitHub](https://github.com/edamametechnologies/edamame_openclaw) |
 | **Guardrail Bridge Plugin** | Pre-agent policy plugin that checks content before OpenClaw dispatches work to an agent | [GitHub](https://github.com/guardrail-bridge/guardrail-bridge-plugin) |
 | **OpenClaw Carapace** | Security auditor, CVE scanner, and skill analyzer for OpenClaw gateways | [GitHub](https://github.com/CoChatAI/openclaw-carapace) |

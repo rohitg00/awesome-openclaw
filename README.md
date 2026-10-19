@@ -1567,6 +1567,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **@parall/openclaw-agent** | Bootstrap wrapper that prepares per-agent OpenClaw state before launching Parall agents | [npm](https://www.npmjs.com/package/@parall/openclaw-agent) |
 | **@watchline/openclaw-plugin** | Delivery adapter for receiving matched Watchline events in OpenClaw workflows | [npm](https://www.npmjs.com/package/@watchline/openclaw-plugin) |
 | **EQVPS** | API-native, pay-per-use VPS skill for OpenClaw with MCP tools for listing plans, ordering servers after confirmation, power control, reinstall, hostname updates, and cancellation. | [ClawHub](https://clawhub.ai/poiuyhje/eqvps) |
+| **allblu Crypto Swap Quotes** | Read-only OpenClaw plugin for live cross-chain crypto swap quotes and supported assets across BTC, ETH, SOL, TRX, BNB and more. No wallet connection or swap execution. | [npm](https://www.npmjs.com/package/openclaw-plugin-allblu-crypto-swap-quotes) |
 
 ### Setup Guides & Starters
 

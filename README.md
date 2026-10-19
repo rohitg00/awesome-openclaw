@@ -362,6 +362,7 @@ Hire someone to set it up for you.
 | **[GetClawHelp Maintenance](https://getclawhelp.com/)** | $97/mo | Monthly | Updates, troubleshooting, new skills |
 | **Fiverr - [almaasparvez](https://www.fiverr.com/almaasparvez)** | $90 | One-time | OpenClaw on AWS VPS, Telegram setup |
 | **Fiverr - marcos_mark683** | $40 | One-time | OpenClaw installation |
+| **Fiverr - [dennismayberry](https://www.fiverr.com/dennismayberry/set-up-your-ai-agent-on-your-own-computer)** | $150-900 | One-time | OpenClaw, Hermes, Claude Code or Codex on a computer you own (Mac mini, Linux or Windows), first job running; optional month of upkeep |
 | **[Upwork - Custom Skills](https://www.upwork.com/services/product/development-it-openclaw-ai-agent-setup-with-custom-skills-2018301653307508886)** | Varies | One-time | Up to 23 custom skills, testing, step-by-step guide |
 | **[Upwork - Secure Deploy](https://www.upwork.com/services/product/development-it-secure-openclaw-clawdbot-deployment-mac-mini-or-vps-approval-gates-2019127245731633908)** | Varies | One-time | Mac Mini/VPS, sandboxing, human-in-the-loop approval gates |
 | **[Freelancer.com](https://www.freelancer.com/projects/automation/OpenClaw-Linux-Setup.html)** | Varies | One-time | Linux setup, tuning, README |
@@ -1966,6 +1967,7 @@ Current OpenClaw operations include OpenTelemetry, Prometheus, dashboards, model
 - [Raspberry Pi - ajfisher](https://ajfisher.me/2026/02/03/openclaw-raspberrypi-howto/) | [Adafruit](https://learn.adafruit.com/openclaw-on-raspberry-pi)
 - [ESP32-S3 MimiClaw](https://github.com/memovai/mimiclaw) - OpenClaw core on a $5 chip, pure C, no Linux/Node.js
 - [PicoClaw](https://github.com/sipeed/picoclaw) - Ultra-lightweight Go agent, 10 MB RAM, $10 RISC-V board, single binary | [CNX Software](https://www.cnx-software.com/2026/02/10/picoclaw-ultra-lightweight-personal-ai-assistant-run-on-just-10mb-of-ram/)
+- [Self-Hosted AI Agent: computer picker](https://selfhostedaiagent.com/) - Three questions (cloud or local model, Mac or not, budget) pick a machine to run OpenClaw on, from a spare laptop to a 128 GB box, with idle power and running cost | [Mac mini for OpenClaw](https://selfhostedaiagent.com/mac-mini-for-openclaw)
 - [Ollama Guide](https://codersera.com/blog/openclaw-ollama-setup-guide-2026/) | [LM Studio](https://codersera.com/blog/openclaw-lm-studio-setup-guide-2026/)
 - [vLLM on AMD Free](https://www.amd.com/en/developer/resources/technical-articles/2026/openclaw-with-vllm-running-for-free-on-amd-developer-cloud-.html)
 - [pizero-openclaw](https://github.com/sebastianvkl/pizero-openclaw) - Raspberry Pi Zero voice assistant that streams transcribed speech through an OpenClaw gateway and renders responses on a PiSugar WhisPlay LCD.

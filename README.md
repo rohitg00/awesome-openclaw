@@ -877,7 +877,7 @@ docker compose run --rm openclaw-cli security audit --deep
 | **Chat4000 Channel** | [npm](https://www.npmjs.com/package/@chat4000/openclaw-plugin) | Chat4000 relay config | E2E relay-based channel plugin for routing Chat4000 messages through OpenClaw |
 | **Aephix Channel** | [npm](https://www.npmjs.com/package/@fateinabox/aephix-openclaw) | Aephix chat config | Native Aephix chat channel provider for OpenClaw integrations |
 | **Xiaoyi Channel** | [npm](https://www.npmjs.com/package/@ynhcj/xiaoyi-channel) | Xiaoyi A2A config | Xiaoyi A2A protocol channel plugin for OpenClaw |
-| **Octopus Prime Channel** | [GitHub](https://github.com/Ivan8344011/octopus-prime-openclaw-plugin) | Octopus Prime account and setup code | Channel plugin that connects OpenClaw agents to Octopus Prime, a hosted web and phone app with scheduled wake-ups, tasks, calendar, Health Watch, and team chat. |
+| **Octopus Prime Channel** | [GitHub](https://github.com/octopusprime-dev/octopus-prime-openclaw-plugin) | Octopus Prime account and setup code | Channel plugin that connects OpenClaw agents to Octopus Prime, a hosted web and phone app with scheduled wake-ups, tasks, calendar, Health Watch, and team chat. |
 
 ### Local LLM Integration
 

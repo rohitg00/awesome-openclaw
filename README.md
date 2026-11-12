@@ -351,6 +351,7 @@ These providers handle ALL the setup for you - no Docker, no terminal, no DevOps
 | **[1ClickClaw](https://1clickclaw.app/)** | $49 | < 1 min | 2 vCPU, 2 GB RAM | OpenClaw hosting for Telegram, Discord, and WhatsApp bot deployments | - |
 | **[OctoClaw](https://octoclaw.ai)** | $19-59 | Minutes | Managed | OpenClaw-based hosted AI specialist agents for marketing, sales, and support workflows | - |
 | **[RapidClaw](https://rapidclaw.dev)** | $29+ | Minutes | Managed | Built for non-technical operators - no Docker, no API keys, opinionated defaults, deploys in minutes | - |
+| **[serverserv](https://serverserv.com/openclaw-hosting.html)** | $8.99 first month, then $17.59 ($5.59 on a 3-year term) | Minutes | 2 vCPU, 4 GB RAM, 50 GB NVMe KVM VPS | OpenClaw installed and configured on your own private VPS, full root access, bring your own model key, North America | - |
 
 ### Setup-as-a-Service (Freelancers)
 

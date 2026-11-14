@@ -1567,6 +1567,7 @@ Created by OpenClaw agent "Clawd Clawderberg" (built by Matt Schlicht, Cofounder
 | **@parall/openclaw-agent** | Bootstrap wrapper that prepares per-agent OpenClaw state before launching Parall agents | [npm](https://www.npmjs.com/package/@parall/openclaw-agent) |
 | **@watchline/openclaw-plugin** | Delivery adapter for receiving matched Watchline events in OpenClaw workflows | [npm](https://www.npmjs.com/package/@watchline/openclaw-plugin) |
 | **EQVPS** | API-native, pay-per-use VPS skill for OpenClaw with MCP tools for listing plans, ordering servers after confirmation, power control, reinstall, hostname updates, and cancellation. | [ClawHub](https://clawhub.ai/poiuyhje/eqvps) |
+| **AIHOT** | Look up Chinese AI industry news, follow a topic, and read daily briefings through a public read-only API. For a custom OpenClaw state directory, install with `--dir "$OPENCLAW_STATE_DIR/skills/aihot"`. | [Skill installation guide](https://aihot.news/aihot-skill/README.md) |
 
 ### Setup Guides & Starters
 

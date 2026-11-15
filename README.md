@@ -1937,6 +1937,7 @@ Current OpenClaw operations include OpenTelemetry, Prometheus, dashboards, model
 - [Awesome OpenClaw Tutorial](https://github.com/xianyu110/awesome-openclaw-tutorial) - Chinese OpenClaw tutorial repository with installation, configuration, current-version notes, and scenario walkthroughs.
 - [AI Coding Guide Zh](https://github.com/KimYx0207/AI-Coding-Guide-Zh) - Chinese tutorial collection that covers OpenClaw alongside Claude Code and Codex learning paths.
 - [hello-claw](https://github.com/datawhalechina/hello-claw) - Chinese OpenClaw learning path covering setup, skills, channels, source walkthroughs, and multi-agent patterns.
+- [The Claw AI Agent Ecosystem study decks](https://github.com/asbarron/quizzes-and-flashcards) - Free flashcards and multiple-choice quizzes (Anki, TSV, JSON) on Claw-style agent architecture, memory files, deployment, cost control, and security, built from the book by Ava S. Barron.
 
 ### Reviews
 

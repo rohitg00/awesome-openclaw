@@ -738,6 +738,7 @@ docker compose run --rm openclaw-cli security audit --deep
 | **Security Agent** | Daily security posture auditor for OpenClaw hosts and hosted services with baseline comparison reports | [GitHub](https://github.com/clwdtch/openclaw-security-agent) |
 | **ReefWatch** | Host-based monitoring skill for OpenClaw machines, with local detection for auth, malware, privilege, and persistence signals | [GitHub](https://github.com/yasnaak/reefwatch) |
 | **trentclaw** | Security assessment skill for OpenClaw - scans gateway config, tool permissions, installed skills, and MCP servers for risks, then proposes fixes you review before applying. | [GitHub](https://github.com/trnt-ai/trent-openclaw-security-assessment) |
+| **ControlClaw** | Open-source AI firewall and control panel for OpenClaw - checks every request and MCP call against plain-English rules, keeps passwords and API keys on the firewall (the agent only sees placeholders), holds risky actions for approval. One firewall can serve many agents | [GitHub](https://github.com/madarco/controlclaw) |
 
 ### Security Resources
 

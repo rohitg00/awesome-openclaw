@@ -923,6 +923,7 @@ ollama pull llama3.1
 | **Enhanced MCP Bridge Skill** | [GitHub](https://github.com/cc-fuyu/openclaw-mcp-bridge) | Skill that documents MCP server discovery, search, installation, and native tool calls from OpenClaw |
 | **MCP Bootstrap** | [GitHub](https://github.com/keoy7am/openclaw-mcp-bootstrap) | Bootstrap package for adding Sequential Thinking and Context7 MCP servers to OpenClaw |
 | **MCP Router** | [GitHub](https://github.com/lunarmoon26/openclaw-mcp-router) | Dynamic MCP tool router that searches large MCP catalogs before calling tools from OpenClaw |
+| [Public Records MCP](https://github.com/GeminiGeorge22/publicrecords-mcp) | 18 Apify-hosted MCP servers for public data: SAM.gov, Grants.gov, USAspending, EU TED and UK tenders, city council meetings, Ashby/Greenhouse/Lever/SmartRecruiters jobs, company social links, Google Ads Transparency, Etsy sales, sports odds, Spotify play counts |  |
 
 ---
 

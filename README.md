@@ -2016,6 +2016,10 @@ Current OpenClaw operations include OpenTelemetry, Prometheus, dashboards, model
 - [OpenClaw Chinese Docs](https://github.com/yeuxuan/openclaw-docs) - Chinese documentation site covering source analysis, setup, WhatsApp, Telegram, Discord, Feishu, and multi-channel usage.
 - [Moltbook OpenClaw use cases](https://github.com/EvoLinkAI/awesome-openclaw-usecases-moltbook) - Community collection of OpenClaw automation examples gathered from Moltbook posts.
 
+### Troubleshooting
+
+- [CWYN OpenClaw troubleshooting guides](https://cwyn.com/guides/openclaw/) — Free OpenClaw troubleshooting guides, organized by symptom.
+
 ---
 
 ## Video Tutorials
